@@ -12,10 +12,8 @@
     {
       "net": "OUTPUT_VOLTAGE_ADC",
       "route": [
-        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 16.753364, "y": -11 },
-        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 16.753364, "y": -12 },
-        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 15.246636, "y": -13.506727999999999 },
-        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 15.246636, "y": -15 }
+        { "route_type": "wire", "x": 15.246636, "y": -11.1, "layer": "top", "width": 0.25 },
+        { "route_type": "wire", "x": 15.246636, "y": -15, "layer": "top", "width": 0.25 }
       ],
       "sourceTraceId": "source_trace_398",
       "sourceTraceKey": "[[\"R_V_ADC_BOTTOM.pin1\"],[\"OUTPUT_VOLTAGE_ADC\"],null,null]"
@@ -23,8 +21,8 @@
     {
       "net": "OUTPUT_VOLTAGE_ADC",
       "route": [
-        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 16.753364, "y": -11 },
-        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 16.753364, "y": -12.453364 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 15.246636, "y": -11.1 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 15.246636, "y": -12.453364 },
         { "route_type": "wire", "width": 0.25, "layer": "top", "x": 19.3, "y": -15 }
       ],
       "sourceTraceId": "source_trace_410",
@@ -222,10 +220,10 @@
     {
       "net": "MCU_RUN",
       "route": [
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.3, "y": -26 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.3, "y": -26.9 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 12.753364, "y": -26.9 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 12.753364, "y": -26 }
+        { "route_type": "wire", "x": 7.3, "y": -26, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 7.3, "y": -26.9, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 11.246636, "y": -26.9, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 11.246636, "y": -26, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_354",
       "sourceTraceKey": "[[\"C_MCU_RUN.pin1\"],[\"MCU_RUN\"],null,null]"
@@ -377,8 +375,8 @@
     {
       "net": "DRIVER_FAULT",
       "route": [
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 16.753364, "y": -19 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 17.7, "y": -19 }
+        { "route_type": "wire", "x": 15.246636, "y": -19, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 14.3, "y": -19, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_393",
       "sourceTraceKey": "[[\"R_DRIVER_FAULT.pin2\"],[\"DRIVER_FAULT\"],null,null]"
@@ -386,8 +384,8 @@
     {
       "net": "CTRL_3V3",
       "route": [
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 15.246636, "y": -19 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 14.3, "y": -19 }
+        { "route_type": "wire", "x": 16.753364, "y": -19, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 17.7, "y": -19, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_392",
       "sourceTraceKey": "[[\"R_DRIVER_FAULT.pin1\"],[\"CTRL_3V3\"],null,null]"
@@ -1644,8 +1642,9 @@
     {
       "net": "PD_FAULT_BASE",
       "route": [
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -18.246636, "y": 21.6 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -17.753364, "y": 17 }
+        { "route_type": "wire", "x": -18.246636, "y": 21.6, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -18.246636, "y": 19, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -16.246636, "y": 17, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_64",
       "sourceTraceKey": "[[\"R_FAULT_BASE.pin2\"],[\"PD_FAULT_BASE\"],null,null]"
@@ -1653,9 +1652,9 @@
     {
       "net": "PD_FAULT_BASE",
       "route": [
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -17.753364, "y": 17 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -14.65, "y": 19.65 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -14.49, "y": 19.7 }
+        { "route_type": "wire", "x": -16.246636, "y": 17, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -14.65, "y": 19.65, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -14.49, "y": 19.7, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_54",
       "sourceTraceKey": "[[\"Q_PD_FAULT.pin1\"],[\"PD_FAULT_BASE\"],null,null]"
@@ -1919,8 +1918,8 @@
     {
       "net": "GND",
       "route": [
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -16.246636, "y": 17 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -15.396636, "y": 17 }
+        { "route_type": "wire", "x": -17.753364, "y": 17, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -18.603364, "y": 17, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_66",
       "sourceTraceKey": "[[\"R_FAULT_OFF.pin2\"],[\"GND\"],null,null]"
@@ -2388,9 +2387,10 @@
         { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 11.3, "y": -13.3 },
         { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 11.8, "y": -13.8 },
         { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 12.4, "y": -13.8 },
-        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 16.6, "y": -18 },
-        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 16.7, "y": -18 },
-        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 17.7, "y": -19 }
+        { "route_type": "wire", "x": 14.6, "y": -16, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 14.6, "y": -18.3, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 14.3, "y": -18.6, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 14.3, "y": -19, "layer": "bottom", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_393",
       "sourceTraceKey": "[[\"R_DRIVER_FAULT.pin2\"],[\"DRIVER_FAULT\"],null,null]"
@@ -2726,8 +2726,8 @@
         { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 15.2, "y": -10.1 },
         { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 15.2, "y": -10.1 },
         { "route_type": "wire", "width": 0.2, "layer": "top", "x": 15.2, "y": -10.1 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 15.2, "y": -11 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 15.246636, "y": -11 }
+        { "route_type": "wire", "x": 16.753364, "y": -10.1, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 16.753364, "y": -11.1, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_396",
       "sourceTraceKey": "[[\"R_V_ADC_TOP.pin1\"],[\"TEC_POS\"],null,null]"
@@ -2998,6 +2998,7 @@
         { "route_type": "wire", "x": 20.85, "y": -5.1, "layer": "bottom", "width": 0.2 },
         { "route_type": "wire", "x": 20.85, "y": -11.7, "layer": "bottom", "width": 0.2 },
         { "route_type": "wire", "x": 23.5, "y": -11.7, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 23.5, "y": -17.7, "layer": "bottom", "width": 0.2 },
         { "route_type": "wire", "x": 24, "y": -18.2, "layer": "bottom", "width": 0.2 },
         { "route_type": "wire", "x": 23.2, "y": -19, "layer": "bottom", "width": 0.2 },
         { "route_type": "wire", "x": 21.2, "y": -19, "layer": "bottom", "width": 0.2 }
@@ -3012,8 +3013,8 @@
         { "route_type": "wire", "x": 20.2, "y": -18, "width": 0.2, "layer": "bottom" },
         { "route_type": "wire", "x": 18.5, "y": -18, "width": 0.2, "layer": "bottom" },
         { "route_type": "wire", "x": 18.5, "y": -19.6, "width": 0.2, "layer": "bottom" },
-        { "route_type": "wire", "x": 14.9, "y": -19.6, "width": 0.2, "layer": "bottom" },
-        { "route_type": "wire", "x": 14.3, "y": -19, "width": 0.2, "layer": "bottom" }
+        { "route_type": "wire", "x": 17.7, "y": -19.6, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 17.7, "y": -19, "layer": "bottom", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_500",
       "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
@@ -3021,21 +3022,16 @@
     {
       "net": "CTRL_3V3",
       "route": [
-        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 14.3, "y": -19 },
-        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 14.3, "y": -18.7 },
-        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 13.8, "y": -18.2 },
-        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 13.8, "y": -18.2 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 13.8, "y": -18.2 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8.8, "y": -18.2 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8.5, "y": -18.5 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8.5, "y": -21.9 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8, "y": -22.4 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8, "y": -23.6 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 10.4, "y": -26 },
-        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 11.246636, "y": -26 }
+        { "route_type": "wire", "x": 17.7, "y": -19, "layer": "inner2", "width": 0.6 },
+        { "route_type": "wire", "x": 17.7, "y": -17.4, "layer": "inner2", "width": 0.6 },
+        { "route_type": "wire", "x": 14.6, "y": -17.4, "layer": "inner2", "width": 0.6 },
+        { "route_type": "wire", "x": 13.8, "y": -18.2, "layer": "inner2", "width": 0.6 },
+        { "route_type": "via", "x": 13.8, "y": -18.2, "from_layer": "inner2", "to_layer": "top" },
+        { "route_type": "wire", "x": 13.8, "y": -18.2, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 8.8, "y": -18.2, "layer": "top", "width": 0.2 }
       ],
-      "sourceTraceId": "source_trace_366",
-      "sourceTraceKey": "[[\"R_RUN.pin1\"],[\"CTRL_3V3\"],null,null]"
+      "sourceTraceId": "source_trace_500",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
     },
     {
       "net": "CTRL_3V3",
@@ -3819,7 +3815,8 @@
         { "route_type": "wire", "x": 32.09, "y": -20, "width": 0.2, "layer": "top" },
         { "route_type": "wire", "x": 32.09, "y": -14.5, "width": 0.2, "layer": "top" },
         { "route_type": "wire", "x": 29.5, "y": -15, "width": 0.2, "layer": "top" },
-        { "route_type": "wire", "x": 21.646636, "y": -11.8, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 26.3, "y": -11.8, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.646636, "y": -11.8, "width": 0.2, "layer": "top" },
         { "route_type": "wire", "x": 21.646636, "y": -10.7, "width": 0.2, "layer": "top" }
       ],
       "sourceTraceId": "source_trace_524",
@@ -4400,6 +4397,7 @@
         { "route_type": "wire", "x": 20.4, "y": 7.7, "layer": "top", "width": 0.2 },
         { "route_type": "wire", "x": 24.1, "y": 7.7, "layer": "top", "width": 0.2 },
         { "route_type": "wire", "x": 24.1, "y": 8.2, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 25.7, "y": 8.2, "layer": "top", "width": 0.2 },
         { "route_type": "wire", "x": 28.5, "y": 11, "layer": "top", "width": 0.2 }
       ],
       "sourceTraceId": "source_trace_495",
@@ -4431,6 +4429,7 @@
         { "route_type": "wire", "x": 23.34996, "y": 1.850904, "width": 0.2, "layer": "top" },
         { "route_type": "wire", "x": 24.3, "y": 0.900864, "width": 0.2, "layer": "top" },
         { "route_type": "wire", "x": 24.3, "y": -2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 24.3, "y": -3.8, "width": 0.2, "layer": "top" },
         { "route_type": "wire", "x": 28.5, "y": -8, "width": 0.2, "layer": "top" }
       ],
       "sourceTraceId": "source_trace_498",
@@ -4560,6 +4559,7 @@
       "sourcePort": "C_DRIVER_IN1.pin1",
       "route": [
         { "route_type": "wire", "x": -10, "y": 5.982604, "width": 0.8, "layer": "top" },
+        { "route_type": "wire", "x": -5.082604, "y": 5.982604, "width": 0.8, "layer": "top" },
         { "route_type": "wire", "x": -4.3, "y": 5.2, "width": 0.8, "layer": "top" }
       ],
       "sourceTraceId": "source_trace_159",
@@ -4626,6 +4626,17 @@
       ],
       "sourceTraceId": "source_trace_500",
       "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "sourcePort": "R_RUN.pin1",
+      "route": [
+        { "route_type": "wire", "x": 12.753364, "y": -26, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 13.293364, "y": -26.54, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 14.8, "y": -26.54, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_366",
+      "sourceTraceKey": "[[\"R_RUN.pin1\"],[\"CTRL_3V3\"],null,null]"
     }
   ],
   "vias": [
@@ -4687,8 +4698,8 @@
     { "net": "LED_FAULT_DRIVE", "x": 28.200000000000003, "y": -19, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "PD_FAULT_SENSE", "x": -4.7, "y": -14.999925, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "MCU_DRIVER_PERMISSION", "x": 7, "y": -15.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
-    { "net": "DRIVER_FAULT", "x": 17.7, "y": -19, "holeDiameter": 0.3, "outerDiameter": 0.6 },
-    { "net": "CTRL_3V3", "x": 14.3, "y": -19, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 17.7, "y": -19, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "DRIVER_FAULT", "x": 14.3, "y": -19, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "PD_FAULT", "x": 14.35, "y": -8, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "PD_FAULT_SENSE", "x": 17.65, "y": -8, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "LOGIC_5V", "x": 10.4, "y": -11, "holeDiameter": 0.3, "outerDiameter": 0.6 },
@@ -4815,7 +4826,7 @@
     { "net": "GND", "x": -19.34, "y": 20.100066, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "GND", "x": -20.365511, "y": 14.344673, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "GND", "x": -14.49, "y": 22.35, "holeDiameter": 0.3, "outerDiameter": 0.6 },
-    { "net": "GND", "x": -15.396636, "y": 17, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -18.603364, "y": 17, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "GND", "x": 5.603364, "y": 1, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "GND", "x": 5.55, "y": -1, "holeDiameter": 0.3, "outerDiameter": 0.6 },
     { "net": "GND", "x": -0.999998, "y": -17.575063, "holeDiameter": 0.3, "outerDiameter": 0.6 },

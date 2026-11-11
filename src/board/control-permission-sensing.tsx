@@ -39,13 +39,13 @@ export function PermissionAndSensing() {
     <Resistor0603 name="R_PD_FAULT_SENSE" schX={4.2} schY={3.15} schRotation={0} resistance="10k" pcbX={16} pcbY={-8} schSheetName="MONITOR"
       manufacturerPartNumber="0603WAF1002T5E" supplierPartNumbers={{ jlcpcb: ["C25804"] }}
       connections={{ pin1: "net.PD_FAULT", pin2: "net.PD_FAULT_SENSE" }} />
-    <Resistor0603 name="R_DRIVER_FAULT" schX={7} schY={5.6} schRotation={270} resistance="4.7k" pcbX={16} pcbY={-19} schSheetName="MONITOR"
+    <Resistor0603 name="R_DRIVER_FAULT" schX={7} schY={5.6} schRotation={270} resistance="4.7k" pcbRotation={180} pcbX={16} pcbY={-19} schSheetName="MONITOR"
       manufacturerPartNumber="0603WAF4701T5E" supplierPartNumbers={{ jlcpcb: ["C23162"] }}
       connections={{ pin1: "net.CTRL_3V3", pin2: "net.DRIVER_FAULT" }} />
     <Resistor0603 name="R_I_ADC" schX={-8.75} schY={-2.1} schRotation={0} resistance="1k" pcbX={8.5} pcbY={-19} schSheetName="MONITOR"
       manufacturerPartNumber="0603WAF1001T5E" supplierPartNumbers={{ jlcpcb: ["C21190"] }}
       connections={{ pin1: "net.DRIVER_CURRENT_MONITOR", pin2: "net.OUTPUT_CURRENT_ADC" }} />
-    <Resistor0603 name="R_V_ADC_TOP" schX={-2.8} schY={-1.4} schRotation={270} resistance="100k" pcbX={16} pcbY={-11} schSheetName="MONITOR"
+    <Resistor0603 name="R_V_ADC_TOP" schX={-2.8} schY={-1.4} schRotation={270} resistance="100k" pcbRotation={180} pcbX={16} pcbY={-11.1} schSheetName="MONITOR"
       manufacturerPartNumber="0603WAF1003T5E" supplierPartNumbers={{ jlcpcb: ["C25803"] }}
       connections={{ pin1: "net.TEC_POS", pin2: "net.OUTPUT_VOLTAGE_ADC" }} />
     <Resistor0603 name="R_V_ADC_BOTTOM" schX={-2.8} schY={-4.2} schRotation={270} resistance="20k" pcbX={16} pcbY={-15} schSheetName="MONITOR"

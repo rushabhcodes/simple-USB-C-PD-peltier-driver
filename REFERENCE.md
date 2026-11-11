@@ -14,3 +14,5 @@ The default `index.circuit.tsx` renders the board. The reference's accessory ass
 The supplier components are imported afresh with the tscircuit CLI. `docs/component-imports.json` records all 55 BOM SKUs, the commands, raw source hashes, and active wrapper adjustments. Capacitor pin aliases, power/ground attributes, custom schematic symbols, connector access directions, and documented land/drill corrections are retained from the reference after comparing the imported geometry.
 
 Schematic-only refinements group bypass capacitors, reduce excess symbol padding, orient bootstrap capacitors vertically, and move a colliding fault annotation. A local 3V3 label identifies the cold-probe supply. These changes retain the reference's PCB coordinates and electrical net partition.
+
+Release 0.1.1 adds local PCB routing and resistor-orientation corrections, trace names, physical power-copper checks, and an unknown-stock adapter. It preserves the original electrical net partition while changing selected PCB coordinates and routes. The fan inductor explicitly uses its existing manufacturer-recommended land pattern. See [docs/diagnostic-fixes.md](docs/diagnostic-fixes.md).

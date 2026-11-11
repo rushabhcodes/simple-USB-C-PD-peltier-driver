@@ -1,10 +1,4 @@
-placement summary: 4 suboptimal orientations
-
-worst issues:
-1. R_FAULT_OFF connections cross the routing path between its pads. Suggested move: rotate R_FAULT_OFF 180 degrees.
-2. R_RUN connections cross the routing path between its pads. Suggested move: rotate R_RUN 180 degrees.
-3. R_DRIVER_FAULT connections cross the routing path between its pads. Suggested move: rotate R_DRIVER_FAULT 180 degrees.
-4. R_V_ADC_TOP connections cross the routing path between its pads. Suggested move: rotate R_V_ADC_TOP 180 degrees.
+placement summary: no placement issues
 
 board top-layer utilization:
 - occupied: 44.876% (1919.588mm^2 of 4277.5mm^2)
@@ -161,32 +155,6 @@ board-edge status:
 - C_COLD_SENSOR: 9mm inside right edge
 - U_SENSOR_ESD: 8.884mm inside right edge
 - J_TEC: 2.4mm inside bottom edge
-
-flagged components:
-- R_FAULT_OFF
-  source placement: placement_mode=none
-  resolved placement: center=(-17mm, 17mm) on top; bounds=(minX=-18.157mm, maxX=-15.843mm, minY=16.568mm, maxY=17.432mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
-  board edge status: 11.568mm inside bottom edge
-  issues:
-  - R_FAULT_OFF connections cross the routing path between its pads. Suggested move: rotate R_FAULT_OFF 180 degrees.
-- R_RUN
-  source placement: placement_mode=none
-  resolved placement: center=(12mm, -26mm) on top; bounds=(minX=10.843mm, maxX=13.157mm, minY=-26.432mm, maxY=-25.568mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
-  board edge status: 3.568mm inside top edge
-  issues:
-  - R_RUN connections cross the routing path between its pads. Suggested move: rotate R_RUN 180 degrees.
-- R_DRIVER_FAULT
-  source placement: placement_mode=none
-  resolved placement: center=(16mm, -19mm) on top; bounds=(minX=14.843mm, maxX=17.157mm, minY=-19.432mm, maxY=-18.568mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
-  board edge status: 10.568mm inside top edge
-  issues:
-  - R_DRIVER_FAULT connections cross the routing path between its pads. Suggested move: rotate R_DRIVER_FAULT 180 degrees.
-- R_V_ADC_TOP
-  source placement: placement_mode=none
-  resolved placement: center=(16mm, -11mm) on top; bounds=(minX=14.843mm, maxX=17.157mm, minY=-11.432mm, maxY=-10.568mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
-  board edge status: 15.343mm inside right edge
-  issues:
-  - R_V_ADC_TOP connections cross the routing path between its pads. Suggested move: rotate R_V_ADC_TOP 180 degrees.
 
 placement drc:
 Errors: 0

@@ -1,12 +1,14 @@
 # USB-C PD Peltier driver
 
-An editable tscircuit PCB based on [0hmX/dual-usb-peltier-assembly](https://tscircuit.com/0hmX/dual-usb-peltier-assembly), release **0.4.12**. The default entrypoint displays the PCB itself. The reference's routed copper, supplier footprints, firmware, nine schematic sheets, and optional accessory assembly are retained.
+An editable tscircuit PCB based on [0hmX/dual-usb-peltier-assembly](https://tscircuit.com/0hmX/dual-usb-peltier-assembly), release **0.4.12**. The default entrypoint displays the PCB itself. It retains the reference's electrical design, supplier components, firmware, nine schematic sheets, and optional accessory assembly, with local routing and placement fixes.
 
 Supplier parts are imported with the **TSCircuit CLI** using `tsci import C… --jlcpcb --use-exact-footprint`. The import audit in [`docs/component-imports.json`](docs/component-imports.json) records the exact commands and source hashes. The active wrappers preserve the reference's pin semantics and documented manufacturing corrections. Schematic placement is refined for closer capacitor banks, compact IC symbols, and readable annotations.
 
 ![Routed four-layer PCB](docs/previews/pcb.png)
 
-Review the [PCB SVG](docs/previews/pcb.svg), [all nine schematic sheets](docs/previews/all-sheets.svg), or [individual sheet previews](docs/previews/schematics). The [validation record](VALIDATION.md) lists the remaining placement advisories and routing warnings.
+Review the [PCB SVG](docs/previews/pcb.svg), [all nine schematic sheets](docs/previews/all-sheets.svg), or [individual sheet previews](docs/previews/schematics). See the [validation record](VALIDATION.md) and [release diagnostic fixes](docs/diagnostic-fixes.md).
+
+Open the [latest tscircuit board](https://tscircuit.com/rushabhcodes/simple-usb-c-pd-peltier-driver).
 
 ## Design
 
@@ -46,15 +48,15 @@ bun run typecheck
 bun run check:netlist
 bun run check:schematic
 bun run check:placement
-bun run build --disable-parts-engine --pcb-png --schematic-png
+bun run build --pcb-png --schematic-png
 bun run export:schematics
 bun run check:shorts
 bun test ./tests
 ```
 
-Build artifacts are written to `dist/index/`. Individual sheet SVG/PNG previews and an all-sheet SVG are written to `dist/schematics/`. `--disable-parts-engine` uses the committed supplier parts without querying live stock metadata. The retained tests check electrical connectivity, saved copper, component pin maps, schematic separation, and accessory models. They do not replace hardware qualification.
+Build artifacts are written to `dist/index/`. Individual sheet SVG/PNG previews and an all-sheet SVG are written to `dist/schematics/`. Default builds keep supplier checks enabled. Unknown catalog stock remains unknown; actual zero stock and failed lookups still produce warnings. For an offline build, `--disable-parts-engine` uses the committed supplier parts. The tests check electrical connectivity, saved copper, component pin maps, schematic separation, and accessory models. They do not replace hardware qualification.
 
-The current build, netlist, schematic placement, Gerber short check, and 50 retained tests pass. The PCB placement analyzer reports four resistor-orientation advisories and exits nonzero; native placement DRC reports zero errors and zero warnings. Routing width/style warnings are also retained. See [`VALIDATION.md`](VALIDATION.md) for the exact results and limits.
+See [`VALIDATION.md`](VALIDATION.md) for the exact build, placement, routing, supplier-check and test results, including the reviewed manufacturer footprint used for the fan inductor.
 
 ## Wiring and fabrication
 

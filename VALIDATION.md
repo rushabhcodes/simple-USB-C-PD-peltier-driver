@@ -1,38 +1,37 @@
-# Validation — 2026-11-11
+# Validation — 2026-11-11, version 0.1.1
 
-The generated board is a development adaptation of the supplied reference. It retains the reference's copper geometry and electrical net partition. It is not a manufacturing release.
+The board is a development adaptation of the supplied reference. Local online compilation produces **zero errors and zero warnings**. Its original electrical pin/net partition is preserved; selected routes and resistor placements are corrected. It is not a manufacturing release.
 
 | Check | Result |
 | --- | --- |
-| Supplier imports | All 55 unique BOM SKUs successfully imported using the tscircuit CLI; 39 base wrappers integrated |
+| Supplier imports | All 55 unique BOM SKUs imported using the tscircuit CLI; 39 base wrappers integrated |
 | TypeScript | `bun run typecheck` passes |
 | Dependency installation | Locked dependencies install successfully |
 | Netlist | Zero errors, zero warnings |
-| Build | `tsci build index.circuit.tsx --disable-parts-engine --pcb-png --schematic-png --svgs --profile` passes |
-| Native circuit errors | Zero |
+| Online build | `tsci build index.circuit.tsx --pcb-png --schematic-png --svgs --profile` passes with supplier checks enabled |
+| Compiled diagnostics | Zero errors, zero warnings in `dist/index/circuit.json` |
 | Schematic placement | No reported issues across all nine sheets |
-| PCB placement DRC | Zero errors, zero warnings; no overlaps or off-board components |
-| PCB placement analyzer | Four orientation advisories; command exits 1 |
+| PCB placement | Analyzer exits 0 with no issues; native DRC has zero errors and zero warnings |
 | Copper shorts | Default Gerber-based `tsci check shorts dist/index/circuit.json`: no shorts detected |
-| Routing difficulty | Analysis completed; dense regions around MCU bypass components are recorded in `checks/routing-difficulty.txt` |
-| Retained tests | 50 passed, 0 failed; 7,163 assertions across seven files |
+| Routing difficulty | Completed; dense MCU regions are recorded in `checks/routing-difficulty.txt` |
+| Source associations | Source IDs, named nets, constraints and all saved route associations match the complete online build |
+| Tests | 54 passed, 0 failed; 7,198 assertions across eight files |
 
-The tests verify the original electrical net partition, all required physical connections, copper clearances, minimum dimensions, trace constraints, MCU package pins, and the optional accessory assembly. The final circuit has 134 purchased placements, 16 copper debug pads, 359 PCB traces, and nine schematic sheets on a 72.5 × 59 mm four-layer board.
+The tests verify the original electrical net partition, all 430 required physical connections, copper clearances, minimum dimensions, trace constraints, MCU package pins, schematic layout, and the optional accessory assembly. Power-copper checks inspect 3 mm-wide sections of the clipped VIN/SW/VOUT/TEC pours, the 0.6 mm fan-header branch, and the resistance-length budget of the new 0.6 mm inner-layer logic link. The circuit contains 134 purchased placements, 16 debug pads, 360 saved traces, and nine schematic sheets on a 72.5 × 59 mm four-layer board.
 
-## Remaining diagnostics
+## Diagnostic handling and limits
 
-The placement analyzer suggests rotating `R_FAULT_OFF`, `R_RUN`, `R_DRIVER_FAULT`, and `R_V_ADC_TOP` by 180°. Its orientation estimate compares straight-line distances to connected pads; it does not evaluate the saved routed paths. The inherited resistor orientation and copper are retained. These advisories remain visible in `checks/placement.txt`; the command does not pass overall despite clean native placement DRC.
+The 0.1.0 release had 209 warnings: 35 unnamed traces, 34 logical-width warnings, five long odd-angle segments, 134 availability warnings, and one supplier-footprint mismatch. See [docs/diagnostic-fixes.md](docs/diagnostic-fixes.md) for their source fixes and the four additional resistor-orientation corrections.
 
-The compiled circuit also retains 35 unnamed-trace warnings, 34 requested-width versus routed-width warnings, and five trace-angle style warnings. The saved layout uses both traces and pours; the current checks do not establish whether each power path meets its requested width/current budget. The warnings have not been cleared or suppressed. Review actual current paths and the reference's documented local width exceptions before fabrication; passing connectivity/short checks does not establish current-carrying or thermal performance.
+Supplier checks remain enabled. Unknown catalog stock is left unverified; zero stock and failed requests still generate warnings. Tests exercise these cases through core. L_FAN is compared against canonical Sunlord recommended land-pattern geometry instead of the differing supplier CAD; a deliberately incorrect footprint still warns in the regression test. No blanket diagnostic filter is applied to the published circuit.
 
-The reference's exposed-pad via process, four-layer stackup, copper weights, USB geometry, and bench qualification requirements remain applicable. See [`docs/pcb-fabrication.md`](docs/pcb-fabrication.md). No hardware measurements were performed.
+The reference's exposed-pad via process, four-layer stackup, copper weights, local power-copper necks, USB geometry and bench qualification requirements remain applicable. A clean diagnostic list does not establish thermal performance or stock availability. See [docs/pcb-fabrication.md](docs/pcb-fabrication.md). No hardware measurements were performed.
 
 ## Review artifacts
 
-- [`PCB SVG`](docs/previews/pcb.svg) and [`PNG`](docs/previews/pcb.png): committed routed PCB previews.
-- [`All schematic sheets`](docs/previews/all-sheets.svg): all nine sheets in one SVG.
-- [`Individual sheet previews`](docs/previews/schematics): one PNG per sheet.
-- `dist/index/circuit.json`: compiled circuit, generated locally by the build command.
-- `dist/schematics/`: locally generated sheet SVG/PNG previews.
-- [`docs/component-imports.json`](docs/component-imports.json): CLI import commands, hashes, and retained footprint corrections.
-- `checks/`: netlist, placement, schematic, shorts, build, and test logs.
+- [PCB SVG](docs/previews/pcb.svg) and [PNG](docs/previews/pcb.png): committed routed PCB previews.
+- [All schematic sheets](docs/previews/all-sheets.svg) and [individual PNGs](docs/previews/schematics).
+- `dist/index/circuit.json`: compiled circuit generated by the build.
+- `dist/schematics/`: generated sheet SVG/PNG previews.
+- [docs/component-imports.json](docs/component-imports.json): CLI import commands, hashes and footprint corrections.
+- `checks/`: current build, netlist, placement, schematic, short, density and test logs.

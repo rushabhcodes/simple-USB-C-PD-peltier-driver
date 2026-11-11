@@ -20,6 +20,7 @@
       "bun"
     ]
   },
+  "exclude": ["node_modules", "dist", "work"],
   "include": [
     "**/*.ts",
     "**/*.tsx"

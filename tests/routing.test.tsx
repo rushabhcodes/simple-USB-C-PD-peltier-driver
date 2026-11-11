@@ -5,7 +5,7 @@ import * as checks from "@tscircuit/checks"
 import routingData from "../src/board/routing-data.json"
 import type { RoutedCopperData } from "../src/board/routed-copper"
 import { assertCopperAssociations } from "./helpers/copper-associations"
-import { analyzePhysicalCopper, drillSmtClearanceViolations, sourceConnectivity } from "./helpers/physical-copper"
+import { analyzePhysicalCopper, drillSmtClearanceViolations, pouredCorridorCovered, sourceConnectivity } from "./helpers/physical-copper"
 import { inspectThermalVias } from "./helpers/thermal-vias"
 import { boardFixture, FIXTURE_RENDER_TIMEOUT } from "./fixtures"
 
@@ -107,6 +107,36 @@ describe("complete PCB routing", () => {
     }
   })
 
+  test("main power corridors retain broad clipped copper and the fan header retains its 0.6 mm branch", () => {
+    // These are physical trunk sections, not a width imposed on every sense,
+    // bootstrap and ground branch. Package escapes and local necks still need
+    // the thermal qualification documented in docs/pcb-fabrication.md.
+    for (const [net, x1, y1, x2, y2] of [
+      ["DRIVER_SW1", -5.55, 20.5, -5.55, 24],
+      ["DRIVER_SW2", 5.55, 20.5, 5.55, 24],
+      ["VBUS_QUALIFIED", -9.5, 6, -5.5, 6],
+      ["DRIVER_OUT", 11, 15, 16, 15],
+      ["TEC_POS", 24.35, 14.5, 24.35, 18],
+      ["TEC_POS", 20.5, 21, 27.5, 21],
+    ] as const) expect(pouredCorridorCovered(circuit.getCircuitJson(), net, "top",
+      { x: x1, y: y1 }, { x: x2, y: y2 }, 3), `${net} power corridor must contain 3 mm of clipped copper`).toBe(true)
+    const fanHeader = (routingData as RoutedCopperData).routes.find(r => r.net === "FAN_12V" &&
+      r.route.some(p => p.route_type === "wire" && Math.abs(p.y + 29.39) < 1e-6))!
+    expect(fanHeader).toBeDefined()
+    expect(Math.min(...fanHeader.route.filter(p => p.route_type === "wire").map(p => p.width))).toBeGreaterThanOrEqual(0.6)
+    const logicTrunk = (routingData as RoutedCopperData).routes.find(r => r.net === "CTRL_3V3" &&
+      r.route.some(p => p.route_type === "wire" && p.layer === "inner2" && p.x === 17.7 && p.y === -19))!
+    expect(logicTrunk).toBeDefined()
+    const inner = logicTrunk.route.filter(p => p.route_type === "wire").filter(p => p.layer === "inner2")
+    expect(Math.min(...inner.map(p => p.width))).toBeGreaterThanOrEqual(0.6)
+    // 30 um inner copper versus 70 um outer copper; include the 0.8 mm
+    // outer lead from the supply junction. This local link stays below
+    // 6 mm equivalent 0.2 mm outer-copper length (previous link: 4.86 mm).
+    const equivalentLength = inner.slice(1).reduce((sum, p, i) => sum +
+      Math.hypot(p.x - inner[i]!.x, p.y - inner[i]!.y) * (70 / 30) * (0.2 / inner[i]!.width), 0) + 0.8
+    expect(equivalentLength).toBeLessThanOrEqual(6)
+  })
+
   test("full-board native connectivity and geometry checks pass", async () => {
     const json = circuit.getCircuitJson()
     const strictJson = structuredClone(json)
@@ -118,9 +148,8 @@ describe("complete PCB routing", () => {
       ...await checks.runAllRoutingChecks(structuredClone(strictJson)),
       ...await checks.runAllPlacementChecks(structuredClone(strictJson)),
     ]
-    // Style/underspecified-pin warnings are distinct from physical failures.
-    // Widths are checked directly above; the library width warning applies the
-    // widest requested branch to every branch of a shared net, including GND.
+    expect(json.filter(item => item.type === "source_unnamed_trace_warning" ||
+      item.type === "pcb_trace_warning" || item.type === "pcb_trace_style_warning")).toEqual([])
     const thermal = inspectThermalVias(json)
     expect(thermal.missing).toEqual([])
     expect(thermal.invalid).toEqual([])

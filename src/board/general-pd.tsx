@@ -105,7 +105,7 @@ export function GeneralPdDriverBoard({ schematicDisabled = false }: { schematicD
     <Resistor0603 name="R_FAULT_BASE" resistance="10k" pcbX={-19} pcbY={21.6} pcbRotation={0} schX={-6} schY={-6} schRotation={0} schSheetName="PD"
       manufacturerPartNumber="0603WAF1002T5E" supplierPartNumbers={{ jlcpcb: ["C25804"] }}
       connections={{ pin1: "net.PD_FAULT", pin2: "net.PD_FAULT_BASE" }} />
-    <Resistor0603 name="R_FAULT_OFF" resistance="100k" pcbX={-17} pcbY={17} pcbRotation={0} schX={-3.5} schY={-8} schRotation={270} schSheetName="PD"
+    <Resistor0603 name="R_FAULT_OFF" resistance="100k" pcbX={-17} pcbY={17} pcbRotation={180} schX={-3.5} schY={-8} schRotation={270} schSheetName="PD"
       manufacturerPartNumber="0603WAF1003T5E" supplierPartNumbers={{ jlcpcb: ["C25803"] }}
       connections={{ pin1: "net.PD_FAULT_BASE", pin2: "net.GND" }} />
     <group schSheetName="PD">

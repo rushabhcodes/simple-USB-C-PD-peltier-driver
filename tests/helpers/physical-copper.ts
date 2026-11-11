@@ -110,6 +110,19 @@ function pourShape(e: Element) {
   for (const ring of e.brep_shape.inner_rings ?? []) cutHole(shape, new Polygon(ring.vertices.map(point)))
   return shape
 }
+
+/** Check the clipped, fabricated pour across a specified power corridor. */
+export function pouredCorridorCovered(json: AnyCircuitElement[], net: string, layer: string,
+  from: { x: number; y: number }, to: { x: number; y: number }, width: number) {
+  const sourceNet = json.find(e => e.type === "source_net" && e.name === net)
+  if (!sourceNet || sourceNet.type !== "source_net") return false
+  const corridor = rectangle((from.x + to.x) / 2, (from.y + to.y) / 2,
+    Math.hypot(to.x - from.x, to.y - from.y), width,
+    Math.atan2(to.y - from.y, to.x - from.x) * 180 / Math.PI)
+  return (json as Element[]).filter(e => e.type === "pcb_copper_pour" &&
+    e.source_net_id === sourceNet.source_net_id && e.layer === layer)
+    .some(pour => pourShape(pour).contains(corridor))
+}
 function touches(a: Polygon, b: Polygon) {
   return a.contains(b.vertices[0]!) || b.contains(a.vertices[0]!) || a.distanceTo(b)[0] <= EPS
 }

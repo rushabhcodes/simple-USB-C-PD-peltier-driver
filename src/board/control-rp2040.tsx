@@ -137,7 +137,7 @@ export function Rp2040Control() {
     <Resistor0603 name="R_SDA" schX={-6} schY={7.7} schRotation={270} resistance="4.7k" pcbX={-8.5} pcbY={-10.5} schSheetName="MCU"
       manufacturerPartNumber="0603WAF4701T5E" supplierPartNumbers={{ jlcpcb: ["C23162"] }}
       connections={{ pin1: "net.CTRL_3V3", pin2: "net.I2C_SDA" }} />
-    <Resistor0603 name="R_RUN" schX={-16} schY={-5.7} schRotation={270} resistance="10k" pcbX={12} pcbY={-26} schSheetName="MCU"
+    <Resistor0603 name="R_RUN" schX={-16} schY={-5.7} schRotation={270} resistance="10k" pcbRotation={180} pcbX={12} pcbY={-26} schSheetName="MCU"
       manufacturerPartNumber="0603WAF1002T5E" supplierPartNumbers={{ jlcpcb: ["C25804"] }}
       connections={{ pin1: "net.CTRL_3V3", pin2: "net.MCU_RUN" }} />
     <Resistor0603 name="R_USB_DM" schX={-5} schY={-5.5} schRotation={180} resistance="27" pcbX={6.1} pcbY={-6.7} pcbRotation={270} schSheetName="MCU"

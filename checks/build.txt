@@ -1,82 +1,8 @@
-$ tsci build index.circuit.tsx --disable-parts-engine --pcb-png --schematic-png --svgs --profile
 Building 1 file(s)...
 Building index.circuit.tsx...
-Generatinerror: script "buiCircuit JSON written to dist/index/circuit.json
-<trace#127(from:.U_DRIVER > .pin8 to:.L_OUT > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#128(from:.U_DRIVER > .pin10 to:.L_OUT > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#129(from:.U_DRIVER > .pin7 to:.C_DRIVER_INPUT_HF > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#130(from:.U_DRIVER > .pin11 to:.C_DRIVER_OUTPUT_HF > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#131(from:.C_DRIVER_OUTPUT_HF > .pin1 to:.C_DRIVER_OUT1 > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#132(from:.U_DRIVER > .pin20 to:.C_DRIVER_BOOT1 > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#133(from:.U_DRIVER > .pin19 to:.C_DRIVER_BOOT2 > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#134(from:.U_DRIVER > .pin8 to:.C_DRIVER_BOOT1 > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#135(from:.U_DRIVER > .pin10 to:.C_DRIVER_BOOT2 > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#136(from:.U_DRIVER > .pin18 to:.C_DRIVER_VCC > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#137(from:.C_DRIVER_VCC > .pin1 to:.C_DRIVER_VCC_HF > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#138(from:.U_DRIVER > .pin12 to:.C_CURRENT_FILTER > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#139(from:.U_DRIVER > .pin13 to:.C_CURRENT_FILTER > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#140(from:.R_ISP_FILTER > .pin2 to:.C_CURRENT_FILTER > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#141(from:.R_ISN_FILTER > .pin2 to:.C_CURRENT_FILTER > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#142(from:.R_SENSE > .pin1 to:.R_ISP_FILTER > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#143(from:.R_SENSE > .pin2 to:.R_ISN_FILTER > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#144(from:.U_DRIVER > .pin6 to:.R_DRIVER_FSW > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#145(from:.U_DRIVER > .pin15 to:.R_COMP > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#146(from:.R_COMP > .pin2 to:.C_COMP_ZERO > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#147(from:.R_COMP > .pin1 to:.C_COMP_POLE > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#148(from:.U_DRIVER > .pin9 to:.C_DRIVER_INPUT_HF > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#149(from:.U_DRIVER > .pin9 to:.C_DRIVER_OUTPUT_HF > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#150(from:.C_COMP_POLE > .pin2 to:.C_DRIVER_VCC > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#151(from:.C_COMP_ZERO > .pin2 to:.C_COMP_POLE > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#152(from:.R_DRIVER_FSW > .pin2 to:.C_COMP_POLE > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#153(from:.U_DRIVER > .pin17 to:.C_DRIVER_VCC > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#800(from:.R_HOT_PULLUP > .pin2 to:.R_HOT_SERIES > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#801(from:.R_HOT_SERIES > .pin2 to:.U_SENSOR_ESD > .pin6) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#802(from:.U_SENSOR_ESD > .pin1 to:.J_HOT_SENSOR > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#803(from:.R_COLD_PULLUP > .pin2 to:.R_COLD_SERIES > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#804(from:.R_COLD_PULLUP > .pin2 to:.U_SENSOR_ESD > .pin4) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#805(from:.U_SENSOR_ESD > .pin3 to:.J_COLD_SENSOR > .pin2) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#806(from:.R_HOT_PULLUP > .pin1 to:.C_HOT_SENSOR > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-<trace#807(from:.R_COLD_PULLUP > .pin1 to:.C_COLD_SENSOR > .pin1) /> is missing a name. Add a name prop to make the trace easier to identify.
-Trace [.U_DRIVER > .pin8 to .L_OUT > .pin1] is routed thinner than requested (requested: 0.22mm, actual: 0.2mm).
-Trace [.U_DRIVER > .pin10 to .L_OUT > .pin2] is routed thinner than requested (requested: 0.22mm, actual: 0.2mm).
-Trace [.U_DRIVER > .pin7 to .C_DRIVER_INPUT_HF > .pin1] is routed thinner than requested (requested: 0.22mm, actual: 0.2mm).
-Trace [.U_DRIVER > .pin11 to .C_DRIVER_OUTPUT_HF > .pin1] is routed thinner than requested (requested: 0.22mm, actual: 0.2mm).
-Trace [.C_DRIVER_OUTPUT_HF > .pin1 to .C_DRIVER_OUT1 > .pin1] is routed thinner than requested (requested: 1mm, actual: 0.2mm).
-Trace [.U_DRIVER > .pin18 to .C_DRIVER_VCC > .pin1] is routed thinner than requested (requested: 0.25mm, actual: 0.2mm).
-Trace [.C_DRIVER_VCC > .pin1 to .C_DRIVER_VCC_HF > .pin1] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.U_DRIVER > .pin9 to .C_DRIVER_INPUT_HF > .pin2] is routed thinner than requested (requested: 0.3mm, actual: 0.2mm).
-Trace [.U_DRIVER > .pin9 to .C_DRIVER_OUTPUT_HF > .pin2] is routed thinner than requested (requested: 0.3mm, actual: 0.2mm).
-Trace [.C_COMP_POLE > .pin2 to .C_DRIVER_VCC > .pin2] is routed thinner than requested (requested: 0.25mm, actual: 0.2mm).
-Trace [.C_COMP_ZERO > .pin2 to .C_COMP_POLE > .pin2] is routed thinner than requested (requested: 0.25mm, actual: 0.2mm).
-Trace [.R_DRIVER_FSW > .pin2 to .C_COMP_POLE > .pin2] is routed thinner than requested (requested: 0.25mm, actual: 0.2mm).
-Trace [.U_FAN > .pin4 to .U_FAN > .pin5] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.C_FAN_IN > .pin1 to .C_FAN_IN_HF > .pin1] is routed thinner than requested (requested: 0.6mm, actual: 0.2mm).
-Trace [.C_FAN_IN_HF > .pin1 to .U_FAN > .pin5] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.C_FAN_IN > .pin2 to .C_FAN_IN_HF > .pin2] is routed thinner than requested (requested: 0.6mm, actual: 0.2mm).
-Trace [.C_FAN_IN_HF > .pin2 to .U_FAN > .pin2] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.L_FAN > .pin2 to .C_FAN_OUT1 > .pin1] is routed thinner than requested (requested: 0.9mm, actual: 0.2mm).
-Trace [.L_FAN > .pin2 to .C_FAN_OUT2 > .pin1] is routed thinner than requested (requested: 0.9mm, actual: 0.2mm).
-Trace [.C_FAN_OUT1 > .pin2 to .C_FAN_OUT2 > .pin2] is routed thinner than requested (requested: 0.9mm, actual: 0.2mm).
-Trace [.R_FAN_FB_BOTTOM > .pin2 to .U_FAN > .pin2] is routed thinner than requested (requested: 0.3mm, actual: 0.2mm).
-Trace [.C_FAN_OUT2 > .pin1 to .J_FAN > .pin2] is routed thinner than requested (requested: 1mm, actual: 0.2mm).
-Trace [.R_HOT_PULLUP > .pin1 to .C_HOT_SENSOR > .pin1] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.R_COLD_PULLUP > .pin1 to .C_COLD_SENSOR > .pin1] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.R_HOT_PULLUP > .pin1 to .V_SENSOR_HOT_3V3 > .top] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.R_COLD_PULLUP > .pin1 to .V_SENSOR_COLD_3V3 > .top] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.U_SENSOR_ESD > .pin5 to .V_SENSOR_ESD_3V3 > .top] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.V_SENSOR_HOT_3V3 > .bottom to .V_SENSOR_COLD_3V3 > .bottom] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.V_SENSOR_ESD_3V3 > .bottom to .V_SENSOR_HOT_3V3 > .bottom] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.V_SENSOR_HOT_3V3 > .bottom to .J_HOT_SENSOR > .pin1] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.V_SENSOR_COLD_3V3 > .bottom to .J_COLD_SENSOR > .pin1] is routed thinner than requested (requested: 0.4mm, actual: 0.2mm).
-Trace [.C_HOT_SENSOR > .pin2 to .V_SENSOR_HOT_GND > .top] is routed thinner than requested (requested: 0.3mm, actual: 0.2mm).
-Trace [.C_COLD_SENSOR > .pin2 to .V_SENSOR_COLD_GND > .top] is routed thinner than requested (requested: 0.3mm, actual: 0.2mm).
-Trace [.U_SENSOR_ESD > .pin2 to .V_SENSOR_ESD_GND > .top] is routed thinner than requested (requested: 0.3mm, actual: 0.2mm).
-.R_COLD_PULLUP > .pin1 to .C_COLD_SENSOR > .pin1 has a 6.52 mm segment on bottom at 274.40°, 4.40° from the nearest allowed direction (270°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°).
-.R_COLD_SERIES > .pin1 to net.COLD_DATA_MCU has a 8.48 mm segment on top at 157.83°, 22.17° from the nearest allowed direction (180°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°).
-.U_SENSOR_ESD > .pin1 to .J_HOT_SENSOR > .pin2 has a 5.22 mm segment on top at 32.47°, 12.53° from the nearest allowed direction (45°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°).
-.U_SENSOR_ESD > .pin3 to .J_COLD_SENSOR > .pin2 has a 7.32 mm segment on top at 304.99°, 10.01° from the nearest allowed direction (315°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°).
-.C_DRIVER_IN1 > .pin1 to net.VBUS_QUALIFIED has a 5.75 mm segment on top at 352.18°, 7.82° from the nearest allowed direction (0°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°).
-[profile] index.circuit.tsx: 97865.7ms
+Generating circuit JSON...
+Circuit JSON written to dist/index/circuit.json
+[profile] index.circuit.tsx: 130634.3ms
 Generating preview images...
 [index] Generating PCB SVG...
 [index] Written pcb.svg
@@ -88,7 +14,7 @@ Generating preview images...
 [index] Written schematic.png
 
 Profile Summary (slowest first)
-  97865.7ms index.circuit.tsx
+  130634.3ms index.circuit.tsx
 
 Build complete
   Circuits  1 passed

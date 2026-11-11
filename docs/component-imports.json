@@ -593,7 +593,8 @@
         "Retain reference pin labels, power/ground attributes and schematic symbol.",
         "Retain capacitor pin1/pos and pin2/neg aliases where present.",
         "Omit silkscreen and retain reference fabrication/courtyard annotations.",
-        "Retain reference Sunlord 2.2 x 7.5 mm recommended inductor lands at +/-3 mm."
+        "Retain reference Sunlord 2.2 x 7.5 mm recommended inductor lands at +/-3 mm.",
+        "Compare C83467 against canonical manufacturer land-pattern geometry in the project parts engine; retain live stock and footprint mismatch checks."
       ]
     },
     {

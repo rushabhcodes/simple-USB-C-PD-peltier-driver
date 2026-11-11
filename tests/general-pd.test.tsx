@@ -250,6 +250,17 @@ describe("general USB-C PD Peltier driver", () => {
     const coil = component("L_FAN")
     expect(String("inductance" in coil && coil.inductance)).toBe("33uH")
     expect(coil.manufacturer_part_number).toBe("SWPA8040S330MT")
+    // Sunlord SWPA8040S datasheet, page 2: a=3.8, b=2.2, c=7.5 mm.
+    // Review against the manufacturer, rather than EasyEDA's larger CAD pads.
+    const coilPcb = circuit.db.pcb_component.list().find(p => p.source_component_id === coil.source_component_id)!
+    const coilPads = circuit.db.pcb_smtpad.list().filter(p => p.pcb_component_id === coilPcb.pcb_component_id)
+    expect(coilPads).toHaveLength(2)
+    for (const pad of coilPads) {
+      if (pad.shape !== "rect") throw new Error("Sunlord land pattern requires rectangular pads")
+      expect(pad.width).toBeCloseTo(2.2, 6)
+      expect(pad.height).toBeCloseTo(7.5, 6)
+      expect(Math.abs(pad.x - coilPcb.center.x)).toBeCloseTo(3, 6)
+    }
 
     expect(pinNet("U_FAN", 3)).toBe("FAN_FB")
     expect(pinNet("R_FAN_FB_TOP", 1)).toBe("FAN_12V")

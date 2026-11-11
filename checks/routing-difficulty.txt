@@ -257,6 +257,19 @@
     <NearbyComponent name="C_DRIVER_OUTPUT_HF" edgeDistance="4.226mm" directions="right,bottom" freeSpaceOnRight=">5.0mm" freeSpaceBelow=">5.0mm" left="0.9mm" right="1.9mm" bottom="7.0mm" top="9.2mm" />
 </CongestedRegion>
 
+<CongestedRegion probabilityOfFailure="0.1%" left="0.5mm" right="0.7mm" bottom="-12.0mm" top="-11.1mm" width="0.2mm" height="0.9mm">
+    <NearbyComponent name="U_MCU" edgeDistance="0mm" overlapDepth="0.2mm" directions="left,right,bottom" freeSpaceBelow="0.8mm" left="-3.8mm" right="3.8mm" bottom="-18.9mm" top="-11.1mm" />
+    <NearbyComponent name="C_USB_VDD" edgeDistance="0.625mm" directions="top" freeSpaceOnLeft=">5.0mm" freeSpaceOnRight="1.0mm" freeSpaceAbove="1.5mm" left="0.1mm" right="0.7mm" bottom="-10.5mm" top="-9.2mm" />
+    <NearbyComponent name="C_VREG_OUT" edgeDistance="1.127mm" directions="right,top" freeSpaceOnRight=">5.0mm" freeSpaceAbove="0.7mm" left="1.7mm" right="2.6mm" bottom="-10.6mm" top="-8.4mm" />
+    <NearbyComponent name="C_DVDD50" edgeDistance="1.227mm" directions="left,top" freeSpaceOnLeft=">5.0mm" freeSpaceAbove="1.1mm" left="-0.7mm" right="-0.2mm" bottom="-10.1mm" top="-8.8mm" />
+    <NearbyComponent name="C_VREG_IN" edgeDistance="2.465mm" directions="right,top" freeSpaceOnRight="0.5mm" freeSpaceAbove=">5.0mm" left="3.1mm" right="4.0mm" bottom="-10.6mm" top="-8.4mm" />
+    <NearbyComponent name="U_FLASH" edgeDistance="3.395mm" directions="top" freeSpaceOnLeft="0.9mm" freeSpaceOnRight="1.1mm" freeSpaceAbove="1.7mm" left="-2.7mm" right="1.7mm" bottom="-7.8mm" top="1.6mm" />
+    <NearbyComponent name="C_IOVDD42" edgeDistance="3.522mm" directions="right,bottom" freeSpaceOnRight=">5.0mm" freeSpaceBelow=">5.0mm" left="4.2mm" right="5.5mm" bottom="-12.7mm" top="-12.1mm" />
+    <NearbyComponent name="C_ADC_AVDD" edgeDistance="3.55mm" directions="right" freeSpaceOnRight=">5.0mm" freeSpaceAbove="3.2mm" freeSpaceBelow="4.1mm" left="4.3mm" right="5.5mm" bottom="-11.6mm" top="-11.0mm" />
+    <NearbyComponent name="C_IOVDD49" edgeDistance="3.972mm" directions="right,top" freeSpaceOnRight=">5.0mm" freeSpaceAbove=">5.0mm" left="4.6mm" right="5.8mm" bottom="-10.2mm" top="-9.6mm" />
+    <NearbyComponent name="R_USB_DP" edgeDistance="4.711mm" directions="right,top" freeSpaceOnRight="3.1mm" freeSpaceAbove="4.1mm" left="4.1mm" right="4.9mm" bottom="-7.9mm" top="-5.5mm" />
+</CongestedRegion>
+
 <CongestedRegion probabilityOfFailure="0.1%" left="2.1mm" right="2.3mm" bottom="-12.0mm" top="-11.1mm" width="0.2mm" height="0.9mm">
     <NearbyComponent name="U_MCU" edgeDistance="0mm" overlapDepth="0.2mm" directions="left,right,bottom" freeSpaceBelow="0.8mm" left="-3.8mm" right="3.8mm" bottom="-18.9mm" top="-11.1mm" />
     <NearbyComponent name="C_VREG_OUT" edgeDistance="0.52mm" directions="top" freeSpaceOnLeft=">5.0mm" freeSpaceOnRight=">5.0mm" freeSpaceAbove="0.7mm" left="1.7mm" right="2.6mm" bottom="-10.6mm" top="-8.4mm" />
@@ -335,19 +348,18 @@
     <NearbyComponent name="C_PD_3V3_HF1" edgeDistance="4.828mm" directions="right,top" freeSpaceOnRight="0.8mm" freeSpaceAbove="1.1mm" left="-21.1mm" right="-18.9mm" bottom="16.8mm" top="17.7mm" />
 </CongestedRegion>
 
-<CongestedRegion probabilityOfFailure="0.1%" left="2.3mm" right="2.5mm" bottom="-12.0mm" top="-11.1mm" width="0.2mm" height="0.9mm">
+<CongestedRegion probabilityOfFailure="0.1%" left="0.3mm" right="0.5mm" bottom="-11.8mm" top="-11.1mm" width="0.2mm" height="0.7mm">
     <NearbyComponent name="U_MCU" edgeDistance="0mm" overlapDepth="0.2mm" directions="left,right,bottom" freeSpaceBelow="0.8mm" left="-3.8mm" right="3.8mm" bottom="-18.9mm" top="-11.1mm" />
-    <NearbyComponent name="C_VREG_OUT" edgeDistance="0.52mm" directions="top" freeSpaceOnLeft=">5.0mm" freeSpaceOnRight=">5.0mm" freeSpaceAbove="0.7mm" left="1.7mm" right="2.6mm" bottom="-10.6mm" top="-8.4mm" />
-    <NearbyComponent name="C_VREG_IN" edgeDistance="0.802mm" directions="right,top" freeSpaceOnRight="0.5mm" freeSpaceAbove=">5.0mm" left="3.1mm" right="4.0mm" bottom="-10.6mm" top="-8.4mm" />
-    <NearbyComponent name="C_IOVDD42" edgeDistance="1.725mm" directions="right,bottom" freeSpaceOnRight=">5.0mm" freeSpaceBelow=">5.0mm" left="4.2mm" right="5.5mm" bottom="-12.7mm" top="-12.1mm" />
-    <NearbyComponent name="C_USB_VDD" edgeDistance="1.741mm" directions="left,top" freeSpaceOnLeft=">5.0mm" freeSpaceAbove="1.5mm" left="0.1mm" right="0.7mm" bottom="-10.5mm" top="-9.2mm" />
-    <NearbyComponent name="C_ADC_AVDD" edgeDistance="1.75mm" directions="right" freeSpaceOnRight=">5.0mm" freeSpaceAbove="3.2mm" freeSpaceBelow="4.1mm" left="4.3mm" right="5.5mm" bottom="-11.6mm" top="-11.0mm" />
-    <NearbyComponent name="C_IOVDD49" edgeDistance="2.27mm" directions="right,top" freeSpaceOnRight=">5.0mm" freeSpaceAbove=">5.0mm" left="4.6mm" right="5.8mm" bottom="-10.2mm" top="-9.6mm" />
-    <NearbyComponent name="C_DVDD50" edgeDistance="2.679mm" directions="left,top" freeSpaceOnLeft=">5.0mm" freeSpaceAbove="1.1mm" left="-0.7mm" right="-0.2mm" bottom="-10.1mm" top="-8.8mm" />
-    <NearbyComponent name="U_FLASH" edgeDistance="3.444mm" directions="left,top" freeSpaceOnLeft="0.9mm" freeSpaceAbove="1.7mm" left="-2.7mm" right="1.7mm" bottom="-7.8mm" top="1.6mm" />
-    <NearbyComponent name="R_USB_DP" edgeDistance="3.648mm" directions="right,top" freeSpaceOnRight="3.1mm" freeSpaceAbove="4.1mm" left="4.1mm" right="4.9mm" bottom="-7.9mm" top="-5.5mm" />
-    <NearbyComponent name="C_IOVDD33" edgeDistance="4.103mm" directions="right,bottom" freeSpaceOnRight="1.8mm" freeSpaceBelow=">5.0mm" left="4.2mm" right="5.5mm" bottom="-16.3mm" top="-15.7mm" />
-    <NearbyComponent name="R_USB_DM" edgeDistance="4.57mm" directions="right,top" freeSpaceOnRight="1.5mm" freeSpaceAbove=">5.0mm" left="5.7mm" right="6.5mm" bottom="-7.9mm" top="-5.5mm" />
+    <NearbyComponent name="C_USB_VDD" edgeDistance="0.625mm" directions="top" freeSpaceOnLeft=">5.0mm" freeSpaceOnRight="1.0mm" freeSpaceAbove="1.5mm" left="0.1mm" right="0.7mm" bottom="-10.5mm" top="-9.2mm" />
+    <NearbyComponent name="C_DVDD50" edgeDistance="1.13mm" directions="left,top" freeSpaceOnLeft=">5.0mm" freeSpaceAbove="1.1mm" left="-0.7mm" right="-0.2mm" bottom="-10.1mm" top="-8.8mm" />
+    <NearbyComponent name="C_VREG_OUT" edgeDistance="1.308mm" directions="right,top" freeSpaceOnRight=">5.0mm" freeSpaceAbove="0.7mm" left="1.7mm" right="2.6mm" bottom="-10.6mm" top="-8.4mm" />
+    <NearbyComponent name="C_VREG_IN" edgeDistance="2.661mm" directions="right,top" freeSpaceOnRight="0.5mm" freeSpaceAbove=">5.0mm" left="3.1mm" right="4.0mm" bottom="-10.6mm" top="-8.4mm" />
+    <NearbyComponent name="U_FLASH" edgeDistance="3.395mm" directions="top" freeSpaceOnLeft="0.9mm" freeSpaceOnRight="1.1mm" freeSpaceAbove="1.7mm" left="-2.7mm" right="1.7mm" bottom="-7.8mm" top="1.6mm" />
+    <NearbyComponent name="C_IOVDD42" edgeDistance="3.732mm" directions="right,bottom" freeSpaceOnRight=">5.0mm" freeSpaceBelow=">5.0mm" left="4.2mm" right="5.5mm" bottom="-12.7mm" top="-12.1mm" />
+    <NearbyComponent name="C_ADC_AVDD" edgeDistance="3.75mm" directions="right" freeSpaceOnRight=">5.0mm" freeSpaceAbove="3.2mm" freeSpaceBelow="4.1mm" left="4.3mm" right="5.5mm" bottom="-11.6mm" top="-11.0mm" />
+    <NearbyComponent name="C_IOVDD49" edgeDistance="4.166mm" directions="right,top" freeSpaceOnRight=">5.0mm" freeSpaceAbove=">5.0mm" left="4.6mm" right="5.8mm" bottom="-10.2mm" top="-9.6mm" />
+    <NearbyComponent name="C_IOVDD1" edgeDistance="4.809mm" directions="left,bottom" freeSpaceOnLeft=">5.0mm" freeSpaceBelow="3.0mm" left="-5.8mm" right="-4.5mm" bottom="-12.7mm" top="-12.1mm" />
+    <NearbyComponent name="R_USB_DP" edgeDistance="4.856mm" directions="right,top" freeSpaceOnRight="3.1mm" freeSpaceAbove="4.1mm" left="4.1mm" right="4.9mm" bottom="-7.9mm" top="-5.5mm" />
 </CongestedRegion>
 
 <CongestedRegion probabilityOfFailure="0.1%" left="2.6mm" right="3.1mm" bottom="-9.2mm" top="-8.4mm" width="0.5mm" height="0.8mm">
