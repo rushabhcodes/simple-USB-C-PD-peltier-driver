@@ -14,10 +14,14 @@ import routingData from "./routing-data.json"
 import { A_0603WAF1001T5E as Resistor0603 } from "../../imports/A_0603WAF1001T5E"
 import { CC0603KRX7R9BB104 as Capacitor100nF } from "../parts/C14663"
 import { CC0603KRX7R8BB105 as Capacitor1uF } from "../../imports/CC0603KRX7R8BB105"
+import { catalogPartsEngine } from "../catalog-parts-engine"
 
 export function GeneralPdDriverBoard({ schematicDisabled = false }: { schematicDisabled?: boolean } = {}) {
   // Exposed-pad thermal arrays require POFV; routing tests allow only the 13 exact pairs.
+  // Keep catalog handling with the board: cloud hosts can omit runtime
+  // project configuration when rendering a package.
   return <board width={72.5} height={59} outlineOffsetX={-3.75} outlineOffsetY={-0.5} layers={4} thickness={1.6}
+    partsEngine={catalogPartsEngine}
     title="USB-C PD Peltier driver · adjustable CC/CV"
     minTraceWidth={0.2} minTraceToPadEdgeClearance={0.17} minPadEdgeToPadEdgeClearance={0.17}
     minViaEdgeToPadEdgeClearance={0.17} minViaHoleDiameter={0.3} minViaPadDiameter={0.6}

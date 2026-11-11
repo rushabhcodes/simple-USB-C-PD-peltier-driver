@@ -1,4 +1,4 @@
-# Validation — 2026-11-11, version 0.1.1
+# Validation — 2026-11-11, version 0.1.2
 
 The board is a development adaptation of the supplied reference. Local online compilation produces **zero errors and zero warnings**. Its original electrical pin/net partition is preserved; selected routes and resistor placements are corrected. It is not a manufacturing release.
 
@@ -15,13 +15,16 @@ The board is a development adaptation of the supplied reference. Local online co
 | Copper shorts | Default Gerber-based `tsci check shorts dist/index/circuit.json`: no shorts detected |
 | Routing difficulty | Completed; dense MCU regions are recorded in `checks/routing-difficulty.txt` |
 | Source associations | Source IDs, named nets, constraints and all saved route associations match the complete online build |
-| Tests | 54 passed, 0 failed; 7,198 assertions across eight files |
+| Retained full suite | 54 passed, 0 failed; 7,198 assertions across eight files before the configuration-only cloud binding fix |
+| Cloud binding regression | Four supplier tests pass, including a host that ignores runtime project configuration; the rebuilt circuit's 3,560 physical records and electrical netlist are identical to the verified layout |
 
 The tests verify the original electrical net partition, all 430 required physical connections, copper clearances, minimum dimensions, trace constraints, MCU package pins, schematic layout, and the optional accessory assembly. Power-copper checks inspect 3 mm-wide sections of the clipped VIN/SW/VOUT/TEC pours, the 0.6 mm fan-header branch, and the resistance-length budget of the new 0.6 mm inner-layer logic link. The circuit contains 134 purchased placements, 16 debug pads, 360 saved traces, and nine schematic sheets on a 72.5 × 59 mm four-layer board.
 
 ## Diagnostic handling and limits
 
 The 0.1.0 release had 209 warnings: 35 unnamed traces, 34 logical-width warnings, five long odd-angle segments, 134 availability warnings, and one supplier-footprint mismatch. See [docs/diagnostic-fixes.md](docs/diagnostic-fixes.md) for their source fixes and the four additional resistor-orientation corrections.
+
+The 0.1.1 cloud build cleared the 74 board warnings but did not apply the runtime project parts-engine configuration, leaving 135 catalog warnings. Version 0.1.2 binds the same engine directly to the board, so host configuration loading does not determine diagnostic behavior. The local online rebuild remains clear, and the configuration-only change preserves every physical PCB record and the complete electrical netlist. See `checks/cloud-binding-verification.json` and `checks/stock-availability.txt`.
 
 Supplier checks remain enabled. Unknown catalog stock is left unverified; zero stock and failed requests still generate warnings. Tests exercise these cases through core. L_FAN is compared against canonical Sunlord recommended land-pattern geometry instead of the differing supplier CAD; a deliberately incorrect footprint still warns in the regression test. No blanket diagnostic filter is applied to the published circuit.
 

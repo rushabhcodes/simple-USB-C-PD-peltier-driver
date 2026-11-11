@@ -1,9 +1,31 @@
-import { expect, test } from "bun:test"
-import { createElement } from "react"
+import { expect, spyOn, test } from "bun:test"
+import { cloneElement, createElement } from "react"
 import { Circuit } from "tscircuit"
 import type { PartsEngine } from "@tscircuit/props"
 import { withKnownStockAvailability } from "../src/known-stock-parts-engine"
 import { catalogPartsEngine } from "../src/catalog-parts-engine"
+import { GeneralPdDriverBoard } from "../src/board/general-pd"
+
+test("the board uses its catalog engine even when the host ignores runtime project configuration", async () => {
+  const stock = spyOn(catalogPartsEngine, "fetchPartAvailability").mockImplementation(async () => undefined)
+  try {
+    const circuit = new Circuit({ platform: {
+      pcbDisabled: true, schematicDisabled: true, checkAvailability: true,
+      partsEngine: {
+        findPart: () => ({}),
+        fetchPartAvailability: () => ({ stock: 0, price: null, currency: null, checkedAt: "2026-11-11T00:00:00Z" }),
+      },
+    } })
+    circuit.add(cloneElement(GeneralPdDriverBoard(), {}, createElement("resistor", {
+      name: "R_CATALOG_PROBE", resistance: "10k", footprint: "0603", supplierPartNumbers: { jlcpcb: ["C25804"] },
+    })))
+    await circuit.renderUntilSettled()
+    expect(circuit.getCircuitJson().filter(e => e.type === "source_component_availability_warning")).toHaveLength(0)
+    expect(stock).toHaveBeenCalled()
+  } finally {
+    stock.mockRestore()
+  }
+})
 
 test("unknown stock remains unknown, while zero and positive stock remain reportable", async () => {
   const request = { supplierName: "jlcpcb", supplierPartNumber: "C14663" } as const

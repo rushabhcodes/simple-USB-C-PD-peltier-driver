@@ -1,0 +1,9 @@
+{
+  "diagnostics": 0,
+  "physicalRecords": 3560,
+  "physicalGeometryIdentical": true,
+  "electricalNetlistIdentical": true,
+  "referenceReleaseId": "52670271-e461-43ff-90ce-561027d8fdbb",
+  "referenceVersion": "0.1.1",
+  "targetVersion": "0.1.2"
+}

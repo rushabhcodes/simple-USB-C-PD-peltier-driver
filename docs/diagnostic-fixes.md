@@ -1,4 +1,4 @@
-# Release 0.1.1 diagnostic fixes
+# Release diagnostic fixes
 
 The linked 0.1.0 preview contained 209 warnings and no native errors. The source fixes address each category; normal electrical and copper checks remain enabled.
 
@@ -19,3 +19,7 @@ The routing tests check 3 mm-wide sections of the clipped VIN, SW1, SW2, VOUT an
 Stock-adapter tests exercise core with unknown, zero and positive stock. They verify that zero stock still creates a warning. Stock is not frozen or fabricated to obtain a clean preview.
 
 See [VALIDATION.md](../VALIDATION.md) for the completed build and check results.
+
+## Cloud configuration follow-up in 0.1.2
+
+The 0.1.1 cloud build did not apply `tscircuit.config.ts`, so its catalog warnings persisted despite a clear local build. The board now binds `catalogPartsEngine` through its own `partsEngine` prop. A regression test instantiates the actual board with a conflicting host engine and confirms that the board's engine is used. The rebuild has the same electrical netlist and all 3,560 physical PCB records as the verified layout; only catalog handling changes.
