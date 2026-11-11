@@ -1,19 +1,20 @@
 {
   "units": "mm",
   "pcb": {
-    "source": "dist/index/circuit.json",
-    "geometry": "Actual unrouted tscircuit PCB and its component placement, inside native assembly.device; supplied component OBJ models where available. Drawing-derived bodies remain approximate. DNP copper test pads appear in the PCB surface texture with no artificial component bodies.",
-    "routing": "No copper routing. Wires in this assembly are external connection illustrations."
+    "source": "dist/assembly/circuit.json",
+    "geometry": "Routed tscircuit PCB and its actual component placement. The GLB export checks for a mesh for every fitted placement. Copper test pads appear in the PCB texture.",
+    "routing": "Board copper comes from the normal board source. External harnesses are CAD-only."
   },
   "peltier": {
-    "description": "HiLetgo TEC1-12706 2-pack; the board drives one module",
-    "source": "https://www.amazon.com/dp/B00M1PM7H6",
+    "description": "Same Sky CP60440, one sealed single-stage TEC",
+    "source": "https://www.digikey.in/en/products/detail/same-sky-formerly-cui-devices/CP60440/1747370",
+    "datasheet": "https://www.sameskydevices.com/product/resource/cp60.pdf",
     "bodyDimensionsMm": [
       40,
       40,
-      3.6
+      4
     ],
-    "geometry": "Amazon listing dimensional envelope, not manufacturer CAD. Ceramic plates and core are visual approximations; lead routing, diameter and length are illustrative. Confirm purchased samples before mechanical manufacture.",
+    "geometry": "Nominal body drawn from the CP60 mechanical drawing. The marked cold ceramic faces the cold plate. The model depicts the factory lead exits and illustrative bends.",
     "nativePart": "TEC_DEFAULT",
     "leadParts": [
       {
@@ -34,10 +35,10 @@
   },
   "officialCadAttempts": [
     {
-      "part": "GCT USB4085-GF-A",
-      "source": "https://gct.co/connector/usb4085",
-      "cadSource": "https://www.traceparts.com/els/gct/en/api/viewer/3d?EnablePresentationMode=true&MenuAlwaysVisible=true&MergeUIMenu=true&PartNumber=USB4085-GF-A&SupplierID=GLOBAL_431202195",
-      "result": "Manufacturer offers CAD through TraceParts; no downloadable mesh obtained. Board uses the exact-part EasyEDA supplier mesh, which is not claimed to be manufacturer-authored."
+      "part": "GCT USB4110-GF-A",
+      "source": "https://gct.co/connector/usb4110",
+      "drawingSource": "https://www.mouser.com/catalog/specsheets/GCT_USB4110%20Product%20Drawing%20-%2020k%20cycles.pdf",
+      "result": "Native model follows GCT's body and mating cavity dimensions. The shell and insulating tongue are shown in the installed orientation."
     },
     {
       "part": "TI TPS55289RYQR",
@@ -47,9 +48,9 @@
       "drawingSource": "https://www.ti.com/lit/pdf/MPQF641"
     },
     {
-      "part": "HiLetgo DS18B20 wired probe B00M1PM55K",
-      "source": "https://hiletgo.com/ProductDetail/2169579.html",
-      "result": "No manufacturer CAD or selected-SKU housing drawing located. The primary product page is sparse and contains lead-color variants; the selected Amazon SKU is the authority for its cable length/color map. Housing remains an explicitly illustrative envelope."
+      "part": "DFRobot DFR0198 wired DS18B20 probe",
+      "source": "https://wiki.dfrobot.com/dfr0198",
+      "result": "The manufacturer specifies the stainless sleeve dimensions, cable diameter and lead colors. Model drawn from those dimensions."
     },
     {
       "part": "Noctua NF-A8 family CAD for selected NF-A8 PWM",
@@ -58,7 +59,15 @@
       "result": "Official STEP and manufacturer usage notice downloaded and retained. Offline tessellation preserves external/mounting geometry at moderate detail; internal geometry follows the manufacturer public-model limitation. See fan.geometry for conversion/source provenance."
     }
   ],
-  "assemblyLimitations": "Connection and packaging visualization only. No heatsink, cold plate, clamping mechanism or thermal interface is specified by this assembly. Do not power a bare Peltier without an appropriate hot-side thermal assembly.",
+  "assemblyLimitations": "Bench fixture geometry, with simplified heatsink fins and cable paths. Machining fit, clamp force, airflow and thermal performance require checks on the built fixture.",
+  "thermalStack": {
+    "heatsink": "Fischer Elektronik SK 595 100 AL",
+    "heatsinkSource": "https://www.digikey.in/en/products/detail/fischer-elektronik/SK-595-100-AL/25828759",
+    "heatsinkProfileDrawing": "https://www.tme.eu/Document/23cee837e3b77859cb22816be07c871e/SK5951000SA.pdf",
+    "coldPlate": "80 × 76 × 10 mm 6061-T6 aluminium, machined per docs/assembly.md",
+    "fanDuct": "Original CAD in src/assembly/thermal-stack.ts, exported as fan-duct.stl",
+    "assemblyInstructions": "docs/assembly.md"
+  },
   "usbCables": {
     "description": "Two Cable Matters 201440 USB-C to USB-C USB 2.0 data / 240 W / 5 A cables, 1 m option",
     "source": "https://www.cablematters.com/pc-1532-123-usb-c-20-charging-cable-with-240w-power-delivery.aspx",
@@ -85,19 +94,20 @@
     "geometrySource": "src/assembly/models.ts",
     "connectorMappingSource": "src/assembly/connector-placement.ts",
     "api": "https://docs.tscircuit.com/elements/assembly-part",
-    "geometry": "Native assembly.device + eleven literal CAD-only assembly.part models; no accessory PCB components, electrical ports or JLCPCB BOM entries. The fan uses official NF-A8 family CAD. Other peripheral bodies and cable routes are documented envelopes. Board-side XY points derive from real connector placements and exact supplier-footprint insertion/pin offsets. Colored cable polygons retain vendor lead colors. Cable/mating heights, plug/jacket dimensions, routes and probe housing dimensions are explicitly illustrative."
+    "geometry": "Native assembly.device with the routed PCB and CAD-only parts for the thermal stack, probes, fan, and wiring. The fan uses official NF-A8 family CAD. Body dimensions follow the selected parts and the custom plate drawings. Cable paths and connector mating heights are illustrative."
   },
   "temperatureProbes": {
-    "description": "Two HiLetgo DS18B20 wired stainless probes, from the selected five-pack",
-    "source": "https://www.amazon.com/dp/B00M1PM55K",
+    "description": "Two DFRobot DFR0198 wired stainless DS18B20 probes",
+    "source": "https://www.digikey.in/en/products/detail/dfrobot/DFR0198/7597054",
+    "manufacturerSpecifications": "https://wiki.dfrobot.com/dfr0198",
     "quantityUsed": 2,
-    "cableLengthMm": 1000,
-    "housingDimensionsVerified": false,
-    "illustrativeHousingEnvelopeMm": {
+    "cableLengthMm": 900,
+    "housingDimensionsVerified": true,
+    "housingEnvelopeMm": {
       "diameter": 6,
-      "length": 50
+      "length": 35
     },
-    "housingDimensionEvidence": "The selected Amazon listing provides cable length and lead colors, but no verified metal-housing dimensions. Package dimensions and specifications for other sellers are not used as probe dimensions.",
+    "housingDimensionEvidence": "DFRobot specifies a 6 × 35 mm stainless tube and 4 mm cable. Its Wiki gives 900 mm cable length and the product introduction gives 950 mm.",
     "wireMap": [
       {
         "pin": "pin1",
@@ -131,8 +141,8 @@
         "gpio": "GP9"
       }
     ],
-    "geometry": "Native CAD-only probe parts use explicitly illustrative diameter 6 mm by length 50 mm metal cylinders, not verified seller dimensions or manufacturer CAD. Factory cable length 1 m and red VCC / yellow DATA / black GND follow the selected Amazon listing. Only short jacket paths and three colored conductor fanouts are shown. Jacket diameter 3 mm, conductor diameter 0.7 mm, wire-channel height 3 mm and routing are illustrative and not fit-qualified.",
-    "placement": "HOT is shown near the upper TEC face and COLD near the opposite lower face, laterally offset so both can be inspected. These positions illustrate roles; actual thermal contact, clamps and module face orientation must be established in the physical thermal assembly."
+    "geometry": "Drawing-derived 6 × 35 mm cylinder and 4 mm jacket. The three exposed conductors use DFRobot lead colors. The preview shows shortened paths.",
+    "placement": "HOT sits in the heatsink base bore and COLD sits in the cold-plate bore. Explode the stack in the viewer to inspect the probe bodies."
   },
   "fan": {
     "description": "Noctua NF-A8 PWM 12 V, direct factory cable without Low-Noise Adaptor or extension",
@@ -212,8 +222,8 @@
       "appearance": "Manufacturer CAD colors retained where supplied. Uncolored rotor meshes use brown [0.26, 0.12, 0.06]; uncolored label mesh uses gray [0.12, 0.12, 0.12]. These are visualization defaults.",
       "manufacturerLimit": "Manufacturer permits visualization/integration reference. Internal impeller geometry is modified to protect IP; not for performance simulation or reproducing/manufacturing the fan."
     },
-    "cableGeometry": "Illustrative plug/key and black sleeve with short four-color fanout at the plug. Contact/locator XY matches the exact supplier footprint. Mating height 6.8 mm, plug height/shape, 3.2 mm sleeve diameter, 0.7 mm conductor diameter, fan cable exit and bends are approximate. The shown sleeve centerline plus connector-exit fanout is about 200 mm; plug-interior leads are separate. Manufacturer nominal cable length does not specify its measurement endpoints or this laid-out route.",
-    "placement": "Fan center [112, -92, 20] mm in an exploded connectivity view, clear of PCB, TEC and probes. This is not a mounting or thermal design; no hot-side heatsink or cooling-performance guarantee is supplied.",
+    "cableGeometry": "Illustrative keyed plug and sleeve. The contact and key XY coordinates match the board footprint. The route fits within the nominal 200 mm factory cable.",
+    "placement": "Fan flange meets the 71.5 mm mounting pattern on the printed inlet duct. The physical fan's discharge side faces the heatsink fins.",
     "electricalUse": "Pins 1/2 provide fixed 12 V power. Pin 3 tach and pin 4 PWM remain physically present in the plug but are NC on the board; unconnected PWM runs at full speed. Manufacturer maximum input current is not a published startup-current peak."
   }
 }

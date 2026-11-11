@@ -1,12 +1,10 @@
 import type { AnyCircuitElement } from "circuit-json"
+import THERMAL_ARRAYS from "../../src/board/thermal-vias.json"
 import { sourceConnectivity } from "./physical-copper"
 
 // These exact exposed-pad arrays require the filled, planarized and capped
 // process in docs/pcb-fabrication.md. No other same-net via-in-pad is exempt.
-export const THERMAL_ARRAYS = [
-  { component: "U_MCU", pin: 57, x: [-0.8, 0, 0.8], y: [-15.8, -15, -14.2] },
-  { component: "U_PD", pin: 25, x: [-24.7, -23.3], y: [17.8, 19.2] },
-] as const
+export { THERMAL_ARRAYS }
 
 export function inspectThermalVias(json: AnyCircuitElement[]) {
   const ground = json.filter(e => e.type === "source_net").find(e => e.name === "GND")

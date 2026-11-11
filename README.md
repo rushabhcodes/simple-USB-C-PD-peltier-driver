@@ -1,6 +1,6 @@
 # USB-C PD Peltier driver
 
-An editable tscircuit PCB based on [0hmX/dual-usb-peltier-assembly](https://tscircuit.com/0hmX/dual-usb-peltier-assembly), release **0.4.12**. The default entrypoint displays the PCB itself. It retains the reference's electrical design, supplier components, firmware, nine schematic sheets, and optional accessory assembly, with local routing and placement fixes.
+An editable tscircuit PCB based on [0hmX/dual-usb-peltier-assembly](https://tscircuit.com/0hmX/dual-usb-peltier-assembly), release **0.4.12**. The default entrypoint displays the PCB with USB4110 surface-mount receptacles. The project includes nine schematic sheets, RP2040 firmware, and an accessory assembly.
 
 Supplier parts are imported with the **TSCircuit CLI** using `tsci import C… --jlcpcb --use-exact-footprint`. The import audit in [`docs/component-imports.json`](docs/component-imports.json) records the exact commands and source hashes. The active wrappers preserve the reference's pin semantics and documented manufacturing corrections. Schematic placement is refined for closer capacitor banks, compact IC symbols, and readable annotations.
 
@@ -8,7 +8,7 @@ Supplier parts are imported with the **TSCircuit CLI** using `tsci import C… -
 
 Review the [PCB SVG](docs/previews/pcb.svg), [all nine schematic sheets](docs/previews/all-sheets.svg), or [individual sheet previews](docs/previews/schematics). See the [validation record](VALIDATION.md) and [release diagnostic fixes](docs/diagnostic-fixes.md).
 
-Open the [latest tscircuit board](https://tscircuit.com/rushabhcodes/simple-usb-c-pd-peltier-driver).
+Open the [published tscircuit board](https://tscircuit.com/rushabhcodes/simple-usb-c-pd-peltier-driver).
 
 ## Design
 
@@ -37,7 +37,7 @@ bun run dev
 
 The local `tsci` executable is pinned through the project dependency and lockfile. Use the **PCB**, **Schematic**, and **3D** tabs in the local viewer. The schematic sheet selector divides the design into PD input, TEC conversion, logic supplies, MCU signals, MCU power, monitoring, debug, fan, and probes.
 
-Start with [`index.circuit.tsx`](index.circuit.tsx), which renders [`src/board/general-pd.tsx`](src/board/general-pd.tsx). The smaller files in `src/board/` contain each functional block. `imports/` and `src/parts/` contain the actual footprints and pin maps. [`assembly.tsx`](assembly.tsx) retains the reference's optional Peltier, fan, probe, and cable visualization; open it with `bun run dev assembly.tsx`.
+Start with [`index.circuit.tsx`](index.circuit.tsx), which renders [`src/board/general-pd.tsx`](src/board/general-pd.tsx). The smaller files in `src/board/` contain each functional block. `imports/` and `src/parts/` contain the actual footprints and pin maps. [`assembly.tsx`](assembly.tsx) shows the routed board with the Peltier stack, fan, probes and wiring. Run `bun run build:assembly` for the offline viewer and fan-duct STL.
 
 Saved routing is in [`src/board/routing-data.json`](src/board/routing-data.json). After changing component order or logical connections, run `bun run routing:rebind` and review/reroute the affected copper; rebinding updates associations and does not move traces.
 
@@ -60,12 +60,13 @@ See [`VALIDATION.md`](VALIDATION.md) for the exact build, placement, routing, su
 
 ## Wiring and fabrication
 
+- The [bench assembly guide](docs/assembly.md) covers exact parts and purchase links, the component-side wiring diagram, plate machining, and first power-up.
 - Use a 100 W USB-C PD supply and a 5 A electronically marked cable for the reference's full power target.
 - `J_TEC`: pin 1 = TEC positive; pin 2 = ground. Install the Peltier's heatsink and clamping before operation.
 - HOT/COLD probes: use the schematic pin map for 3V3, DATA, and GND.
 - The original board omits silkscreen. Identify connections and polarity from the schematic and assembly guide.
 - Firmware setup and USB commands are in [`firmware/README.md`](firmware/README.md).
-- The inherited layout requires the stackup, copper weights, and filled/capped exposed-pad vias described in [`docs/pcb-fabrication.md`](docs/pcb-fabrication.md). Bench qualification remains required before manufacturing release.
+- Generate the Gerber and Excellon archive with `bun run build && python3 scripts/export-fabrication-review.py`. See the [JLCPCB fabrication review](docs/pcb-fabrication.md#jlcpcb-cam-review) for the stackup, solder mask, and selective via filling. Bench qualification remains required for the full power target.
 
 ## Reference and license
 

@@ -1,4 +1,4 @@
-import { USB4085_GF_A } from "../../imports/USB4085_GF_A"
+import { USB4110_GF_A } from "../../imports/USB4110_GF_A"
 import { connectorPlacements } from "../assembly/connector-placement"
 import { USBLC6_2SC6 } from "../../imports/USBLC6_2SC6"
 import { TPS2116DRLR } from "../../imports/TPS2116DRLR"
@@ -19,12 +19,12 @@ export function ProgrammingAndLogicPower() {
       <netlabel net="PROGRAM_VBUS" connectsTo={[".U_LOGIC_MUX > .pin6", ".C_PROGRAM_IN > .pin1"]} schX={0} schY={-3.4} anchorSide="bottom" />
       <schematictext text="TPS2116: MODE = 0, PR1 = 0 → higher-voltage 5 V source, reverse blocking" schX={0} schY={0} fontSize={0.28} />
     </group>
-    <USB4085_GF_A name="J_PROGRAM" {...connectorPlacements.J_PROGRAM} schX={-12} schY={7} schRotation={0} schSheetName="LOGIC"
-      schWidth={1.575} schHeight={4.4}
-      schPinArrangement={{ leftSide: [], rightSide: [3, 7, 10, 15, 1, 14, 4, 13, 5, 12, 2, 8, 9, 16, 17, 6, 11] }}
+    <USB4110_GF_A name="J_PROGRAM" {...connectorPlacements.J_PROGRAM} schX={-12} schY={7} schRotation={0} schSheetName="LOGIC"
+      schWidth={1.575} schHeight={3.4}
+      schPinArrangement={{ leftSide: [], rightSide: [3, 7, 1, 14, 4, 13, 5, 12, 2, 8, 17, 6, 11] }}
       connections={{ pin1: "net.PROGRAM_CC1", pin14: "net.PROGRAM_CC2",
-        pin2: "net.GND", pin8: "net.GND", pin9: "net.GND", pin16: "net.GND", pin17: "net.GND",
-        pin3: "net.PROGRAM_VBUS", pin7: "net.PROGRAM_VBUS", pin10: "net.PROGRAM_VBUS", pin15: "net.PROGRAM_VBUS",
+        pin2: "net.GND", pin8: "net.GND", pin17: "net.GND",
+        pin3: "net.PROGRAM_VBUS", pin7: "net.PROGRAM_VBUS",
         pin4: "net.PROGRAM_USB_DP", pin13: "net.PROGRAM_USB_DP", pin5: "net.PROGRAM_USB_DM", pin12: "net.PROGRAM_USB_DM" }}
       noConnect={["SBU1", "SBU2"]} />
     <USBLC6_2SC6 name="U_PROGRAM_ESD" schX={-2} schY={7} schRotation={0} pcbX={-27.7} pcbY={-20} pcbRotation={90} schSheetName="LOGIC"

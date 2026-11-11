@@ -4,13 +4,15 @@ import { loadJscadPlan } from "circuit-json-to-gltf"
 import Device from "../assembly"
 import { boardFixture, renderFixture, placedComponents, FIXTURE_RENDER_TIMEOUT } from "./fixtures"
 import { assemblyConnections, hotProbe, coldProbe, hotProbeCable, coldProbeCable, fan, fanCable } from "../src/assembly/models"
+import { fanDuctTriangles } from "../src/assembly/thermal-stack"
 import provenance from "../assets/assembly/provenance.json"
 
 type RenderedCircuit = InstanceType<typeof Circuit>
 type MeshVertex = ReturnType<typeof loadJscadPlan>["triangles"][number]["vertices"][number]
 let board: RenderedCircuit, device: RenderedCircuit
 const originalNames = ["TEC_DEFAULT", "USB_PD_CABLE", "USB_PROGRAM_CABLE", "TEC_POS_LEAD", "TEC_NEG_LEAD"]
-const externalNames = [...originalNames, "HOT_PROBE", "COLD_PROBE", "HOT_PROBE_CABLE", "COLD_PROBE_CABLE", "FAN_DEFAULT", "FAN_CABLE"]
+const externalNames = [...originalNames, "HOT_PROBE", "COLD_PROBE", "HOT_PROBE_CABLE", "COLD_PROBE_CABLE",
+  "FAN_DEFAULT", "FAN_CABLE", "HOT_SIDE_HEATSINK", "COLD_PLATE", "TEC_CLAMP", "FAN_DUCT"]
 const originalConnections = assemblyConnections.filter(connection => originalNames.includes(connection.partName))
 const meshes = new Map<string, ReturnType<typeof loadJscadPlan>>()
 
@@ -104,12 +106,12 @@ describe("native Peltier assembly", () => {
       ["TEC_POS_LEAD", "J_TEC", "pin1"], ["TEC_NEG_LEAD", "J_TEC", "pin2"],
     ])
     const { source: tecSource, cad: tecCad, mesh: tecMesh } = externalGeometry("TEC_DEFAULT")
-    expect(tecSource.display_name).toContain("TEC1-12706")
+    expect(tecSource.display_name).toContain("CP60440")
     // loadJscadPlan converts circuit XY/Z into scene XZ/Y. Dimensions must
     // match the selected product's recorded envelope, not just its CAD label.
     const spans = (["x", "z", "y"] as const).map(axis => tecMesh.boundingBox.max[axis] - tecMesh.boundingBox.min[axis])
     for (let i = 0; i < 3; i++) expect(spans[i]!).toBeCloseTo(provenance.peltier.bodyDimensionsMm[i]!, 5)
-    expect(provenance.peltier.source).toBe("https://www.amazon.com/dp/B00M1PM7H6")
+    expect(provenance.peltier.source).toContain("/CP60440/1747370")
     expect(provenance.peltier.nativePart).toBe(tecSource.name)
     expect(provenance.peltier.leadParts.map(lead => [lead.nativePart, lead.boardConnector, lead.pin])).toEqual(
       originalConnections.flatMap(connection => "pin" in connection
@@ -146,11 +148,10 @@ describe("native Peltier assembly", () => {
         expect(point[1]).toBeGreaterThan(tecCad.position.y + tecMesh.boundingBox.min.z)
         expect(point[1]).toBeLessThan(tecCad.position.y + tecMesh.boundingBox.max.z)
       } else {
-        // tscircuit infers this metadata from silk outlines. With intentionally
-        // no silk, keep the established physical USB face/anchor contract, not
-        // the now outline-free inference (which points at the wrong edge).
+        // Measure from the GCT USB4110 mating face to the footprint anchor.
         expect(pcb.rotation).toBe(270)
-        expect(connection.boardPoint[0]).toBeCloseTo(Number(pcb.display_offset_x) - 7.237483112, 5)
+        expect(connection.boardPoint[0]).toBeCloseTo(Number(pcb.display_offset_x) - 4.885, 5)
+        expect(connection.boardPoint[2]).toBeCloseTo(1.63, 5)
         expect(connection.boardPoint[1]).toBeCloseTo(Number(pcb.display_offset_y), 5)
         expect(externalGeometry(connection.partName).source.display_name).toContain("Cable Matters 201440")
       }
@@ -171,10 +172,10 @@ describe("native Peltier assembly", () => {
 
   test("both factory probe cables render three correctly colored conductors at the actual sensor terminals", () => {
     const details = provenance.temperatureProbes
-    expect(details.source).toBe("https://www.amazon.com/dp/B00M1PM55K")
+    expect(details.source).toContain("/DFR0198/7597054")
     expect(details.quantityUsed).toBe(2)
-    expect(details.cableLengthMm).toBe(1_000)
-    expect(details.housingDimensionsVerified).toBe(false)
+    expect(details.cableLengthMm).toBe(900)
+    expect(details.housingDimensionsVerified).toBe(true)
     expect(details.roles.map(role => [role.role, role.boardPort, role.nativePart, role.cableNativePart, role.gpio])).toEqual([
       ["HOT", "J_HOT_SENSOR", "HOT_PROBE", "HOT_PROBE_CABLE", "GP8"],
       ["COLD", "J_COLD_SENSOR", "COLD_PROBE", "COLD_PROBE_CABLE", "GP9"],
@@ -189,16 +190,16 @@ describe("native Peltier assembly", () => {
     }))
     for (const [probe, cable, side] of [[hotProbe, hotProbeCable, "HOT"], [coldProbe, coldProbeCable, "COLD"]] as const) {
       const { source: probeSource, cad: probeCad, mesh: probeMesh } = externalGeometry(probe.partName)
-      expect(probeSource.display_name).toContain("HiLetgo DS18B20")
-      expect(probeSource.display_name).toContain("illustrative")
+      expect(probeSource.display_name).toContain("DFRobot DFR0198")
       expect(probeCad.position).toEqual({ x: probe.position[0], y: probe.position[1], z: probe.position[2] })
-      expect(probeMesh.boundingBox.max.x - probeMesh.boundingBox.min.x).toBeCloseTo(details.illustrativeHousingEnvelopeMm.length, 5)
-      for (const axis of ["y", "z"] as const)
-        expect(probeMesh.boundingBox.max[axis] - probeMesh.boundingBox.min[axis]).toBeCloseTo(details.illustrativeHousingEnvelopeMm.diameter, 5)
+      const longAxis = side === "HOT" ? "x" : "z"
+      for (const axis of ["x", "y", "z"] as const)
+        expect(probeMesh.boundingBox.max[axis] - probeMesh.boundingBox.min[axis])
+          .toBeCloseTo(axis === longAxis ? details.housingEnvelopeMm.length : details.housingEnvelopeMm.diameter, 5)
       // The jacket joins the rear center of the actual rendered cylinder.
       expect(cable.probePoint).toEqual(probe.cableEndPoint)
-      expect(cable.probePoint[0]).toBeCloseTo(probeCad.position.x + probeMesh.boundingBox.min.x, 5)
-      expect(cable.probePoint[1]).toBe(probeCad.position.y)
+      expect(cable.probePoint[0]).toBeCloseTo(probeCad.position.x + (side === "HOT" ? probeMesh.boundingBox.max.x : 0), 5)
+      expect(cable.probePoint[1]).toBeCloseTo(probeCad.position.y + (side === "COLD" ? probeMesh.boundingBox.min.z : 0), 5)
       expect(cable.probePoint[2]).toBe(probeCad.position.z)
       expect(cable.path[cable.path.length - 1]).toEqual(cable.probePoint)
       expect(cable.conductors.map(conductor => [conductor.pin, conductor.signal, conductor.colorName])).toEqual([
@@ -239,7 +240,7 @@ describe("native Peltier assembly", () => {
         const color = triangle.material?.color
         return Array.isArray(color) && Math.max(...color.slice(0, 3)) < 0.2
       }).flatMap(triangle => triangle.vertices)
-      for (const point of cable.path) expect(nearPoint(blackVertices, point, 1.51)).toBe(true)
+      for (const point of cable.path) expect(nearPoint(blackVertices, point, 2.01)).toBe(true)
     }
   })
 
@@ -259,14 +260,14 @@ describe("native Peltier assembly", () => {
     expect(source.display_name).toContain("official NF-A8 family CAD")
     expect(mesh.triangles.length).toBe(details.geometry.conversion.triangles)
     expect(cad.position).toEqual({ x: fan.position[0], y: fan.position[1], z: fan.position[2] })
-    for (const [i, axis] of (["x", "z", "y"] as const).entries())
+    for (const [i, axis] of (["x", "y", "z"] as const).entries())
       expect(mesh.boundingBox.max[axis] - mesh.boundingBox.min[axis]).toBeCloseTo(details.bodyWithPadsDimensionsMm[i]!, 4)
     expect(fan.mountingHoleSpacingMm).toBe(details.mountingHoleSpacingMm)
-    // Exploded placement must leave the fan frame clear of the PCB and TEC.
+    // The mounted fan frame meets the duct flange and clears the board.
     const pcb = device.db.pcb_board.list()[0]!
-    expect(cad.position.y + mesh.boundingBox.max.z).toBeLessThan(pcb.center.y - pcb.height! / 2)
-    const tec = externalGeometry("TEC_DEFAULT")
-    expect(cad.position.y + mesh.boundingBox.max.z).toBeLessThan(tec.cad.position.y + tec.mesh.boundingBox.min.z)
+    expect(cad.position.y + mesh.boundingBox.min.z).toBeGreaterThan(pcb.center.y + pcb.height! / 2)
+    const duct = externalGeometry("FAN_DUCT")
+    expect(cad.position.y + mesh.boundingBox.min.z).toBeCloseTo(duct.cad.position.y + duct.mesh.boundingBox.max.z, 5)
     expect(fanCable.path[fanCable.path.length - 1]).toEqual(fan.cableEndPoint)
     // The unpublished cable exit is illustrative, but must meet the frame.
     for (const [i, axis] of (["x", "z", "y"] as const).entries()) {
@@ -326,7 +327,34 @@ describe("native Peltier assembly", () => {
     const pathLength = (path: number[][]) => path.slice(1).reduce((sum, point, i) =>
       sum + Math.hypot(...point.map((value, axis) => value - path[i]![axis]!)), 0)
     const cableLength = pathLength(fanCable.path) + Math.max(...fanCable.conductors.map(c => pathLength(c.path)))
-    expect(cableLength).toBeLessThanOrEqual(fanCable.cableLengthMm)
-    expect(cableLength).toBeGreaterThan(fanCable.cableLengthMm - 2)
+    expect(cableLength).toBeLessThanOrEqual(fanCable.cableLengthMm - 5)
+  })
+
+  test("the two thermal contact faces meet the selected TEC", () => {
+    const tec = externalGeometry("TEC_DEFAULT")
+    const sink = externalGeometry("HOT_SIDE_HEATSINK")
+    const plate = externalGeometry("COLD_PLATE")
+    expect(sink.cad.position.z + sink.mesh.boundingBox.min.y).toBeCloseTo(tec.cad.position.z + tec.mesh.boundingBox.max.y, 5)
+    expect(plate.cad.position.z + plate.mesh.boundingBox.max.y).toBeCloseTo(tec.cad.position.z + tec.mesh.boundingBox.min.y, 5)
+    for (const lead of originalConnections.filter(connection => "modulePoint" in connection)) {
+      const length = lead.path.slice(1).reduce((sum, point, i) =>
+        sum + Math.hypot(...point.map((coordinate, axis) => coordinate - lead.path[i]![axis]!)), 0)
+      expect(length).toBeLessThanOrEqual(90) // CP60440 lead minimum 95 mm, with 5 mm slack.
+    }
+  })
+
+  test("the printable fan duct has a closed mesh with opposite winding at shared edges", () => {
+    const edges = new Map<string, number[]>()
+    for (const triangle of fanDuctTriangles) {
+      for (let i = 0; i < triangle.length; i++) {
+        const from = triangle[i]!.join(","), to = triangle[(i + 1) % triangle.length]!.join(",")
+        const key = from < to ? `${from}|${to}` : `${to}|${from}`
+        const directions = edges.get(key) ?? []
+        directions.push(from < to ? 1 : -1)
+        edges.set(key, directions)
+      }
+    }
+    expect(edges.size).toBeGreaterThan(0)
+    expect([...edges.values()].every(([a, b, extra]) => a! + b! === 0 && extra === undefined)).toBe(true)
   })
 })

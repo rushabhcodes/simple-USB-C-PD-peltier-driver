@@ -145,24 +145,42 @@ describe("general USB-C PD Peltier driver", () => {
     }
   })
 
-  test("both USB4085 footprints retain the manufacturer's two rows of through-hole contacts", () => {
-    // GCT drawing, sheet 2: 0.85 mm contact pitch, 1.35 mm rows, 0.40/0.65 mm drill/land.
+  test("both USB4110 footprints use the GCT tail order, SMT shell tabs and nonplated locators", () => {
+    const tails = [
+      [2, -3.2, ["A1", "B12"]], [3, -2.4, ["A4", "B9"]], [11, -1.75, ["B8"]],
+      [1, -1.25, ["A5"]], [12, -0.75, ["B7"]], [4, -0.25, ["A6"]],
+      [5, 0.25, ["A7"]], [13, 0.75, ["B6"]], [6, 1.25, ["A8"]], [14, 1.75, ["B5"]],
+      [7, 2.4, ["A9", "B4"]], [8, 3.2, ["A12", "B1"]],
+    ] as const
     for (const name of ["J_USB", "J_PROGRAM"]) {
-      expect(component(name).manufacturer_part_number).toBe("USB4085-GF-A")
-      const rows = [[2, 3, 1, 4, 5, 6, 7, 8], [9, 10, 11, 12, 13, 14, 15, 16]]
-      for (const row of rows) for (const [index, pin] of row.entries()) {
+      expect(component(name).manufacturer_part_number).toBe("USB4110-GF-A")
+      expect(component(name).supplier_part_numbers?.jlcpcb).toEqual(["C5143397"])
+      const { pcb_component_id: id } = physicalPin(name, 17)
+      const placed = circuit.db.pcb_component.list().find(part => part.pcb_component_id === id)!
+      expect(placed.rotation).toBe(270)
+      const pads = circuit.db.pcb_smtpad.list().filter(pad => pad.pcb_component_id === id)
+      expect(pads).toHaveLength(16)
+      for (const [pin, offset, contacts] of tails) {
+        const wide = contacts.length === 2
         const port = physicalPin(name, pin)
-        const hole = circuit.db.pcb_plated_hole.list().find(hole => hole.pcb_port_id === port.pcb_port_id)!
-        expect(hole.shape).toBe("pill")
-        if (hole.shape !== "pill") throw new Error("Missing USB through-hole contact")
-        expect(hole.hole_width).toBeCloseTo(0.4, 3)
-        expect(hole.hole_height).toBeCloseTo(0.4, 3)
-        expect(hole.outer_width).toBeCloseTo(0.65, 3)
-        expect(hole.outer_height).toBeCloseTo(0.65, 3)
-        expect(port.x).toBeCloseTo(physicalPin(name, row[0]!).x, 3)
-        if (index) expect(physicalPin(name, row[index - 1]!).y - port.y).toBeCloseTo(0.85, 1)
+        expect(sourcePin(name, pin).port_hints).toEqual(expect.arrayContaining([...contacts]))
+        expect(port.y).toBeCloseTo(placed.center.y - offset, 6)
+        expect(port.x).toBeCloseTo(placed.center.x + (wide ? 2.49 : 2.465), 6)
+        const pad = pads.find(pad => pad.pcb_port_id === port.pcb_port_id)!
+        if (pad.shape !== "rect") throw new Error("Expected rectangular USB4110 tails")
+        expect(pad.width).toBeCloseTo(wide ? 1.1 : 1.15, 6)
+        expect(pad.height).toBeCloseTo(wide ? 0.6 : 0.3, 6)
       }
-      expect(physicalPin(name, 2).x - physicalPin(name, 9).x).toBeCloseTo(1.35, 3)
+      expect(circuit.db.pcb_plated_hole.list().filter(hole => hole.pcb_component_id === id)).toEqual([])
+      const locators = circuit.db.pcb_hole.list().filter(hole => hole.pcb_component_id === id)
+      expect(locators).toHaveLength(2)
+      for (const hole of locators) {
+        if (hole.hole_shape !== "circle") throw new Error("Expected a round USB4110 locator")
+        expect(hole.hole_diameter).toBe(0.65)
+        expect(hole.x).toBeCloseTo(placed.center.x + 1.39, 6)
+        expect(Math.abs(hole.y - placed.center.y)).toBeCloseTo(2.89, 6)
+      }
+      expect(pads.filter(pad => pad.port_hints?.includes("pin17"))).toHaveLength(4)
     }
   })
 
@@ -172,14 +190,14 @@ describe("general USB-C PD Peltier driver", () => {
     const rawCapacitanceF = directCapacitance("VBUS_RAW")
     expect(rawCapacitanceF).toBeGreaterThan(0)
     expect(rawCapacitanceF * 1.2).toBeLessThanOrEqual(10e-6)
-    expect(component("J_USB").manufacturer_part_number).toBe("USB4085-GF-A")
+    expect(component("J_USB").manufacturer_part_number).toBe("USB4110-GF-A")
     for (const pin of [1, 2, 5, 23]) expect(pinNet("U_PD", pin)).toBe("PD_3V3")
     expect(pinNet("U_PD", 6)).toBe("GND")
     expect(pinNet("U_PD", 18)).toBe("VBUS_RAW")
     for (const pin of [16, 17]) expect(pinNet("U_PD", pin)).toBeUndefined()
     expect(pinNet("J_USB", 1)).toBe("CC1")
     expect(pinNet("J_USB", 14)).toBe("CC2")
-    for (const pin of [3, 7, 10, 15]) expect(pinNet("J_USB", pin)).toBe("VBUS_RAW")
+    for (const pin of [3, 7]) expect(pinNet("J_USB", pin)).toBe("VBUS_RAW")
     for (const name of ["Q_INPUT", "Q_REVERSE"]) {
       for (const pin of [1, 2, 3]) expect(pinNet(name, pin)).toBe("PFET_SOURCE")
       expect(pinNet(name, 4)).toBe("PD_GATE")
@@ -435,7 +453,7 @@ describe("general USB-C PD Peltier driver", () => {
       expect(pinNet(name, 2)).toBe("GND")
       expect(pinNet("J_PROGRAM", pin)).toBe(net)
     }
-    for (const pin of [3, 7, 10, 15]) expect(pinNet("J_PROGRAM", pin)).toBe("PROGRAM_VBUS")
+    for (const pin of [3, 7]) expect(pinNet("J_PROGRAM", pin)).toBe("PROGRAM_VBUS")
     for (const [connectorPins, mcuPin, esdPins, net, series, mcuNet] of [
       [[4, 13], 47, [3, 4], "PROGRAM_USB_DP", "R_USB_DP", "RP_USB_DP"],
       [[5, 12], 46, [1, 6], "PROGRAM_USB_DM", "R_USB_DM", "RP_USB_DM"],

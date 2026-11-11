@@ -5,7 +5,7 @@ import * as checks from "@tscircuit/checks"
 import routingData from "../src/board/routing-data.json"
 import type { RoutedCopperData } from "../src/board/routed-copper"
 import { assertCopperAssociations } from "./helpers/copper-associations"
-import { analyzePhysicalCopper, drillSmtClearanceViolations, pouredCorridorCovered, sourceConnectivity } from "./helpers/physical-copper"
+import { analyzePhysicalCopper, drillSmtClearanceViolations, pouredCorridorCovered, roundDrillToPourClearance, solderMaskSpacingViolations, sourceConnectivity } from "./helpers/physical-copper"
 import { inspectThermalVias } from "./helpers/thermal-vias"
 import { boardFixture, FIXTURE_RENDER_TIMEOUT } from "./fixtures"
 
@@ -24,12 +24,18 @@ beforeAll(async () => {
 
 describe("complete PCB routing", () => {
   test("routing preserves the original named pins, NC pins and electrical net partition", () => {
-    // Hash of canonical {net names, component.pin groups} from the original
-    // unrouted board. Copper IDs, placements and generated via ports are absent.
+    // Expand the USB4110's four paired mating contacts to the original pin IDs.
+    const pairedContacts = new Map([["2", "9"], ["3", "10"], ["7", "15"], ["8", "16"]])
+    const { groups, internalKeys } = sourceConnectivity(circuit.getCircuitJson())
+    const matingGroups = groups.map(({ nets, ports }) => ({ nets, ports: ports.flatMap(port => {
+      const [name, pin] = port.split(".")
+      const other = pairedContacts.get(pin!)
+      return (name === "J_USB" || name === "J_PROGRAM") && other ? [port, `${name}.${other}`] : [port]
+    }).sort() })).sort((a, b) => a.ports.join() < b.ports.join() ? -1 : a.ports.join() > b.ports.join() ? 1 : 0)
     const originalNetlist = "2df111c39b7d3294a0155048451ab575d62202339edb9e6157b2c3a0de41d77b"
-    expect(createHash("sha256").update(sourceConnectivity(circuit.getCircuitJson()).signature).digest("hex"))
+    expect(createHash("sha256").update(JSON.stringify(matingGroups)).digest("hex"))
       .toBe(originalNetlist)
-    expect(physical.requiredPortCount).toBe(430)
+    expect(physical.requiredPortCount).toBe(422)
     expect(physical.groups).toHaveLength(76)
     expect(physical.ignoredNcPortCount).toBe(39)
     // Physical package metal is limited to the original connector shells and
@@ -38,7 +44,7 @@ describe("complete PCB routing", () => {
       ...["J_USB", "J_PROGRAM"].map(name => [17, "pin17_internal_1", "pin17_internal_2", "pin17_internal_3"].map(pin => `${name}.${pin}`)),
       ...["U_PROGRAM_ESD", "U_SENSOR_ESD"].flatMap(name => [[1, 6], [3, 4]].map(pins => pins.map(pin => `${name}.${pin}`))),
     ].map(pins => pins.sort().join()).sort()
-    expect([...new Set(sourceConnectivity(circuit.getCircuitJson()).internalKeys.map(pins => pins.sort().join()))].sort())
+    expect([...new Set(internalKeys.map(pins => pins.sort().join()))].sort())
       .toEqual(packageMetal)
   })
 
@@ -94,8 +100,20 @@ describe("complete PCB routing", () => {
       expect(via.layers.map(String).sort()).toEqual(layers)
       expect(via.hole_diameter).toBeGreaterThanOrEqual(board.min_via_hole_diameter!)
       expect(via.outer_diameter).toBeGreaterThanOrEqual(board.min_via_pad_diameter!)
-      expect(via.outer_diameter).toBeGreaterThan(via.hole_diameter)
+      expect(via.outer_diameter - via.hole_diameter).toBeGreaterThanOrEqual(0.15)
     }
+  })
+
+  test("the connector locator drills clear the copper pours and both outer layers retain 0.20 mm mask dams", () => {
+    const holes = circuit.db.pcb_hole.list()
+    const diameters = holes.map(hole => {
+      if (hole.hole_shape !== "circle") throw new Error("Expected a round locator drill")
+      expect(roundDrillToPourClearance(circuit.getCircuitJson(), hole.x, hole.y, hole.hole_diameter))
+        .toBeGreaterThanOrEqual(0.2)
+      return hole.hole_diameter
+    }).sort((a, b) => a - b)
+    expect(diameters).toEqual([0.65, 0.65, 0.65, 0.65, 1.25])
+    expect(solderMaskSpacingViolations(circuit.getCircuitJson())).toEqual([])
   })
 
   test("original crystal limits hold even for copper without source-trace associations", () => {

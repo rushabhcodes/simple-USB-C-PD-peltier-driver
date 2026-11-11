@@ -68,7 +68,8 @@ export const TPS55289RYQR = (props: ChipProps<typeof pinLabels>) => {
 <smtpad portHints={["pin2"]} pcbX="-2.3999952mm" pcbY="0.249936mm" width="0.5999988mm" height="0.2500122mm" shape="rect" />
 <smtpad portHints={["pin3"]} pcbX="-2.3999952mm" pcbY="-0.249936mm" width="0.5999988mm" height="0.2500122mm" shape="rect" />
 <smtpad portHints={["pin4"]} pcbX="-2.3999952mm" pcbY="-0.750062mm" width="0.5999988mm" height="0.2500122mm" shape="rect" />
-<smtpad portHints={["pin5"]} pcbX="-2.040001mm" pcbY="-1.3750036mm" width="0.2500122mm" height="0.6500114mm" shape="rect" />
+        {/* Retract the heels of the four corner lands by 0.05 mm for the 2 oz mask dam. */}
+<smtpad portHints={["pin5"]} pcbX="-2.040001mm" pcbY="-1.4mm" width="0.2500122mm" height="0.6mm" shape="rect" />
 <smtpad portHints={["pin6"]} pcbX="-1.539875mm" pcbY="-1.3999972mm" width="0.2500122mm" height="0.5999988mm" shape="rect" />
 <smtpad portHints={["pin7"]} pcbX="-1.040003mm" pcbY="0mm" width="0.2500122mm" height="3.3999932mm" shape="rect" />
 <smtpad portHints={["pin8"]} pcbX="-0.539877mm" pcbY="0mm" width="0.2500122mm" height="3.3999932mm" shape="rect" />
@@ -76,14 +77,14 @@ export const TPS55289RYQR = (props: ChipProps<typeof pinLabels>) => {
 <smtpad portHints={["pin10"]} pcbX="0.540131mm" pcbY="0mm" width="0.2500122mm" height="3.3999932mm" shape="rect" />
 <smtpad portHints={["pin11"]} pcbX="1.040003mm" pcbY="0mm" width="0.2500122mm" height="3.3999932mm" shape="rect" />
 <smtpad portHints={["pin12"]} pcbX="1.540129mm" pcbY="-1.3999972mm" width="0.2500122mm" height="0.5999988mm" shape="rect" />
-<smtpad portHints={["pin13"]} pcbX="2.040001mm" pcbY="-1.3750036mm" width="0.2500122mm" height="0.6500114mm" shape="rect" />
+<smtpad portHints={["pin13"]} pcbX="2.040001mm" pcbY="-1.4mm" width="0.2500122mm" height="0.6mm" shape="rect" />
 <smtpad portHints={["pin14"]} pcbX="2.3999952mm" pcbY="-0.750062mm" width="0.5999988mm" height="0.2500122mm" shape="rect" />
 <smtpad portHints={["pin15"]} pcbX="2.3999952mm" pcbY="-0.249936mm" width="0.5999988mm" height="0.2500122mm" shape="rect" />
 <smtpad portHints={["pin16"]} pcbX="2.3999952mm" pcbY="0.249936mm" width="0.5999988mm" height="0.2500122mm" shape="rect" />
 <smtpad portHints={["pin17"]} pcbX="2.3999952mm" pcbY="0.750062mm" width="0.5999988mm" height="0.2500122mm" shape="rect" />
-<smtpad portHints={["pin18"]} pcbX="2.040001mm" pcbY="1.3750036mm" width="0.2500122mm" height="0.6500114mm" shape="rect" />
+<smtpad portHints={["pin18"]} pcbX="2.040001mm" pcbY="1.4mm" width="0.2500122mm" height="0.6mm" shape="rect" />
 <smtpad portHints={["pin19"]} pcbX="1.540129mm" pcbY="1.3999972mm" width="0.2500122mm" height="0.5999988mm" shape="rect" />
-<smtpad portHints={["pin21"]} pcbX="-2.040001mm" pcbY="1.3750036mm" width="0.2500122mm" height="0.6500114mm" shape="rect" />
+<smtpad portHints={["pin21"]} pcbX="-2.040001mm" pcbY="1.4mm" width="0.2500122mm" height="0.6mm" shape="rect" />
 <smtpad portHints={["pin20"]} pcbX="-1.540129mm" pcbY="1.3999972mm" width="0.2500122mm" height="0.5999988mm" shape="rect" />
 
 <courtyardoutline outline={[{"x":-3.348799999999983,"y":1.9518000000000058},{"x":2.9424000000000063,"y":1.9518000000000058},{"x":2.9424000000000063,"y":-1.9517999999999915},{"x":-3.348799999999983,"y":-1.9517999999999915},{"x":-3.348799999999983,"y":1.9518000000000058}]} />

@@ -1,1 +1,2 @@
-
+$ tsci check schematic-placement dist/index/circuit.json
+No placement issues on nine schematic sheets.

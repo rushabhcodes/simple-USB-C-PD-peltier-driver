@@ -159,7 +159,8 @@
       "adjustments": [
         "Retain reference pin labels, power/ground attributes and schematic symbol.",
         "Retain capacitor pin1/pos and pin2/neg aliases where present.",
-        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Use the nominal 0.40 mm pitch with 0.20 mm wide RP2040 lands for 1:1 LDI openings."
       ]
     },
     {
@@ -512,7 +513,8 @@
       "adjustments": [
         "Retain reference pin labels, power/ground attributes and schematic symbol.",
         "Retain capacitor pin1/pos and pin2/neg aliases where present.",
-        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retract the heels of corner lands 5, 13, 18 and 21 by 0.05 mm for the 2 oz solder-mask dams."
       ]
     },
     {
@@ -529,17 +531,17 @@
       ]
     },
     {
-      "code": "C7095263",
-      "command": "tsci import C7095263 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "code": "C5143397",
+      "command": "tsci import C5143397 --jlcpcb --use-exact-footprint",
       "exitCode": 0,
-      "rawFile": "work/component-imports/imports/USB4085_GF_A.tsx",
-      "rawSha256": "44a4cb1842b01fe94b9e809e329d48fff433f1d9ab4a3324926085f3446260d4",
-      "activeWrapper": "imports/USB4085_GF_A.tsx",
+      "rawFile": "work/jlc-release/catalog/imports/USB4110_GF_A.tsx",
+      "rawSha256": "9fa2932a33b425dda7d5c2a6360b175ce7c50e18d1f55fd12c46ce831c7fc343",
+      "activeWrapper": "imports/USB4110_GF_A.tsx",
       "adjustments": [
-        "Retain reference pin labels, power/ground attributes and schematic symbol.",
-        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
-        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
-        "Declare from_bottom insertion in the footprint frame; 270 degree placement faces both USB-C receptacles toward the left board edge."
+        "Map the twelve SMT tails to the mating contacts in the GCT USB4110 drawing.",
+        "Use nominal 0.50 mm signal pitch and retract the peg-side edge of the four wide tails by 0.05 mm.",
+        "Use four SMT shell tabs and two 0.65 mm nonplated locator drills per port.",
+        "Use a drawing-derived CAD envelope and declare from_bottom insertion in the footprint frame."
       ]
     },
     {

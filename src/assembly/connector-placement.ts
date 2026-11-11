@@ -1,7 +1,7 @@
 // Shared by the real PCB and its native CAD-only accessories. Millimetres / degrees.
 export const connectorPlacements = {
-  J_USB: { pcbX: -33, pcbY: 10, pcbRotation: 270 },
-  J_PROGRAM: { pcbX: -33, pcbY: -20, pcbRotation: 270 },
+  J_USB: { pcbX: -35.35, pcbY: 10.5, pcbRotation: 270 },
+  J_PROGRAM: { pcbX: -35.35, pcbY: -20, pcbRotation: 270 },
   J_TEC: { pcbX: 28.5, pcbY: 23, pcbRotation: 90 },
   J_HOT_SENSOR: { pcbX: 28.5, pcbY: 11, pcbRotation: 90 },
   J_COLD_SENSOR: { pcbX: 28.5, pcbY: -8, pcbRotation: 90 },
@@ -17,11 +17,7 @@ export function connectorPoint(placement: ConnectorPlacement, local: readonly [n
     placement.pcbY + Math.sin(angle) * local[0] + Math.cos(angle) * local[1], local[2]]
 }
 
-// The USB face offset is the insertion centre inferred from the exact C7095263
-// imported footprint, relative to its authored placement anchor (not its pad bounds).
-// Retain this face contract without silkscreen: the renderer's outline-based
-// insertion inference is not reliable for the intentionally unmarked board.
-export const usbFaceLocal: Point3 = [0, -7.237483112, 2.5]
+export { usb4110Face as usbFaceLocal } from "../../imports/USB4110_GF_A"
 // Exact C474881 / KF301 footprint pin centres. Z=6 is an illustrative wire channel.
 export const tecPinLocal = { pin1: [-2.499995, 0, 6], pin2: [2.499995, 0, 6] } as const
 // Exact C784941 plated-hole centres; Z=3 approximates the visible wire channel.

@@ -2,20 +2,20 @@
 
 The board has **PD IN** for Peltier power and **PROGRAM** for configuration and firmware updates. PROGRAM can power the logic by itself; it cannot energize the Peltier without qualified PD power. There is no screen or button UI.
 
-The application uses the **official Raspberry Pi Pico SDK 2.2.0** and its pinned **TinyUSB 0.18.0** submodule, running only on RP2040 core 0. A 12 MHz crystal supplies the SDK's system/USB clocks. External flash is **Winbond W25Q128JVSIQ, 16 MiB**; SDK `boot2_w25q080` uses the compatible Winbond quad command set. The PCB remains unrouted: USB enumeration, actual flash programming, and converter operation await bench validation.
+The application uses the **official Raspberry Pi Pico SDK 2.2.0** and its pinned **TinyUSB 0.18.0** submodule, running only on RP2040 core 0. A 12 MHz crystal supplies the SDK's system/USB clocks. External flash is **Winbond W25Q128JVSIQ, 16 MiB**. The SDK's `boot2_w25q080` uses the compatible Winbond quad command set. USB enumeration, flash programming and converter operation require bench validation.
 
 ## Configure once, then use PD alone
 
 ```sh
 python3 -m venv .venv
 .venv/bin/pip install -r host/requirements.txt
-.venv/bin/python host/control.py configure 12.0 5.5
+.venv/bin/python host/control.py configure 3.0 1.0
 ```
 
-This sends STOP → SET → SAVE, storing the nominal **12 V / 5.5 A** TEC1-12706 profile. A later PD connection starts the saved profile after approximately one second of stable qualified input. Add `--run` to start now when PD is already connected. Unplugging PROGRAM leaves an operating output running on PD.
+This sends STOP → SET → SAVE and stores **3.0 V / 1.0 A**. A later PD connection starts the saved profile after approximately one second of stable qualified input. Follow the [first power-up steps](../docs/assembly.md#first-power-up) to test an unsaved profile manually. Add `--run` to start now when PD is already connected. Unplugging PROGRAM leaves an operating output running on PD.
 
 ```sh
-.venv/bin/python host/control.py configure 12.0 5.5 --run
+.venv/bin/python host/control.py configure 3.0 1.0 --run
 .venv/bin/python host/control.py status
 .venv/bin/python host/control.py stop
 .venv/bin/python host/control.py run

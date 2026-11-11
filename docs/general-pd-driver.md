@@ -4,9 +4,7 @@
 
 One two-wire output with adjustable constant-voltage and constant-current limits. **PD POWER** supplies the load; **USB PROGRAM** provides native USB configuration, firmware updates and logic power. There are no display, buttons or display headers. Three status LEDs and 16 bare copper debug pads support setup and development.
 
-The default module is [HiLetgo TEC1-12706, Amazon ASIN B00M1PM7H6](https://www.amazon.com/dp/B00M1PM7H6). Its listing specifies 40 × 40 × 3.6 mm and two modules per package; this board drives one. During selection, that listing showed 50+ purchases in the past month, 564 ratings and 4.3/5; [diymore's TEC1-12706 listing](https://www.amazon.com/dp/B01IUVSSHW) showed 100+, 354 ratings and 4.4/5. These changing, potentially pooled listing statistics support choosing a familiar consumer module, without establishing the world's best-selling Peltier.
-
-The [Hebei reference datasheet](https://www.hebeiltd.com.cn/peltier.datasheet/TEC1-12706.pdf) describes a related TEC1-12706 variant with 6.4 A maximum, 14.4 V maximum and 50 W maximum heat pumping at a 25 °C hot side. It does not certify the Amazon batch. Qualify purchased samples and their thermal installation; electrical watts are not watts of cooling.
+The bench assembly uses one Same Sky CP60440, a 40 × 40 × 4 mm TEC with 20 AWG leads. Use the initial 3.0 V / 1.0 A settings and qualify the installed heatsink and cold plate before increasing power. The CP60440 datasheet gives performance curves for heat pumped at a given hot-side temperature and temperature difference. [Assembly instructions](assembly.md) · [Same Sky CP60 datasheet](https://www.sameskydevices.com/product/resource/cp60.pdf)
 
 | Setting | Prototype target |
 | --- | --- |
@@ -19,7 +17,7 @@ The [Hebei reference datasheet](https://www.hebeiltd.com.cn/peltier.datasheet/TE
 | Programming input | USB 2.0 data and 5 V logic supply |
 | Fan output | Fixed 12 V, 0.5 A / 6 W continuous budget; qualified PD only |
 | Temperature ports | Two independent powered DS18B20 inputs on GPIO8 / GPIO9 |
-| Board | 74 × 60 mm, nominal 1.6 mm, four layers, routed power/signals and ground pours |
+| Board | 72.5 × 59 mm, nominal 1.6 mm, four layers, routed power/signals and ground pours |
 
 Voltage is regulated **before the 10 mΩ shunt**, which drops approximately 55 mV at 5.5 A plus wiring losses. USB STATUS reports approximate voltage at the TEC terminal. The 2.1 V setting floor provides nominal margin above the converter's 2 V current-sense common-mode accuracy boundary after the shunt. Current regulation under overload can reduce output below that boundary; low-voltage accuracy and short-circuit behavior need bench validation. IC, shunt and divider tolerances remain uncalibrated.
 
@@ -44,7 +42,7 @@ The switching network uses approximately 395 kHz, a 4.7 µH coil, four 10 µF / 
 
 ## Temperature probes and fan power
 
-The default probes are two units from the [HiLetgo DS18B20 five-pack, Amazon B00M1PM55K](https://www.amazon.com/dp/B00M1PM55K), with 1 m factory cables. The live Amazon selection showed **In Stock**, **Amazon's Choice**, **100+ bought in the past month**, **378 ratings**, and **4.5/5**. The [selection snapshot](sensor-sourcing.json) records the observation and geometry limits. These are popularity signals for the selected listing.
+The bench assembly uses two DFRobot DFR0198 DS18B20 probes. Their Ø6 × 35 mm tubes fit the bores specified in the assembly guide. [DFRobot specifications](https://wiki.dfrobot.com/dfr0198) · [Assembly instructions](assembly.md)
 
 Both XY302V-3.5-3P terminals use **pin1=3V3/red, pin2=DATA/yellow, pin3=GND/black**. Separate 4.7 kΩ pull-ups and 100 Ω series resistors connect HOT to RP2040 GPIO8 (physical pin11) and COLD to GPIO9 (physical pin12), with local bypassing and USBLC6-2SC6 data-line protection. The selected terminal accepts 16–26 AWG wire. Use one externally powered probe per port; parasite power is unsupported. Check the wire assignments when substituting another seller's probe.
 
@@ -54,20 +52,20 @@ A dedicated [TI LMR50410XDBVR](https://www.ti.com/lit/ds/symlink/lmr50410.pdf) b
 
 The keyed **Molex 47053-1000** header connects **pin1=GND, pin2=12V, pin3=tach NC, pin4=PWM NC**. [Noctua's primary PC fan specification](https://noctua.at/pub/media/wysiwyg/Noctua_PWM_specifications_white_paper.pdf) identifies this header and describes compatible fans' full-speed behavior without a PWM signal. Use a 12 V fan within the continuous and startup supply ratings; 24 V fans and high-current server fans are outside this output's intended range.
 
-The selected fan is the **[Noctua NF-A8 PWM, Amazon B00NEMG62M](https://www.amazon.com/dp/B00NEMG62M)**, the standard beige/brown 12 V model. [Noctua's specifications](https://www.noctua.at/en/products/nf-a8-pwm/specifications) give **0.08 A maximum / 0.96 W**, a factory 4-pin plug and 200 mm sleeved cable, **2200 rpm**, **32.67 CFM**, an SSO2 bearing and **six-year warranty**. It plugs directly into the existing header and runs at full speed with PWM unconnected; use the direct cable without the Low-Noise Adaptor. The 80 × 80 × 25 mm frame is 81 × 81 × 27 mm with its anti-vibration pads. Amazon US showed **In Stock**, **$17.95**, **500+ bought in the past month**, **4.9/5 with 2,269 ratings**, sold by **Noctua Cooling Solutions** and shipped by **Amazon**, checked 14 October 2026. [The selection record](fan-sourcing.json) distinguishes US availability from other delivery regions. The fan and cable are external accessories; the PCB circuit and purchased JLC BOM are unchanged. The assembly shows connectivity and does not specify the hot-side heatsink or establish thermal performance.
+The selected fan is the standard beige/brown **Noctua NF-A8 PWM 12 V** with a **0.08 A maximum** input, factory four-pin plug and 200 mm sleeved cable. It plugs into J_FAN and runs at full speed with PWM unconnected. The model shows the 81 × 81 × 27 mm frame with its anti-vibration pads attached to the inlet duct. [Noctua specifications](https://www.noctua.at/en/products/nf-a8-pwm/specifications) · [Amazon B00NEMG62M](https://www.amazon.com/dp/B00NEMG62M)
 
 ## Parts, cables and debug
 
 | Role | Selected source |
 | --- | --- |
-| Peltier | [HiLetgo TEC1-12706, Amazon B00M1PM7H6](https://www.amazon.com/dp/B00M1PM7H6) |
-| Both temperature probes | [HiLetgo DS18B20 five-pack, Amazon B00M1PM55K](https://www.amazon.com/dp/B00M1PM55K); two used, 1 m factory leads |
+| Peltier | [Same Sky CP60440, DigiKey 102-1678-ND](https://www.digikey.in/en/products/detail/same-sky-formerly-cui-devices/CP60440/1747370) |
+| Both temperature probes | Two [DFRobot DFR0198, DigiKey 1738-1311-ND](https://www.digikey.in/en/products/detail/dfrobot/DFR0198/7597054) |
 | Fan and factory cable | [Noctua NF-A8 PWM 12 V, Amazon B00NEMG62M](https://www.amazon.com/dp/B00NEMG62M); one used, 200 mm factory cable, 0.08 A maximum |
 | Both probe terminals | Xinlaiya XY302V-3.5-3P, C784941; three positions, 3.5 mm pitch, 16–26 AWG |
 | Fixed 12 V fan supply | TI LMR50410XDBVR, C2841056 / Sunlord SWPA8040S330MT, C83467 |
 | PC fan header | Molex 47053-1000, C240840; [manufacturer drawing](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/470/47053/470531000_sd.pdf) |
 | PD sink | CYPD3177-24LQXQT, C2952489; [Infineon datasheet](https://www.infineon.com/assets/row/public/documents/24/49/infineon-cypd3177-24lqxq-datasheet-en.pdf) |
-| Both USB receptacles | GCT USB4085-GF-A, C7095263; [manufacturer](https://gct.co/connector/usb4085), 5 A rating |
+| Both USB receptacles | GCT **USB4110-GF-A**, USB 2.0 and 5 A across VBUS. [JLCPCB C5143397](https://jlcpcb.com/partdetail/5762033-USB4110_GFA/C5143397) · [DigiKey India](https://www.digikey.in/en/products/detail/gct/USB4110-GF-A/10384548) |
 | PD PFET pair | AO4407A, C16072; [AOS datasheet](https://www.aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf) |
 | CC/CV converter | TPS55289RYQR, C5942077; [TI datasheet](https://www.ti.com/lit/ds/symlink/tps55289.pdf), [EVM](https://www.ti.com/tool/TPS55289EVM) |
 | Main inductor | Bourns SRP1265A-4R7M, C780205; [manufacturer drawing](https://www.bourns.com/docs/product-datasheets/srp1265a.pdf) |
@@ -81,7 +79,7 @@ The selected fan is the **[Noctua NF-A8 PWM, Amazon B00NEMG62M](https://www.amaz
 | POWER / RUN / FAULT | Yellow KT-0603Y C2287 / green KT-0603YG C2289 / red KT-0603R C2286 |
 | Both USB cables | [Cable Matters 201440](https://www.cablematters.com/pc-1532-123-usb-c-20-charging-cable-with-240w-power-delivery.aspx), 1 m, 5 A, e-marked, USB 2.0 data |
 
-[Inventory](component-sourcing.csv) records **134 purchased placements across 55 exact JLC SKUs**. The [timestamped stock snapshot](jlc-stock-audit.json) and CSV retain historical observations for the original 54 SKUs; stock for the added C960916 capacitor still needs checking. Stock and pricing change; the tscircuit parts engine’s availability warnings are separate from these direct catalog observations and netlist validation. No fabrication or component order has been placed.
+The current inventory records **134 purchased placements across 55 exact JLCPCB SKUs**. The October stock snapshot predates the USB4110 swap and the C960916 capacitor. Check both added SKUs in the assembly order's current inventory. [Current parts list](component-sourcing.csv) · [October stock snapshot](jlc-stock-audit.json)
 
 Use factory Peltier leads in the terminal; seller lengths/gauges vary. Cable extensions require their own current/temperature qualification. Both selected USB cables support data, although PD POWER uses only power/CC. The model distinguishes their roles by color and labels; these are illustrative cable shapes.
 
@@ -97,10 +95,6 @@ Specify **JLC041621-7628**, nominal **1.6 mm**, **2 oz outer / 1 oz inner copper
 
 ## Assembly and qualification
 
-The default entrypoint contains a native `assembly.device`, with the board and `assembly.part` CAD geometry visible together in the local dev server's **3D** tab. This follows the [tscircuit assembly API](https://docs.tscircuit.com/guides/advanced-assembly). Peltier and cable geometry add no PCB footprints or electrical nets. The installed `assembly.cable` API requires PCB connector or motor endpoints; these external accessories use explicit geometry tied to the actual board connectors without introducing artificial peripheral PCBs.
-
-The assembly export consumes the final circuit JSON and actual placement. Imported supplier meshes are identified as supplier CAD. Eleven native accessories show the Peltier, two USB cables, two TEC leads, both probe bodies and cables, and the Noctua fan with its factory cable. The fan uses manufacturer CAD; the Amazon Peltier uses its listed envelope, while probe housings and cable routes illustrate connectivity. [Provenance](../assets/assembly/provenance.json) records sources and fallbacks, and generated provenance includes the circuit JSON hash. These models are not fit-qualified mechanical CAD.
-
-The preview omits the required hot-side heatsink, cold plate, clamping and thermal interface. Fit these before operation. The board is a power driver rather than a complete refrigeration assembly.
+Open `assembly.tsx` in the tscircuit 3D view or run `bun run build:assembly` for the offline viewer. The export checks each fitted PCB component for a mesh and includes the external wiring, heatsink, cold plate, clamp, probes and fan duct. Use the [bench assembly guide](assembly.md) for the pin-by-pin wiring, purchases, machining dimensions and first power-up. [Model sources](../assets/assembly/provenance.json)
 
 Before manufacture, review the generated copper and drill files against the [fabrication requirements](pcb-fabrication.md), including stackup, exposed-pad via treatment, power transitions and USB references. Bench-check USB enumeration/UF2/recovery; both orientations and simultaneous supplies; backfeed/inrush; saved-profile startup and corrupt/interrupted saves; PD detach/reset; current/voltage tolerances and compensation; short circuit and output-off discharge; watchdog/control-supply loss; and sustained connector/cable/board temperatures. Native tests and a firmware cross-build do not establish these measurements.

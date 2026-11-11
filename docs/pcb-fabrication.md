@@ -16,9 +16,33 @@ These are the [JLCPCB stackup selector](https://jlcpcb.com/impedance) values for
 
 ## Manufacturing rules
 
-The board source sets 0.20 mm minimum trace width; 0.17 mm trace-to-pad, pad-to-pad and via-edge-to-pad clearance; 0.30 mm via drills with 0.60 mm pads; 0.25 mm trace-to-hole and hole-to-hole clearance; and 0.30 mm copper-to-board-edge clearance. Non-POFV via drills must also remain at least 0.15 mm from SMT solder lands, including same-net lands; this separate fabrication margin is checked in the routing tests. Use at least 0.20 mm copper clearance where placement permits. Local bounded pours use `boardEdgeMargin={0}` to retain their specified outer outline; their clearances to other copper and the actual board boundary still require checking in the exported geometry. Fine-pitch package lands follow their footprints and require the selected 2 oz process to pass fabrication review. JLC's [2 oz guidance](https://jlcpcb.com/help/article/jlcpcb-copper-weight) lists 0.16 mm minimum trace/space.
+The board source sets a 0.20 mm minimum trace width, 0.17 mm copper clearance for pads and traces, 0.25 mm trace-to-hole and via-to-via drill clearance, and 0.30 mm copper-to-board-edge clearance. The routing tests also require 0.15 mm from non-POFV via drills to SMT solder lands, including same-net lands. The audit uses the copper-weight guide's 0.16 mm minimum trace width and space on the 2 oz outer layers. The rigid PCB table lists 0.15 mm for 2 oz multilayer boards. [JLCPCB rigid PCB capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/), [Copper weight guide](https://jlcpcb.com/help/article/jlcpcb-copper-weight)
 
-Intentional same-net thermal vias intersecting exposed solder lands, including the MCU and PD controller ground arrays, require **epoxy fill, planarization and copper caps (POFV)**. Apply this treatment to any converter thermal vias that intersect solder lands in the final layout. The 0.30 mm drill is within JLC's published 0.20–0.50 mm POFV range; [POFV is available for four-layer boards as a charged process](https://jlcpcb.com/news/free-via-in-pad-6-20-layer-pcbs-pofv). Specify the affected via coordinates or all 0.30 mm vias in the order notes and confirm the production files. [JLC's via-covering rules](https://jlcpcb.com/help/article/pcb-via-covering) explicitly exclude via-in-pad from ordinary solder-mask ink plugging and support epoxy-filled, copper-capped pads. Open holes or ordinary tenting are not the release process for these arrays. Use ENIG where exposed copper spacing is below 0.20 mm, following the same vendor guidance. A DRC exception for a named same-net thermal array verifies placement intent only; it does not verify the ordered fill/cap process or authorize signal drill-in-pad.
+### JLCPCB CAM review
+
+Use **JLC041621-7628**, **2 oz outer / 1 oz inner copper**, green solder mask, ENIG and selective epoxy fill, planarization and copper caps for the marked vias. Select **Confirm Production File** and review the selected stack, 90 Ω differential target and POFV treatment in the production artwork. [JLCPCB rigid PCB capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/)
+
+| Check | Board | JLCPCB rule |
+| --- | --- | --- |
+| Through vias | Ø0.30 mm drill / Ø0.60 mm pad, 0.15 mm radial ring | Ø0.15 / Ø0.25 mm minimum for this board thickness and 0.20 mm minimum via drill web |
+| Plated component holes | 12 terminal and header holes with a minimum 0.300 mm annular ring | 0.254 mm minimum ring for 2 oz multilayer boards |
+| Tracks and routed edge | 0.20 mm minimum routed width, 0.17 mm minimum different-net copper clearance and 0.30 mm minimum copper setback | 0.16 mm minimum width/spacing on 2 oz outer copper and 0.20 mm minimum copper-to-routed-edge clearance |
+| USB-C mounting | Both ports use GCT **USB4110-GF-A**, C5143397, with 12 SMT solder tails, four SMT shell tabs and two Ø0.65 mm nonplated locators each. Minimum locator clearance is 0.225 mm in the Gerbers. | NPTH diameter at least 0.50 mm and clearance to copper at least 0.20 mm |
+| Solder mask | Separate 1:1 LDI openings at both USB ports, the RP2040 and the TPS55289. Minimum dam is 0.20 mm on the outer layers. | 0.20 mm minimum pad spacing for dams on 2 oz copper and 0.09 mm from openings to neighboring traces |
+
+The USB4110 is rated for 5 A across its VBUS contacts and retains both USB 2.0 plug orientations. Each wide power or ground tail joins two mating contacts. The footprint retracts the peg-side edge of the four wide lands by 0.05 mm for a nominal 0.225 mm minimum copper clearance at the locators. The PD connector moves 0.5 mm toward the top edge to clear the adjacent resistor courtyard. Both faces extend about 0.24 mm past the left board edge. [GCT specifications](https://gct.co/connector/usb4110) · [GCT drawing](https://www.mouser.com/catalog/specsheets/GCT_USB4110%20Product%20Drawing%20-%2020k%20cycles.pdf) · [JLCPCB part C5143397](https://jlcpcb.com/partdetail/5762033-USB4110_GFA/C5143397)
+
+The RP2040 uses Raspberry Pi's 0.40 mm pitch and 0.20 mm peripheral land width. Confirm that package-specific land width in CAM because JLCPCB's general capability table lists a 0.25 × 0.25 mm minimum SMD pad. At TPS55289 pins 5, 13, 18 and 21, the pad heels move outward by 0.05 mm. The pads retain their 0.25 mm width and outer toe position, with about 0.225 mm clearance to the adjacent row. [RP2040 datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf) · [TI RYQ0021A land pattern](https://www.ti.com/lit/ds/symlink/tps55289.pdf) · [JLCPCB solder mask design](https://jlcpcb.com/blog/basic-design-of-solder-mask)
+
+The Gerber `Peltier-POFV.sk` marks the 13 exposed-pad vias (nine under U_MCU and four under U_PD) that require **epoxy fill, planarization and copper caps**. Name this layer and its use in the order notes. The solder mask artwork tents the other via drills. [JLCPCB Gerber preparation](https://jlcpcb.com/help/article/gerber-files-preparation) · [POFV availability](https://jlcpcb.com/news/free-via-in-pad-6-20-layer-pcbs-pofv) · [Via covering options](https://jlcpcb.com/help/article/pcb-via-covering)
+
+Regenerate the bare-board archive at `dist/jlcpcb-dfm-review.zip` from the built board.
+
+```sh
+bun run build && python3 scripts/export-fabrication-review.py
+```
+
+The archive contains four copper layers, top and bottom mask, the routed outline, separate plated and nonplated Excellon files, and the POFV marker layer. The drill files contain 370 vias, 12 plated component holes and five nonplated locators. For a PCBA order, check both USB-C rotations and LED_RUN in the placement preview.
 
 ## Power copper and returns
 
@@ -67,7 +91,7 @@ The recorded pre-cleanup longest MCU 3.3 V path is 56.86 mm equivalent trace len
 
 The long bottom-layer pair targets **90 Ω differential**, with **0.240 mm trace width and 0.200 mm edge-to-edge gap**, referenced to L3 through 0.203 mm of Er 4.4 prepreg. Keep other same-layer copper at least 0.60 mm away along the uniform section; short fine-pitch escapes and component transitions are discontinuities that need separate review.
 
-The sum of 2D trace centerline lengths is approximately **57.660 mm per data line**, with four signal vias per line; the alternate connector orientation adds approximately **0.0053 mm** of geometric mismatch. These lengths exclude via barrels and package paths and make no propagation-delay claim. Connector, ESD, resistor, via and tuning transitions are outside the uniform 90 Ω model.
+The copper centerline length from the USB4110 tails to the MCU is **59.946 mm per line** through the primary tails and approximately **64.230 mm per line** through the alternate tails. The alternate path adds two signal vias per line for six total and has less than 0.001 mm of geometric skew. The calculation covers PCB traces. Connector, ESD, resistor, via and tuning transitions are outside the uniform 90 Ω model.
 
 The current [JLCPCB impedance calculator](https://jlcpcb.com/pcb-impedance-calculator) returned **89.945 Ω** on 2026-10-17 using `DiffEdgeCoupledCoatedMicrostrip1B`. Reproducible model inputs: lower width W1 = 0.240 mm, upper etched width W2 = 0.2146 mm, gap S1 = 0.200 mm, dielectric H1 = 0.203 mm, Er1 = 4.4; the calculator's 2 oz defaults are copper T1 = 0.07239 mm, mask C1/C3 = 0.03048 mm, C2 = 0.02032 mm, and mask Er = 3.8. The inverse calculation returned W1 = 0.239553 mm for 90.0085 Ω before rounding.
 

@@ -1,6 +1,7 @@
 import type { JscadOperation, JscadPolygon3 } from "jscad-planner"
 import fanMesh from "./assets/noctua-nf-a8-pwm.mesh.json"
 import { connectorPlacements, connectorPoint, fanLocatorLocal, fanPinLocal, sensorPinLocal, tecPinLocal, usbFaceLocal, type Point3 } from "./connector-placement"
+import { coldPlate, coldProbeEntry, fanDuct, fanPosition, hotProbeEntry, hotSideHeatsink, moduleCenter, tecClamp, thermalProbeLength } from "./thermal-stack"
 
 // Circuit coordinates: X/Y follow the PCB, Z is height. Accessory geometry is
 // documented peripheral geometry; cable routes are not a mechanical fit test.
@@ -48,10 +49,9 @@ function wirePolygons(points: Point3[], radius: number, color: Point3): JscadPol
   return polygons
 }
 
-export const moduleCenter: Point3 = [112, 24, 1.8]
 export const moduleModel = colored([0.965, 0.969, 0.965], union([
-  cuboid([38.5, 38.5, 2.2], [0, 0, 0]),
-  ...[-1.45, 1.45].map(z => cuboid([40, 40, 0.7], [0, 0, z])),
+  cuboid([38.5, 38.5, 2.6], [0, 0, 0]),
+  ...[-1.65, 1.65].map(z => cuboid([40, 40, 0.7], [0, 0, z])),
 ]))
 
 function usbCable(boardConnector: "J_USB" | "J_PROGRAM", partName: string, branch: number, color: Point3) {
@@ -75,8 +75,8 @@ function usbCable(boardConnector: "J_USB" | "J_PROGRAM", partName: string, branc
 function tecLead(pin: "pin1" | "pin2", partName: string, offset: number, color: Point3) {
   const boardPoint = connectorPoint(connectorPlacements.J_TEC, tecPinLocal[pin])
   const modulePoint: Point3 = [moduleCenter[0] - 20, moduleCenter[1] + offset, moduleCenter[2]]
-  const path: Point3[] = [boardPoint, [connectorPlacements.J_TEC.pcbX + 15, boardPoint[1], 6],
-    [connectorPlacements.J_TEC.pcbX + 34, moduleCenter[1] + offset, 4], modulePoint]
+  const path: Point3[] = [boardPoint, [35, boardPoint[1], 6],
+    [60, modulePoint[1], modulePoint[2]], modulePoint]
   return { partName, boardConnector: "J_TEC", pin, boardPoint, modulePoint, path, position: boardPoint,
     displayName: pin === "pin1" ? "TEC positive lead · red · path illustration" : "TEC negative lead · black · path illustration",
     model: wire(path.map(point => subtract(point, boardPoint)), 0.75, color) }
@@ -84,25 +84,31 @@ function tecLead(pin: "pin1" | "pin2", partName: string, offset: number, color: 
 
 export const usbPdCable = usbCable("J_USB", "USB_PD_CABLE", 1, [0.19, 0.21, 0.25])
 export const usbProgramCable = usbCable("J_PROGRAM", "USB_PROGRAM_CABLE", -1, [0.68, 0.73, 0.79])
-export const tecPositiveLead = tecLead("pin1", "TEC_POS_LEAD", -3, [0.78, 0.17, 0.21])
-export const tecNegativeLead = tecLead("pin2", "TEC_NEG_LEAD", 3, [0.125, 0.14, 0.17])
+export const tecPositiveLead = tecLead("pin1", "TEC_POS_LEAD", -3.5, [0.78, 0.17, 0.21])
+export const tecNegativeLead = tecLead("pin2", "TEC_NEG_LEAD", 3.5, [0.125, 0.14, 0.17])
 
-// Selected HiLetgo B00M1PM55K housing dimensions are not published/verified.
-// These cylinders are explicitly illustrative, not seller-specified dimensions.
-const probeBodyLengthMm = 50, probeBodyDiameterMm = 6
-const probeModel: JscadOperation = { type: "rotateY", angle: Math.PI / 2,
-  shape: { type: "cylinder", height: probeBodyLengthMm, radius: probeBodyDiameterMm / 2 },
+// DFRobot DFR0198: Ø6 × 35 mm stainless tube. The probe is inserted to
+// its cable shoulder from the side of each plate.
+const probeBodyDiameterMm = 6
+const probeBody: JscadOperation = { type: "cylinder", height: thermalProbeLength, radius: probeBodyDiameterMm / 2,
   material: { color: [0.72, 0.75, 0.77], metalness: 0.8, roughness: 0.3 } }
-export const hotProbe = { partName: "HOT_PROBE", position: [112, 50, 9.6] as Point3, model: probeModel,
-  cableEndPoint: [87, 50, 9.6] as Point3, bodyLengthMm: probeBodyLengthMm, bodyDiameterMm: probeBodyDiameterMm }
-export const coldProbe = { partName: "COLD_PROBE", position: [112, -8, -6] as Point3, model: probeModel,
-  cableEndPoint: [87, -8, -6] as Point3, bodyLengthMm: probeBodyLengthMm, bodyDiameterMm: probeBodyDiameterMm }
+export const hotProbe = { partName: "HOT_PROBE", displayName: "DFRobot DFR0198 · HOT · Ø6 × 35 mm",
+  position: add(hotProbeEntry, [-thermalProbeLength / 2, 0, 0]),
+  model: { type: "rotateY", angle: Math.PI / 2, shape: probeBody } satisfies JscadOperation,
+  cableEndPoint: hotProbeEntry }
+export const coldProbe = { partName: "COLD_PROBE", displayName: "DFRobot DFR0198 · COLD · Ø6 × 35 mm",
+  position: add(coldProbeEntry, [0, thermalProbeLength / 2, 0]),
+  model: { type: "rotateX", angle: Math.PI / 2, shape: probeBody } satisfies JscadOperation,
+  cableEndPoint: coldProbeEntry }
 
 function probeCable(boardConnector: "J_HOT_SENSOR" | "J_COLD_SENSOR", partName: string, probePoint: Point3) {
   const placement = connectorPlacements[boardConnector]
   const boardPoint = connectorPoint(placement, sensorPinLocal.pin2)
   const join: Point3 = [66, placement.pcbY, 8]
-  const path: Point3[] = [join, [77, boardConnector === "J_HOT_SENSOR" ? 42 : -24, boardConnector === "J_HOT_SENSOR" ? 12 : 2], probePoint]
+  const isHot = boardConnector === "J_HOT_SENSOR"
+  const path: Point3[] = isHot
+    ? [join, [69, 0, 1], [69, -34, 1], [203, -34, 5], [204, probePoint[1], probePoint[2]], probePoint]
+    : [join, [68, -28, -2], [probePoint[0], -28, -5], probePoint]
   const conductors = [
     { pin: "pin1", signal: "CTRL_3V3", colorName: "red", color: [0.82, 0.06, 0.04] as Point3 },
     { pin: "pin2", signal: boardConnector === "J_HOT_SENSOR" ? "HOT_SENSOR_DATA" : "COLD_SENSOR_DATA", colorName: "yellow", color: [0.95, 0.76, 0.05] as Point3 },
@@ -114,19 +120,25 @@ function probeCable(boardConnector: "J_HOT_SENSOR" | "J_COLD_SENSOR", partName: 
   // Union discards child shape colors. Colored native polygons keep all three
   // vendor wire colors in one cable part, with no invented electrical anchors.
   const jacketColor: Point3 = [0.05, 0.055, 0.06]
-  const pieces = [{ path, radius: 1.5, color: jacketColor }, ...conductors.map(c => ({ path: c.path, radius: 0.35, color: c.color }))]
+  const pieces = [{ path, radius: 2, color: jacketColor }, ...conductors.map(c => ({ path: c.path, radius: 0.35, color: c.color }))]
   const polygons = pieces.flatMap(piece => wirePolygons(piece.path.map(point => subtract(point, boardPoint)), piece.radius, piece.color))
-  return { partName, boardConnector, boardPoint, path, probePoint, conductors, model: { type: "createGeom3", polygons } satisfies JscadOperation }
+  return { partName, boardConnector, boardPoint, path, probePoint, conductors, position: boardPoint,
+    displayName: `DFRobot DFR0198 cable · ${isHot ? "HOT" : "COLD"} · red / yellow / black`,
+    model: { type: "createGeom3", polygons } satisfies JscadOperation }
 }
 
 export const hotProbeCable = probeCable("J_HOT_SENSOR", "HOT_PROBE_CABLE", hotProbe.cableEndPoint)
 export const coldProbeCable = probeCable("J_COLD_SENSOR", "COLD_PROBE_CABLE", coldProbe.cableEndPoint)
 // Offline tessellation of Noctua's NF-A8 family public STEP: manufacturer
 // external/mounting geometry, including pads. Noctua modifies internal details.
-export const fan = { partName: "FAN_DEFAULT", position: [112, -92, 20] as Point3,
-  cableEndPoint: [72, -68, 20] as Point3, bodyDimensionsMm: [81, 81, 27], mountingHoleSpacingMm: 71.5,
+export const fan = { partName: "FAN_DEFAULT", displayName: "Noctua NF-A8 PWM · official NF-A8 family CAD", position: fanPosition,
+  cableEndPoint: add(fanPosition, [-39, -10, 24]), bodyDimensionsMm: [81, 81, 27], mountingHoleSpacingMm: 71.5,
   model: { type: "createGeom3", polygons: fanMesh.meshes.flatMap(mesh => mesh.triangles.map(indices => ({
-    vertices: indices.map(index => mesh.vertices[index]!) as Point3[], color: mesh.color as Point3,
+    vertices: indices.map(index => {
+      const [x, y, z] = mesh.vertices[index]! as Point3
+      return [x, -z, y] as Point3
+    }),
+    color: mesh.color as Point3,
   }))) } satisfies JscadOperation }
 
 const fanBoardPoint = connectorPoint(connectorPlacements.J_FAN, [0, 0.98001455, 6.8])
@@ -141,11 +153,9 @@ const fanConductors = fanColors.map(conductor => {
   const boardPoint = connectorPoint(connectorPlacements.J_FAN, fanPinLocal[conductor.pin as keyof typeof fanPinLocal])
   return { ...conductor, boardPoint, path: [boardPoint, [boardPoint[0], boardPoint[1], 11.6], fanJoin] as Point3[] }
 })
-// Approximate slack for the nominal 200 mm factory cable, with no extension or
-// LNA. The shown sleeve plus connector-exit fanout is about 200 mm; the plug's
-// internal leads are separate. Noctua does not specify these bends/exit points.
-const fanPath: Point3[] = [fanJoin, [67, -36, 28], [58, -70, 28],
-  [42, -109, 22], [69, -105, 20], fan.cableEndPoint]
+// The route clears the sink's left edge and leaves slack in the 200 mm cable.
+const fanPath: Point3[] = [fanJoin, [40, -28, 22], [53, -4, 24], [63, 32, 26],
+  [65, 67, 31], [76, 103, 48], fan.cableEndPoint]
 const plugColor: Point3 = [0.77, 0.74, 0.64]
 function boxPolygons(center: Point3, size: Point3): JscadPolygon3[] {
   // These envelopes were authored for the original 90-degree header.
@@ -159,7 +169,8 @@ function boxPolygons(center: Point3, size: Point3): JscadPolygon3[] {
 const fanLocatorPoint = connectorPoint(connectorPlacements.J_FAN, fanLocatorLocal)
 export const fanCable = { partName: "FAN_CABLE", boardConnector: "J_FAN", boardPoint: fanBoardPoint,
   locatorPoint: fanLocatorPoint, path: fanPath, fanPoint: fan.cableEndPoint, cableLengthMm: 200,
-  conductors: fanConductors,
+  conductors: fanConductors, position: fanBoardPoint,
+  displayName: "Noctua factory 200 mm cable · GND / 12 V / tach NC / PWM NC",
   model: { type: "createGeom3", polygons: [
     ...boxPolygons([0, 0, 0.55], [4.2, 10.2, 8.5]),
     ...boxPolygons([fanLocatorPoint[0] - fanBoardPoint[0], fanLocatorPoint[1] - fanBoardPoint[1], 0.55], [0.6, 7.62, 4]),
@@ -167,3 +178,7 @@ export const fanCable = { partName: "FAN_CABLE", boardConnector: "J_FAN", boardP
     ...fanConductors.flatMap(c => wirePolygons(c.path.map(p => subtract(p, fanBoardPoint)), 0.35, c.color)),
   ] } satisfies JscadOperation }
 export const assemblyConnections = [usbPdCable, usbProgramCable, tecPositiveLead, tecNegativeLead, hotProbeCable, coldProbeCable, fanCable]
+export const assemblyParts = [
+  { partName: "TEC_DEFAULT", displayName: "Same Sky CP60440 · 40 × 40 × 4 mm", position: moduleCenter, model: moduleModel },
+  hotSideHeatsink, coldPlate, tecClamp, fanDuct, fan, hotProbe, coldProbe, ...assemblyConnections,
+]

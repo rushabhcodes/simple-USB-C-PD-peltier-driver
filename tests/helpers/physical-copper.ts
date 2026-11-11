@@ -86,20 +86,23 @@ function cutHole(outer: Polygon, hole: Polygon) {
   }
   return outer
 }
-function padShape(e: Element, components: Map<string, Element>) {
+function padShape(e: Element, components: Map<string, Element>, maskOpening = false) {
   const { x, y } = e, rotation = e.ccw_rotation ?? 0
   if (e.type === "pcb_via") return cutHole(disk(x, y, e.outer_diameter / 2), disk(x, y, e.hole_diameter / 2))
   const plated = e.type === "pcb_plated_hole"
-  const w = plated ? e.outer_width : e.width, h = plated ? e.outer_height : e.height
+  const margin = maskOpening ? e.soldermask_margin ?? 0 : 0
+  const w = (plated ? e.outer_width : e.width) + 2 * margin
+  const h = (plated ? e.outer_height : e.height) + 2 * margin
   let shape: Polygon
-  if (e.shape === "circle") shape = disk(x, y, plated ? e.outer_diameter / 2 : e.radius)
+  if (e.shape === "circle") shape = disk(x, y, (plated ? e.outer_diameter / 2 : e.radius) + margin)
   else if (["rect", "rotated_rect", "circle_with_rect_pad"].includes(e.shape)) shape = rectangle(x, y, w, h, rotation)
   else if (["pill", "rotated_pill", "oval"].includes(e.shape)) shape = capsule(x, y, w, h, rotation)
   else if (e.shape === "polygon") {
+    if (margin !== 0) throw new Error("Polygonal solder-mask opening needs explicit geometry")
     shape = new Polygon(e.points.map(point))
     if (plated) shape = shape.rotate((components.get(e.pcb_component_id ?? "")?.rotation ?? 0) * Math.PI / 180).translate(new Vector(x, y))
   } else throw new Error(`Unsupported copper shape: ${e.type} ${e.shape}`)
-  if (plated) cutHole(shape, e.hole_diameter ? disk(x, y, e.hole_diameter / 2) : capsule(x, y, e.hole_width, e.hole_height, rotation))
+  if (plated && !maskOpening) cutHole(shape, e.hole_diameter ? disk(x, y, e.hole_diameter / 2) : capsule(x, y, e.hole_width, e.hole_height, rotation))
   return shape
 }
 function pourShape(e: Element) {
@@ -125,6 +128,39 @@ export function pouredCorridorCovered(json: AnyCircuitElement[], net: string, la
 }
 function touches(a: Polygon, b: Polygon) {
   return a.contains(b.vertices[0]!) || b.contains(a.vertices[0]!) || a.distanceTo(b)[0] <= EPS
+}
+
+export function roundDrillToPourClearance(json: AnyCircuitElement[], x: number, y: number, diameter: number) {
+  const drill = disk(x, y, diameter / 2)
+  const pours = (json as Element[]).filter(e => e.type === "pcb_copper_pour").map(pourShape)
+  return Math.min(...pours.map(pour => touches(drill, pour) ? 0 : drill.distanceTo(pour)[0]))
+}
+
+/** The 2 oz mask dam applies between adjacent openings on either outer layer. */
+export function solderMaskSpacingViolations(json: AnyCircuitElement[]) {
+  const elements = json as Element[], minimum = 0.2
+  const components = new Map(elements.filter(e => e.type === "pcb_component").map(e => [e.pcb_component_id, e]))
+  const pads = elements.filter(e => (e.type === "pcb_smtpad" || e.type === "pcb_plated_hole") &&
+    !e.is_covered_with_solder_mask)
+  const violations: { layer: string; pads: string[]; actual: number }[] = []
+  for (const layer of ["top", "bottom"]) {
+    const openings = pads.filter(pad => pad.type === "pcb_plated_hole" || pad.layer === layer)
+      .map(pad => ({ id: pad[`${pad.type}_id`], shape: padShape(pad, components, true) }))
+    if (!openings.length) continue
+    const index = new Flatbush(openings.length)
+    for (const { shape: { box: b } } of openings) index.add(b.xmin, b.ymin, b.xmax, b.ymax)
+    index.finish()
+    openings.forEach(({ id, shape }, i) => {
+      const b = shape.box
+      for (const j of index.search(b.xmin - minimum, b.ymin - minimum, b.xmax + minimum, b.ymax + minimum)) {
+        if (j <= i) continue
+        const other = openings[j]!
+        const actual = touches(shape, other.shape) ? 0 : shape.distanceTo(other.shape)[0]
+        if (actual < minimum - EPS) violations.push({ layer, pads: [id, other.id], actual })
+      }
+    })
+  }
+  return violations
 }
 
 /** Drill webs are a fabrication constraint even when the copper shares a net. */

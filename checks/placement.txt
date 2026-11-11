@@ -1,11 +1,11 @@
 placement summary: no placement issues
 
 board top-layer utilization:
-- occupied: 44.876% (1919.588mm^2 of 4277.5mm^2)
+- occupied: 45.114% (1929.753mm^2 of 4277.5mm^2)
 - empty spaces over 5% of board area: none
 
 board-edge status:
-- J_USB: 3.97mm inside left edge
+- J_USB: 1.61mm inside left edge
 - U_PD: 8.197mm inside bottom edge
 - Q_INPUT: 11.5mm inside left edge
 - Q_REVERSE: 17.801mm inside bottom edge
@@ -50,7 +50,7 @@ board-edge status:
 - R_DRIVER_EN_TOP: 25.568mm inside bottom edge
 - R_DRIVER_EN_BOTTOM: 27.343mm inside right edge
 - C_DRIVER_EN: 27.4mm inside right edge
-- J_PROGRAM: 3.97mm inside left edge
+- J_PROGRAM: 1.61mm inside left edge
 - U_PROGRAM_ESD: 8.784mm inside top edge
 - C_PROGRAM_ESD: 6.55mm inside top edge
 - U_LOGIC_MUX: 12.02mm inside top edge

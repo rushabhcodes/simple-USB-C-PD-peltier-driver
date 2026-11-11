@@ -1,4 +1,5 @@
 {
+  "status": "Historical HiLetgo sourcing record. The bench assembly uses DFRobot DFR0198 as specified in docs/assembly.md.",
   "recorded_at_utc": "2026-10-14T11:59:42Z",
   "live_ui_observation_recorded_at_utc": "2026-10-14T11:40:40Z",
   "observation_method": "Read-only live Amazon.com page in local Chrome via native CUA accessibility state; primary page showed a same-day October 14 delivery option. No purchase or cart change.",

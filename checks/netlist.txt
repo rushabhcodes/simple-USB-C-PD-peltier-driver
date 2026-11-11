@@ -1,3 +1,4 @@
+$ tsci check netlist index.circuit.tsx
 Errors: 0
 Warnings: 0
 
@@ -361,8 +362,6 @@ NET: DRIVER_CURRENT_MONITOR
 
 NET: PROGRAM_VBUS
   - R_PROGRAM_SENSE_TOP pin1
-  - J_PROGRAM VBUS4
-  - J_PROGRAM VBUS3
   - J_PROGRAM VBUS2
   - J_PROGRAM VBUS1
   - C_PROGRAM_IN pin1 (+)
@@ -442,8 +441,6 @@ NET: VBUS_RAW
   - Q_INPUT pin6
   - Q_INPUT pin5
   - U_PD VBUS_IN
-  - J_USB VBUS4
-  - J_USB VBUS3
   - J_USB VBUS2
   - J_USB VBUS1
 
@@ -686,8 +683,6 @@ NET: GND
   - J_PROGRAM pin17_internal_1
   - J_PROGRAM pin17_internal_2
   - J_PROGRAM pin17_internal_3
-  - J_PROGRAM GND4
-  - J_PROGRAM GND3
   - J_PROGRAM GND2
   - J_PROGRAM GND1
   - J_TEC pin2
@@ -731,33 +726,27 @@ NET: GND
   - J_USB pin17_internal_1
   - J_USB pin17_internal_2
   - J_USB pin17_internal_3
-  - J_USB GND4
-  - J_USB GND3
   - J_USB GND2
   - J_USB GND1
 
 
 COMPONENT_PINS:
-J_USB (USB4085-GF-A)
+J_USB (USB4110-GF-A)
 - pin17_internal_1(pin17, 17): NETS(GND)
 - pin17_internal_2(pin17, 17): NETS(GND)
 - pin17_internal_3(pin17, 17): NETS(GND)
 - pin1(CC1, A5): NETS(CC1)
-- pin2(GND1, A1): NETS(GND)
-- pin3(VBUS1, A4): NETS(VBUS_RAW)
+- pin2(GND1, A1, B12): NETS(GND)
+- pin3(VBUS1, A4, B9): NETS(VBUS_RAW)
 - pin4(Dp1, A6): NOT_CONNECTED
 - pin5(Dn1, A7): NOT_CONNECTED
 - pin6(SBU1, A8): NOT_CONNECTED
-- pin7(VBUS2, A9): NETS(VBUS_RAW)
-- pin8(GND2, A12): NETS(GND)
-- pin9(GND3, B12): NETS(GND)
-- pin10(VBUS3, B9): NETS(VBUS_RAW)
+- pin7(VBUS2, A9, B4): NETS(VBUS_RAW)
+- pin8(GND2, A12, B1): NETS(GND)
 - pin11(SBU2, B8): NOT_CONNECTED
 - pin12(Dn2, B7): NOT_CONNECTED
 - pin13(Dp2, B6): NOT_CONNECTED
 - pin14(CC2, B5): NETS(CC2)
-- pin15(VBUS4, B4): NETS(VBUS_RAW)
-- pin16(GND4, B1): NETS(GND)
 - pin17(S1): NETS(GND)
 
 U_PD (CYPD3177-24LQXQT)
@@ -991,26 +980,22 @@ C_DRIVER_EN (100nF undefined)
 - pin1(pos): NETS(DRIVER_ENABLE)
 - pin2(neg): NETS(GND)
 
-J_PROGRAM (USB4085-GF-A)
+J_PROGRAM (USB4110-GF-A)
 - pin17_internal_1(pin17, 17): NETS(GND)
 - pin17_internal_2(pin17, 17): NETS(GND)
 - pin17_internal_3(pin17, 17): NETS(GND)
 - pin1(CC1, A5): NETS(PROGRAM_CC1)
-- pin2(GND1, A1): NETS(GND)
-- pin3(VBUS1, A4): NETS(PROGRAM_VBUS)
+- pin2(GND1, A1, B12): NETS(GND)
+- pin3(VBUS1, A4, B9): NETS(PROGRAM_VBUS)
 - pin4(Dp1, A6): NETS(PROGRAM_USB_DP)
 - pin5(Dn1, A7): NETS(PROGRAM_USB_DM)
 - pin6(SBU1, A8): NOT_CONNECTED
-- pin7(VBUS2, A9): NETS(PROGRAM_VBUS)
-- pin8(GND2, A12): NETS(GND)
-- pin9(GND3, B12): NETS(GND)
-- pin10(VBUS3, B9): NETS(PROGRAM_VBUS)
+- pin7(VBUS2, A9, B4): NETS(PROGRAM_VBUS)
+- pin8(GND2, A12, B1): NETS(GND)
 - pin11(SBU2, B8): NOT_CONNECTED
 - pin12(Dn2, B7): NETS(PROGRAM_USB_DM)
 - pin13(Dp2, B6): NETS(PROGRAM_USB_DP)
 - pin14(CC2, B5): NETS(PROGRAM_CC2)
-- pin15(VBUS4, B4): NETS(PROGRAM_VBUS)
-- pin16(GND4, B1): NETS(GND)
 - pin17(S1): NETS(GND)
 
 U_PROGRAM_ESD (USBLC6-2SC6)

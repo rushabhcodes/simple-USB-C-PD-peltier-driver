@@ -1,6 +1,6 @@
 import { CYPD3177_24LQXQT } from "../../imports/CYPD3177_24LQXQT"
 import { AO4407A } from "../../imports/AO4407A"
-import { USB4085_GF_A } from "../../imports/USB4085_GF_A"
+import { USB4110_GF_A } from "../../imports/USB4110_GF_A"
 import { connectorPlacements } from "../assembly/connector-placement"
 import { KF301_5_0_2P } from "../parts/C474881"
 import { MMBT3904_RANGE_100_300_ } from "../parts/C20526"
@@ -45,10 +45,10 @@ export function GeneralPdDriverBoard({ schematicDisabled = false }: { schematicD
     <schematicsheet name="DEBUG" displayName="Status LEDs and debug test pads" sheetIndex={7} />
     <schematicsheet name="FAN" displayName="Fixed 12 V fan power" sheetIndex={8} />
     <schematicsheet name="SENSORS" displayName="Hot- and cold-side temperature probes" sheetIndex={9} />
-    <USB4085_GF_A name="J_USB" schWidth={1.575} {...connectorPlacements.J_USB} schX={-11} schY={4.2} schRotation={0} schSheetName="PD"
+    <USB4110_GF_A name="J_USB" schWidth={1.575} {...connectorPlacements.J_USB} schX={-11} schY={4.2} schRotation={0} schSheetName="PD"
       connections={{ pin1: "net.CC1", pin14: "net.CC2",
-        pin2: "net.GND", pin8: "net.GND", pin9: "net.GND", pin16: "net.GND", pin17: "net.GND",
-        pin3: "net.VBUS_RAW", pin7: "net.VBUS_RAW", pin10: "net.VBUS_RAW", pin15: "net.VBUS_RAW" }}
+        pin2: "net.GND", pin8: "net.GND", pin17: "net.GND",
+        pin3: "net.VBUS_RAW", pin7: "net.VBUS_RAW" }}
       noConnect={["pin4", "pin5", "pin6", "pin11", "pin12", "pin13"]} />
     <CYPD3177_24LQXQT name="U_PD" pcbX={-24} pcbY={18.5} pcbRotation={180} schX={-2} schY={4.05} schRotation={0} schSheetName="PD" schWidth={2.71} schHeight={3.84}
       schPinArrangement={{
