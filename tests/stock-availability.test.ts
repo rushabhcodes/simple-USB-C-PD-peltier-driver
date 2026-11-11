@@ -38,7 +38,17 @@ test("unknown stock remains unknown, while zero and positive stock remain report
       .toBe(stock === null ? undefined : stock)
   }
   const engine = withKnownStockAvailability({ findPart: () => ({}), fetchPartAvailability: () => { throw new Error("Catalog failed") } })
-  await expect(Promise.resolve().then(() => engine.fetchPartAvailability!(request))).rejects.toThrow("Catalog failed")
+  expect(await engine.fetchPartAvailability!(request)).toBeUndefined()
+})
+
+test("a stalled lookup returns unknown before core's deadline and aborts its request", async () => {
+  let signal: AbortSignal | undefined
+  const engine = withKnownStockAvailability({
+    findPart: () => ({}),
+    fetchPartAvailability: request => { signal = request.signal; return new Promise(() => {}) },
+  }, { timeoutMs: 10 })
+  expect(await engine.fetchPartAvailability!({ supplierName: "jlcpcb", supplierPartNumber: "C14663" })).toBeUndefined()
+  expect(signal?.aborted).toBe(true)
 })
 
 test("the manufacturer footprint is compared, and an incorrect inductor footprint still warns", async () => {

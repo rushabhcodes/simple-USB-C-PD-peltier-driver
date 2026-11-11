@@ -54,7 +54,7 @@ bun run check:shorts
 bun test ./tests
 ```
 
-Build artifacts are written to `dist/index/`. Individual sheet SVG/PNG previews and an all-sheet SVG are written to `dist/schematics/`. Default builds keep supplier checks enabled. Unknown catalog stock remains unknown; actual zero stock and failed lookups still produce warnings. For an offline build, `--disable-parts-engine` uses the committed supplier parts. The tests check electrical connectivity, saved copper, component pin maps, schematic separation, and accessory models. They do not replace hardware qualification.
+Build artifacts are written to `dist/index/`. Individual sheet SVG/PNG previews and an all-sheet SVG are written to `dist/schematics/`. Default builds keep supplier checks enabled. Confirmed zero stock produces a warning; missing data, failed requests and timed-out lookups remain unverified. For an offline build, `--disable-parts-engine` uses the committed supplier parts. Cloud builds use `bun run build:cloud` in a fresh process after dependency installation. The tests check electrical connectivity, saved copper, component pin maps, schematic separation, and accessory models. They do not replace hardware qualification.
 
 See [`VALIDATION.md`](VALIDATION.md) for the exact build, placement, routing, supplier-check and test results, including the reviewed manufacturer footprint used for the fan inductor.
 

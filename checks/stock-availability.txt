@@ -1,12 +1,13 @@
 bun test v1.3.3 (274e01c7)
 
 tests/stock-availability.test.ts:
-(pass) the board uses its catalog engine even when the host ignores runtime project configuration [121.00ms]
+(pass) the board uses its catalog engine even when the host ignores runtime project configuration [166.99ms]
 (pass) unknown stock remains unknown, while zero and positive stock remain reportable [1.00ms]
-(pass) the manufacturer footprint is compared, and an incorrect inductor footprint still warns [129.00ms]
-(pass) core still emits a real zero-stock warning with the catalog adapter installed [36.00ms]
+(pass) a stalled lookup returns unknown before core's deadline and aborts its request [18.00ms]
+(pass) the manufacturer footprint is compared, and an incorrect inductor footprint still warns [144.99ms]
+(pass) core still emits a real zero-stock warning with the catalog adapter installed [56.00ms]
 
- 4 pass
+ 5 pass
  0 fail
- 11 expect() calls
-Ran 4 tests across 1 file. [2.78s]
+ 13 expect() calls
+Ran 5 tests across 1 file. [4.64s]

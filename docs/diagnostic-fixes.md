@@ -7,7 +7,7 @@ The linked 0.1.0 preview contained 209 warnings and no native errors. The source
 | 35 unnamed traces | Give every explicit power and sensor branch a stable descriptive name. |
 | 34 requested-width warnings | Remove autorouter width hints from logical branches of this manually routed board. The pinned checker compares a branch's request with the narrowest trace anywhere on its entire net, including unrelated ground and sense branches. Physical widths remain in `routing-data.json`. |
 | 5 long odd-angle segments | Replace these segments with horizontal, vertical and 45° paths, then verify physical connectivity and clearance. |
-| 134 availability warnings | The catalog returned `stock: null`, including for C14663 and C21190. The configured parts engine returns an unknown result for unknown stock. It retains zero-stock values and rejected lookups, so real availability problems still generate warnings. Unknown stock does **not** establish that a part can be ordered. |
+| 134 availability warnings | The catalog returned `stock: null`, including for C14663 and C21190. Missing stock, failed requests and timed-out lookups return unknown. Confirmed zero stock still generates a warning. Unknown stock does **not** establish that a part can be ordered. |
 | 1 fan-inductor footprint warning | Compare L_FAN against the reviewed Sunlord land pattern supplied by the project parts engine, rather than the different supplier CAD footprint. Stock and footprint checks both remain enabled. |
 
 L_FAN uses two 2.2 × 7.5 mm pads with 3.8 mm inner spacing, as specified in the [Sunlord SWPA8040S recommended land pattern, page 2](https://atta.szlcsc.com/upload/public/pdf/source/20190109/C361638_7901FB77EA6D5D90885BF852E01DD0FD.pdf). The CLI-imported supplier CAD instead has 4.2 × 8.2 mm pads. The footprint checker receives canonical manufacturer geometry for C83467; other parts retain their normal supplier geometry lookup. Tests check the actual rendered pads and verify that an incorrect C83467 footprint still generates a mismatch warning.
@@ -20,6 +20,8 @@ Stock-adapter tests exercise core with unknown, zero and positive stock. They ve
 
 See [VALIDATION.md](../VALIDATION.md) for the completed build and check results.
 
-## Cloud configuration follow-up in 0.1.2
+## Cloud build and lookup deadlines in 0.1.3
 
-The 0.1.1 cloud build did not apply `tscircuit.config.ts`, so its catalog warnings persisted despite a clear local build. The board now binds `catalogPartsEngine` through its own `partsEngine` prop. A regression test instantiates the actual board with a conflicting host engine and confirms that the board's engine is used. The rebuild has the same electrical netlist and all 3,560 physical PCB records as the verified layout; only catalog handling changes.
+The cloud bootstrap attempted to import the catalog dependency before installing dependencies. The board now binds `catalogPartsEngine` through its own `partsEngine` prop, and the JSON `buildCommand` starts a fresh process after installation. A regression test instantiates the actual board with a conflicting host engine and confirms that the board's engine is used.
+
+The core stock checker treats a ten-second timeout as unavailable. The provider instead ends inconclusive requests after two seconds, aborts them, and returns unknown. Tests preserve warnings for actual zero stock and cover rejected and stalled requests. The rebuild has the same electrical netlist and all 3,560 physical PCB records as the verified layout; only catalog handling and cloud startup change.
