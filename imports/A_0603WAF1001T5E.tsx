@@ -1,0 +1,32 @@
+// Supplier footprint: tsci import C21190 --jlcpcb --use-exact-footprint; see docs/component-imports.json.
+import type { ResistorProps } from "@tscircuit/props"
+
+export const A_0603WAF1001T5E = (props: ResistorProps) => {
+  const { name = "R1", resistance = "1kohm", ...restProps } = props
+
+  return (
+    <resistor
+      name={name}
+      resistance={resistance}
+      supplierPartNumbers={{
+  "jlcpcb": [
+    "C21190"
+  ]
+}}
+      manufacturerPartNumber="0603WAF1001T5E"
+      footprint={<footprint>
+        <smtpad portHints={["pin2"]} pcbX="0.753364mm" pcbY="0mm" width="0.8064754mm" height="0.8640064mm" shape="rect" />
+<smtpad portHints={["pin1"]} pcbX="-0.753364mm" pcbY="0mm" width="0.8064754mm" height="0.8640064mm" shape="rect" />
+
+<courtyardoutline outline={[{"x":-1.4066016999998965,"y":0.6820032000000538},{"x":1.4066016999997828,"y":0.6820032000000538},{"x":1.4066016999997828,"y":-0.6820032000000538},{"x":-1.4066016999998965,"y":-0.6820032000000538},{"x":-1.4066016999998965,"y":0.6820032000000538}]} />
+      </footprint>}
+      cadModel={{
+        objUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+        stepUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.step?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+        pcbRotationOffset: 90,
+        modelOriginPosition: { x: -0.004999999999999977, y: 0, z: -0.01 },
+      }}
+      {...restProps}
+    />
+  )
+}

@@ -1,0 +1,193 @@
+placement summary: 4 suboptimal orientations
+
+worst issues:
+1. R_FAULT_OFF connections cross the routing path between its pads. Suggested move: rotate R_FAULT_OFF 180 degrees.
+2. R_RUN connections cross the routing path between its pads. Suggested move: rotate R_RUN 180 degrees.
+3. R_DRIVER_FAULT connections cross the routing path between its pads. Suggested move: rotate R_DRIVER_FAULT 180 degrees.
+4. R_V_ADC_TOP connections cross the routing path between its pads. Suggested move: rotate R_V_ADC_TOP 180 degrees.
+
+board top-layer utilization:
+- occupied: 44.876% (1919.588mm^2 of 4277.5mm^2)
+- empty spaces over 5% of board area: none
+
+board-edge status:
+- J_USB: 3.97mm inside left edge
+- U_PD: 8.197mm inside bottom edge
+- Q_INPUT: 11.5mm inside left edge
+- Q_REVERSE: 17.801mm inside bottom edge
+- C_USB: 14.15mm inside left edge
+- C_PD_VBUS: 10.94mm inside left edge
+- C_PD_3V3: 13.36mm inside bottom edge
+- C_PD_3V3_HF1: 11.3mm inside bottom edge
+- C_PD_3V3_HF2: 9.3mm inside bottom edge
+- C_PD_CORE: 13.36mm inside bottom edge
+- Q_PD_FAULT: 7.1mm inside bottom edge
+- R_GATE: 16.068mm inside bottom edge
+- R_GATE_OFF: 16.068mm inside bottom edge
+- R_DC_SENSE: 5.343mm inside bottom edge
+- R_FAULT_BASE: 6.968mm inside bottom edge
+- R_FAULT_OFF: 11.568mm inside bottom edge
+- U_DRIVER: 15.3mm inside bottom edge
+- L_OUT: 4mm inside bottom edge
+- R_SENSE: 8.792mm inside right edge
+- C_DRIVER_IN1: 19.165mm inside bottom edge
+- C_DRIVER_IN2: 19.165mm inside bottom edge
+- C_DRIVER_IN3: 13.665mm inside bottom edge
+- C_DRIVER_IN4: 13.665mm inside bottom edge
+- C_DRIVER_INPUT_BULK: 25.08mm inside top edge
+- C_DRIVER_INPUT_HF: 19.8mm inside bottom edge
+- C_DRIVER_BOOT1: 13.65mm inside bottom edge
+- C_DRIVER_BOOT2: 13.65mm inside bottom edge
+- C_DRIVER_VCC: 14.525mm inside bottom edge
+- C_DRIVER_VCC_HF: 16.95mm inside bottom edge
+- C_DRIVER_OUT1: 19.165mm inside bottom edge
+- C_DRIVER_OUT2: 17.15mm inside right edge
+- C_DRIVER_OUT3: 13.665mm inside bottom edge
+- C_DRIVER_OUT4: 13.665mm inside bottom edge
+- C_DRIVER_OUTPUT_HF: 19.8mm inside bottom edge
+- C_TEC_BULK: 1.08mm inside bottom edge
+- R_ISP_FILTER: 18.568mm inside bottom edge
+- R_ISN_FILTER: 23.068mm inside bottom edge
+- C_CURRENT_FILTER: 24.05mm inside right edge
+- R_DRIVER_FSW: 10.568mm inside bottom edge
+- R_COMP: 9.768mm inside bottom edge
+- C_COMP_ZERO: 9.75mm inside bottom edge
+- C_COMP_POLE: 11.75mm inside bottom edge
+- R_DRIVER_EN_TOP: 25.568mm inside bottom edge
+- R_DRIVER_EN_BOTTOM: 27.343mm inside right edge
+- C_DRIVER_EN: 27.4mm inside right edge
+- J_PROGRAM: 3.97mm inside left edge
+- U_PROGRAM_ESD: 8.784mm inside top edge
+- C_PROGRAM_ESD: 6.55mm inside top edge
+- U_LOGIC_MUX: 12.02mm inside top edge
+- C_PROGRAM_IN: 14.55mm inside top edge
+- C_LOGIC_MUX_OUT: 9.2mm inside top edge
+- U_AUX: 17.775mm inside left edge
+- L_AUX: 18.05mm inside top edge
+- C_AUX_IN: 15.525mm inside top edge
+- C_AUX_HF: 17.2mm inside left edge
+- C_AUX_BOOT: 19.9mm inside top edge
+- C_AUX_OUT: 13.795mm inside top edge
+- U_CTRL_LDO: 7.65mm inside top edge
+- C_LDO_IN: 10.9mm inside top edge
+- C_LDO_OUT: 10.9mm inside top edge
+- R_PROGRAM_CC1: 10.843mm inside left edge
+- R_PROGRAM_CC2: 10.843mm inside left edge
+- U_MCU: 11.15mm inside top edge
+- U_FLASH: 22.245mm inside top edge
+- Y_MCU: 5.35mm inside top edge
+- C_IOVDD1: 17.325mm inside top edge
+- C_IOVDD10: 13.725mm inside top edge
+- C_IOVDD22: 9.075mm inside top edge
+- C_IOVDD33: 13.725mm inside top edge
+- C_IOVDD42: 17.325mm inside top edge
+- C_IOVDD49: 19.825mm inside top edge
+- C_ADC_AVDD: 18.425mm inside top edge
+- C_USB_VDD: 19.475mm inside top edge
+- C_DVDD23: 9.075mm inside top edge
+- C_DVDD50: 19.875mm inside top edge
+- C_VREG_IN: 19.37mm inside top edge
+- C_VREG_OUT: 19.37mm inside top edge
+- C_MCU_BULK: 9.495mm inside top edge
+- C_MCU_RUN: 3.55mm inside top edge
+- C_FLASH: 26.9mm inside bottom edge
+- C_XIN: 6.35mm inside top edge
+- C_XOUT: 4.35mm inside top edge
+- R_SCL: 21.568mm inside top edge
+- R_SDA: 19.068mm inside top edge
+- R_RUN: 3.568mm inside top edge
+- R_USB_DM: 22.143mm inside top edge
+- R_USB_DP: 22.143mm inside top edge
+- R_XOUT: 6.368mm inside top edge
+- R_BOOTSEL: 23.268mm inside top edge
+- R_FLASH_CS: 24.868mm inside bottom edge
+- Q_MCU_KILL: 19.09mm inside right edge
+- Q_MCU_RELEASE: 10mm inside right edge
+- R_KILL_DRIVE: 14.068mm inside top edge
+- R_KILL_RESET: 18.568mm inside top edge
+- R_RELEASE_OFF: 11.343mm inside right edge
+- R_PD_FAULT_SENSE: 15.343mm inside right edge
+- R_DRIVER_FAULT: 10.568mm inside top edge
+- R_I_ADC: 10.568mm inside top edge
+- R_V_ADC_TOP: 15.343mm inside right edge
+- R_V_ADC_BOTTOM: 14.568mm inside top edge
+- R_PD_ADC_TOP: 4.568mm inside top edge
+- R_PD_ADC_BOTTOM: 4.568mm inside top edge
+- R_PROGRAM_SENSE_TOP: 6.568mm inside top edge
+- R_PROGRAM_SENSE_BOTTOM: 6.568mm inside top edge
+- C_I_ADC: 10.55mm inside top edge
+- C_V_ADC: 11.4mm inside right edge
+- C_PD_ADC: 4.55mm inside top edge
+- C_PROGRAM_SENSE: 6.55mm inside top edge
+- R_LED_POWER: 8.343mm inside right edge
+- LED_POWER: 8.349mm inside right edge
+- R_LED_RUN: 4.843mm inside right edge
+- LED_RUN: 4.851mm inside right edge
+- R_LED_FAULT: 1.343mm inside right edge
+- LED_FAULT: 1.35mm inside right edge
+- TP_SWDIO: 0.75mm inside top edge
+- TP_SWCLK: 0.75mm inside top edge
+- TP_BOOTSEL: 23.75mm inside top edge
+- TP_RUN: 0.75mm inside top edge
+- TP_3V3: 11.1mm inside top edge
+- TP_GND: 0.75mm inside top edge
+- TP_RAW_PD: 9.75mm inside left edge
+- TP_QUAL_PD: 14.75mm inside bottom edge
+- TP_5V: 10.55mm inside top edge
+- TP_TEC: 13.25mm inside right edge
+- TP_OUT: 11.65mm inside right edge
+- TP_EN: 21.25mm inside top edge
+- TP_ISP: 19.75mm inside right edge
+- TP_ISN: 25.25mm inside right edge
+- TP_SCL: 21.45mm inside top edge
+- TP_SDA: 18.55mm inside top edge
+- U_FAN: 9.784mm inside left edge
+- L_FAN: 14.6mm inside left edge
+- C_FAN_IN: 4.55mm inside left edge
+- C_FAN_IN_HF: 8.05mm inside left edge
+- C_FAN_BOOT: 13.05mm inside left edge
+- C_FAN_OUT1: 23.465mm inside left edge
+- C_FAN_OUT2: 23.465mm inside left edge
+- R_FAN_FB_TOP: 5.843mm inside left edge
+- R_FAN_FB_BOTTOM: 8.843mm inside left edge
+- J_FAN: 1.04mm inside right edge
+- J_HOT_SENSOR: 3.15mm inside right edge
+- J_COLD_SENSOR: 3.15mm inside right edge
+- R_HOT_PULLUP: 8.943mm inside right edge
+- R_COLD_PULLUP: 8.943mm inside right edge
+- R_HOT_SERIES: 8.943mm inside right edge
+- R_COLD_SERIES: 8.943mm inside right edge
+- C_HOT_SENSOR: 12.4mm inside right edge
+- C_COLD_SENSOR: 9mm inside right edge
+- U_SENSOR_ESD: 8.884mm inside right edge
+- J_TEC: 2.4mm inside bottom edge
+
+flagged components:
+- R_FAULT_OFF
+  source placement: placement_mode=none
+  resolved placement: center=(-17mm, 17mm) on top; bounds=(minX=-18.157mm, maxX=-15.843mm, minY=16.568mm, maxY=17.432mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
+  board edge status: 11.568mm inside bottom edge
+  issues:
+  - R_FAULT_OFF connections cross the routing path between its pads. Suggested move: rotate R_FAULT_OFF 180 degrees.
+- R_RUN
+  source placement: placement_mode=none
+  resolved placement: center=(12mm, -26mm) on top; bounds=(minX=10.843mm, maxX=13.157mm, minY=-26.432mm, maxY=-25.568mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
+  board edge status: 3.568mm inside top edge
+  issues:
+  - R_RUN connections cross the routing path between its pads. Suggested move: rotate R_RUN 180 degrees.
+- R_DRIVER_FAULT
+  source placement: placement_mode=none
+  resolved placement: center=(16mm, -19mm) on top; bounds=(minX=14.843mm, maxX=17.157mm, minY=-19.432mm, maxY=-18.568mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
+  board edge status: 10.568mm inside top edge
+  issues:
+  - R_DRIVER_FAULT connections cross the routing path between its pads. Suggested move: rotate R_DRIVER_FAULT 180 degrees.
+- R_V_ADC_TOP
+  source placement: placement_mode=none
+  resolved placement: center=(16mm, -11mm) on top; bounds=(minX=14.843mm, maxX=17.157mm, minY=-11.432mm, maxY=-10.568mm); size=(width=2.313mm, height=0.864mm); anchor_alignment="center"
+  board edge status: 15.343mm inside right edge
+  issues:
+  - R_V_ADC_TOP connections cross the routing path between its pads. Suggested move: rotate R_V_ADC_TOP 180 degrees.
+
+placement drc:
+Errors: 0
+Warnings: 0

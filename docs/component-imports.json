@@ -1,0 +1,651 @@
+{
+  "date": "2026-11-11",
+  "tscircuitVersion": "0.0.2868",
+  "cliVersion": "0.1.2320",
+  "source": "JLCPCB/EasyEDA through tsci import",
+  "note": "All 55 unique BOM SKUs were imported with the CLI. Resistor variants share the imported 0603 base footprint with explicit value and SKU overrides in the circuit. Raw CLI outputs and logs were captured locally in work/component-imports/, which is excluded from Git; regenerate them using the recorded commands.",
+  "components": [
+    {
+      "code": "C106218",
+      "command": "tsci import C106218 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CC0603KRX7R9BB472.tsx",
+      "rawSha256": "4f8dcd2c9ff6ac199b4e97b2dd122b35bbeeb559023bd5cb252bc1b8e18d1c03",
+      "activeWrapper": "imports/CC0603KRX7R9BB472.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C106858",
+      "command": "tsci import C106858 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CC0603KRX7R8BB105.tsx",
+      "rawSha256": "c8658893d579926e3dd186d9ee661a7a50b30379e76514fca140598c07cbef1c",
+      "activeWrapper": "imports/CC0603KRX7R8BB105.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C107033",
+      "command": "tsci import C107033 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CC0603JRNPO0BN101.tsx",
+      "rawSha256": "d0368d1ae53ad52928426da6dc382518dec063d5cac2e8fb45b0c2c94daa5a93",
+      "activeWrapper": "imports/CC0603JRNPO0BN101.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C107083",
+      "command": "tsci import C107083 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CC0603KRX7R9BB224.tsx",
+      "rawSha256": "b8b28c1f605bf72b37f3f488ed058f8c845cd7c55645eff1d51ce4b3cd8b3b19",
+      "activeWrapper": "imports/CC0603KRX7R9BB224.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C125847",
+      "command": "tsci import C125847 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CC0805KKX7R9BB225.tsx",
+      "rawSha256": "1ad17b340cd8edcdc9b31dddcef5835c5c335f92fb89f4c8a0c2f95d6fc729da",
+      "activeWrapper": "imports/CC0805KKX7R9BB225.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C14663",
+      "command": "tsci import C14663 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CC0603KRX7R9BB104.tsx",
+      "rawSha256": "083dd3753a12fcd7a79757256ffc1e2da11f108fcefbdfb5d3d4c429127bcf15",
+      "activeWrapper": "src/parts/C14663.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retain reference 0603 MLCC lands and explicit mask/paste margins."
+      ]
+    },
+    {
+      "code": "C15850",
+      "command": "tsci import C15850 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CL21A106KAYNNNE.tsx",
+      "rawSha256": "bae4ddb2455163960807007782a51ce608a163ced35f24317c4837bc5df18b57",
+      "activeWrapper": "imports/CL21A106KAYNNNE.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C16072",
+      "command": "tsci import C16072 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/AO4407A.tsx",
+      "rawSha256": "a176150f1c2469fe0586f1d74d8b4448f1874a87212300c7d9f1a57c7bbddaed",
+      "activeWrapper": "imports/AO4407A.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C164071",
+      "command": "tsci import C164071 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/OVZ101M1ETR_0606.tsx",
+      "rawSha256": "443b8fec70e0fbd8235308b2e164a2812c73b0b8e09b5230b6ee53214dc80970",
+      "activeWrapper": "imports/OVZ101M1ETR_0606.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C1644",
+      "command": "tsci import C1644 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CL10C150JB8NNNC.tsx",
+      "rawSha256": "c3f2988bc291fcad190d8f8dc93e23c82a04694f63f6bca10f50666fc26410ae",
+      "activeWrapper": "imports/CL10C150JB8NNNC.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C192580",
+      "command": "tsci import C192580 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/RLM25FEER010.tsx",
+      "rawSha256": "5eac620e513be65e6a260af52ae86e414f1cccfb884a24365727c40821a9f268",
+      "activeWrapper": "imports/RLM25FEER010.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C2040",
+      "command": "tsci import C2040 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/RP2040.tsx",
+      "rawSha256": "f75c168660e8104d83299ea0988458d59b9c30febd9e585f9c67afa32bfcea99",
+      "activeWrapper": "imports/RP2040.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C20526",
+      "command": "tsci import C20526 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/MMBT3904_RANGE_100_300_.tsx",
+      "rawSha256": "b689171da10e821d2db204cba58bade4db45f07b990cfe8960e6896c6bb5f913",
+      "activeWrapper": "src/parts/C20526.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retain reference corrected SOT-23 lands, solder mask and paste margins."
+      ]
+    },
+    {
+      "code": "C20625731",
+      "command": "tsci import C20625731 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/ABM8_272_T3.tsx",
+      "rawSha256": "77ca2512d301d09c3cf5423909e1bf3537674039fa4f8593728ed5f5d1023232",
+      "activeWrapper": "imports/ABM8_272_T3.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C21190",
+      "command": "tsci import C21190 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1001T5E.tsx",
+      "rawSha256": "e0d61856d9313772b07629372f62020fcab72614cb58dae583bd3bfaa41e2efa",
+      "activeWrapper": "imports/A_0603WAF1001T5E.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C21397",
+      "command": "tsci import C21397 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/GRM32ER71E226KE15L.tsx",
+      "rawSha256": "d4c88a43d2f929cc7467deebf16febeaaae1ad93455dc8969e42f3600b27e113",
+      "activeWrapper": "imports/GRM32ER71E226KE15L.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C22775",
+      "command": "tsci import C22775 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1000T5E.tsx",
+      "rawSha256": "0a16cb2c8e9ec0c4db18f783a57d1f2bdb04fb41dfb8695b4619a808c5ca7e92",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C22795",
+      "command": "tsci import C22795 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1303T5E.tsx",
+      "rawSha256": "f2389c6dabc235506aa5635c75b9867a4e198dff72233e4aaa7c25278a475ab5",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C22807",
+      "command": "tsci import C22807 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1503T5E.tsx",
+      "rawSha256": "db26e3f52f32edea05d867da26e3c639ee4097f27115f86b0a94db2074244d85",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C22809",
+      "command": "tsci import C22809 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1502T5E.tsx",
+      "rawSha256": "81a1c3f039dc265ce316aeaf4ad8650ddd24e660aaa37a6b4fa1f87c32e7a2ff",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C22859",
+      "command": "tsci import C22859 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF100JT5E.tsx",
+      "rawSha256": "bd964fd0be7538249ff6dff89749ae4675aaf2a90cca9b165e2bd834e249c6b8",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C2286",
+      "command": "tsci import C2286 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/KT_0603R.tsx",
+      "rawSha256": "1ded69f5fa70bae08de493a70d7f52fdaff662b80e686e46903b60bc6ebc3c81",
+      "activeWrapper": "imports/KT_0603R.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C2287",
+      "command": "tsci import C2287 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/KT_0603Y.tsx",
+      "rawSha256": "dbbc63624657f09b24f9103b48d0a6ab872a3bafea37ebee3823cd0ad2d1a71d",
+      "activeWrapper": "imports/KT_0603Y.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C2289",
+      "command": "tsci import C2289 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/KT_0603YG.tsx",
+      "rawSha256": "8229226ded70643f0e46dc71a950fa2e29263735ec54fd140857f38465d085a7",
+      "activeWrapper": "imports/KT_0603YG.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C22964",
+      "command": "tsci import C22964 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF2742T5E.tsx",
+      "rawSha256": "2fe2986c05b4c8c639fbfa2e28056979c94358d08e16fe8b9588414059e63475",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C23162",
+      "command": "tsci import C23162 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF4701T5E.tsx",
+      "rawSha256": "7d47f4ea58f80777dd9d5c5eadd4332639c687c11e320a7223ba12983b59d109",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C23184",
+      "command": "tsci import C23184 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF4992T5E.tsx",
+      "rawSha256": "60e10ae969a4fba9935bd270f6172ef0ea14ff2698a8ab197647f36ebc2ca298",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C23186",
+      "command": "tsci import C23186 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF5101T5E.tsx",
+      "rawSha256": "53272ba878b2edabce678f95b3efe4ecd4a0bb9247efb99145a5cedde9a8ca67",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C237304",
+      "command": "tsci import C237304 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/GRM31CC72A475KE11L.tsx",
+      "rawSha256": "6f275f5c654b4905f2d752a528713d62ee87c013a27336bfcd189db1f45876ff",
+      "activeWrapper": "src/parts/C237304.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retain reference 1206 MLCC lands and explicit mask/paste margins."
+      ]
+    },
+    {
+      "code": "C240840",
+      "command": "tsci import C240840 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_470531000.tsx",
+      "rawSha256": "3782d78856dbb5ba983eaf94ce4b2e7822aab16141688d14d4b02175a76d0be6",
+      "activeWrapper": "imports/A_470531000.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retain reference Molex fan-header 1.02 mm contact holes and 1.25 mm locator hole."
+      ]
+    },
+    {
+      "code": "C25190",
+      "command": "tsci import C25190 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF270JT5E.tsx",
+      "rawSha256": "ab01569284e590efac0cef0a46e7cdbf5ca7f1ab2d01b2a8cb50485c2f47bca6",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C25803",
+      "command": "tsci import C25803 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1003T5E.tsx",
+      "rawSha256": "e4f7c2b32683570810a2eb85442e05d68bb8fd7f9c8d3e36229e5d435c8260ed",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C25804",
+      "command": "tsci import C25804 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1002T5E.tsx",
+      "rawSha256": "14e67b635c74e96a370432e3723046ffeea0271eb44df5c5614e155daf9b0a4a",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C25805",
+      "command": "tsci import C25805 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF1103T5E.tsx",
+      "rawSha256": "d22e4ce745f6de0253c0067f872694d5cb1cf7442f52e591a0ec8f0a90016cea",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C25819",
+      "command": "tsci import C25819 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF4702T5E.tsx",
+      "rawSha256": "1ebbfc8124498d79c3888974dc123ae0ae63408df2b721f0368ababdd03f243c",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C2841056",
+      "command": "tsci import C2841056 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/LMR50410XDBVR.tsx",
+      "rawSha256": "77d11be478a1f7c607e36524ff1fc0af761f83f3eb014e0cbe8632d67c964190",
+      "activeWrapper": "imports/LMR50410XDBVR.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C2871822",
+      "command": "tsci import C2871822 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/LMR50410Y5FQDBVRQ1.tsx",
+      "rawSha256": "d3c178c76b46febf0a900a0093118c282d30aeecafe07f25d2780729e822ded4",
+      "activeWrapper": "imports/LMR50410Y5FQDBVRQ1.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C2952489",
+      "command": "tsci import C2952489 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CYPD3177_24LQXQT.tsx",
+      "rawSha256": "3d0e5810f9c463e00b8d59adc235f3a506b2775268ba292c2ed310d9bc107cc5",
+      "activeWrapper": "imports/CYPD3177_24LQXQT.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C31850",
+      "command": "tsci import C31850 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF2202T5E.tsx",
+      "rawSha256": "65234ae92fa7bc9fbbcf5b41d5d883193dd66c74e02933754629e43e70f41eca",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C3235557",
+      "command": "tsci import C3235557 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/TPS2116DRLR.tsx",
+      "rawSha256": "28c1684cad2959df8e938cc05fe6123f69276c9c5339fe4bd654720878b3ec9b",
+      "activeWrapper": "imports/TPS2116DRLR.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C404027",
+      "command": "tsci import C404027 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/TLV75533PDBVR.tsx",
+      "rawSha256": "8c7067902c542c63334198ae33bd6ea81b82afa917c551cf541271cb0ba42d7a",
+      "activeWrapper": "imports/TLV75533PDBVR.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C4184",
+      "command": "tsci import C4184 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_0603WAF2002T5E.tsx",
+      "rawSha256": "2ca45ea7a52b3658bb8e3398387a832be5c800bb8379c3c7ad51def05d3e8eed",
+      "use": "BOM value/SKU variant on shared imported 0603 footprint."
+    },
+    {
+      "code": "C454360",
+      "command": "tsci import C454360 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/EEHZK1V101XP.tsx",
+      "rawSha256": "22d55ae81d218c20ac764668a7653c02121371d38ce96d1cf85317dab8250a80",
+      "activeWrapper": "imports/EEHZK1V101XP.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C474881",
+      "command": "tsci import C474881 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/KF301_5_0_2P.tsx",
+      "rawSha256": "c9b183a845fb2678d24957866f0b465976e966ec81f5227777487a32ff91928e",
+      "activeWrapper": "src/parts/C474881.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retain reference 1.30 mm finished-hole adaptation for terminal lead tolerances."
+      ]
+    },
+    {
+      "code": "C5942077",
+      "command": "tsci import C5942077 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/TPS55289RYQR.tsx",
+      "rawSha256": "034e5cd4c2cf764cf7d9edfe79a7c11c56cc90f759e3880a4720df7fd9838b85",
+      "activeWrapper": "imports/TPS55289RYQR.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C60117",
+      "command": "tsci import C60117 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/SWPA4018S4R7MT.tsx",
+      "rawSha256": "6c14480133da852b714dd7ef6b062f8184a8b10c40414b885400daff3ab0d3e5",
+      "activeWrapper": "imports/SWPA4018S4R7MT.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C7095263",
+      "command": "tsci import C7095263 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/USB4085_GF_A.tsx",
+      "rawSha256": "44a4cb1842b01fe94b9e809e329d48fff433f1d9ab4a3324926085f3446260d4",
+      "activeWrapper": "imports/USB4085_GF_A.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Declare from_bottom insertion in the footprint frame; 270 degree placement faces both USB-C receptacles toward the left board edge."
+      ]
+    },
+    {
+      "code": "C7519",
+      "command": "tsci import C7519 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/USBLC6_2SC6.tsx",
+      "rawSha256": "8500e4493651c5174911a619d96a75737698466213740a6358fd6b6ac7a5a558",
+      "activeWrapper": "imports/USBLC6_2SC6.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C780205",
+      "command": "tsci import C780205 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/SRP1265A_4R7M.tsx",
+      "rawSha256": "cdb2c844594e0774a530472af6e00913ea0d62d170bd38b2cb8076049c40c909",
+      "activeWrapper": "imports/SRP1265A_4R7M.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retain reference 3.1 x 5 mm inductor lands and explicit mask/paste margins."
+      ]
+    },
+    {
+      "code": "C784941",
+      "command": "tsci import C784941 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/XY302V_3_5_3P.tsx",
+      "rawSha256": "e430821e6f22b3c043c8ffde2414d59e264b7f0dcf5da2f80125aafb623e57d4",
+      "activeWrapper": "src/parts/XY302V_3_5_3P.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C83467",
+      "command": "tsci import C83467 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/SWPA8040S330MT.tsx",
+      "rawSha256": "1c1aa8685c73bc461d44791b6b21056e6845c9adaafb7959a098a04db4d2d372",
+      "activeWrapper": "imports/SWPA8040S330MT.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations.",
+        "Retain reference Sunlord 2.2 x 7.5 mm recommended inductor lands at +/-3 mm."
+      ]
+    },
+    {
+      "code": "C8545",
+      "command": "tsci import C8545 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/A_2N7002.tsx",
+      "rawSha256": "5bbc36bdaf514124e1cfe9ad55b3458938fb964554da74c8a990ed3a05a69aa0",
+      "activeWrapper": "imports/A_2N7002.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C92856",
+      "command": "tsci import C92856 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/UMK325BJ106KM_T.tsx",
+      "rawSha256": "fd300523060a7f0fbbe9520bd7a9650348626828450618695e3dd70caf57961b",
+      "activeWrapper": "imports/UMK325BJ106KM_T.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    },
+    {
+      "code": "C960916",
+      "command": "tsci import C960916 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/CL05B104KB5NNNC.tsx",
+      "rawSha256": "c3dccbbba563f8b5a311b17df1b19f21bfe3f6c6b3d8e7b8a69c47b6f0be226d",
+      "activeWrapper": "src/parts/Samsung0402Capacitors.tsx",
+      "generatedComponent": "imports/CL05B104KB5NNNC.tsx",
+      "adjustments": [
+        "Retain manufacturer-recommended 0402 lands and mask/paste margins from the reference."
+      ]
+    },
+    {
+      "code": "C97521",
+      "command": "tsci import C97521 --jlcpcb --use-exact-footprint --exclude-pin-attributes",
+      "exitCode": 0,
+      "rawFile": "work/component-imports/imports/W25Q128JVSIQ.tsx",
+      "rawSha256": "4f14c67ed1271bdb0a3486f310a2ae0afc676f4ef50782efc1a35b20eebb4a96",
+      "activeWrapper": "imports/W25Q128JVSIQ.tsx",
+      "adjustments": [
+        "Retain reference pin labels, power/ground attributes and schematic symbol.",
+        "Retain capacitor pin1/pos and pin2/neg aliases where present.",
+        "Omit silkscreen and retain reference fabrication/courtyard annotations."
+      ]
+    }
+  ]
+}

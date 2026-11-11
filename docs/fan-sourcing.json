@@ -1,0 +1,78 @@
+{
+  "observed_at_utc": "2026-10-14T12:42:47Z",
+  "observed_date_local": "2026-10-14",
+  "timezone": "Asia/Kolkata",
+  "observation_method": "Read-only live Amazon.com page in the existing local Chrome US delivery context. No cart change or purchase.",
+  "selected_fan": {
+    "manufacturer": "Noctua",
+    "model": "NF-A8 PWM",
+    "variant": "Standard beige/brown 12 V, 4-pin PWM, 80 mm; not the 5 V variant",
+    "quantity": 1,
+    "amazon_asin": "B00NEMG62M",
+    "amazon_url": "https://www.amazon.com/dp/B00NEMG62M",
+    "manufacturer_buy_page": "https://www.noctua.at/en/products/nf-a8-pwm/buy",
+    "manufacturer_buy_link_matches_asin": true,
+    "specifications_url": "https://www.noctua.at/en/products/nf-a8-pwm/specifications",
+    "availability": {
+      "status": "In Stock",
+      "price_usd": 17.95,
+      "sold_by": "Noctua Cooling Solutions",
+      "ships_from": "Amazon",
+      "scope": "Amazon.com US delivery context. This offer and price are not claimed for India or other delivery regions. The India-context in-app browser showed a separate imported third-party offer, not this manufacturer-sold offer."
+    },
+    "popularity": {
+      "badge": "Amazon's Choice",
+      "bought_in_past_month_minimum": 500,
+      "rating": 4.9,
+      "ratings_count": 2269,
+      "limit": "Changing listing-level signals, potentially pooled across variants; not evidence of worldwide sales leadership."
+    }
+  },
+  "manufacturer_specifications": {
+    "rated_voltage_v": 12,
+    "maximum_operating_voltage_v": 13.2,
+    "starting_voltage_v": 7,
+    "input_current_max_a": 0.08,
+    "input_power_max_w": 0.96,
+    "rotational_speed_max_rpm": 2200,
+    "airflow_max_cfm": 32.67,
+    "static_pressure_max_mm_h2o": 2.37,
+    "noise_max_dba": 17.7,
+    "bearing": "SSO2",
+    "warranty_years": 6,
+    "mttf_hours_lower_bound": 150000,
+    "dimensions_without_pads_mm": [
+      80,
+      80,
+      25
+    ],
+    "dimensions_with_pads_mm": [
+      81,
+      81,
+      27
+    ],
+    "mounting_hole_spacing_mm": [
+      71.5,
+      71.5
+    ],
+    "factory_cable_length_mm": 200,
+    "included_extension_length_mm": 300,
+    "wire_awg": 26,
+    "cable_sleeving": "Fibreglass silicone mesh",
+    "connector_type": "A2543-4PIN or equal"
+  },
+  "current_board_compatibility": {
+    "connector": "J_FAN / Molex 47053-1000 / JLC C240840",
+    "rail": "FAN_12V from VBUS_QUALIFIED; enabled while qualified PD is present, including TEC STOP",
+    "continuous_budget_a": 0.5,
+    "regulator_rated_current_a": 1,
+    "selected_fan_maximum_budget_fraction": 0.16,
+    "pin1": "Black / GND",
+    "pin2": "Yellow / +12 V",
+    "pin3": "Green / tachometer; board NC",
+    "pin4": "Blue / PWM; board NC",
+    "operation": "Plug factory cable directly into J_FAN without the Low-Noise Adaptor. No PWM input means full rated speed. Tach is not monitored.",
+    "primary_connector_and_pwm_source": "https://cdn.noctua.at/media/Noctua_PWM_specifications_white_paper.pdf",
+    "qualification_limit": "Manufacturer ratings establish electrical compatibility; a separate peak startup/inrush current is not published for this model, and startup, rail overshoot and thermal performance have not been bench-tested. The published 0.08 A maximum is not represented as a measured startup bound. A hot-side heatsink is not selected by this fan record."
+  }
+}

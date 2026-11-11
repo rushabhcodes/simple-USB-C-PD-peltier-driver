@@ -1,0 +1,1508 @@
+Errors: 0
+Warnings: 0
+
+Readable Netlist:
+COMPONENTS:
+ - J_USB: J_USB, source_component
+ - U_PD: CYPD3177-24LQXQT
+ - Q_INPUT: Q_INPUT, source_component
+ - Q_REVERSE: Q_REVERSE, source_component
+ - C_USB: 4.7uF capacitor
+ - C_PD_VBUS: 100nF capacitor
+ - C_PD_3V3: 1uF capacitor
+ - C_PD_3V3_HF1: 100nF capacitor
+ - C_PD_3V3_HF2: 100nF capacitor
+ - C_PD_CORE: 1uF capacitor
+ - Q_PD_FAULT: Q_PD_FAULT, source_component
+ - R_GATE: 1kΩ resistor
+ - R_GATE_OFF: 49.9kΩ resistor
+ - R_DC_SENSE: 1kΩ resistor
+ - R_FAULT_BASE: 10kΩ resistor
+ - R_FAULT_OFF: 100kΩ resistor
+ - U_DRIVER: TPS55289RYQR
+ - L_OUT: L_OUT, source_component
+ - R_SENSE: 10mΩ resistor
+ - C_DRIVER_IN1: 10uF capacitor
+ - C_DRIVER_IN2: 10uF capacitor
+ - C_DRIVER_IN3: 10uF capacitor
+ - C_DRIVER_IN4: 10uF capacitor
+ - C_DRIVER_INPUT_BULK: 100uF capacitor
+ - C_DRIVER_INPUT_HF: 100nF capacitor
+ - C_DRIVER_BOOT1: 100nF capacitor
+ - C_DRIVER_BOOT2: 100nF capacitor
+ - C_DRIVER_VCC: 10uF capacitor
+ - C_DRIVER_VCC_HF: 100nF capacitor
+ - C_DRIVER_OUT1: 22uF capacitor
+ - C_DRIVER_OUT2: 22uF capacitor
+ - C_DRIVER_OUT3: 22uF capacitor
+ - C_DRIVER_OUT4: 22uF capacitor
+ - C_DRIVER_OUTPUT_HF: 100nF capacitor
+ - C_TEC_BULK: 100uF capacitor
+ - R_ISP_FILTER: 10Ω resistor
+ - R_ISN_FILTER: 10Ω resistor
+ - C_CURRENT_FILTER: 220nF capacitor
+ - R_DRIVER_FSW: 49.9kΩ resistor
+ - R_COMP: 27.4kΩ resistor
+ - C_COMP_ZERO: 4.7nF capacitor
+ - C_COMP_POLE: 100pF capacitor
+ - R_DRIVER_EN_TOP: 130kΩ resistor
+ - R_DRIVER_EN_BOTTOM: 10kΩ resistor
+ - C_DRIVER_EN: 100nF capacitor
+ - J_PROGRAM: J_PROGRAM, source_component
+ - U_PROGRAM_ESD: USBLC6-2SC6
+ - C_PROGRAM_ESD: 100nF capacitor
+ - U_LOGIC_MUX: TPS2116DRLR
+ - C_PROGRAM_IN: 1uF capacitor
+ - C_LOGIC_MUX_OUT: 1uF capacitor
+ - U_AUX: LMR50410Y5FQDBVRQ1
+ - L_AUX: L_AUX, source_component
+ - C_AUX_IN: 2.2uF capacitor
+ - C_AUX_HF: 100nF capacitor
+ - C_AUX_BOOT: 100nF capacitor
+ - C_AUX_OUT: 10uF capacitor
+ - U_CTRL_LDO: TLV75533PDBVR
+ - C_LDO_IN: 1uF capacitor
+ - C_LDO_OUT: 1uF capacitor
+ - R_PROGRAM_CC1: 5.1kΩ resistor
+ - R_PROGRAM_CC2: 5.1kΩ resistor
+ - U_MCU: RP2040
+ - U_FLASH: W25Q128JVSIQ
+ - Y_MCU: Y_MCU, source_component
+ - C_IOVDD1: 100nF capacitor
+ - C_IOVDD10: 100nF capacitor
+ - C_IOVDD22: 100nF capacitor
+ - C_IOVDD33: 100nF capacitor
+ - C_IOVDD42: 100nF capacitor
+ - C_IOVDD49: 100nF capacitor
+ - C_ADC_AVDD: 100nF capacitor
+ - C_USB_VDD: 100nF capacitor
+ - C_DVDD23: 100nF capacitor
+ - C_DVDD50: 100nF capacitor
+ - C_VREG_IN: 1uF capacitor
+ - C_VREG_OUT: 1uF capacitor
+ - C_MCU_BULK: 10uF capacitor
+ - C_MCU_RUN: 100nF capacitor
+ - C_FLASH: 100nF capacitor
+ - C_XIN: 15pF capacitor
+ - C_XOUT: 15pF capacitor
+ - R_SCL: 4.7kΩ resistor
+ - R_SDA: 4.7kΩ resistor
+ - R_RUN: 10kΩ resistor
+ - R_USB_DM: 27Ω resistor
+ - R_USB_DP: 27Ω resistor
+ - R_XOUT: 1kΩ resistor
+ - R_BOOTSEL: 1kΩ resistor
+ - R_FLASH_CS: 10kΩ resistor
+ - Q_MCU_KILL: Q_MCU_KILL, source_component
+ - Q_MCU_RELEASE: Q_MCU_RELEASE, source_component
+ - R_KILL_DRIVE: 1kΩ resistor
+ - R_KILL_RESET: 47kΩ resistor
+ - R_RELEASE_OFF: 100kΩ resistor
+ - R_PD_FAULT_SENSE: 10kΩ resistor
+ - R_DRIVER_FAULT: 4.7kΩ resistor
+ - R_I_ADC: 1kΩ resistor
+ - R_V_ADC_TOP: 100kΩ resistor
+ - R_V_ADC_BOTTOM: 20kΩ resistor
+ - R_PD_ADC_TOP: 150kΩ resistor
+ - R_PD_ADC_BOTTOM: 22kΩ resistor
+ - R_PROGRAM_SENSE_TOP: 15kΩ resistor
+ - R_PROGRAM_SENSE_BOTTOM: 20kΩ resistor
+ - C_I_ADC: 100nF capacitor
+ - C_V_ADC: 100nF capacitor
+ - C_PD_ADC: 100nF capacitor
+ - C_PROGRAM_SENSE: 100nF capacitor
+ - R_LED_POWER: 1kΩ resistor
+ - LED_POWER: LED_POWER, source_component
+ - R_LED_RUN: 1kΩ resistor
+ - LED_RUN: LED_RUN, source_component
+ - R_LED_FAULT: 1kΩ resistor
+ - LED_FAULT: LED_FAULT, source_component
+ - TP_SWDIO: TP_SWDIO, source_component
+ - TP_SWCLK: TP_SWCLK, source_component
+ - TP_BOOTSEL: TP_BOOTSEL, source_component
+ - TP_RUN: TP_RUN, source_component
+ - TP_3V3: TP_3V3, source_component
+ - TP_GND: TP_GND, source_component
+ - TP_RAW_PD: TP_RAW_PD, source_component
+ - TP_QUAL_PD: TP_QUAL_PD, source_component
+ - TP_5V: TP_5V, source_component
+ - TP_TEC: TP_TEC, source_component
+ - TP_OUT: TP_OUT, source_component
+ - TP_EN: TP_EN, source_component
+ - TP_ISP: TP_ISP, source_component
+ - TP_ISN: TP_ISN, source_component
+ - TP_SCL: TP_SCL, source_component
+ - TP_SDA: TP_SDA, source_component
+ - U_FAN: LMR50410XDBVR
+ - L_FAN: L_FAN, source_component
+ - C_FAN_IN: 10uF capacitor
+ - C_FAN_IN_HF: 100nF capacitor
+ - C_FAN_BOOT: 100nF capacitor
+ - C_FAN_OUT1: 22uF capacitor
+ - C_FAN_OUT2: 22uF capacitor
+ - R_FAN_FB_TOP: 110kΩ resistor
+ - R_FAN_FB_BOTTOM: 10kΩ resistor
+ - J_FAN: J_FAN, source_component
+ - J_HOT_SENSOR: J_HOT_SENSOR, source_component
+ - J_COLD_SENSOR: J_COLD_SENSOR, source_component
+ - R_HOT_PULLUP: 4.7kΩ resistor
+ - R_COLD_PULLUP: 4.7kΩ resistor
+ - R_HOT_SERIES: 100Ω resistor
+ - R_COLD_SERIES: 100Ω resistor
+ - C_HOT_SENSOR: 100nF capacitor
+ - C_COLD_SENSOR: 100nF capacitor
+ - U_SENSOR_ESD: USBLC6-2SC6
+ - J_TEC: J_TEC, source_component
+
+NET: CC2
+  - U_PD CC2
+  - J_USB CC2
+
+NET: CC1
+  - U_PD CC1
+  - J_USB CC1
+
+NET: PD_3V3
+  - C_PD_3V3_HF2 pin1 (+)
+  - C_PD_3V3_HF1 pin1 (+)
+  - C_PD_3V3 pin1 (+)
+  - U_PD VDDD
+  - U_PD ISNK_COARSE
+  - U_PD VBUS_MAX
+  - U_PD VBUS_MIN
+
+NET: PD_CORE
+  - C_PD_CORE pin1 (+)
+  - U_PD VCCD
+
+NET: PD_GATE_DRIVE
+  - R_GATE pin1
+  - U_PD VBUS_FET_EN
+
+NET: PFET_SOURCE
+  - R_GATE_OFF pin1
+  - Q_REVERSE pin3
+  - Q_REVERSE pin2
+  - Q_REVERSE pin1
+  - Q_INPUT pin3
+  - Q_INPUT pin2
+  - Q_INPUT pin1
+
+NET: PD_GATE
+  - R_GATE_OFF pin2
+  - R_GATE pin2
+  - Q_REVERSE pin4
+  - Q_INPUT pin4
+
+NET: PD_VDC_OUT
+  - R_DC_SENSE pin2
+  - U_PD VDC_OUT
+
+NET: PD_FAULT_BASE
+  - R_FAULT_OFF pin1
+  - R_FAULT_BASE pin2
+  - Q_PD_FAULT pin1
+
+NET: DRIVER_BOOT1
+  - U_DRIVER BOOT1
+  - C_DRIVER_BOOT1 pin1 (+)
+
+NET: DRIVER_SW1
+  - U_DRIVER SW1
+  - L_OUT pin1 (+)
+  - C_DRIVER_BOOT1 pin2 (-)
+
+NET: DRIVER_BOOT2
+  - U_DRIVER BOOT2
+  - C_DRIVER_BOOT2 pin1 (+)
+
+NET: DRIVER_SW2
+  - U_DRIVER SW2
+  - L_OUT pin2 (-)
+  - C_DRIVER_BOOT2 pin2 (-)
+
+NET: DRIVER_FSW
+  - U_DRIVER FSW
+  - R_DRIVER_FSW pin1
+
+NET: DRIVER_COMP_ZERO
+  - R_COMP pin2
+  - C_COMP_ZERO pin1 (+)
+
+NET: DRIVER_COMP
+  - U_DRIVER COMP
+  - R_COMP pin1
+  - C_COMP_POLE pin1 (+)
+
+NET: AUX_BOOT
+  - C_AUX_BOOT pin1 (+)
+  - U_AUX CB
+
+NET: AUX_SW
+  - C_AUX_BOOT pin2 (-)
+  - L_AUX pin1 (+)
+  - U_AUX SW
+
+NET: AUX_5V
+  - C_AUX_OUT pin1 (+)
+  - L_AUX pin2 (-)
+  - U_AUX FB
+  - U_LOGIC_MUX VIN1
+
+NET: PROGRAM_CC1
+  - R_PROGRAM_CC1 pin1
+  - J_PROGRAM CC1
+
+NET: PROGRAM_CC2
+  - R_PROGRAM_CC2 pin1
+  - J_PROGRAM CC2
+
+NET: QSPI_SD1
+  - U_FLASH DO
+  - U_MCU QSPI_SD1
+
+NET: QSPI_SD2
+  - U_FLASH IO2
+  - U_MCU QSPI_SD2
+
+NET: QSPI_SD0
+  - U_FLASH DI
+  - U_MCU QSPI_SD0
+
+NET: QSPI_SCLK
+  - U_FLASH CLK
+  - U_MCU QSPI_SCLK
+
+NET: QSPI_SD3
+  - U_FLASH IO3
+  - U_MCU QSPI_SD3
+
+NET: RP_CORE_1V1
+  - C_VREG_OUT pin1 (+)
+  - C_DVDD50 pin1 (+)
+  - C_DVDD23 pin1 (+)
+  - U_MCU VREG_VOUT
+  - U_MCU DVDD1
+  - U_MCU DVDD2
+
+NET: XIN
+  - C_XIN pin1 (+)
+  - Y_MCU pin1
+  - U_MCU XIN
+
+NET: PROGRAM_USB_DM
+  - R_USB_DM pin1
+  - U_PROGRAM_ESD pin1
+  - U_PROGRAM_ESD pin6
+  - J_PROGRAM Dn2
+  - J_PROGRAM Dn1
+
+NET: RP_USB_DM
+  - R_USB_DM pin2
+  - U_MCU USB_DM
+
+NET: PROGRAM_USB_DP
+  - R_USB_DP pin1
+  - U_PROGRAM_ESD pin3
+  - U_PROGRAM_ESD pin4
+  - J_PROGRAM Dp2
+  - J_PROGRAM Dp1
+
+NET: RP_USB_DP
+  - R_USB_DP pin2
+  - U_MCU USB_DP
+
+NET: XOUT
+  - R_XOUT pin1
+  - U_MCU XOUT
+
+NET: XOUT_CRYSTAL
+  - R_XOUT pin2
+  - C_XOUT pin1 (+)
+  - Y_MCU pin3
+
+NET: QSPI_SS
+  - R_FLASH_CS pin2
+  - R_BOOTSEL pin2
+  - U_FLASH N_CS
+  - U_MCU QSPI_SS
+
+NET: MCU_DRIVER_PERMISSION
+  - R_KILL_DRIVE pin1
+  - U_MCU GPIO2
+
+NET: DRIVER_KILL_BASE
+  - R_KILL_RESET pin2
+  - Q_MCU_RELEASE pin3
+  - Q_MCU_KILL pin1
+
+NET: DRIVER_RELEASE_GATE
+  - R_RELEASE_OFF pin1
+  - R_KILL_DRIVE pin2
+  - Q_MCU_RELEASE pin1
+
+NET: PD_FAULT
+  - R_PD_FAULT_SENSE pin1
+  - R_FAULT_BASE pin1
+  - U_PD FAULT
+
+NET: PD_FAULT_SENSE
+  - R_PD_FAULT_SENSE pin2
+  - U_MCU GPIO4
+
+NET: DRIVER_FAULT
+  - R_DRIVER_FAULT pin2
+  - U_MCU GPIO3
+  - U_DRIVER FB
+
+NET: DRIVER_CURRENT_MONITOR
+  - R_I_ADC pin1
+  - U_DRIVER CDC
+
+NET: PROGRAM_VBUS
+  - R_PROGRAM_SENSE_TOP pin1
+  - J_PROGRAM VBUS4
+  - J_PROGRAM VBUS3
+  - J_PROGRAM VBUS2
+  - J_PROGRAM VBUS1
+  - C_PROGRAM_IN pin1 (+)
+  - U_LOGIC_MUX VIN2
+
+NET: OUTPUT_CURRENT_ADC
+  - C_I_ADC pin1 (+)
+  - R_I_ADC pin2
+  - U_MCU GPIO26_ADC0
+
+NET: OUTPUT_VOLTAGE_ADC
+  - C_V_ADC pin1 (+)
+  - R_V_ADC_BOTTOM pin1
+  - R_V_ADC_TOP pin2
+  - U_MCU GPIO27_ADC1
+
+NET: INPUT_VOLTAGE_ADC
+  - C_PD_ADC pin1 (+)
+  - R_PD_ADC_BOTTOM pin1
+  - R_PD_ADC_TOP pin2
+  - U_MCU GPIO28_ADC2
+
+NET: PROGRAM_VBUS_SENSE
+  - C_PROGRAM_SENSE pin1 (+)
+  - R_PROGRAM_SENSE_BOTTOM pin1
+  - R_PROGRAM_SENSE_TOP pin2
+  - U_MCU GPIO29_ADC3
+
+NET: LED_POWER_ANODE
+  - LED_POWER anode (+)
+  - R_LED_POWER pin2
+
+NET: LED_RUN_DRIVE
+  - R_LED_RUN pin1
+  - U_MCU GPIO6
+
+NET: LED_RUN_ANODE
+  - LED_RUN anode (+)
+  - R_LED_RUN pin2
+
+NET: LED_FAULT_DRIVE
+  - R_LED_FAULT pin1
+  - U_MCU GPIO7
+
+NET: LED_FAULT_ANODE
+  - LED_FAULT anode (+)
+  - R_LED_FAULT pin2
+
+NET: SWDIO
+  - TP_SWDIO pin1
+  - U_MCU SWD
+
+NET: SWCLK
+  - TP_SWCLK pin1
+  - U_MCU SWCLK
+
+NET: BOOTSEL_PAD
+  - TP_BOOTSEL pin1
+  - R_BOOTSEL pin1
+
+NET: MCU_RUN
+  - TP_RUN pin1
+  - R_RUN pin2
+  - C_MCU_RUN pin1 (+)
+  - U_MCU RUN
+
+NET: VBUS_RAW
+  - TP_RAW_PD pin1
+  - C_AUX_HF pin1 (+)
+  - C_AUX_IN pin1 (+)
+  - U_AUX VIN
+  - U_AUX EN
+  - C_PD_VBUS pin1 (+)
+  - C_USB pin1 (+)
+  - Q_INPUT pin8
+  - Q_INPUT pin7
+  - Q_INPUT pin6
+  - Q_INPUT pin5
+  - U_PD VBUS_IN
+  - J_USB VBUS4
+  - J_USB VBUS3
+  - J_USB VBUS2
+  - J_USB VBUS1
+
+NET: LOGIC_5V
+  - TP_5V pin1
+  - R_KILL_RESET pin1
+  - C_LDO_IN pin1 (+)
+  - U_CTRL_LDO EN
+  - U_CTRL_LDO IN
+  - C_LOGIC_MUX_OUT pin1 (+)
+  - U_LOGIC_MUX VOUT2
+  - U_LOGIC_MUX VOUT1
+  - C_PROGRAM_ESD pin1 (+)
+  - U_PROGRAM_ESD pin5
+  - U_DRIVER VCC
+  - C_DRIVER_VCC pin1 (+)
+  - C_DRIVER_VCC_HF pin1 (+)
+
+NET: DRIVER_OUT
+  - TP_OUT pin1
+  - C_DRIVER_OUT4 pin1 (+)
+  - C_DRIVER_OUT3 pin1 (+)
+  - C_DRIVER_OUT2 pin1 (+)
+  - R_SENSE pin1
+  - R_ISP_FILTER pin1
+  - U_DRIVER VOUT
+  - C_DRIVER_OUTPUT_HF pin1 (+)
+  - C_DRIVER_OUT1 pin1 (+)
+
+NET: DRIVER_ENABLE
+  - TP_EN pin1
+  - Q_MCU_KILL pin3
+  - C_DRIVER_EN pin1 (+)
+  - R_DRIVER_EN_BOTTOM pin1
+  - R_DRIVER_EN_TOP pin2
+  - U_DRIVER EN
+  - Q_PD_FAULT pin3
+
+NET: DRIVER_ISP
+  - TP_ISP pin1
+  - R_ISP_FILTER pin2
+  - U_DRIVER ISP
+  - C_CURRENT_FILTER pin1 (+)
+
+NET: DRIVER_ISN
+  - TP_ISN pin1
+  - R_ISN_FILTER pin2
+  - U_DRIVER ISN
+  - C_CURRENT_FILTER pin2 (-)
+
+NET: I2C_SCL
+  - TP_SCL pin1
+  - R_SCL pin2
+  - U_MCU GPIO1
+  - U_DRIVER SCL
+
+NET: I2C_SDA
+  - TP_SDA pin1
+  - R_SDA pin2
+  - U_MCU GPIO0
+  - U_DRIVER SDA
+
+NET: VBUS_QUALIFIED
+  - C_FAN_IN_HF pin1 (+)
+  - C_FAN_IN pin1 (+)
+  - U_FAN VIN
+  - U_FAN EN
+  - TP_QUAL_PD pin1
+  - R_PD_ADC_TOP pin1
+  - R_DRIVER_EN_TOP pin1
+  - C_DRIVER_INPUT_BULK pin1 (+)
+  - C_DRIVER_IN4 pin1 (+)
+  - C_DRIVER_IN3 pin1 (+)
+  - C_DRIVER_IN2 pin1 (+)
+  - C_DRIVER_IN1 pin1 (+)
+  - U_DRIVER VIN
+  - C_DRIVER_INPUT_HF pin1 (+)
+  - R_DC_SENSE pin1
+  - Q_REVERSE pin8
+  - Q_REVERSE pin7
+  - Q_REVERSE pin6
+  - Q_REVERSE pin5
+
+NET: FAN_BOOT
+  - C_FAN_BOOT pin1 (+)
+  - U_FAN CB
+
+NET: FAN_SW
+  - C_FAN_BOOT pin2 (-)
+  - L_FAN pin1 (+)
+  - U_FAN SW
+
+NET: FAN_FB
+  - R_FAN_FB_BOTTOM pin1
+  - R_FAN_FB_TOP pin2
+  - U_FAN FB
+
+NET: FAN_12V
+  - J_FAN pin2
+  - R_FAN_FB_TOP pin1
+  - C_FAN_OUT2 pin1 (+)
+  - C_FAN_OUT1 pin1 (+)
+  - L_FAN pin2 (-)
+
+NET: HOT_DATA_MCU
+  - R_HOT_SERIES pin1
+  - U_MCU GPIO8
+
+NET: COLD_DATA_MCU
+  - R_COLD_SERIES pin1
+  - U_MCU GPIO9
+
+NET: HOT_SENSOR_DATA
+  - R_HOT_PULLUP pin2
+  - R_HOT_SERIES pin2
+  - U_SENSOR_ESD pin1
+  - U_SENSOR_ESD pin6
+  - J_HOT_SENSOR pin2
+
+NET: COLD_SENSOR_DATA
+  - R_COLD_PULLUP pin2
+  - R_COLD_SERIES pin2
+  - U_SENSOR_ESD pin3
+  - U_SENSOR_ESD pin4
+  - J_COLD_SENSOR pin2
+
+NET: CTRL_3V3
+  - U_SENSOR_ESD pin5
+  - R_COLD_PULLUP pin1
+  - C_COLD_SENSOR pin1 (+)
+  - R_HOT_PULLUP pin1
+  - C_HOT_SENSOR pin1 (+)
+  - TP_3V3 pin1
+  - R_LED_POWER pin1
+  - R_DRIVER_FAULT pin1
+  - R_FLASH_CS pin1
+  - R_RUN pin1
+  - R_SDA pin1
+  - R_SCL pin1
+  - C_FLASH pin1 (+)
+  - C_MCU_BULK pin1 (+)
+  - C_VREG_IN pin1 (+)
+  - C_USB_VDD pin1 (+)
+  - C_ADC_AVDD pin1 (+)
+  - C_IOVDD49 pin1 (+)
+  - C_IOVDD42 pin1 (+)
+  - C_IOVDD33 pin1 (+)
+  - C_IOVDD22 pin1 (+)
+  - C_IOVDD10 pin1 (+)
+  - C_IOVDD1 pin1 (+)
+  - U_FLASH VCC
+  - U_MCU IOVDD1
+  - U_MCU USB_VDD
+  - U_MCU VREG_IN
+  - U_MCU ADC_AVDD
+  - U_MCU IOVDD2
+  - U_MCU IOVDD3
+  - U_MCU IOVDD4
+  - U_MCU IOVDD5
+  - U_MCU IOVDD6
+  - C_LDO_OUT pin1 (+)
+  - U_CTRL_LDO OUT
+  - J_HOT_SENSOR pin1
+  - J_COLD_SENSOR pin1
+
+NET: TEC_POS
+  - J_TEC pin1
+  - TP_TEC pin1
+  - R_V_ADC_TOP pin1
+  - C_TEC_BULK pin1 (+)
+  - R_SENSE pin2
+  - R_ISN_FILTER pin1
+
+NET: GND
+  - J_COLD_SENSOR pin3
+  - J_HOT_SENSOR pin3
+  - U_SENSOR_ESD pin2
+  - C_COLD_SENSOR pin2 (-)
+  - C_HOT_SENSOR pin2 (-)
+  - J_FAN pin1
+  - R_FAN_FB_BOTTOM pin2
+  - C_FAN_OUT2 pin2 (-)
+  - C_FAN_OUT1 pin2 (-)
+  - C_FAN_IN_HF pin2 (-)
+  - C_FAN_IN pin2 (-)
+  - U_FAN GND
+  - TP_GND pin1
+  - LED_FAULT cathode (-)
+  - LED_RUN cathode (-)
+  - LED_POWER cathode (-)
+  - C_PROGRAM_SENSE pin2 (-)
+  - C_PD_ADC pin2 (-)
+  - C_V_ADC pin2 (-)
+  - C_I_ADC pin2 (-)
+  - R_PROGRAM_SENSE_BOTTOM pin2
+  - R_PD_ADC_BOTTOM pin2
+  - R_V_ADC_BOTTOM pin2
+  - R_RELEASE_OFF pin2
+  - Q_MCU_RELEASE pin2
+  - Q_MCU_KILL pin2
+  - C_XOUT pin2 (-)
+  - C_XIN pin2 (-)
+  - C_MCU_RUN pin2 (-)
+  - C_MCU_BULK pin2 (-)
+  - C_VREG_OUT pin2 (-)
+  - C_VREG_IN pin2 (-)
+  - C_DVDD50 pin2 (-)
+  - C_DVDD23 pin2 (-)
+  - C_USB_VDD pin2 (-)
+  - C_ADC_AVDD pin2 (-)
+  - C_IOVDD49 pin2 (-)
+  - C_IOVDD42 pin2 (-)
+  - C_IOVDD33 pin2 (-)
+  - C_IOVDD22 pin2 (-)
+  - C_IOVDD10 pin2 (-)
+  - C_IOVDD1 pin2 (-)
+  - Y_MCU pin4
+  - Y_MCU pin2
+  - U_FLASH GND
+  - U_MCU GND
+  - U_MCU TESTEN
+  - C_FLASH pin2 (-)
+  - R_PROGRAM_CC2 pin2
+  - R_PROGRAM_CC1 pin2
+  - C_LDO_OUT pin2 (-)
+  - C_LDO_IN pin2 (-)
+  - U_CTRL_LDO GND
+  - C_AUX_OUT pin2 (-)
+  - C_AUX_HF pin2 (-)
+  - C_AUX_IN pin2 (-)
+  - U_AUX GND
+  - C_LOGIC_MUX_OUT pin2 (-)
+  - C_PROGRAM_IN pin2 (-)
+  - U_LOGIC_MUX MODE
+  - U_LOGIC_MUX PR1
+  - U_LOGIC_MUX GND
+  - C_PROGRAM_ESD pin2 (-)
+  - U_PROGRAM_ESD pin2
+  - J_PROGRAM S1
+  - J_PROGRAM pin17_internal_1
+  - J_PROGRAM pin17_internal_2
+  - J_PROGRAM pin17_internal_3
+  - J_PROGRAM GND4
+  - J_PROGRAM GND3
+  - J_PROGRAM GND2
+  - J_PROGRAM GND1
+  - J_TEC pin2
+  - C_DRIVER_EN pin2 (-)
+  - R_DRIVER_EN_BOTTOM pin2
+  - C_TEC_BULK pin2 (-)
+  - C_DRIVER_OUT4 pin2 (-)
+  - C_DRIVER_OUT3 pin2 (-)
+  - C_DRIVER_OUT2 pin2 (-)
+  - C_DRIVER_OUT1 pin2 (-)
+  - C_DRIVER_VCC_HF pin2 (-)
+  - C_DRIVER_INPUT_BULK pin2 (-)
+  - C_DRIVER_IN4 pin2 (-)
+  - C_DRIVER_IN3 pin2 (-)
+  - C_DRIVER_IN2 pin2 (-)
+  - C_DRIVER_IN1 pin2 (-)
+  - U_DRIVER AGND
+  - R_DRIVER_FSW pin2
+  - C_COMP_ZERO pin2 (-)
+  - C_COMP_POLE pin2 (-)
+  - C_DRIVER_VCC pin2 (-)
+  - U_DRIVER PGND
+  - C_DRIVER_INPUT_HF pin2 (-)
+  - C_DRIVER_OUTPUT_HF pin2 (-)
+  - U_DRIVER EXTVCC
+  - U_DRIVER DITH
+  - U_DRIVER MODE
+  - R_FAULT_OFF pin2
+  - Q_PD_FAULT pin2
+  - C_PD_CORE pin2 (-)
+  - C_PD_3V3_HF2 pin2 (-)
+  - C_PD_3V3_HF1 pin2 (-)
+  - C_PD_3V3 pin2 (-)
+  - C_PD_VBUS pin2 (-)
+  - C_USB pin2 (-)
+  - U_PD EP
+  - U_PD GND2
+  - U_PD GND1
+  - U_PD ISNK_FINE
+  - J_USB S1
+  - J_USB pin17_internal_1
+  - J_USB pin17_internal_2
+  - J_USB pin17_internal_3
+  - J_USB GND4
+  - J_USB GND3
+  - J_USB GND2
+  - J_USB GND1
+
+
+COMPONENT_PINS:
+J_USB (USB4085-GF-A)
+- pin17_internal_1(pin17, 17): NETS(GND)
+- pin17_internal_2(pin17, 17): NETS(GND)
+- pin17_internal_3(pin17, 17): NETS(GND)
+- pin1(CC1, A5): NETS(CC1)
+- pin2(GND1, A1): NETS(GND)
+- pin3(VBUS1, A4): NETS(VBUS_RAW)
+- pin4(Dp1, A6): NOT_CONNECTED
+- pin5(Dn1, A7): NOT_CONNECTED
+- pin6(SBU1, A8): NOT_CONNECTED
+- pin7(VBUS2, A9): NETS(VBUS_RAW)
+- pin8(GND2, A12): NETS(GND)
+- pin9(GND3, B12): NETS(GND)
+- pin10(VBUS3, B9): NETS(VBUS_RAW)
+- pin11(SBU2, B8): NOT_CONNECTED
+- pin12(Dn2, B7): NOT_CONNECTED
+- pin13(Dp2, B6): NOT_CONNECTED
+- pin14(CC2, B5): NETS(CC2)
+- pin15(VBUS4, B4): NETS(VBUS_RAW)
+- pin16(GND4, B1): NETS(GND)
+- pin17(S1): NETS(GND)
+
+U_PD (CYPD3177-24LQXQT)
+- pin1(VBUS_MIN): NETS(PD_3V3)
+- pin2(VBUS_MAX): NETS(PD_3V3)
+- pin3(VBUS_FET_EN): NETS(PD_GATE_DRIVE)
+- pin4(SAFE_PWR_EN): NOT_CONNECTED
+- pin5(ISNK_COARSE): NETS(PD_3V3)
+- pin6(ISNK_FINE): NETS(GND)
+- pin7(HPI_INT): NOT_CONNECTED
+- pin8(GPIO_1): NOT_CONNECTED
+- pin9(FAULT): NETS(PD_FAULT)
+- pin10(FLIP): NOT_CONNECTED
+- pin11(VDC_OUT): NETS(PD_VDC_OUT)
+- pin12(HPI_SDA): NOT_CONNECTED
+- pin13(HPI_SCL): NOT_CONNECTED
+- pin14(CC2): NETS(CC2)
+- pin15(CC1): NETS(CC1)
+- pin16(D_NEG): NOT_CONNECTED
+- pin17(D_POS): NOT_CONNECTED
+- pin18(VBUS_IN): NETS(VBUS_RAW)
+- pin19(GND1): NETS(GND)
+- pin20(DNU1): NOT_CONNECTED
+- pin21(DNU2): NOT_CONNECTED
+- pin22(GND2): NETS(GND)
+- pin23(VDDD): NETS(PD_3V3)
+- pin24(VCCD): NETS(PD_CORE)
+- pin25(EP): NETS(GND)
+
+Q_INPUT (AO4407A)
+- pin1(S3): NETS(PFET_SOURCE)
+- pin2(S2): NETS(PFET_SOURCE)
+- pin3(S1): NETS(PFET_SOURCE)
+- pin4(G): NETS(PD_GATE)
+- pin5(D1): NETS(VBUS_RAW)
+- pin6(D2): NETS(VBUS_RAW)
+- pin7(D3): NETS(VBUS_RAW)
+- pin8(D4): NETS(VBUS_RAW)
+
+Q_REVERSE (AO4407A)
+- pin1(S3): NETS(PFET_SOURCE)
+- pin2(S2): NETS(PFET_SOURCE)
+- pin3(S1): NETS(PFET_SOURCE)
+- pin4(G): NETS(PD_GATE)
+- pin5(D1): NETS(VBUS_QUALIFIED)
+- pin6(D2): NETS(VBUS_QUALIFIED)
+- pin7(D3): NETS(VBUS_QUALIFIED)
+- pin8(D4): NETS(VBUS_QUALIFIED)
+
+C_USB (4.7uF undefined)
+- pin1(pos): NETS(VBUS_RAW)
+- pin2(neg): NETS(GND)
+
+C_PD_VBUS (100nF undefined)
+- pin1(pos): NETS(VBUS_RAW)
+- pin2(neg): NETS(GND)
+
+C_PD_3V3 (1uF undefined)
+- pin1(pos): NETS(PD_3V3)
+- pin2(neg): NETS(GND)
+
+C_PD_3V3_HF1 (100nF undefined)
+- pin1(pos): NETS(PD_3V3)
+- pin2(neg): NETS(GND)
+
+C_PD_3V3_HF2 (100nF undefined)
+- pin1(pos): NETS(PD_3V3)
+- pin2(neg): NETS(GND)
+
+C_PD_CORE (1uF undefined)
+- pin1(pos): NETS(PD_CORE)
+- pin2(neg): NETS(GND)
+
+Q_PD_FAULT (MMBT3904(RANGE:100-300))
+- pin1(B): NETS(PD_FAULT_BASE)
+- pin2(E): NETS(GND)
+- pin3(C): NETS(DRIVER_ENABLE)
+
+R_GATE (1kΩ undefined)
+- pin1(anode, pos, left): NETS(PD_GATE_DRIVE)
+- pin2(cathode, neg, right): NETS(PD_GATE)
+
+R_GATE_OFF (49.9kΩ undefined)
+- pin1(anode, pos, left): NETS(PFET_SOURCE)
+- pin2(cathode, neg, right): NETS(PD_GATE)
+
+R_DC_SENSE (1kΩ undefined)
+- pin1(anode, pos, left): NETS(VBUS_QUALIFIED)
+- pin2(cathode, neg, right): NETS(PD_VDC_OUT)
+
+R_FAULT_BASE (10kΩ undefined)
+- pin1(anode, pos, left): NETS(PD_FAULT)
+- pin2(cathode, neg, right): NETS(PD_FAULT_BASE)
+
+R_FAULT_OFF (100kΩ undefined)
+- pin1(anode, pos, left): NETS(PD_FAULT_BASE)
+- pin2(cathode, neg, right): NETS(GND)
+
+U_DRIVER (TPS55289RYQR)
+- pin1(EN, UVLO): NETS(DRIVER_ENABLE)
+- pin2(MODE): NETS(GND)
+- pin3(SCL): NETS(I2C_SCL)
+- pin4(SDA): NETS(I2C_SDA)
+- pin5(DITH, SYNC): NETS(GND)
+- pin6(FSW): NETS(DRIVER_FSW)
+- pin7(VIN): NETS(VBUS_QUALIFIED)
+- pin8(SW1): NETS(DRIVER_SW1)
+- pin9(PGND): NETS(GND)
+- pin10(SW2): NETS(DRIVER_SW2)
+- pin11(VOUT): NETS(DRIVER_OUT)
+- pin12(ISP): NETS(DRIVER_ISP)
+- pin13(ISN): NETS(DRIVER_ISN)
+- pin14(FB, N_INT): NETS(DRIVER_FAULT)
+- pin15(COMP): NETS(DRIVER_COMP)
+- pin16(CDC): NETS(DRIVER_CURRENT_MONITOR)
+- pin17(AGND): NETS(GND)
+- pin18(VCC): NETS(LOGIC_5V)
+- pin19(BOOT2): NETS(DRIVER_BOOT2)
+- pin20(BOOT1): NETS(DRIVER_BOOT1)
+- pin21(EXTVCC): NETS(GND)
+
+L_OUT (SRP1265A-4R7M)
+- pin1(anode, pos, left): NETS(DRIVER_SW1)
+- pin2(cathode, neg, right): NETS(DRIVER_SW2)
+
+R_SENSE (10mΩ undefined)
+- pin1(anode, pos, left): NETS(DRIVER_OUT)
+- pin2(cathode, neg, right): NETS(TEC_POS)
+
+C_DRIVER_IN1 (10uF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_IN2 (10uF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_IN3 (10uF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_IN4 (10uF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_INPUT_BULK (100uF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_INPUT_HF (100nF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_BOOT1 (100nF undefined)
+- pin1(pos): NETS(DRIVER_BOOT1)
+- pin2(neg): NETS(DRIVER_SW1)
+
+C_DRIVER_BOOT2 (100nF undefined)
+- pin1(pos): NETS(DRIVER_BOOT2)
+- pin2(neg): NETS(DRIVER_SW2)
+
+C_DRIVER_VCC (10uF undefined)
+- pin1(pos): NETS(LOGIC_5V)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_VCC_HF (100nF undefined)
+- pin1(pos): NETS(LOGIC_5V)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_OUT1 (22uF undefined)
+- pin1(pos): NETS(DRIVER_OUT)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_OUT2 (22uF undefined)
+- pin1(pos): NETS(DRIVER_OUT)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_OUT3 (22uF undefined)
+- pin1(pos): NETS(DRIVER_OUT)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_OUT4 (22uF undefined)
+- pin1(pos): NETS(DRIVER_OUT)
+- pin2(neg): NETS(GND)
+
+C_DRIVER_OUTPUT_HF (100nF undefined)
+- pin1(pos): NETS(DRIVER_OUT)
+- pin2(neg): NETS(GND)
+
+C_TEC_BULK (100uF undefined)
+- pin1(pos): NETS(TEC_POS)
+- pin2(neg): NETS(GND)
+
+R_ISP_FILTER (10Ω undefined)
+- pin1(anode, pos, left): NETS(DRIVER_OUT)
+- pin2(cathode, neg, right): NETS(DRIVER_ISP)
+
+R_ISN_FILTER (10Ω undefined)
+- pin1(anode, pos, left): NETS(TEC_POS)
+- pin2(cathode, neg, right): NETS(DRIVER_ISN)
+
+C_CURRENT_FILTER (220nF undefined)
+- pin1(pos): NETS(DRIVER_ISP)
+- pin2(neg): NETS(DRIVER_ISN)
+
+R_DRIVER_FSW (49.9kΩ undefined)
+- pin1(anode, pos, left): NETS(DRIVER_FSW)
+- pin2(cathode, neg, right): NETS(GND)
+
+R_COMP (27.4kΩ undefined)
+- pin1(anode, pos, left): NETS(DRIVER_COMP)
+- pin2(cathode, neg, right): NETS(DRIVER_COMP_ZERO)
+
+C_COMP_ZERO (4.7nF undefined)
+- pin1(pos): NETS(DRIVER_COMP_ZERO)
+- pin2(neg): NETS(GND)
+
+C_COMP_POLE (100pF undefined)
+- pin1(pos): NETS(DRIVER_COMP)
+- pin2(neg): NETS(GND)
+
+R_DRIVER_EN_TOP (130kΩ undefined)
+- pin1(anode, pos, left): NETS(VBUS_QUALIFIED)
+- pin2(cathode, neg, right): NETS(DRIVER_ENABLE)
+
+R_DRIVER_EN_BOTTOM (10kΩ undefined)
+- pin1(anode, pos, left): NETS(DRIVER_ENABLE)
+- pin2(cathode, neg, right): NETS(GND)
+
+C_DRIVER_EN (100nF undefined)
+- pin1(pos): NETS(DRIVER_ENABLE)
+- pin2(neg): NETS(GND)
+
+J_PROGRAM (USB4085-GF-A)
+- pin17_internal_1(pin17, 17): NETS(GND)
+- pin17_internal_2(pin17, 17): NETS(GND)
+- pin17_internal_3(pin17, 17): NETS(GND)
+- pin1(CC1, A5): NETS(PROGRAM_CC1)
+- pin2(GND1, A1): NETS(GND)
+- pin3(VBUS1, A4): NETS(PROGRAM_VBUS)
+- pin4(Dp1, A6): NETS(PROGRAM_USB_DP)
+- pin5(Dn1, A7): NETS(PROGRAM_USB_DM)
+- pin6(SBU1, A8): NOT_CONNECTED
+- pin7(VBUS2, A9): NETS(PROGRAM_VBUS)
+- pin8(GND2, A12): NETS(GND)
+- pin9(GND3, B12): NETS(GND)
+- pin10(VBUS3, B9): NETS(PROGRAM_VBUS)
+- pin11(SBU2, B8): NOT_CONNECTED
+- pin12(Dn2, B7): NETS(PROGRAM_USB_DM)
+- pin13(Dp2, B6): NETS(PROGRAM_USB_DP)
+- pin14(CC2, B5): NETS(PROGRAM_CC2)
+- pin15(VBUS4, B4): NETS(PROGRAM_VBUS)
+- pin16(GND4, B1): NETS(GND)
+- pin17(S1): NETS(GND)
+
+U_PROGRAM_ESD (USBLC6-2SC6)
+- pin1: NETS(PROGRAM_USB_DM)
+- pin2: NETS(GND)
+- pin3: NETS(PROGRAM_USB_DP)
+- pin4: NETS(PROGRAM_USB_DP)
+- pin5: NETS(LOGIC_5V)
+- pin6: NETS(PROGRAM_USB_DM)
+
+C_PROGRAM_ESD (100nF undefined)
+- pin1(pos): NETS(LOGIC_5V)
+- pin2(neg): NETS(GND)
+
+U_LOGIC_MUX (TPS2116DRLR)
+- pin1(GND): NETS(GND)
+- pin2(VOUT1): NETS(LOGIC_5V)
+- pin3(VIN1): NETS(AUX_5V)
+- pin4(PR1): NETS(GND)
+- pin5(MODE): NETS(GND)
+- pin6(VIN2): NETS(PROGRAM_VBUS)
+- pin7(VOUT2): NETS(LOGIC_5V)
+- pin8(ST): NOT_CONNECTED
+
+C_PROGRAM_IN (1uF undefined)
+- pin1(pos): NETS(PROGRAM_VBUS)
+- pin2(neg): NETS(GND)
+
+C_LOGIC_MUX_OUT (1uF undefined)
+- pin1(pos): NETS(LOGIC_5V)
+- pin2(neg): NETS(GND)
+
+U_AUX (LMR50410Y5FQDBVRQ1)
+- pin1(CB): NETS(AUX_BOOT)
+- pin2(GND): NETS(GND)
+- pin3(FB): NETS(AUX_5V)
+- pin4(EN): NETS(VBUS_RAW)
+- pin5(VIN): NETS(VBUS_RAW)
+- pin6(SW): NETS(AUX_SW)
+
+L_AUX (SWPA4018S4R7MT)
+- pin1(anode, pos, left): NETS(AUX_SW)
+- pin2(cathode, neg, right): NETS(AUX_5V)
+
+C_AUX_IN (2.2uF undefined)
+- pin1(pos): NETS(VBUS_RAW)
+- pin2(neg): NETS(GND)
+
+C_AUX_HF (100nF undefined)
+- pin1(pos): NETS(VBUS_RAW)
+- pin2(neg): NETS(GND)
+
+C_AUX_BOOT (100nF undefined)
+- pin1(pos): NETS(AUX_BOOT)
+- pin2(neg): NETS(AUX_SW)
+
+C_AUX_OUT (10uF undefined)
+- pin1(pos): NETS(AUX_5V)
+- pin2(neg): NETS(GND)
+
+U_CTRL_LDO (TLV75533PDBVR)
+- pin1(IN): NETS(LOGIC_5V)
+- pin2(GND): NETS(GND)
+- pin3(EN): NETS(LOGIC_5V)
+- pin4(NC): NOT_CONNECTED
+- pin5(OUT): NETS(CTRL_3V3)
+
+C_LDO_IN (1uF undefined)
+- pin1(pos): NETS(LOGIC_5V)
+- pin2(neg): NETS(GND)
+
+C_LDO_OUT (1uF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+R_PROGRAM_CC1 (5.1kΩ undefined)
+- pin1(anode, pos, left): NETS(PROGRAM_CC1)
+- pin2(cathode, neg, right): NETS(GND)
+
+R_PROGRAM_CC2 (5.1kΩ undefined)
+- pin1(anode, pos, left): NETS(PROGRAM_CC2)
+- pin2(cathode, neg, right): NETS(GND)
+
+U_MCU (RP2040)
+- pin1(IOVDD6): NETS(CTRL_3V3)
+- pin2(GPIO0): NETS(I2C_SDA)
+- pin3(GPIO1): NETS(I2C_SCL)
+- pin4(GPIO2): NETS(MCU_DRIVER_PERMISSION)
+- pin5(GPIO3): NETS(DRIVER_FAULT)
+- pin6(GPIO4): NETS(PD_FAULT_SENSE)
+- pin7(GPIO5): NOT_CONNECTED
+- pin8(GPIO6): NETS(LED_RUN_DRIVE)
+- pin9(GPIO7): NETS(LED_FAULT_DRIVE)
+- pin10(IOVDD5): NETS(CTRL_3V3)
+- pin11(GPIO8): NETS(HOT_DATA_MCU)
+- pin12(GPIO9): NETS(COLD_DATA_MCU)
+- pin13(GPIO10): NOT_CONNECTED
+- pin14(GPIO11): NOT_CONNECTED
+- pin15(GPIO12): NOT_CONNECTED
+- pin16(GPIO13): NOT_CONNECTED
+- pin17(GPIO14): NOT_CONNECTED
+- pin18(GPIO15): NOT_CONNECTED
+- pin19(TESTEN): NETS(GND)
+- pin20(XIN): NETS(XIN)
+- pin21(XOUT): NETS(XOUT)
+- pin22(IOVDD4): NETS(CTRL_3V3)
+- pin23(DVDD2): NETS(RP_CORE_1V1)
+- pin24(SWCLK): NETS(SWCLK)
+- pin25(SWD): NETS(SWDIO)
+- pin26(RUN): NETS(MCU_RUN)
+- pin27(GPIO16): NOT_CONNECTED
+- pin28(GPIO17): NOT_CONNECTED
+- pin29(GPIO18): NOT_CONNECTED
+- pin30(GPIO19): NOT_CONNECTED
+- pin31(GPIO20): NOT_CONNECTED
+- pin32(GPIO21): NOT_CONNECTED
+- pin33(IOVDD3): NETS(CTRL_3V3)
+- pin34(GPIO22): NOT_CONNECTED
+- pin35(GPIO23): NOT_CONNECTED
+- pin36(GPIO24): NOT_CONNECTED
+- pin37(GPIO25): NOT_CONNECTED
+- pin38(GPIO26_ADC0): NETS(OUTPUT_CURRENT_ADC)
+- pin39(GPIO27_ADC1): NETS(OUTPUT_VOLTAGE_ADC)
+- pin40(GPIO28_ADC2): NETS(INPUT_VOLTAGE_ADC)
+- pin41(GPIO29_ADC3): NETS(PROGRAM_VBUS_SENSE)
+- pin42(IOVDD2): NETS(CTRL_3V3)
+- pin43(ADC_AVDD): NETS(CTRL_3V3)
+- pin44(VREG_IN): NETS(CTRL_3V3)
+- pin45(VREG_VOUT): NETS(RP_CORE_1V1)
+- pin46(USB_DM): NETS(RP_USB_DM)
+- pin47(USB_DP): NETS(RP_USB_DP)
+- pin48(USB_VDD): NETS(CTRL_3V3)
+- pin49(IOVDD1): NETS(CTRL_3V3)
+- pin50(DVDD1): NETS(RP_CORE_1V1)
+- pin51(QSPI_SD3): NETS(QSPI_SD3)
+- pin52(QSPI_SCLK): NETS(QSPI_SCLK)
+- pin53(QSPI_SD0): NETS(QSPI_SD0)
+- pin54(QSPI_SD2): NETS(QSPI_SD2)
+- pin55(QSPI_SD1): NETS(QSPI_SD1)
+- pin56(QSPI_SS): NETS(QSPI_SS)
+- pin57(GND): NETS(GND)
+
+U_FLASH (W25Q128JVSIQ)
+- pin1(N_CS): NETS(QSPI_SS)
+- pin2(DO): NETS(QSPI_SD1)
+- pin3(IO2): NETS(QSPI_SD2)
+- pin4(GND): NETS(GND)
+- pin5(DI): NETS(QSPI_SD0)
+- pin6(CLK): NETS(QSPI_SCLK)
+- pin7(IO3): NETS(QSPI_SD3)
+- pin8(VCC): NETS(CTRL_3V3)
+
+Y_MCU (ABM8-272-T3)
+- pin1(X1): NETS(XIN)
+- pin2(GND1): NETS(GND)
+- pin3(X2): NETS(XOUT_CRYSTAL)
+- pin4(GND2): NETS(GND)
+
+C_IOVDD1 (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_IOVDD10 (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_IOVDD22 (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_IOVDD33 (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_IOVDD42 (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_IOVDD49 (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_ADC_AVDD (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_USB_VDD (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_DVDD23 (100nF undefined)
+- pin1(pos): NETS(RP_CORE_1V1)
+- pin2(neg): NETS(GND)
+
+C_DVDD50 (100nF undefined)
+- pin1(pos): NETS(RP_CORE_1V1)
+- pin2(neg): NETS(GND)
+
+C_VREG_IN (1uF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_VREG_OUT (1uF undefined)
+- pin1(pos): NETS(RP_CORE_1V1)
+- pin2(neg): NETS(GND)
+
+C_MCU_BULK (10uF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_MCU_RUN (100nF undefined)
+- pin1(pos): NETS(MCU_RUN)
+- pin2(neg): NETS(GND)
+
+C_FLASH (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_XIN (15pF undefined)
+- pin1(pos): NETS(XIN)
+- pin2(neg): NETS(GND)
+
+C_XOUT (15pF undefined)
+- pin1(pos): NETS(XOUT_CRYSTAL)
+- pin2(neg): NETS(GND)
+
+R_SCL (4.7kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(I2C_SCL)
+
+R_SDA (4.7kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(I2C_SDA)
+
+R_RUN (10kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(MCU_RUN)
+
+R_USB_DM (27Ω undefined)
+- pin1(anode, pos, left): NETS(PROGRAM_USB_DM)
+- pin2(cathode, neg, right): NETS(RP_USB_DM)
+
+R_USB_DP (27Ω undefined)
+- pin1(anode, pos, left): NETS(PROGRAM_USB_DP)
+- pin2(cathode, neg, right): NETS(RP_USB_DP)
+
+R_XOUT (1kΩ undefined)
+- pin1(anode, pos, left): NETS(XOUT)
+- pin2(cathode, neg, right): NETS(XOUT_CRYSTAL)
+
+R_BOOTSEL (1kΩ undefined)
+- pin1(anode, pos, left): NETS(BOOTSEL_PAD)
+- pin2(cathode, neg, right): NETS(QSPI_SS)
+
+R_FLASH_CS (10kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(QSPI_SS)
+
+Q_MCU_KILL (MMBT3904(RANGE:100-300))
+- pin1(B): NETS(DRIVER_KILL_BASE)
+- pin2(E): NETS(GND)
+- pin3(C): NETS(DRIVER_ENABLE)
+
+Q_MCU_RELEASE (2N7002)
+- pin1(G): NETS(DRIVER_RELEASE_GATE)
+- pin2(S): NETS(GND)
+- pin3(D): NETS(DRIVER_KILL_BASE)
+
+R_KILL_DRIVE (1kΩ undefined)
+- pin1(anode, pos, left): NETS(MCU_DRIVER_PERMISSION)
+- pin2(cathode, neg, right): NETS(DRIVER_RELEASE_GATE)
+
+R_KILL_RESET (47kΩ undefined)
+- pin1(anode, pos, left): NETS(LOGIC_5V)
+- pin2(cathode, neg, right): NETS(DRIVER_KILL_BASE)
+
+R_RELEASE_OFF (100kΩ undefined)
+- pin1(anode, pos, left): NETS(DRIVER_RELEASE_GATE)
+- pin2(cathode, neg, right): NETS(GND)
+
+R_PD_FAULT_SENSE (10kΩ undefined)
+- pin1(anode, pos, left): NETS(PD_FAULT)
+- pin2(cathode, neg, right): NETS(PD_FAULT_SENSE)
+
+R_DRIVER_FAULT (4.7kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(DRIVER_FAULT)
+
+R_I_ADC (1kΩ undefined)
+- pin1(anode, pos, left): NETS(DRIVER_CURRENT_MONITOR)
+- pin2(cathode, neg, right): NETS(OUTPUT_CURRENT_ADC)
+
+R_V_ADC_TOP (100kΩ undefined)
+- pin1(anode, pos, left): NETS(TEC_POS)
+- pin2(cathode, neg, right): NETS(OUTPUT_VOLTAGE_ADC)
+
+R_V_ADC_BOTTOM (20kΩ undefined)
+- pin1(anode, pos, left): NETS(OUTPUT_VOLTAGE_ADC)
+- pin2(cathode, neg, right): NETS(GND)
+
+R_PD_ADC_TOP (150kΩ undefined)
+- pin1(anode, pos, left): NETS(VBUS_QUALIFIED)
+- pin2(cathode, neg, right): NETS(INPUT_VOLTAGE_ADC)
+
+R_PD_ADC_BOTTOM (22kΩ undefined)
+- pin1(anode, pos, left): NETS(INPUT_VOLTAGE_ADC)
+- pin2(cathode, neg, right): NETS(GND)
+
+R_PROGRAM_SENSE_TOP (15kΩ undefined)
+- pin1(anode, pos, left): NETS(PROGRAM_VBUS)
+- pin2(cathode, neg, right): NETS(PROGRAM_VBUS_SENSE)
+
+R_PROGRAM_SENSE_BOTTOM (20kΩ undefined)
+- pin1(anode, pos, left): NETS(PROGRAM_VBUS_SENSE)
+- pin2(cathode, neg, right): NETS(GND)
+
+C_I_ADC (100nF undefined)
+- pin1(pos): NETS(OUTPUT_CURRENT_ADC)
+- pin2(neg): NETS(GND)
+
+C_V_ADC (100nF undefined)
+- pin1(pos): NETS(OUTPUT_VOLTAGE_ADC)
+- pin2(neg): NETS(GND)
+
+C_PD_ADC (100nF undefined)
+- pin1(pos): NETS(INPUT_VOLTAGE_ADC)
+- pin2(neg): NETS(GND)
+
+C_PROGRAM_SENSE (100nF undefined)
+- pin1(pos): NETS(PROGRAM_VBUS_SENSE)
+- pin2(neg): NETS(GND)
+
+R_LED_POWER (1kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(LED_POWER_ANODE)
+
+LED_POWER (KT-0603Y)
+- pin1(anode, pos): NETS(LED_POWER_ANODE)
+- pin2(cathode, neg): NETS(GND)
+
+R_LED_RUN (1kΩ undefined)
+- pin1(anode, pos, left): NETS(LED_RUN_DRIVE)
+- pin2(cathode, neg, right): NETS(LED_RUN_ANODE)
+
+LED_RUN (KT-0603YG)
+- pin1(cathode, neg): NETS(GND)
+- pin2(anode, pos): NETS(LED_RUN_ANODE)
+
+R_LED_FAULT (1kΩ undefined)
+- pin1(anode, pos, left): NETS(LED_FAULT_DRIVE)
+- pin2(cathode, neg, right): NETS(LED_FAULT_ANODE)
+
+LED_FAULT (KT-0603R)
+- pin1(anode, pos): NETS(LED_FAULT_ANODE)
+- pin2(cathode, neg): NETS(GND)
+
+TP_SWDIO
+- pin1: NETS(SWDIO)
+
+TP_SWCLK
+- pin1: NETS(SWCLK)
+
+TP_BOOTSEL
+- pin1: NETS(BOOTSEL_PAD)
+
+TP_RUN
+- pin1: NETS(MCU_RUN)
+
+TP_3V3
+- pin1: NETS(CTRL_3V3)
+
+TP_GND
+- pin1: NETS(GND)
+
+TP_RAW_PD
+- pin1: NETS(VBUS_RAW)
+
+TP_QUAL_PD
+- pin1: NETS(VBUS_QUALIFIED)
+
+TP_5V
+- pin1: NETS(LOGIC_5V)
+
+TP_TEC
+- pin1: NETS(TEC_POS)
+
+TP_OUT
+- pin1: NETS(DRIVER_OUT)
+
+TP_EN
+- pin1: NETS(DRIVER_ENABLE)
+
+TP_ISP
+- pin1: NETS(DRIVER_ISP)
+
+TP_ISN
+- pin1: NETS(DRIVER_ISN)
+
+TP_SCL
+- pin1: NETS(I2C_SCL)
+
+TP_SDA
+- pin1: NETS(I2C_SDA)
+
+U_FAN (LMR50410XDBVR)
+- pin1(CB): NETS(FAN_BOOT)
+- pin2(GND): NETS(GND)
+- pin3(FB): NETS(FAN_FB)
+- pin4(EN): NETS(VBUS_QUALIFIED)
+- pin5(VIN): NETS(VBUS_QUALIFIED)
+- pin6(SW): NETS(FAN_SW)
+
+L_FAN (SWPA8040S330MT)
+- pin1(anode, pos, left): NETS(FAN_SW)
+- pin2(cathode, neg, right): NETS(FAN_12V)
+
+C_FAN_IN (10uF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_FAN_IN_HF (100nF undefined)
+- pin1(pos): NETS(VBUS_QUALIFIED)
+- pin2(neg): NETS(GND)
+
+C_FAN_BOOT (100nF undefined)
+- pin1(pos): NETS(FAN_BOOT)
+- pin2(neg): NETS(FAN_SW)
+
+C_FAN_OUT1 (22uF undefined)
+- pin1(pos): NETS(FAN_12V)
+- pin2(neg): NETS(GND)
+
+C_FAN_OUT2 (22uF undefined)
+- pin1(pos): NETS(FAN_12V)
+- pin2(neg): NETS(GND)
+
+R_FAN_FB_TOP (110kΩ undefined)
+- pin1(anode, pos, left): NETS(FAN_12V)
+- pin2(cathode, neg, right): NETS(FAN_FB)
+
+R_FAN_FB_BOTTOM (10kΩ undefined)
+- pin1(anode, pos, left): NETS(FAN_FB)
+- pin2(cathode, neg, right): NETS(GND)
+
+J_FAN (470531000)
+- pin1: NETS(GND)
+- pin2: NETS(FAN_12V)
+- pin3: NOT_CONNECTED
+- pin4: NOT_CONNECTED
+
+J_HOT_SENSOR (XY302V-3.5-3P)
+- pin1: NETS(CTRL_3V3)
+- pin2: NETS(HOT_SENSOR_DATA)
+- pin3: NETS(GND)
+
+J_COLD_SENSOR (XY302V-3.5-3P)
+- pin1: NETS(CTRL_3V3)
+- pin2: NETS(COLD_SENSOR_DATA)
+- pin3: NETS(GND)
+
+R_HOT_PULLUP (4.7kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(HOT_SENSOR_DATA)
+
+R_COLD_PULLUP (4.7kΩ undefined)
+- pin1(anode, pos, left): NETS(CTRL_3V3)
+- pin2(cathode, neg, right): NETS(COLD_SENSOR_DATA)
+
+R_HOT_SERIES (100Ω undefined)
+- pin1(anode, pos, left): NETS(HOT_DATA_MCU)
+- pin2(cathode, neg, right): NETS(HOT_SENSOR_DATA)
+
+R_COLD_SERIES (100Ω undefined)
+- pin1(anode, pos, left): NETS(COLD_DATA_MCU)
+- pin2(cathode, neg, right): NETS(COLD_SENSOR_DATA)
+
+C_HOT_SENSOR (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+C_COLD_SENSOR (100nF undefined)
+- pin1(pos): NETS(CTRL_3V3)
+- pin2(neg): NETS(GND)
+
+U_SENSOR_ESD (USBLC6-2SC6)
+- pin1: NETS(HOT_SENSOR_DATA)
+- pin2: NETS(GND)
+- pin3: NETS(COLD_SENSOR_DATA)
+- pin4: NETS(COLD_SENSOR_DATA)
+- pin5: NETS(CTRL_3V3)
+- pin6: NETS(HOT_SENSOR_DATA)
+
+J_TEC (KF301-5.0-2P)
+- pin1: NETS(TEC_POS)
+- pin2: NETS(GND)

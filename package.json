@@ -1,0 +1,42 @@
+{
+  "name": "simple-usb-c-pd-peltier-driver",
+  "version": "0.1.0",
+  "description": "Editable four-layer USB-C PD Peltier driver, based on 0hmX/dual-usb-peltier-assembly",
+  "keywords": [
+    "tscircuit",
+    "circuit",
+    "pcb",
+    "electronics"
+  ],
+  "scripts": {
+    "dev": "tsci dev",
+    "build": "tsci build index.circuit.tsx",
+    "snapshot": "tsci snapshot",
+    "start": "tsci dev",
+    "typecheck": "tsc --noEmit",
+    "routing:rebind": "bun run scripts/rebind-routing.tsx",
+    "export:schematics": "bun run scripts/export-schematics.ts",
+    "check:netlist": "tsci check netlist index.circuit.tsx",
+    "check:schematic": "tsci check schematic-placement index.circuit.tsx",
+    "check:placement": "tsci check placement index.circuit.tsx",
+    "check:shorts": "tsci check shorts index.circuit.tsx",
+    "test": "bun test ./tests"
+  },
+  "devDependencies": {
+    "@flatten-js/core": "1.6.14",
+    "@resvg/resvg-js": "2.6.2",
+    "@types/bun": "^1.4.2",
+    "@types/react": "^19.0.8",
+    "circuit-json-to-gltf": "0.0.151",
+    "circuit-to-svg": "0.0.450",
+    "flatbush": "4.6.2",
+    "jscad-planner": "0.0.19",
+    "poppygl": "0.0.34",
+    "three": "0.179.1",
+    "tscircuit": "0.0.2868",
+    "typescript": "^5.0.0"
+  },
+  "private": true,
+  "type": "module",
+  "license": "MIT"
+}

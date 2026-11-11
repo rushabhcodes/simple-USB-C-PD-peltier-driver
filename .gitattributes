@@ -1,0 +1,3 @@
+# Preserve the official vendor CAD/source notice bytes.
+src/assembly/assets/*.stp binary
+src/assembly/assets/Noctua-CAD-README.txt whitespace=cr-at-eol

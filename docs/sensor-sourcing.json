@@ -1,0 +1,79 @@
+{
+  "recorded_at_utc": "2026-10-14T11:59:42Z",
+  "live_ui_observation_recorded_at_utc": "2026-10-14T11:40:40Z",
+  "observation_method": "Read-only live Amazon.com page in local Chrome via native CUA accessibility state; primary page showed a same-day October 14 delivery option. No purchase or cart change.",
+  "asin": "B00M1PM55K",
+  "url": "https://www.amazon.com/dp/B00M1PM55K",
+  "brand": "HiLetgo",
+  "listing_title": "HiLetgo 5pcs DS18B20 Temperature Sensor Temperature Probe Stainless Steel Package Waterproof 1M",
+  "selected_variant": "Small (five probes)",
+  "quantity_used": 2,
+  "roles": [
+    "HOT",
+    "COLD"
+  ],
+  "observed_purchase_evidence": {
+    "status": "In Stock",
+    "price_usd": 10.99,
+    "buttons_present": [
+      "Add to cart",
+      "Buy Now"
+    ],
+    "sold_by": "HiLetgo",
+    "ships_from": "Amazon",
+    "scope": "Amazon.com US delivery context; delivery and availability elsewhere were not verified."
+  },
+  "observed_popularity_evidence": {
+    "star_rating": 4.5,
+    "global_rating_count": 378,
+    "past_month_purchase_badge": "100+ bought in past month",
+    "badge": "Amazon's Choice",
+    "limitation": "Listing-specific observations, not proof of a worldwide most-popular rank."
+  },
+  "listing_specifications": {
+    "advertised_cable_length_m": 1,
+    "power_supply_v": [
+      3.0,
+      5.5
+    ],
+    "wire_colors": {
+      "red": "VCC (board 3V3)",
+      "yellow": "DATA",
+      "black": "GND"
+    },
+    "recommended_pullup_ohms": 4700,
+    "temperature_range_c": [
+      -55,
+      125
+    ]
+  },
+  "dimensional_provenance": {
+    "probe_body_diameter_mm": null,
+    "probe_body_length_mm": null,
+    "body_dimensions_status": "Unverified: the live listing does not establish reliable housing dimensions in its accessible text. Generic Amazon item dimensions 7.87 x 7.87 x 5.91 in are not treated as probe-body dimensions.",
+    "cad_status": "Illustrative probe-body envelope; not manufacturer CAD or a qualified mechanical-fit model. The cable length follows the selected listing.",
+    "primary_gallery_dimension_photo_url": "https://m.media-amazon.com/images/I/61uW8KIlJ9L._SL1000_.jpg",
+    "gallery_note": "The exact-ASIN primary gallery asset URL was found, but its dimension annotations were not visually verified. Secondary manuals and other vendors' probe dimensions were not substituted."
+  },
+  "screenshot": {
+    "saved_file": null,
+    "limitation": "Native CUA screenshot-save attempt failed when the Sky native pipe closed. Live text evidence was observed successfully before that failure."
+  },
+  "board_sensor_connector": {
+    "mpn": "XY302V-3.5-3P",
+    "jlcpcb_code": "C784941",
+    "manufacturer": "Ningbo Xinlaiya Elec.",
+    "pitch_mm": 3.5,
+    "wire_range_awg": [
+      16,
+      26
+    ],
+    "pin_order": {
+      "1": "3V3/red",
+      "2": "DATA/yellow",
+      "3": "GND/black"
+    },
+    "source_url": "https://jlcpcb.com/partdetail/XY302V-3.5-3P/C784941",
+    "provenance": "Exact supplier EasyEDA footprint and STEP/OBJ; actual incoming probe wire gauge and color assignment should be checked against the selected listing before wiring."
+  }
+}

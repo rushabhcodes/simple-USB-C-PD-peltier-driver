@@ -1,0 +1,26 @@
+#ifndef GENERAL_PD_RP2040_H
+#define GENERAL_PD_RP2040_H
+// Custom RP2040 board, 12 MHz crystal and Winbond W25Q128JVSIQ (16 MiB).
+pico_board_cmake_set(PICO_PLATFORM, rp2040)
+pico_board_cmake_set_default(PICO_FLASH_SIZE_BYTES, (16 * 1024 * 1024))
+#define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
+#define PICO_BOOT_STAGE2_CHOOSE_W25Q080 1
+#define PICO_FLASH_SPI_CLKDIV 4
+#define PICO_XOSC_HZ 12000000
+#define PD_I2C_SDA_PIN 0
+#define PD_I2C_SCL_PIN 1
+#define PD_PERMISSION_PIN 2
+#define PD_DRIVER_FAULT_PIN 3
+#define PD_PD_FAULT_PIN 4
+#define PD_RUN_LED_PIN 6
+#define PD_FAULT_LED_PIN 7
+#define PD_HOT_SENSOR_PIN 8
+#define PD_COLD_SENSOR_PIN 9
+#define PD_CURRENT_ADC_PIN 26
+#define PD_VOLTAGE_ADC_PIN 27
+#define PD_INPUT_ADC_PIN 28
+#define PD_PROGRAM_ADC_PIN 29
+#define PD_ADC_REFERENCE_MV 3300u
+#define PD_USB_ATTACH_MV 4200u
+#define PD_USB_DETACH_MV 3800u
+#endif

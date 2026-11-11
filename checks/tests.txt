@@ -1,0 +1,70 @@
+bun test v1.3.3 (274e01c7)
+
+tests/schematic.test.tsx:
+(pass) readable functional schematics > all functional sheets use A4 styling and render without errors or schematic warnings [2.00ms]
+(pass) readable functional schematics > every physical part and exposed debug pad has a finite, separated schematic symbol [4.00ms]
+(pass) readable functional schematics > splitting the MCU drawing preserves one physical RP2040 and every real package pin [3.00ms]
+(pass) readable functional schematics > capacitor package aliases remain usable when their schematic symbols rotate [4.00ms]
+
+tests/routing.test.tsx:
+(pass) complete PCB routing > routing preserves the original named pins, NC pins and electrical net partition [8.00ms]
+(pass) complete PCB routing > actual copper joins every required pin with no shorts, floating copper or invalid pours
+(pass) complete PCB routing > saved copper renders with finite coordinates, legal widths and physical through vias [1398.00ms]
+(pass) complete PCB routing > original crystal limits hold even for copper without source-trace associations [4.00ms]
+(pass) complete PCB routing > full-board native connectivity and geometry checks pass [12618.96ms]
+
+tests/routing-metadata.test.ts:
+(pass) only exact documented filled thermal pad/via pairs receive native exceptions [1.00ms]
+(pass) drills require a 0.15mm solder-land web, including same-net vias and plated slots [3.00ms]
+(pass) only the exact 13 thermal via-pad pairs waive the drill web [2.00ms]
+(pass) saved source associations retain the original pin, named net and constraints [3.00ms]
+(pass) a constrained source branch cannot be borrowed by a distant copper trunk
+(pass) constrained endpoints may land inside pad copper away from the center [1.00ms]
+(pass) all pins of a constrained branch must be its physical endpoints [2.00ms]
+
+tests/rebind-routing.test.ts:
+(pass) rebinding regenerates IDs without changing copper or borrowing branch constraints [9.00ms]
+(pass) a global trunk touching a capacitor does not inherit its local length limit [5.00ms]
+(pass) rebinding rejects lost constraint ownership and ambiguous constrained sources [4.00ms]
+(pass) multi-pin constraints require every endpoint and take priority over generic traces [1.00ms]
+(pass) pour trunks prefer a source pin represented by reachable trace copper [34.00ms]
+(pass) two-phase guard permits net renumbering but rejects changed source pins
+(pass) compact serialization keeps exact coordinates and escaped source signatures [2.00ms]
+
+tests/physical-copper.test.ts:
+(pass) physical copper connectivity oracle > logical net and trace IDs do not connect isolated copper islands [2.00ms]
+(pass) physical copper connectivity oracle > real copper joins required pins and ignores a genuinely unused pin [1.00ms]
+(pass) physical copper connectivity oracle > current package flow-through conductors preserve the original source net partition [2.00ms]
+(pass) physical copper connectivity oracle > bottom copper cannot contact top-only pads [1.00ms]
+(pass) physical copper connectivity oracle > top-to-bottom barrels connect inner copper and arbitrary via IDs count [2.00ms]
+(pass) physical copper connectivity oracle > native wire-to-via points include the copper leading into and out of a barrel [2.00ms]
+(pass) physical copper connectivity oracle > through-pad paths require real plated copper between their two layers [3.00ms]
+(pass) physical copper connectivity oracle > a repeated wire endpoint inside a drilled via is not a floating copper disk [1.00ms]
+(pass) physical copper connectivity oracle > a pour hole isolates copper inside it [3.00ms]
+(pass) physical copper connectivity oracle > touching an NC pad is an unintended connection [1.00ms]
+(pass) physical copper connectivity oracle > source-net mutation remains visible even when copper connects the pins [1.00ms]
+(pass) physical copper connectivity oracle > a 0.095 mm gap fails a 0.1 mm rule without a tolerance waiver [1.00ms]
+
+tests/general-pd.test.tsx:
+(pass) general USB-C PD Peltier driver > every placed part is sourced, with an error-free and separated placement [8.00ms]
+(pass) general USB-C PD Peltier driver > output connectors reach the board edge with their full bodies clear of other parts [11.00ms]
+(pass) general USB-C PD Peltier driver > both USB4085 footprints retain the manufacturer's two rows of through-hole contacts [24.00ms]
+(pass) general USB-C PD Peltier driver > 20 V / 5 A PD qualification is the only input to the load converter [85.00ms]
+(pass) general USB-C PD Peltier driver > the hardware CC loop measures a series shunt and the converter has both bootstrap paths [6.00ms]
+(pass) general USB-C PD Peltier driver > fixed 12 V fan power is qualified-PD-only and matches the keyed PC fan header [31.00ms]
+(pass) general USB-C PD Peltier driver > each powered probe has its own protected 1-Wire input and correctly numbered screw contacts [50.00ms]
+(pass) general USB-C PD Peltier driver > reset and PD fault independently disable output while live logic has a 5 V driver bias [115.00ms]
+(pass) general USB-C PD Peltier driver > programming USB powers logic through a reverse-blocking mux and exposes real recovery pads [239.00ms]
+(pass) all board and footprint silkscreen is intentionally absent [1.00ms]
+
+tests/assembly.test.tsx:
+(pass) native Peltier assembly > the optional assembly contains native models for the module, cables, temperature probes and fan [1366.99ms]
+(pass) native Peltier assembly > the mechanical assembly preserves the entire physical PCB and its electrical connections [210.00ms]
+(pass) native Peltier assembly > accessory solids meet the real connector endpoints with correct TEC polarity and documented dimensions [3.00ms]
+(pass) native Peltier assembly > both factory probe cables render three correctly colored conductors at the actual sensor terminals [49.00ms]
+(pass) native Peltier assembly > manufacturer fan CAD and the four-wire factory plug match the real header without changing its NC signals [48.00ms]
+
+ 50 pass
+ 0 fail
+ 7163 expect() calls
+Ran 50 tests across 7 files. [334.45s]
