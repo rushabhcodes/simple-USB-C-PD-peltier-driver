@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "tsci dev",
     "build": "tsci build index.circuit.tsx",
-    "build:cloud": "tsci build assembly.tsx --site --transpile --pcb-png --schematic-png --svgs --use-cdn-javascript && bun run scripts/build-assembly.ts --site-preview",
+    "build:cloud": "bun run scripts/pack-site-preview.ts unpack",
+    "build:preview": "tsci build assembly.tsx --site --transpile --pcb-png --schematic-png --svgs --use-cdn-javascript && bun run scripts/build-assembly.ts --site-preview && bun run scripts/pack-site-preview.ts pack",
     "snapshot": "tsci snapshot",
     "start": "tsci dev",
     "typecheck": "tsc --noEmit",
