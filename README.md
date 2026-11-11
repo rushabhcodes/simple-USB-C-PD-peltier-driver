@@ -1,6 +1,6 @@
 # USB-C PD Peltier driver
 
-An editable tscircuit PCB based on [0hmX/dual-usb-peltier-assembly](https://tscircuit.com/0hmX/dual-usb-peltier-assembly), release **0.4.12**. The default entrypoint displays the PCB with USB4110 surface-mount receptacles. The project includes nine schematic sheets, RP2040 firmware, and an accessory assembly.
+An editable tscircuit PCB based on [0hmX/dual-usb-peltier-assembly](https://tscircuit.com/0hmX/dual-usb-peltier-assembly), release **0.4.12**. The default 3D preview shows the routed board with its Peltier stack, fan, probes, and cables. The project includes nine schematic sheets and RP2040 firmware.
 
 Supplier parts are imported with the **TSCircuit CLI** using `tsci import C… --jlcpcb --use-exact-footprint`. The import audit in [`docs/component-imports.json`](docs/component-imports.json) records the exact commands and source hashes. The active wrappers preserve the reference's pin semantics and documented manufacturing corrections. Schematic placement is refined for closer capacitor banks, compact IC symbols, and readable annotations.
 
@@ -37,7 +37,7 @@ bun run dev
 
 The local `tsci` executable is pinned through the project dependency and lockfile. Use the **PCB**, **Schematic**, and **3D** tabs in the local viewer. The schematic sheet selector divides the design into PD input, TEC conversion, logic supplies, MCU signals, MCU power, monitoring, debug, fan, and probes.
 
-Start with [`index.circuit.tsx`](index.circuit.tsx), which renders [`src/board/general-pd.tsx`](src/board/general-pd.tsx). The smaller files in `src/board/` contain each functional block. `imports/` and `src/parts/` contain the actual footprints and pin maps. [`assembly.tsx`](assembly.tsx) shows the routed board with the Peltier stack, fan, probes and wiring. Run `bun run build:assembly` for the offline viewer and fan-duct STL.
+The viewer opens [`assembly.tsx`](assembly.tsx). Zoom out in the local 3D tab to see the full thermal stack. For the PCB entrypoint, run `bun run dev index.circuit.tsx`. It renders [`src/board/general-pd.tsx`](src/board/general-pd.tsx) from the functional blocks in `src/board/`. `imports/` and `src/parts/` contain the footprints and pin maps. Run `bun run build:assembly` and open `dist/assembly/assembly.html` for the offline viewer with an exploded view. The build also exports the fan duct STL.
 
 Saved routing is in [`src/board/routing-data.json`](src/board/routing-data.json). After changing component order or logical connections, run `bun run routing:rebind` and review/reroute the affected copper; rebinding updates associations and does not move traces.
 
@@ -72,4 +72,4 @@ See [`VALIDATION.md`](VALIDATION.md) for the exact build, placement, routing, su
 
 Adapted from [0hmX/usb-c-peltier-board](https://github.com/0hmX/usb-c-peltier-board/tree/87fa5809a7254b2ae2d7efe53fcedd53276361bb), commit `87fa5809a7254b2ae2d7efe53fcedd53276361bb`, corresponding to the supplied tscircuit release. Original source copyright © 2026 0hmX, under the [MIT license](LICENSE). See [`REFERENCE.md`](REFERENCE.md) for the adaptation details and [`docs/general-pd-driver.md`](docs/general-pd-driver.md) for the original design notes and component datasheets.
 
-The optional assembly includes manufacturer CAD from Noctua with its [bundled usage terms](src/assembly/assets/Noctua-CAD-README.txt).
+The assembly includes manufacturer CAD from Noctua with its [bundled usage terms](src/assembly/assets/Noctua-CAD-README.txt).

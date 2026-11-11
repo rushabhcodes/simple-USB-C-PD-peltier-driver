@@ -9,7 +9,8 @@ import { fanDuctTriangles } from "../src/assembly/thermal-stack"
 import { assemblyWiringSvg } from "./helpers/assembly-wiring"
 
 // Consume the actual build; do not duplicate board/component geometry here.
-const output = resolve(process.argv[2] ?? "dist/assembly")
+const sitePreview = process.argv[2] === "--site-preview"
+const output = resolve(sitePreview ? "dist/assembly" : process.argv[2] ?? "dist/assembly")
 await mkdir(output, { recursive: true })
 const circuitSource = await readFile("dist/assembly/circuit.json", "utf8")
 const circuit: AnyCircuitElement[] = JSON.parse(circuitSource)
@@ -74,25 +75,6 @@ const missingModels = [...pcbParts.map(part => part.reference), ...assemblyParts
 if (missingModels.length) throw new Error(`Models did not render: ${missingModels.join(", ")}`)
 
 const glb = await convertSceneToGLTF(scene, { binary: true, embedImages: true, forceIndices: true }) as ArrayBuffer
-await writeFile(resolve(output, "assembly.glb"), new Uint8Array(glb))
-await writeFile(resolve(output, "provenance.json"), JSON.stringify(provenance, null, 2) + "\n")
-const stl = Buffer.alloc(84 + fanDuctTriangles.length * 50)
-stl.writeUInt32LE(fanDuctTriangles.length, 80)
-for (const [index, triangle] of fanDuctTriangles.entries()) {
-  // Rotate X depth to print Z, with the fan flange flat on the print bed.
-  const vertices = triangle.map(([x, y, z]) => [-z, y, x])
-  const [a, b, c] = vertices
-  const [u, v, w] = b!.map((value, axis) => value - a![axis]!)
-  const [p, q, r] = c!.map((value, axis) => value - a![axis]!)
-  const normal = [v! * r! - w! * q!, w! * p! - u! * r!, u! * q! - v! * p!]
-  const magnitude = Math.hypot(...normal)
-  if (!magnitude) throw new Error("The fan duct mesh contains a degenerate triangle")
-  const values = [...normal.map(value => value / magnitude), ...vertices.flat()]
-  values.forEach((value, i) => stl.writeFloatLE(value, 84 + index * 50 + 4 * i))
-}
-await writeFile(resolve(output, "fan-duct.stl"), stl)
-const wiring = assemblyWiringSvg()
-await writeFile(resolve(output, "wiring.svg"), wiring)
 // The exporter bakes rotations into meshes and uses translated, flat nodes.
 // Fit actual GLB bounds, including accessories beyond the PCB, in an elevated view.
 const data = Buffer.from(glb), model = JSON.parse(data.subarray(20, 20 + data.readUInt32LE(12)).toString())
@@ -115,11 +97,40 @@ for (const x of [min[0]!, max[0]!]) for (const y of [min[1]!, max[1]!]) for (con
 const camPos = center.map((v, i) => v + direction[i]! * distance * 1.12) as [number, number, number]
 const png = await renderGLTFToPNGFromGLB(new Uint8Array(glb), { width: 1600, height: 900, supersampling: 2, realistic: true,
   camPos, lookAt: center as [number, number, number], fov: 43, backgroundColor: "#f3f6fa" })
-await writeFile(resolve(output, "assembly.png"), png)
-const viewerSource = await Bun.build({ entrypoints: ["scripts/assembly-viewer.js"], target: "browser", minify: true })
-if (!viewerSource.success) throw new Error("Could not bundle assembly viewer")
-const js = await viewerSource.outputs[0].text()
-const html = await readFile("assets/assembly/viewer.html", "utf8")
-await writeFile(resolve(output, "assembly.html"), html.replace("__GLB__", Buffer.from(glb).toString("base64"))
-  .replace("__PREVIEW__", Buffer.from(png).toString("base64")).replace("__WIRING__", () => wiring).replace("__VIEWER__", () => js))
-console.log(`Assembly exported to ${output}`)
+if (sitePreview) {
+  // The registry loads 3d.glb for the interactive view and 3d.png for the thumbnail.
+  await Promise.all([
+    writeFile(resolve(output, "3d.glb"), data),
+    writeFile(resolve(output, "3d.png"), png),
+    writeFile(resolve(output, "circuit.json"), JSON.stringify(circuit)),
+  ])
+  console.log(`Assembly preview exported to ${output}`)
+} else {
+  await writeFile(resolve(output, "assembly.glb"), data)
+  await writeFile(resolve(output, "provenance.json"), JSON.stringify(provenance, null, 2) + "\n")
+  const stl = Buffer.alloc(84 + fanDuctTriangles.length * 50)
+  stl.writeUInt32LE(fanDuctTriangles.length, 80)
+  for (const [index, triangle] of fanDuctTriangles.entries()) {
+    // Rotate X depth to print Z, with the fan flange flat on the print bed.
+    const vertices = triangle.map(([x, y, z]) => [-z, y, x])
+    const [a, b, c] = vertices
+    const [u, v, w] = b!.map((value, axis) => value - a![axis]!)
+    const [p, q, r] = c!.map((value, axis) => value - a![axis]!)
+    const normal = [v! * r! - w! * q!, w! * p! - u! * r!, u! * q! - v! * p!]
+    const magnitude = Math.hypot(...normal)
+    if (!magnitude) throw new Error("The fan duct mesh contains a degenerate triangle")
+    const values = [...normal.map(value => value / magnitude), ...vertices.flat()]
+    values.forEach((value, i) => stl.writeFloatLE(value, 84 + index * 50 + 4 * i))
+  }
+  await writeFile(resolve(output, "fan-duct.stl"), stl)
+  const wiring = assemblyWiringSvg()
+  await writeFile(resolve(output, "wiring.svg"), wiring)
+  await writeFile(resolve(output, "assembly.png"), png)
+  const viewerSource = await Bun.build({ entrypoints: ["scripts/assembly-viewer.js"], target: "browser", minify: true })
+  if (!viewerSource.success) throw new Error("Could not bundle assembly viewer")
+  const js = await viewerSource.outputs[0].text()
+  const html = await readFile("assets/assembly/viewer.html", "utf8")
+  await writeFile(resolve(output, "assembly.html"), html.replace("__GLB__", data.toString("base64"))
+    .replace("__PREVIEW__", Buffer.from(png).toString("base64")).replace("__WIRING__", () => wiring).replace("__VIEWER__", () => js))
+  console.log(`Assembly exported to ${output}`)
+}
