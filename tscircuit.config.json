@@ -2,6 +2,13 @@
   "$schema": "https://cdn.jsdelivr.net/npm/@tscircuit/cli/types/tscircuit.config.schema.json",
   "mainEntrypoint": "assembly.tsx",
   "previewComponentPath": "assembly.tsx",
+  "siteDefaultComponentPath": "assembly.tsx",
+  "includeBoardFiles": [
+    "assembly.tsx",
+    "designs/lite.circuit.tsx",
+    "designs/modular-power.circuit.tsx",
+    "designs/modular-control.circuit.tsx"
+  ],
   "buildCommand": "bun run build:cloud",
   "ignoredFiles": ["work/**", "dist/**", "firmware/**", "tests/**"]
 }

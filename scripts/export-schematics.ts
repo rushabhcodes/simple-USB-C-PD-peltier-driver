@@ -6,12 +6,12 @@ import {
   convertCircuitJsonToStackedSchematicSheetsSvg,
 } from "circuit-to-svg"
 
-const input = "dist/index/circuit.json"
+const input = process.argv[2] ?? "dist/index/circuit.json"
 if (!await Bun.file(input).exists()) throw new Error("Build the board first: bun run build")
 const circuit = await Bun.file(input).json() as CircuitJson
 const sheets = circuit.filter(item => item.type === "schematic_sheet")
   .sort((a, b) => (a.sheet_index ?? 0) - (b.sheet_index ?? 0))
-const output = "dist/schematics"
+const output = process.argv[3] ?? "dist/schematics"
 await mkdir(output, { recursive: true })
 for (const [index, sheet] of sheets.entries()) {
   const filename = `${String(index + 1).padStart(2, "0")}-${sheet.name}`

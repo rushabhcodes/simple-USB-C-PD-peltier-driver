@@ -1,0 +1,111 @@
+{
+  "graphMatches": true,
+  "referencePins": 461,
+  "stitchedPins": 461,
+  "nativeViaProxyPortsExcluded": 740,
+  "commercialAssumptions": {
+    "currency": "USD",
+    "priceStatus": "provisional-assumption-awaiting-user-targets",
+    "planningQuantity": 100,
+    "saleScope": "Assembled PCB(s), including Modular's internal inter-board harness; no TEC, fan, probes, heatsink, enclosure, PSU, external cables or sales tax",
+    "targetGrossMargin": 0.5
+  },
+  "prices": [
+    {
+      "id": "lite",
+      "currency": "USD",
+      "targetSellPrice": [
+        59,
+        79
+      ],
+      "priceStatus": "provisional-assumption-awaiting-user-targets",
+      "maxLandedCogs": [
+        29.5,
+        39.5
+      ],
+      "actualCost": null
+    },
+    {
+      "id": "standard",
+      "currency": "USD",
+      "targetSellPrice": [
+        89,
+        119
+      ],
+      "priceStatus": "provisional-assumption-awaiting-user-targets",
+      "maxLandedCogs": [
+        44.5,
+        59.5
+      ],
+      "actualCost": null
+    },
+    {
+      "id": "modular",
+      "currency": "USD",
+      "targetSellPrice": [
+        119,
+        159
+      ],
+      "priceStatus": "provisional-assumption-awaiting-user-targets",
+      "maxLandedCogs": [
+        59.5,
+        79.5
+      ],
+      "actualCost": null
+    }
+  ],
+  "boards": [
+    {
+      "id": "lite",
+      "purchasedPlacements": 115,
+      "routingComplete": false,
+      "manufacturingReady": false,
+      "placementIssues": [],
+      "errors": [],
+      "warnings": [],
+      "unsourced": []
+    },
+    {
+      "id": "modular-power",
+      "purchasedPlacements": 80,
+      "routingComplete": false,
+      "manufacturingReady": false,
+      "placementIssues": [],
+      "errors": [],
+      "warnings": [
+        {
+          "type": "source_missing_manufacturer_part_number_warning",
+          "source_missing_manufacturer_part_number_warning_id": "source_missing_manufacturer_part_number_warning_0",
+          "source_component_id": "source_component_85",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "warning_type": "source_missing_manufacturer_part_number_warning",
+          "message": "<pinheader#8779 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
+        }
+      ],
+      "unsourced": [
+        "J_LINK"
+      ]
+    },
+    {
+      "id": "modular-control",
+      "purchasedPlacements": 57,
+      "routingComplete": false,
+      "manufacturingReady": false,
+      "placementIssues": [],
+      "errors": [],
+      "warnings": [
+        {
+          "type": "source_missing_manufacturer_part_number_warning",
+          "source_missing_manufacturer_part_number_warning_id": "source_missing_manufacturer_part_number_warning_0",
+          "source_component_id": "source_component_65",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "warning_type": "source_missing_manufacturer_part_number_warning",
+          "message": "<pinheader#10817 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
+        }
+      ],
+      "unsourced": [
+        "J_LINK"
+      ]
+    }
+  ]
+}

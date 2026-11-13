@@ -10,7 +10,23 @@ Review the [PCB SVG](docs/previews/pcb.svg), [all nine schematic sheets](docs/pr
 
 Open the [published tscircuit board](https://tscircuit.com/rushabhcodes/simple-usb-c-pd-peltier-driver).
 
+The package has four [registry build views](docs/publishing.md) for the three
+products: **Standard**, **Lite**, **Modular Power** and **Modular Controller**.
+Standard is the default routed assembly. Lite and both Modular boards are
+explicitly **unrouted design candidates**; publishing is not manufacturing approval.
+
 ## Design
+
+For the recommended all-round version, run `bun run best:build`. The
+[recommended-version guide](docs/best-version.md) describes the integrated
+Standard board and the complete PCB, assembly, firmware and CAM review package.
+
+The [three-product design study](docs/product-designs.md) adds a lower-BOM Lite
+candidate and a Modular candidate with separate power/controller PCBs alongside
+this integrated Standard design. It includes provisional selling-price targets,
+editable entrypoints, buildable schematics/floorplans, and a
+[three-cycle review log](docs/design-review.md). The new candidates require fresh
+routing and hardware qualification; run `bun run designs:build` to inspect them.
 
 | Item | Specification |
 | --- | --- |

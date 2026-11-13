@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "currency": "USD",
+  "priceStatus": "provisional-assumption-awaiting-user-targets",
+  "planningQuantity": 100,
+  "saleScope": "Assembled PCB(s), including Modular's internal inter-board harness; no TEC, fan, probes, heatsink, enclosure, PSU, external cables or sales tax",
+  "targetGrossMargin": 0.5,
+  "products": [
+    {
+      "id": "lite", "name": "Lite", "targetSellPrice": [59, 79],
+      "boards": ["lite"], "fanSupply": false, "probePorts": 0,
+      "positioning": "Lower BOM for an OEM with its own cooling and sensing",
+      "routingStatus": "unrouted", "hardwareQualified": false
+    },
+    {
+      "id": "standard", "name": "Standard", "targetSellPrice": [89, 119],
+      "boards": ["standard"], "fanSupply": true, "probePorts": 2,
+      "positioning": "Existing integrated four-layer controller for bench integration",
+      "routingStatus": "existing-routed-design", "hardwareQualified": false
+    },
+    {
+      "id": "modular", "name": "Modular", "targetSellPrice": [119, 159],
+      "boards": ["modular-power", "modular-control"], "fanSupply": true, "probePorts": 2,
+      "positioning": "Separate replaceable power and controller PCBs joined by a low-power harness",
+      "routingStatus": "unrouted", "hardwareQualified": false
+    }
+  ]
+}
