@@ -1,6 +1,6 @@
 # Publishing the three product versions
 
-Version 0.2.0 keeps one package, `rushabhcodes/simple-usb-c-pd-peltier-driver`,
+Version 0.2.1 keeps one package, `rushabhcodes/simple-usb-c-pd-peltier-driver`,
 with multiple build views. `includeBoardFiles` is the TSCircuit CLI's supported
 configuration for those builds. The three products have four physical board
 views because Modular consists of two PCBs:
@@ -25,12 +25,13 @@ bun run build:cloud
 bun run typecheck
 bun test ./tests
 tsci login
-tsci push
+tsci push --no-compress
 ```
 
 `build:preview` compiles all four entrypoints from the pinned dependency set,
 generates PCB/schematic/3D artifacts, restores the full Standard assembly model,
-and packs the outputs. `build:cloud` verifies the source fingerprint and unpacks
+and packs the outputs in checksum-verified chunks of at most 3 MiB to respect
+registry request-size limits. `build:cloud` verifies the source fingerprint and unpacks
 the same four builds for the registry's cloud builder. The fingerprint covers
 all variant source and the output map; a stale or incomplete preview is rejected.
 
@@ -39,8 +40,11 @@ CDN's file-size limit. Preview generation uses committed footprints with live
 supplier lookups disabled; supplier stock and price feasibility remain unverified.
 The ordinary source `build` command keeps its normal supplier-check behaviour.
 
-Do not push with `--include-dist`: local review ZIPs, tool outputs and firmware
-build caches are not registry source. Credentials stay in the CLI's user config
+Publish from a clean source checkout or a staging tree containing only files
+listed by `git ls-files`. This CLI version's `push` does not honour the project's
+`ignoredFiles` list, so pushing a development tree can include generated firmware
+and work caches. Do not use `--include-dist`. `--no-compress` uploads the bounded
+files individually instead of exceeding the archive request limit. Credentials stay in the CLI's user config
 or environment, never Git or the packed preview. Native `tsci login` provides
 the user sign-in flow; do not paste session tokens into chat or commit them.
 
@@ -49,7 +53,7 @@ After pushing, check the new package release's build result and confirm all four
 present. The [design comparison](product-designs.md) and
 [review log](design-review.md) distinguish the remaining release gates.
 
-## 0.2.0 local preflight
+## Local preflight and upload correction
 
 The release passed TypeScript and all **89 tests across 14 files**. A clean
 source staging tree with no prior `dist/` restored all four compiled builds,
@@ -58,3 +62,8 @@ showed four gallery cards, and reported no page, request or HTTP errors. Draft
 outputs contained no saved copper; Standard retained its 364 routed traces.
 These checks establish the prepared artifacts, not hardware qualification or
 the eventual remote publication result; verify the live registry build after push.
+
+The initial 0.2.0 upload was stopped after HTTP 413 and detection of generated
+caches in the CLI fallback. Version 0.2.1 uses the same four checked board builds,
+split preview files, and a clean tracked-source staging tree. No credential or
+build cache directory belongs in the published source.

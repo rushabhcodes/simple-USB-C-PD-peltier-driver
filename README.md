@@ -72,7 +72,7 @@ bun test ./tests
 
 Board artifacts are written to `dist/index/`. Individual sheet SVG/PNG previews and an all-sheet SVG are written to `dist/schematics/`. Default builds keep supplier checks enabled. Confirmed zero stock produces a warning; missing data, failed requests and timed-out lookups remain unverified. For an offline build, `--disable-parts-engine` uses the committed supplier parts. The tests check electrical connectivity, saved copper, component pin maps, schematic separation, and accessory models. They do not replace hardware qualification.
 
-After changing the board or assembly, run `bun run build:preview` and commit the updated `assets/assembly/site-preview.br`. The tscircuit cloud build verifies the source fingerprint and unpacks this preview into `dist/`.
+After changing a board or assembly, run `bun run build:preview` and commit the updated `assets/assembly/site-preview-manifest.json` and numbered `.brpart` chunks. The tscircuit cloud build verifies their checksums and source fingerprint and restores all four previews into `dist/`.
 
 See [`VALIDATION.md`](VALIDATION.md) for the exact build, placement, routing, supplier-check and test results, including the reviewed manufacturer footprint used for the fan inductor.
 

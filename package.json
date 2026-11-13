@@ -1,6 +1,6 @@
 {
   "name": "simple-usb-c-pd-peltier-driver",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Editable four-layer USB-C PD Peltier driver, based on 0hmX/dual-usb-peltier-assembly",
   "keywords": [
     "tscircuit",

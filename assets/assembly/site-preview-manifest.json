@@ -1,0 +1,42 @@
+{
+  "format": "brotli-chunks-v1",
+  "bytes": 20837303,
+  "sha256": "695f9af68f033f6a86b5ca5a2e1c61ae184cc1dc67d0e07597e047850b5e300b",
+  "parts": [
+    {
+      "file": "site-preview-000.brpart",
+      "bytes": 3145728,
+      "sha256": "0e21179e21a2eb7caca874bc347cb269a7322c4fd02f19567d0ed0314e598499"
+    },
+    {
+      "file": "site-preview-001.brpart",
+      "bytes": 3145728,
+      "sha256": "dc893dea0031f4bdd6f04cf11eb6c4d5ad9051bec000cc4629163c3a94575509"
+    },
+    {
+      "file": "site-preview-002.brpart",
+      "bytes": 3145728,
+      "sha256": "3c46f76731f47787b392d37cb51e18f800e22a73a1f97a2bd8067be47332e0eb"
+    },
+    {
+      "file": "site-preview-003.brpart",
+      "bytes": 3145728,
+      "sha256": "f1ca58bf7271b4faf87a4629144347361bbe0f28165196b24ef8ca5b599db6c3"
+    },
+    {
+      "file": "site-preview-004.brpart",
+      "bytes": 3145728,
+      "sha256": "9f6b1939b8afd154a503eec2a1afc0421462ead92c62bd38593f0388c6c9ca6a"
+    },
+    {
+      "file": "site-preview-005.brpart",
+      "bytes": 3145728,
+      "sha256": "4ac36d0707d80c1b3264829d6d64fc081e4cf197f747f0eff88e12b761aecea2"
+    },
+    {
+      "file": "site-preview-006.brpart",
+      "bytes": 1962935,
+      "sha256": "682a3f56f3c13973ac73fa7b4cfb2cb2f7e15b5120c476523fa5c38c7cfb5041"
+    }
+  ]
+}

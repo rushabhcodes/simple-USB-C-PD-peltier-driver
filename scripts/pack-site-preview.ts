@@ -2,8 +2,10 @@ import { createHash } from "node:crypto"
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { brotliCompressSync, brotliDecompressSync, constants } from "node:zlib"
 import builds from "../assets/assembly/registry-builds.json"
+import { chunkPreview, joinPreview, validatePreviewManifest, type PreviewArchiveManifest } from "./preview-archive"
 
-const archivePath = "assets/assembly/site-preview.br"
+const archivePath = "assets/assembly/site-preview-manifest.json"
+const archiveDirectory = "assets/assembly"
 const outputs = [
   "index.html", "standalone.min.js", "index.js", "index.cjs", "index.d.ts",
   ...builds.flatMap(build => ["circuit.json", "3d.glb", "3d.png", "pcb.svg", "pcb.png", "schematic.svg", "schematic.png"]
@@ -15,7 +17,7 @@ async function sourceFingerprint() {
   const glob = new Bun.Glob("**/*")
   const paths = [
     "assembly.tsx", "index.circuit.tsx", "package.json", "tscircuit.config.json", "tsconfig.json",
-    "scripts/build-assembly.ts", "scripts/pack-site-preview.ts", "assets/assembly/provenance.json", "assets/assembly/registry-builds.json",
+    "scripts/build-assembly.ts", "scripts/pack-site-preview.ts", "scripts/preview-archive.ts", "assets/assembly/provenance.json", "assets/assembly/registry-builds.json",
     ...["src", "imports", "designs"].flatMap(dir =>
       [...glob.scanSync({ cwd: dir, onlyFiles: true })].map(path => `${dir}/${path}`)),
   ].sort()
@@ -46,14 +48,19 @@ switch (process.argv[2]) {
     }
     const header: PreviewHeader = { fingerprint, paths: outputs, sizes: files.map(file => file.length) }
     const payload = Buffer.concat([Buffer.from(JSON.stringify(header) + "\n"), ...files])
-    await writeFile(archivePath, brotliCompressSync(payload, {
+    const archive = chunkPreview(brotliCompressSync(payload, {
       params: { [constants.BROTLI_PARAM_QUALITY]: 6 },
     }))
+    await Promise.all(archive.manifest.parts.map((part, i) => writeFile(`${archiveDirectory}/${part.file}`, archive.chunks[i]!)))
+    await writeFile(archivePath, JSON.stringify(archive.manifest, null, 2) + "\n")
     console.log(`Packed the validated preview into ${archivePath}`)
     break
   }
   case "unpack": {
-    const payload = brotliDecompressSync(await readFile(archivePath))
+    const manifest = JSON.parse(await readFile(archivePath, "utf8")) as PreviewArchiveManifest
+    validatePreviewManifest(manifest)
+    const chunks = await Promise.all(manifest.parts.map(part => readFile(`${archiveDirectory}/${part.file}`)))
+    const payload = brotliDecompressSync(joinPreview(manifest, chunks))
     const newline = payload.indexOf(10)
     if (newline < 0) throw new Error(`Invalid preview archive: ${archivePath}`)
     const header: PreviewHeader = JSON.parse(payload.toString("utf8", 0, newline))
