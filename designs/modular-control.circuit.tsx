@@ -1,2 +1,2 @@
-import { DraftBoard } from "./boards"
-export default () => <DraftBoard id="modular-control" />
+import { RoutedProductBoard } from "./routed-boards"
+export default () => <RoutedProductBoard id="modular-control" />

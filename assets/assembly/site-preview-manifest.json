@@ -1,42 +1,42 @@
 {
   "format": "brotli-chunks-v1",
-  "bytes": 20867439,
-  "sha256": "69877321f875976502792ab687e82768e48bad997d01872dc31d2dee85684106",
+  "bytes": 21930041,
+  "sha256": "d6715c7ae9abea3dea98193097e24b09986994b33fd05f6f05dc8ea4e75364bb",
   "parts": [
     {
       "file": "site-preview-000.brpart",
       "bytes": 3145728,
-      "sha256": "f40848e787468aa8ac8bd2b185f4663b8d52e6829d4c87d1a6587388af9ff0aa"
+      "sha256": "93bb4d97bce5a1815fec6ea7edd95d590b587f7164208ade11da58628d232cbc"
     },
     {
       "file": "site-preview-001.brpart",
       "bytes": 3145728,
-      "sha256": "c1349eb60735c10f4c129257190d322e39bf6c358b3e19a6f72178d1aa587519"
+      "sha256": "10de432a446f983484fe1b2920029b799eb0b23903f4dd5ebbb36286a4a533f5"
     },
     {
       "file": "site-preview-002.brpart",
       "bytes": 3145728,
-      "sha256": "a52cbff02fcee128becd20e5644ca6d66dd98b242d1d2e7cd8d32e9de478df94"
+      "sha256": "a74b2a623046951de8a156314663c6b7c7cf87961b0eec4450ef6efb1bd9586c"
     },
     {
       "file": "site-preview-003.brpart",
       "bytes": 3145728,
-      "sha256": "1c99f936b9211a4329044c2716eb5828e38a13a9db60e20b38346c1c15cf1b0c"
+      "sha256": "f47137f3cd7b6e12b61490dbc615ea368d6f3f3dc6cb314b79f1f5517154257b"
     },
     {
       "file": "site-preview-004.brpart",
       "bytes": 3145728,
-      "sha256": "c2ecd4a70270e58b1817871be189931937b578220e276f7f1d9b719ce0deaae3"
+      "sha256": "b52c16001fd1fb4e51b186201ef6d3229071616800e2b9abcdd6d00b1e44a78c"
     },
     {
       "file": "site-preview-005.brpart",
       "bytes": 3145728,
-      "sha256": "a67202340c04205486fca3134f3f4d13182c89277aba604b8dd7f4de9562a985"
+      "sha256": "84b4502e19cc0130a67b17f59b46dae36f807720942394eeba0b1076705e2f08"
     },
     {
       "file": "site-preview-006.brpart",
-      "bytes": 1993071,
-      "sha256": "7b6482e01666a106d5bb46c2caf463d7581cac808c40d3fd709d153cfaa5936c"
+      "bytes": 3055673,
+      "sha256": "56f9003f245c83c0e2222c1885d7c2d0b0bf35973667d5acd7e31da2c1b6edd2"
     }
   ]
 }

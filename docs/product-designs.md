@@ -4,8 +4,9 @@ The design family offers a lower-BOM OEM board, the existing integrated board,
 and a serviceable two-board system. All retain the reference CC/CV controller,
 RP2040 pin mapping, reverse-blocked PROGRAM power and fixed TEC polarity.
 
-**Design stage:** Standard retains its existing routed PCB; Lite and Modular are
-schematic and placement candidates with **no routed copper**. None has completed
+**Design stage:** All four PCBs have routed copper checked against fresh source,
+physical connectivity, native DRC and fabrication geometry. Standard retains its
+original layout; Lite and Modular have variant-specific copper. None has completed
 electrical, thermal or mechanical bench qualification. The 72 W TEC setting is a
 configuration ceiling, not a measured continuous-power rating. The firmware has
 temperature telemetry but no thermostat or polarity reversal.
@@ -43,7 +44,7 @@ power limit or closed-loop cooling feature. The outline is unchanged: the claime
 saving is 19 purchased placements, **not** a measured dollar or PCB-area saving.
 An OEM must provide suitable cooling independently of the removed fan supply.
 
-![Lite unrouted component floorplan](previews/products/lite.png)
+![Lite routed PCB](previews/products/lite.png)
 
 ### Standard — integrated reference
 
@@ -69,9 +70,9 @@ are individually smaller than Standard, but their combined board area is about
 73.2 cm² versus 42.8 cm² for Standard. Extra board area, connectors, test and
 harness assembly make this a serviceability option rather than a cost saving.
 
-![Modular power PCB — unrouted](previews/products/modular-power.png)
+![Modular power PCB — routed](previews/products/modular-power.png)
 
-![Modular controller PCB — unrouted](previews/products/modular-control.png)
+![Modular controller PCB — routed](previews/products/modular-control.png)
 
 ## Modular electrical interface
 
@@ -118,22 +119,24 @@ individual conductor fault.
 
 ```sh
 bun run designs:build
+bun run designs:route-check
 bun run designs:review
 bun test ./tests
 ```
 
 `designs:build` compiles fresh source for Lite and both Modular boards, exports
-Circuit JSON, BOM JSON, component floorplan SVG/PNG and multi-sheet schematic
+Circuit JSON, BOM JSON, routed PCB SVG/PNG and multi-sheet schematic
 SVG, and writes `dist/product-designs/validation.json`. Parts-engine lookups are
 disabled deliberately for this reproducible design study; all supplier stock
 and cost information needs a new quote. Standard continues to use the existing
 `bun run build` and `bun run build:preview` workflows.
 
-The builder checks every original pin through the explicit cable and checks
-placement/native circuit diagnostics. A bad connection or placement makes it
-exit nonzero. Missing connector MPNs remain reported warnings and open release
-gates. `bun run designs:build --fabrication` intentionally refuses to export the
-unrouted drafts. The previews shown above are component placement studies.
+The builder checks every original pin through the explicit cable, actual copper
+connectivity, native DRC, clearances, thermal arrays, clock routing and the
+converter's power corridors and Kelvin branches. A failed check makes it exit
+nonzero. Missing connector MPNs remain reported warnings and open release gates.
+`bun run designs:build --fabrication` intentionally refuses to export unqualified
+hardware. The previews above show the routed review candidates.
 
 Editable entrypoints:
 
@@ -143,6 +146,8 @@ Editable entrypoints:
 - [Modular controller](../designs/modular-control.circuit.tsx)
 
 Read [the review log](design-review.md) for all findings, fixes, failed checks,
-re-review outcomes and open issues. Do not reuse Standard's saved copper on a
-draft board. New routing, connector selection, mechanical checks, PCBA quotations
-and hardware qualification are required before manufacturing or sale.
+re-review outcomes and open issues. The [routing follow-up](routing-review.md)
+records three further review cycles and each board's measured routing checks.
+Saved copper in `designs/copper/` belongs to its exact source variant; it must be
+rebound and reviewed after source changes. Connector selection, mechanical checks,
+PCBA quotations and hardware qualification remain required before manufacturing or sale.

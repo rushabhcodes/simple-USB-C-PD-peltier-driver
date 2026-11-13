@@ -6,13 +6,13 @@ import { sourceConnectivity } from "./physical-copper"
 // process in docs/pcb-fabrication.md. No other same-net via-in-pad is exempt.
 export { THERMAL_ARRAYS }
 
-export function inspectThermalVias(json: AnyCircuitElement[]) {
+export function inspectThermalVias(json: AnyCircuitElement[], arrays = THERMAL_ARRAYS) {
   const ground = json.filter(e => e.type === "source_net").find(e => e.name === "GND")
   const source = sourceConnectivity(json)
   const vias = json.filter(e => e.type === "pcb_via")
   const allowedErrorIds = new Set<string>(), missing: string[] = [], invalid: string[] = []
   const close = (a: number, b: number) => Math.abs(a - b) <= 1e-6
-  for (const array of THERMAL_ARRAYS) {
+  for (const array of arrays) {
     const key = `${array.component}.${array.pin}`
     const sourcePort = source.ports.get(key)
     const port = json.filter(e => e.type === "pcb_port").find(e => e.source_port_id === sourcePort)

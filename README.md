@@ -12,8 +12,9 @@ Open the [published tscircuit board](https://tscircuit.com/rushabhcodes/simple-u
 
 The package has four [registry build views](docs/publishing.md) for the three
 products: **Standard**, **Lite**, **Modular Power** and **Modular Controller**.
-Standard is the default routed assembly. Lite and both Modular boards are
-explicitly **unrouted design candidates**; publishing is not manufacturing approval.
+Standard is the default routed assembly. **All four PCBs are routed** and pass
+physical connectivity, clearance and native DRC checks. Hardware qualification
+and Modular connector selection remain open; publishing is not manufacturing approval.
 
 ## Design
 
@@ -24,9 +25,10 @@ Standard board and the complete PCB, assembly, firmware and CAM review package.
 The [three-product design study](docs/product-designs.md) adds a lower-BOM Lite
 candidate and a Modular candidate with separate power/controller PCBs alongside
 this integrated Standard design. It includes provisional selling-price targets,
-editable entrypoints, buildable schematics/floorplans, and a
-[three-cycle review log](docs/design-review.md). The new candidates require fresh
-routing and hardware qualification; run `bun run designs:build` to inspect them.
+editable entrypoints, routed PCB previews, and a
+[three-cycle review log](docs/design-review.md). The subsequent
+[routing review](docs/routing-review.md) records the routing fixes and remaining
+qualification work. Run `bun run designs:build` to inspect the products.
 
 | Item | Specification |
 | --- | --- |
@@ -61,6 +63,7 @@ Saved routing is in [`src/board/routing-data.json`](src/board/routing-data.json)
 
 ```sh
 bun run typecheck
+bun run designs:route-check
 bun run check:netlist
 bun run check:schematic
 bun run check:placement

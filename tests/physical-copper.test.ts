@@ -48,6 +48,12 @@ describe("physical copper connectivity oracle", () => {
   test("bottom copper cannot contact top-only pads", () => {
     expect(analyzePhysicalCopper([...fixture(), trace("bottom")]).disconnected).toHaveLength(1)
   })
+  test("routing targets come from physical islands rather than shared net labels", () => {
+    const open = analyzePhysicalCopper(fixture())
+    expect(open.routingPointsForIsland(["P0.1"])).toEqual([{ x: 0, y: 0, layers: ["top"] }])
+    const joined = analyzePhysicalCopper([...fixture(), trace()])
+    expect(joined.routingPointsForIsland(["P0.1"]).some(p => p.x === 2)).toBe(true)
+  })
   test("top-to-bottom barrels connect inner copper and arbitrary via IDs count", () => {
     const result = analyzePhysicalCopper([...fixture(), via(0), via(2), trace("inner1")])
     expect(result.disconnected).toEqual([])
@@ -79,6 +85,18 @@ describe("physical copper connectivity oracle", () => {
       outer_diameter: 0.5, hole_diameter: 0.2, layers: ["top", "bottom"] }
     expect(analyzePhysicalCopper([...json, hole, routed]).disconnected).toEqual([])
   })
+  test("a square pin-one header annulus joins copper around its actual drill", () => {
+    const routes = [trace("top", 0, 0.5), trace("top", 1.5, 2)]
+    expect(analyzePhysicalCopper([...fixture(), ...routes]).disconnected).toHaveLength(1)
+    const header: any = { type: "pcb_plated_hole", pcb_plated_hole_id: "header-pin-one",
+      shape: "circular_hole_with_rect_pad", x: 1, y: 0, hole_diameter: 1,
+      rect_pad_width: 1.5, rect_pad_height: 1.5, rect_ccw_rotation: 0,
+      hole_offset_x: 0, hole_offset_y: 0, layers: ["top", "inner1", "inner2", "bottom"] }
+    const physical = analyzePhysicalCopper([...fixture(), header, ...routes])
+    expect(physical.disconnected).toEqual([])
+    expect(physical.shorts).toEqual([])
+    expect(physical.unanchoredCopper).toEqual([])
+  })
   test("a repeated wire endpoint inside a drilled via is not a floating copper disk", () => {
     const routed: any = { type: "pcb_trace", pcb_trace_id: "stub", route: [
       { route_type: "wire", x: 0, y: 0, width: 0.1, layer: "top" },
@@ -87,6 +105,23 @@ describe("physical copper connectivity oracle", () => {
       { route_type: "wire", x: 1, y: 0, width: 0.1, layer: "bottom" },
     ] }
     expect(analyzePhysicalCopper([...fixture(), via(1), routed]).unanchoredCopper).toEqual([])
+  })
+  test("a short stroke wholly inside a drill does not fabricate an isolated copper island", () => {
+    const inside: any = { type: "pcb_trace", pcb_trace_id: "inside-hole", source_trace_id: "st0", route: [
+      { route_type: "wire", x: 0.975, y: 0, width: 0.1, layer: "top" },
+      { route_type: "wire", x: 1.025, y: 0, width: 0.1, layer: "top" },
+    ] }
+    const physical = analyzePhysicalCopper([...fixture(), via(1), trace(), inside])
+    expect(physical.disconnected).toEqual([])
+    expect(physical.unanchoredCopper).toEqual([])
+    const variable: any = { ...inside, route: [
+      { route_type: "wire", x: 0.975, y: 0, width: 0.12, layer: "top" },
+      { route_type: "wire", x: 1.075, y: 0, width: 0.02, layer: "top" },
+    ] }
+    expect(analyzePhysicalCopper([...fixture(), via(1), trace(), variable])
+      .metricsForNet("SIGNAL").traceLengthMm).toBeCloseTo(2.1, 8)
+    expect(analyzePhysicalCopper([...fixture(), via(1), trace(), { ...variable, route_thickness_mode: "interpolated" }])
+      .metricsForNet("SIGNAL").traceLengthMm).toBe(2)
   })
   test("a pour hole isolates copper inside it", () => {
     const pour: any = { type: "pcb_copper_pour", pcb_copper_pour_id: "pour", shape: "brep", layer: "top", source_net_id: "n",
@@ -97,7 +132,9 @@ describe("physical copper connectivity oracle", () => {
     expect(analyzePhysicalCopper([...fixture(), pour]).disconnected).toEqual([])
   })
   test("touching an NC pad is an unintended connection", () => {
-    expect(analyzePhysicalCopper([...fixture(), trace("top", 0, 4)]).shorts).toHaveLength(1)
+    const physical = analyzePhysicalCopper([...fixture(), trace("top", 0, 4)])
+    expect(physical.shorts).toHaveLength(1)
+    expect(physical.shortContacts.some(p => p.a === "pad2" && p.b === "trace0:segment0")).toBe(true)
   })
   test("source-net mutation remains visible even when copper connects the pins", () => {
     const baseline = fixture(), altered = structuredClone(baseline) as any[]

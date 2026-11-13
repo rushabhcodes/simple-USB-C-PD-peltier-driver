@@ -1,5 +1,10 @@
 # Validation — 2026-11-11, version 0.1.3
 
+For the subsequent all-product routing update, see the
+[routing review and 102-test results](docs/routing-review.md) and
+[four-board routing report](docs/routing-validation.json). The baseline validation
+below records the original Standard design.
+
 The revised board builds with **zero circuit errors and zero circuit warnings**. The mating-contact netlist matches the reference after mapping the USB4110's paired power and ground tails.
 
 | Check | Result |

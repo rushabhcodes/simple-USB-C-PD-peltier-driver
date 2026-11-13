@@ -7,7 +7,8 @@ type Element = ReactElement<Record<string, any>>
 export type DraftBoardId = "lite" | "modular-power" | "modular-control"
 
 /** Expand functional blocks, keeping the actual imported component wrappers.
- * Saved copper belongs exclusively to the original board and is never copied.
+ * Omit the original board's copper here. Each variant's independently checked
+ * copper is attached by RoutedProductBoard after source selection/placement.
  */
 function expand(children: ReactNode, sheet?: string): Element[] {
   return Children.toArray(children).flatMap(child => {
@@ -104,7 +105,7 @@ function selectedElements(id: DraftBoardId) {
   })
 }
 
-/** Schematic/floorplan candidates only. Routing is explicitly incomplete. */
+/** Unrouted source/placement stage, also used to verify the variant netlists. */
 export function DraftBoard({ id }: { id: DraftBoardId }) {
   const original = GeneralPdDriverBoard()
   return <board {...original.props} {...boardDimensions[id]} title={`Peltier ${id} — UNROUTED DESIGN CANDIDATE`}

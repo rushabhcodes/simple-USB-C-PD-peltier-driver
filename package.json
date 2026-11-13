@@ -1,6 +1,6 @@
 {
   "name": "simple-usb-c-pd-peltier-driver",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Editable four-layer USB-C PD Peltier driver, based on 0hmX/dual-usb-peltier-assembly",
   "keywords": [
     "tscircuit",
@@ -18,6 +18,7 @@
     "typecheck": "tsc --noEmit",
     "best:build": "bun run scripts/build-best-version.ts",
     "designs:build": "bun run scripts/build-product-designs.tsx",
+    "designs:route-check": "bun run scripts/validate-product-routing.tsx",
     "designs:review": "bun run typecheck && bun test ./tests/product-designs.test.tsx ./tests/modular-contract.test.tsx ./tests/product-economics.test.ts ./tests/product-design-artifacts.test.tsx",
     "routing:rebind": "bun run scripts/rebind-routing.tsx",
     "export:schematics": "bun run scripts/export-schematics.ts",

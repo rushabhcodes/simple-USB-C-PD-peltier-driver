@@ -58,7 +58,7 @@
     {
       "id": "lite",
       "purchasedPlacements": 115,
-      "routingComplete": false,
+      "routingComplete": true,
       "manufacturingReady": false,
       "placementIssues": [],
       "errors": [],
@@ -68,7 +68,7 @@
     {
       "id": "modular-power",
       "purchasedPlacements": 80,
-      "routingComplete": false,
+      "routingComplete": true,
       "manufacturingReady": false,
       "placementIssues": [],
       "errors": [],
@@ -79,7 +79,38 @@
           "source_component_id": "source_component_85",
           "subcircuit_id": "subcircuit_source_group_0",
           "warning_type": "source_missing_manufacturer_part_number_warning",
-          "message": "<pinheader#8779 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
+          "message": "<pinheader#10210 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
+        },
+        {
+          "type": "pcb_trace_style_warning",
+          "pcb_trace_style_warning_id": "pcb_trace_style_warning_0",
+          "warning_type": "pcb_trace_style_warning",
+          "styling_issue_type": "long_segment_at_odd_angle",
+          "pcb_trace_id": "pcb_trace_162",
+          "source_trace_id": "source_trace_302",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "layer": "inner1",
+          "start_route_index": 8,
+          "end_route_index": 9,
+          "segment_start": {
+            "x": -23.75,
+            "y": -1.45
+          },
+          "segment_end": {
+            "x": -28.85,
+            "y": -2.35
+          },
+          "center": {
+            "x": -26.3,
+            "y": -1.9
+          },
+          "segment_length": 5.178802950489622,
+          "minimum_segment_length": 5,
+          "angle_degrees": 190.0079798014413,
+          "nearest_allowed_angle_degrees": 180,
+          "angle_deviation_degrees": 10.007979801441309,
+          "angle_tolerance_degrees": 4,
+          "message": ".U_FAN > .pin4 to .U_FAN > .pin5 has a 5.18 mm segment on inner1 at 190.01°, 10.01° from the nearest allowed direction (180°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
         }
       ],
       "unsourced": [
@@ -89,7 +120,7 @@
     {
       "id": "modular-control",
       "purchasedPlacements": 57,
-      "routingComplete": false,
+      "routingComplete": true,
       "manufacturingReady": false,
       "placementIssues": [],
       "errors": [],
@@ -100,7 +131,7 @@
           "source_component_id": "source_component_65",
           "subcircuit_id": "subcircuit_source_group_0",
           "warning_type": "source_missing_manufacturer_part_number_warning",
-          "message": "<pinheader#10817 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
+          "message": "<pinheader#13250 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
         }
       ],
       "unsourced": [

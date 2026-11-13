@@ -1,0 +1,2763 @@
+{
+  "routes": [
+    {
+      "net": "PROGRAM_VBUS_SENSE",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 8.753364, "y": -11 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 11.246636, "y": -11 }
+      ],
+      "sourceTraceId": "source_trace_140",
+      "sourceTraceKey": "[[\"R_PROGRAM_SENSE_BOTTOM.pin1\"],[\"PROGRAM_VBUS_SENSE\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS_SENSE",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 11.246636, "y": -11 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 11.246636, "y": -10.600000000000001 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 12.046636, "y": -9.8 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 14.1, "y": -9.8 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 15.3, "y": -11 }
+      ],
+      "sourceTraceId": "source_trace_142",
+      "sourceTraceKey": "[[\"C_PROGRAM_SENSE.pin1\"],[\"PROGRAM_VBUS_SENSE\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 12.753364, "y": -11 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 12.753364, "y": -11.399999999999999 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 13.553364, "y": -12.2 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 15.5, "y": -12.2 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 16.7, "y": -11 }
+      ],
+      "sourceTraceId": "source_trace_143",
+      "sourceTraceKey": "[[\"C_PROGRAM_SENSE.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 16.7, "y": -11 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 17.5, "y": -11 }
+      ],
+      "sourceTraceId": "source_trace_143",
+      "sourceTraceKey": "[[\"C_PROGRAM_SENSE.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "XIN",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.599948, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.599948, "y": -6.960000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.6, "y": -7.960052000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.6, "y": -9.05 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.1, "y": -9.55 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.1, "y": -11.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.749989, "y": -12.050011000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.100074, "y": -12.050011000000001 }
+      ],
+      "sourcePort": "U_MCU.pin20",
+      "sourceTraceId": "source_trace_57",
+      "sourceTraceKey": "[[\"U_MCU.pin20\"],[\"XIN\"],10,0]"
+    },
+    {
+      "net": "XIN",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.100074, "y": -12.050011000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.799976, "y": -11.2 }
+      ],
+      "sourcePort": "C_XIN.pin1",
+      "sourceTraceId": "source_trace_116",
+      "sourceTraceKey": "[[\"C_XIN.pin1\"],[\"XIN\"],10,0]"
+    },
+    {
+      "net": "XOUT",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.200152, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.200152, "y": -7.109999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.55, "y": -7.459848000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.55, "y": -9.274999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.4, "y": -9.425 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.1, "y": -9.425 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.253364, "y": -10.578364 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.253364, "y": -11.2 }
+      ],
+      "sourceTraceId": "source_trace_130",
+      "sourceTraceKey": "[[\"R_XOUT.pin1\"],[\"XOUT\"],null,null]"
+    },
+    {
+      "net": "XOUT_CRYSTAL",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.100074, "y": -10.349989 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.746636, "y": -11.2 }
+      ],
+      "sourcePort": "R_XOUT.pin2",
+      "sourceTraceId": "source_trace_131",
+      "sourceTraceKey": "[[\"R_XOUT.pin2\"],[\"XOUT_CRYSTAL\"],10,0]"
+    },
+    {
+      "net": "XOUT_CRYSTAL",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.746636, "y": -11.2 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.799976, "y": -13.2 }
+      ],
+      "sourcePort": "C_XOUT.pin1",
+      "sourceTraceId": "source_trace_118",
+      "sourceTraceKey": "[[\"C_XOUT.pin1\"],[\"XOUT_CRYSTAL\"],10,0]"
+    },
+    {
+      "net": "MCU_RUN",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.799844, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.799844, "y": -7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.8, "y": -8 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.3, "y": -8 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.3, "y": -9 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.3, "y": -13 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.3, "y": -14 }
+      ],
+      "sourceTraceId": "source_trace_112",
+      "sourceTraceKey": "[[\"C_MCU_RUN.pin1\"],[\"MCU_RUN\"],null,null]"
+    },
+    {
+      "net": "MCU_RUN",
+      "route": [
+        { "route_type": "wire", "x": 7.3, "y": -14, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 7.3, "y": -14.899999999999999, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 11.246636, "y": -14.899999999999999, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 11.246636, "y": -14, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_112",
+      "sourceTraceKey": "[[\"C_MCU_RUN.pin1\"],[\"MCU_RUN\"],null,null]"
+    },
+    {
+      "net": "LED_POWER_ANODE",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 23.753364, "y": -7 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 23.7510018, "y": -4 }
+      ],
+      "sourceTraceId": "source_trace_146",
+      "sourceTraceKey": "[[\"LED_POWER.pin1\"],[\"LED_POWER_ANODE\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 22.246636, "y": -7 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 21.2, "y": -7 }
+      ],
+      "sourceTraceId": "source_trace_144",
+      "sourceTraceKey": "[[\"R_LED_POWER.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "LED_RUN_ANODE",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 27.253364, "y": -7 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 27.2489952, "y": -3.999872999999999 }
+      ],
+      "sourceTraceId": "source_trace_150",
+      "sourceTraceKey": "[[\"LED_RUN.pin2\"],[\"LED_RUN_ANODE\"],null,null]"
+    },
+    {
+      "net": "LED_RUN_DRIVE",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 25.746636, "y": -7 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 24.7, "y": -7 }
+      ],
+      "sourceTraceId": "source_trace_148",
+      "sourceTraceKey": "[[\"R_LED_RUN.pin1\"],[\"LED_RUN_DRIVE\"],null,null]"
+    },
+    {
+      "net": "LED_FAULT_ANODE",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 30.753363999999998, "y": -7 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 30.750062, "y": -4 }
+      ],
+      "sourceTraceId": "source_trace_154",
+      "sourceTraceKey": "[[\"LED_FAULT.pin1\"],[\"LED_FAULT_ANODE\"],null,null]"
+    },
+    {
+      "net": "LED_FAULT_DRIVE",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 29.246636000000002, "y": -7 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 28.200000000000003, "y": -7 }
+      ],
+      "sourceTraceId": "source_trace_152",
+      "sourceTraceKey": "[[\"R_LED_FAULT.pin1\"],[\"LED_FAULT_DRIVE\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 16.753364, "y": -7, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 17.7, "y": -7, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_136",
+      "sourceTraceKey": "[[\"R_DRIVER_FAULT.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -20.4, "y": -6.999976 },
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -22.4, "y": -6.399999999999999 },
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -22.4, "y": -5.199999999999999 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": -22.4, "y": -5.199999999999999 },
+        { "route_type": "wire", "width": 0.5, "layer": "bottom", "x": -22.4, "y": -5.199999999999999 },
+        { "route_type": "wire", "width": 0.5, "layer": "bottom", "x": -22.4, "y": -6.600000000000001 },
+        { "route_type": "wire", "width": 0.5, "layer": "bottom", "x": -14.6, "y": -6.700023999999999 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -14.6, "y": -6.700023999999999 },
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -14.6, "y": -6.700023999999999 },
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -13.300099, "y": -6.700023999999999 }
+      ],
+      "sourceTraceId": "source_trace_25",
+      "sourceTraceKey": "[[\"C_LDO_IN.pin1\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -13.300099, "y": -6.700023999999999 },
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -13.300099, "y": -8.15004 }
+      ],
+      "sourceTraceId": "source_trace_25",
+      "sourceTraceKey": "[[\"C_LDO_IN.pin1\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -13.300099, "y": -8.15004 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -12.35, "y": -8.15004 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -12.35, "y": -10.049959999999999 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -13.300099, "y": -10.049960000000002 }
+      ],
+      "sourceTraceId": "source_trace_21",
+      "sourceTraceKey": "[[\"U_CTRL_LDO.pin1\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -10.699901, "y": -8.15004 },
+        { "route_type": "wire", "width": 0.4, "layer": "top", "x": -10.699901, "y": -6.700023999999999 }
+      ],
+      "sourceTraceId": "source_trace_27",
+      "sourceTraceKey": "[[\"C_LDO_OUT.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -18.750064, "y": -1.6499759999999988 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -19.65, "y": -1.6499760000000006 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "inner1", "x": -19.65, "y": -1.6499760000000006 },
+        { "route_type": "wire", "width": 0.3, "layer": "inner1", "x": -19.65, "y": -1.6499760000000006 }
+      ],
+      "sourceTraceId": "source_trace_20",
+      "sourceTraceKey": "[[\"C_PROGRAM_IN.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -13.300099, "y": -9.100000000000001 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -14.45, "y": -9.100000000000001 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "inner1", "x": -14.45, "y": -9.100000000000001 },
+        { "route_type": "wire", "width": 0.3, "layer": "inner1", "x": -14.45, "y": -9.100000000000001 }
+      ],
+      "sourceTraceId": "source_trace_22",
+      "sourceTraceKey": "[[\"U_CTRL_LDO.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -13.300099, "y": -5.299976000000001 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -14.3, "y": -5.299976000000001 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "inner1", "x": -14.3, "y": -5.299976000000001 },
+        { "route_type": "wire", "width": 0.3, "layer": "inner1", "x": -14.3, "y": -5.299976000000001 }
+      ],
+      "sourceTraceId": "source_trace_26",
+      "sourceTraceKey": "[[\"C_LDO_IN.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -10.699901, "y": -5.299976000000001 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -9.89, "y": -5.299976000000001 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "inner1", "x": -9.89, "y": -5.299976000000001 },
+        { "route_type": "wire", "width": 0.3, "layer": "inner1", "x": -9.89, "y": -5.299976000000001 }
+      ],
+      "sourceTraceId": "source_trace_28",
+      "sourceTraceKey": "[[\"C_LDO_OUT.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "SWCLK",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.5, "y": -16.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.5, "y": -15.3 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": 1.5, "y": -15.3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 1.5, "y": -15.3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 1.5, "y": -9.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.65, "y": -8.649999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.65, "y": -5.350000000000001 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 0.65, "y": -5.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.65, "y": -5.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.999998, "y": -5.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.999998, "y": -6.4250630000000015 }
+      ],
+      "sourceTraceId": "source_trace_157",
+      "sourceTraceKey": "[[\"TP_SWCLK.pin1\"],[\"SWCLK\"],null,null]"
+    },
+    {
+      "net": "SWDIO",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.5, "y": -16.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.5, "y": -15.3 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": 4.5, "y": -15.3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 4.5, "y": -15.3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 4.5, "y": -8.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 1.5, "y": -5.350000000000001 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 1.5, "y": -5.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.5, "y": -5.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.400048, "y": -5.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.400048, "y": -6.4250630000000015 }
+      ],
+      "sourceTraceId": "source_trace_156",
+      "sourceTraceKey": "[[\"TP_SWDIO.pin1\"],[\"SWDIO\"],null,null]"
+    },
+    {
+      "net": "MCU_RUN",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.5, "y": -16.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.3, "y": -16.8 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.3, "y": -14 }
+      ],
+      "sourceTraceId": "source_trace_112",
+      "sourceTraceKey": "[[\"C_MCU_RUN.pin1\"],[\"MCU_RUN\"],null,null]"
+    },
+    {
+      "net": "BOOTSEL_PAD",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -9.5, "y": 6.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.753364, "y": 5.7 }
+      ],
+      "sourceTraceId": "source_trace_132",
+      "sourceTraceKey": "[[\"R_BOOTSEL.pin1\"],[\"BOOTSEL_PAD\"],null,null]"
+    },
+    {
+      "net": "I2C_SCL",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11, "y": 4.2 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11, "y": 5.1 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -8, "y": 5.1 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.746636, "y": 4.846636 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.746636, "y": 4 }
+      ],
+      "sourceTraceId": "source_trace_121",
+      "sourceTraceKey": "[[\"R_SCL.pin2\"],[\"I2C_SCL\"],null,null]"
+    },
+    {
+      "net": "I2C_SDA",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11, "y": 1.3000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11, "y": 2.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.746636, "y": 2.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.746636, "y": 1.5 }
+      ],
+      "sourceTraceId": "source_trace_123",
+      "sourceTraceKey": "[[\"R_SDA.pin2\"],[\"I2C_SDA\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -8.9, "y": -6.149975999999999 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -10.699901, "y": -6.700023999999999 }
+      ],
+      "sourceTraceId": "source_trace_27",
+      "sourceTraceKey": "[[\"C_LDO_OUT.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -22, "y": -6.6999759999999995 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -20.4, "y": -6.999976 }
+      ],
+      "sourceTraceId": "source_trace_162",
+      "sourceTraceKey": "[[\"TP_5V.pin1\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "RP_USB_DP",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.999998, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.999998, "y": -0.40000000000000036 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.6, "y": -0.8000000000000007 }
+      ],
+      "sourceTraceId": "source_trace_67",
+      "sourceTraceKey": "[[\"U_MCU.pin47\"],[\"RP_USB_DP\"],null,null]"
+    },
+    {
+      "net": "RP_USB_DM",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.400048, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.42, "y": -0.8000000000000007 }
+      ],
+      "sourceTraceId": "source_trace_66",
+      "sourceTraceKey": "[[\"U_MCU.pin46\"],[\"RP_USB_DM\"],null,null]"
+    },
+    {
+      "net": "RP_USB_DP",
+      "route": [
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 0.6, "y": -0.8000000000000007 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 0.6, "y": -0.40000000000000036 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 4.5, "y": 3.5 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 4.5, "y": 3.7300000000000004 }
+      ],
+      "sourceTraceId": "source_trace_129",
+      "sourceTraceKey": "[[\"R_USB_DP.pin2\"],[\"RP_USB_DP\"],null,null]"
+    },
+    {
+      "net": "RP_USB_DM",
+      "route": [
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 1.42, "y": -0.8000000000000007 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 1.42, "y": -0.20225396744416102 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 5.122253967444162, "y": 3.5 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 6.1, "y": 3.5 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 6.1, "y": 3.7300000000000004 }
+      ],
+      "sourceTraceId": "source_trace_127",
+      "sourceTraceKey": "[[\"R_USB_DM.pin2\"],[\"RP_USB_DM\"],null,null]"
+    },
+    {
+      "net": "RP_USB_DP",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.5, "y": 3.7300000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.5, "y": 4.5466359999999995 }
+      ],
+      "sourceTraceId": "source_trace_129",
+      "sourceTraceKey": "[[\"R_USB_DP.pin2\"],[\"RP_USB_DP\"],null,null]"
+    },
+    {
+      "net": "RP_USB_DM",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.1, "y": 3.7300000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.1, "y": 4.5466359999999995 }
+      ],
+      "sourceTraceId": "source_trace_127",
+      "sourceTraceKey": "[[\"R_USB_DM.pin2\"],[\"RP_USB_DM\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_CC2",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -29.2, "y": -5.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -28.753364, "y": -4.5 }
+      ],
+      "sourceTraceId": "source_trace_31",
+      "sourceTraceKey": "[[\"R_PROGRAM_CC2.pin1\"],[\"PROGRAM_CC2\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -28.849096, "y": -8 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -27.7, "y": -7.600000000000001 }
+      ],
+      "sourceTraceId": "source_trace_16",
+      "sourceTraceKey": "[[\"U_PROGRAM_ESD.pin5\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -27.7, "y": -7.600000000000001 },
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -28.6, "y": -7.600000000000001 },
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -28.9, "y": -7.899999999999999 },
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -28.9, "y": -9.600000000000001 },
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -28.4, "y": -10.100000000000001 }
+      ],
+      "sourceTraceId": "source_trace_25",
+      "sourceTraceKey": "[[\"C_LDO_IN.pin1\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -28.4, "y": -10.100000000000001 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -28.4, "y": -11 }
+      ],
+      "sourceTraceId": "source_trace_17",
+      "sourceTraceKey": "[[\"C_PROGRAM_ESD.pin1\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -22.4, "y": -5.199999999999999 },
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -22.4, "y": -6.600000000000001 },
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -27.7, "y": -6.600000000000001 },
+        { "route_type": "wire", "width": 0.25, "layer": "bottom", "x": -27.7, "y": -7.600000000000001 }
+      ],
+      "sourceTraceId": "source_trace_25",
+      "sourceTraceKey": "[[\"C_LDO_IN.pin1\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -26.550904, "y": -8 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -27.7, "y": -8.399999999999999 }
+      ],
+      "sourceTraceId": "source_trace_15",
+      "sourceTraceKey": "[[\"U_PROGRAM_ESD.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -27, "y": -11 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -27, "y": -11.899999999999999 }
+      ],
+      "sourceTraceId": "source_trace_18",
+      "sourceTraceKey": "[[\"C_PROGRAM_ESD.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -27.246636, "y": -2 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -26.4, "y": -2 }
+      ],
+      "sourceTraceId": "source_trace_30",
+      "sourceTraceKey": "[[\"R_PROGRAM_CC1.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -27.246636, "y": -4.5 },
+        { "route_type": "wire", "width": 0.3, "layer": "top", "x": -25.8, "y": -4.5 }
+      ],
+      "sourceTraceId": "source_trace_32",
+      "sourceTraceKey": "[[\"R_PROGRAM_CC2.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": -22.125, "y": 16.5, "width": 0.6, "layer": "top" },
+        { "route_type": "wire", "x": -22.125, "y": 15, "width": 0.6, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_191",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": -22.125, "y": 16.5, "width": 0.6, "layer": "top" },
+        { "route_type": "wire", "x": -21.325, "y": 15, "width": 0.6, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_191",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": -22.125, "y": 16.5, "width": 0.6, "layer": "top" },
+        { "route_type": "wire", "x": -20.525, "y": 15, "width": 0.6, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_191",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -0.3999290000000002 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.7250000000000005, "y": -0.3999290000000002 }
+      ],
+      "sourcePort": "C_IOVDD1.pin1",
+      "sourceTraceId": "source_trace_86",
+      "sourceTraceKey": "[[\"C_IOVDD1.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -3.9998710000000006 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.7250000000000005, "y": -3.9998710000000006 }
+      ],
+      "sourcePort": "C_IOVDD10.pin1",
+      "sourceTraceId": "source_trace_88",
+      "sourceTraceKey": "[[\"C_IOVDD10.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.199898, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.2000000000000001, "y": -7.849999999999998 }
+      ],
+      "sourcePort": "C_IOVDD22.pin1",
+      "sourceTraceId": "source_trace_90",
+      "sourceTraceKey": "[[\"C_IOVDD22.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": -7.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.05, "y": -7.849999999999998 }
+      ],
+      "sourcePort": "C_DVDD23.pin1",
+      "sourceTraceId": "source_trace_102",
+      "sourceTraceKey": "[[\"C_DVDD23.pin1\"],[\"RP_CORE_1V1\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.424936, "y": -3.9998710000000006 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.445, "y": -3.9998710000000006 }
+      ],
+      "sourcePort": "C_IOVDD33.pin1",
+      "sourceTraceId": "source_trace_92",
+      "sourceTraceKey": "[[\"C_IOVDD33.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.424936, "y": -0.3999290000000002 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.445, "y": -0.3999290000000002 }
+      ],
+      "sourcePort": "C_IOVDD42.pin1",
+      "sourceTraceId": "source_trace_94",
+      "sourceTraceKey": "[[\"C_IOVDD42.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.599944, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.4750000000000005, "y": 0.6999999999999993 }
+      ],
+      "sourcePort": "C_ADC_AVDD.pin1",
+      "sourceTraceId": "source_trace_98",
+      "sourceTraceKey": "[[\"C_ADC_AVDD.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.199894, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.56, "y": 1.7699759999999998 }
+      ],
+      "sourcePort": "C_VREG_IN.pin1",
+      "sourceTraceId": "source_trace_106",
+      "sourceTraceKey": "[[\"C_VREG_IN.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.799844, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.799844, "y": 1.1300000000000008 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.15, "y": 1.7699759999999998 }
+      ],
+      "sourcePort": "C_VREG_OUT.pin1",
+      "sourceTraceId": "source_trace_108",
+      "sourceTraceKey": "[[\"C_VREG_OUT.pin1\"],[\"RP_CORE_1V1\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": 1.1300000000000008 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.4, "y": 1.6999999999999993 }
+      ],
+      "sourcePort": "C_USB_VDD.pin1",
+      "sourceTraceId": "source_trace_100",
+      "sourceTraceKey": "[[\"C_USB_VDD.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.200152, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.200152, "y": 1.1300000000000008 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.45, "y": 2.0999999999999996 }
+      ],
+      "sourcePort": "C_DVDD50.pin1",
+      "sourceTraceId": "source_trace_104",
+      "sourceTraceKey": "[[\"C_DVDD50.pin1\"],[\"RP_CORE_1V1\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.199898, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.199898, "y": 1.1300000000000008 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": 1.1300000000000008 }
+      ],
+      "sourceTraceId": "source_trace_42",
+      "sourceTraceKey": "[[\"U_MCU.pin49\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.4750000000000005, "y": 0.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.775, "y": 2.0999999999999996 }
+      ],
+      "sourcePort": "C_IOVDD49.pin1",
+      "sourceTraceId": "source_trace_96",
+      "sourceTraceKey": "[[\"C_IOVDD49.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.7250000000000005, "y": -3.9998710000000006 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.35, "y": -5.800001999999999 }
+      ],
+      "sourcePort": "C_MCU_BULK.pin1",
+      "sourceTraceId": "source_trace_110",
+      "sourceTraceKey": "[[\"C_MCU_BULK.pin1\"],[\"CTRL_3V3\"],2,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -2.7, "y": 13.025 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -3.6, "y": 13.025 }
+      ],
+      "sourceTraceId": "source_trace_114",
+      "sourceTraceKey": "[[\"C_FLASH.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -3.85, "y": 13.875 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": -3.85, "y": 14.6 }
+      ],
+      "sourceTraceId": "source_trace_33",
+      "sourceTraceKey": "[[\"C_FLASH.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 1.6, "y": 5 },
+        { "route_type": "wire", "width": 0.25, "layer": "top", "x": 2.3, "y": 4.4 }
+      ],
+      "sourceTraceId": "source_trace_77",
+      "sourceTraceKey": "[[\"U_FLASH.pin4\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "QSPI_SS",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.246636, "y": 5.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.735092, "y": 5.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.405, "y": 5.369908 }
+      ],
+      "sourceTraceId": "source_trace_133",
+      "sourceTraceKey": "[[\"R_BOOTSEL.pin2\"],[\"QSPI_SS\"],null,null]"
+    },
+    {
+      "net": "QSPI_SD3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.599948, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.599948, "y": 1.0500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.96, "y": 1.4100520000000003 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.96, "y": 1.4499999999999993 }
+      ],
+      "sourceTraceId": "source_trace_68",
+      "sourceTraceKey": "[[\"U_MCU.pin51\"],[\"QSPI_SD3\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.999998, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.999998, "y": -5.575063 }
+      ],
+      "sourceTraceId": "source_trace_43",
+      "sourceTraceKey": "[[\"U_MCU.pin19\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.100074, "y": -12.050010999999998 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0, "y": -11.2 }
+      ],
+      "sourceTraceId": "source_trace_83",
+      "sourceTraceKey": "[[\"Y_MCU.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.100074, "y": -10.349989 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0, "y": -11.2 }
+      ],
+      "sourceTraceId": "source_trace_85",
+      "sourceTraceKey": "[[\"Y_MCU.pin4\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.575, "y": -0.3999290000000002 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.225, "y": -0.3999290000000002 }
+      ],
+      "sourcePort": "C_IOVDD1.pin2",
+      "sourceTraceId": "source_trace_87",
+      "sourceTraceKey": "[[\"C_IOVDD1.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.575, "y": -3.9998710000000006 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.225, "y": -3.9998710000000006 }
+      ],
+      "sourcePort": "C_IOVDD10.pin2",
+      "sourceTraceId": "source_trace_89",
+      "sourceTraceKey": "[[\"C_IOVDD10.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.19999999999999993, "y": -8.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.15, "y": -8.7 }
+      ],
+      "sourcePort": "C_IOVDD22.pin2",
+      "sourceTraceId": "source_trace_91",
+      "sourceTraceKey": "[[\"C_IOVDD22.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.295, "y": -3.9998710000000006 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.945, "y": -3.9998710000000006 }
+      ],
+      "sourcePort": "C_IOVDD33.pin2",
+      "sourceTraceId": "source_trace_93",
+      "sourceTraceKey": "[[\"C_IOVDD33.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.295, "y": -0.3999290000000002 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.945, "y": -0.3999290000000002 }
+      ],
+      "sourcePort": "C_IOVDD42.pin2",
+      "sourceTraceId": "source_trace_95",
+      "sourceTraceKey": "[[\"C_IOVDD42.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.625, "y": 2.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.275, "y": 2.0999999999999996 }
+      ],
+      "sourcePort": "C_IOVDD49.pin2",
+      "sourceTraceId": "source_trace_97",
+      "sourceTraceKey": "[[\"C_IOVDD49.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.325, "y": 0.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.975, "y": 0.6999999999999993 }
+      ],
+      "sourcePort": "C_ADC_AVDD.pin2",
+      "sourceTraceId": "source_trace_99",
+      "sourceTraceKey": "[[\"C_ADC_AVDD.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.4, "y": 2.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.45, "y": 3.5999999999999996 }
+      ],
+      "sourcePort": "C_USB_VDD.pin2",
+      "sourceTraceId": "source_trace_101",
+      "sourceTraceKey": "[[\"C_USB_VDD.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.05, "y": -8.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.15, "y": -8.7 }
+      ],
+      "sourcePort": "C_DVDD23.pin2",
+      "sourceTraceId": "source_trace_103",
+      "sourceTraceKey": "[[\"C_DVDD23.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.45, "y": 2.950000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.45, "y": 3.5999999999999996 }
+      ],
+      "sourcePort": "C_DVDD50.pin2",
+      "sourceTraceId": "source_trace_105",
+      "sourceTraceKey": "[[\"C_DVDD50.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.56, "y": 3.1700240000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.56, "y": 4.020024 }
+      ],
+      "sourcePort": "C_VREG_IN.pin2",
+      "sourceTraceId": "source_trace_107",
+      "sourceTraceKey": "[[\"C_VREG_IN.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.15, "y": 3.1700239999999997 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.71, "y": 3.1700239999999997 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.56, "y": 4.020024 }
+      ],
+      "sourcePort": "C_VREG_OUT.pin2",
+      "sourceTraceId": "source_trace_109",
+      "sourceTraceKey": "[[\"C_VREG_OUT.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.35, "y": -7.799998000000002 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.35, "y": -8.949998 }
+      ],
+      "sourcePort": "C_MCU_BULK.pin2",
+      "sourceTraceId": "source_trace_111",
+      "sourceTraceKey": "[[\"C_MCU_BULK.pin2\"],[\"GND\"],2,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8.7, "y": -14 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 9.55, "y": -14 }
+      ],
+      "sourceTraceId": "source_trace_113",
+      "sourceTraceKey": "[[\"C_MCU_RUN.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.200024, "y": -11.2 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.050024, "y": -11.2 }
+      ],
+      "sourceTraceId": "source_trace_117",
+      "sourceTraceKey": "[[\"C_XIN.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.200024, "y": -13.2 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.150024, "y": -13.2 }
+      ],
+      "sourceTraceId": "source_trace_119",
+      "sourceTraceKey": "[[\"C_XOUT.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": 22.249938, "y": -4, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 22.249938, "y": -2.8000000000000007, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_147",
+      "sourceTraceKey": "[[\"LED_POWER.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": 25.749998, "y": -4, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 25.749998, "y": -2.8000000000000007, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_151",
+      "sourceTraceKey": "[[\"LED_RUN.pin1\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 29.249938, "y": -4 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 28.399938, "y": -4 }
+      ],
+      "sourceTraceId": "source_trace_155",
+      "sourceTraceKey": "[[\"LED_FAULT.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 10.5, "y": -16.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 11.65, "y": -15.5 }
+      ],
+      "sourceTraceId": "source_trace_161",
+      "sourceTraceKey": "[[\"TP_GND.pin1\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "QSPI_SD3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.96, "y": 1.4499999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.77, "y": 2.26 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.77, "y": 3.5500000000000007 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -1.77, "y": 3.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.77, "y": 3.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.77, "y": 6.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.135, "y": 7.335 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.135, "y": 12.430092 }
+      ],
+      "sourceTraceId": "source_trace_80",
+      "sourceTraceKey": "[[\"U_FLASH.pin7\"],[\"QSPI_SD3\"],null,null]"
+    },
+    {
+      "net": "QSPI_SCLK",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.999998, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.999998, "y": -0.08500000000000085 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.534998, "y": -0.5500000000000007 }
+      ],
+      "sourceTraceId": "source_trace_69",
+      "sourceTraceKey": "[[\"U_MCU.pin52\"],[\"QSPI_SCLK\"],null,null]"
+    },
+    {
+      "net": "QSPI_SD0",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.400048, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.400048, "y": -0.4999520000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.35, "y": -0.5500000000000007 }
+      ],
+      "sourceTraceId": "source_trace_70",
+      "sourceTraceKey": "[[\"U_MCU.pin53\"],[\"QSPI_SD0\"],null,null]"
+    },
+    {
+      "net": "QSPI_SD2",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.800098, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.800098, "y": -0.20009800000000055 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.15, "y": -0.5500000000000007 }
+      ],
+      "sourceTraceId": "source_trace_71",
+      "sourceTraceKey": "[[\"U_MCU.pin54\"],[\"QSPI_SD2\"],null,null]"
+    },
+    {
+      "net": "QSPI_SS",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.599944, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.5749999999999993, "y": 0.4500069999999994 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.5749999999999993, "y": 5.175 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.405, "y": 5.344999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.405, "y": 5.369908 }
+      ],
+      "sourceTraceId": "source_trace_74",
+      "sourceTraceKey": "[[\"U_FLASH.pin1\"],[\"QSPI_SS\"],null,null]"
+    },
+    {
+      "net": "QSPI_SS",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.746636, "y": 15.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.746636, "y": 7.2533639999999995 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.3999999999999995, "y": 6.6000000000000005 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.3999999999999995, "y": 5.375 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.405, "y": 5.369908 }
+      ],
+      "sourceTraceId": "source_trace_135",
+      "sourceTraceKey": "[[\"R_FLASH_CS.pin2\"],[\"QSPI_SS\"],null,null]"
+    },
+    {
+      "net": "QSPI_SD1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.200148, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.200148, "y": 2.274851999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.135, "y": 3.34 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.135, "y": 5.369908 }
+      ],
+      "sourceTraceId": "source_trace_75",
+      "sourceTraceKey": "[[\"U_FLASH.pin2\"],[\"QSPI_SD1\"],null,null]"
+    },
+    {
+      "net": "QSPI_SD2",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -2.15, "y": -0.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -2.15, "y": -0.5250000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.6999999999999993, "y": 0.9250000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.6749999999999989, "y": 0.9250000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.375, "y": 1.2249999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.375, "y": 2.6750000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.0250000000000004, "y": 3.325000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.0250000000000004, "y": 3.875 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.715, "y": 4.185 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.02, "y": 4.185 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.265, "y": 3.9399999999999995 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 0.265, "y": 3.9399999999999995 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.265, "y": 3.9399999999999995 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.135, "y": 4.07 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.135, "y": 5.369908 }
+      ],
+      "sourceTraceId": "source_trace_76",
+      "sourceTraceKey": "[[\"U_FLASH.pin3\"],[\"QSPI_SD2\"],null,null]"
+    },
+    {
+      "net": "QSPI_SCLK",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.534998, "y": -0.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.534998, "y": 0.4400019999999998 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.275, "y": 1.25 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.275, "y": 3.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.5, "y": 3.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 1.075, "y": 3.7750000000000004 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 1.075, "y": 3.7750000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.075, "y": 3.7750000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.075, "y": 3.994999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.8, "y": 4.27 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.8000000000000007, "y": 10.85 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.135, "y": 11.515 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.135, "y": 12.430092 }
+      ],
+      "sourceTraceId": "source_trace_79",
+      "sourceTraceKey": "[[\"U_FLASH.pin6\"],[\"QSPI_SCLK\"],null,null]"
+    },
+    {
+      "net": "QSPI_SD0",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.35, "y": -0.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.35, "y": -0.5750000000000011 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.8999999999999986, "y": -1.125 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -2.3999999999999995, "y": -1.125 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -3.1499999999999995, "y": -0.375 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -3.1499999999999995, "y": 2.3499999999999996 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -3.1499999999999995, "y": 2.3499999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.1499999999999995, "y": 2.3499999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.925, "y": 5.125 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.925, "y": 6.25 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.2249999999999988, "y": 8.950000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.3249999999999993, "y": 8.950000000000001 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": -2.3249999999999993, "y": 8.950000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -2.3249999999999993, "y": 8.950000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.325, "y": 10.95 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 1.405, "y": 10.95 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 1.405, "y": 10.95 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.405, "y": 10.95 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.405, "y": 12.430092 }
+      ],
+      "sourceTraceId": "source_trace_78",
+      "sourceTraceKey": "[[\"U_FLASH.pin5\"],[\"QSPI_SD0\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS_SENSE",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.424936, "y": -0.7999790000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.4, "y": -0.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.8, "y": -0.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.7, "y": -0.9000000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.7, "y": -2.4000000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.5, "y": -2.5999999999999996 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": 2.5, "y": -2.5999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 2.5, "y": -2.5999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 2.9, "y": -3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 3, "y": -3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 4.3, "y": -4.300000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 4.4, "y": -4.300000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 4.5, "y": -4.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 4.7, "y": -4.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 10.7, "y": -10.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 14.3, "y": -10.399999999999999 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 14.3, "y": -10.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 14.3, "y": -10.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 14.4, "y": -10.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 14.8, "y": -10.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 15.3, "y": -11 }
+      ],
+      "sourceTraceId": "source_trace_142",
+      "sourceTraceKey": "[[\"C_PROGRAM_SENSE.pin1\"],[\"PROGRAM_VBUS_SENSE\"],null,null]"
+    },
+    {
+      "net": "HOT_DATA_MCU",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -4.399920999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.4, "y": -4.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.1, "y": -4.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.2, "y": -4.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.2, "y": -5.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.5, "y": -6.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.5, "y": -11.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2, "y": -13.399999999999999 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "inner2", "x": -2, "y": -13.399999999999999 },
+        { "route_type": "wire", "x": -2, "y": -13.399999999999999, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -2, "y": -15, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -0.7, "y": -16.4, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 23, "y": -16.4, "layer": "inner2", "width": 0.2 },
+        { "route_type": "wire", "x": 32, "y": -16.4, "layer": "inner2", "width": 0.2 },
+        { "route_type": "wire", "x": 32, "y": 18, "layer": "inner2", "width": 0.2 },
+        { "route_type": "wire", "x": 21.6, "y": 18, "layer": "inner2", "width": 0.2 },
+        { "route_type": "wire", "x": 21.6, "y": 17.2, "layer": "inner2", "width": 0.2 },
+        { "route_type": "via", "x": 21.6, "y": 17.2, "from_layer": "inner2", "to_layer": "top" },
+        { "route_type": "wire", "x": 21.6, "y": 17.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.646636, "y": 18, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_184",
+      "sourceTraceKey": "[[\"R_HOT_SERIES.pin1\"],[\"HOT_DATA_MCU\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -18.750064, "y": -3.0500240000000005 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -16.849976, "y": -3.0500240000000005 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -15.7, "y": -4.199999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -15.4, "y": -4.199999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -15.2, "y": -4.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -15.1, "y": -4.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -15, "y": -4.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -10.3, "y": -4.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -10.2, "y": -4.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -10, "y": -4.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -9.9, "y": -4.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -9.3, "y": -4.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -9.1, "y": -4.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -8.9, "y": -4.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -8.8, "y": -5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -8, "y": -5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.6, "y": -6.399999999999999 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": -6.6, "y": -6.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -6.6, "y": -6.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.3, "y": -13.3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 0.3, "y": -14.600000000000001 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 0.3, "y": -14.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.3, "y": -14.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.9, "y": -14.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.4, "y": -14.100000000000001 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": 6.4, "y": -14.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 6.4, "y": -14.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 6.4, "y": -12.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 6.9, "y": -11.899999999999999 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 6.9, "y": -11.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.9, "y": -11.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.9, "y": -11.399999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.2, "y": -11.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.2, "y": -11 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 7.246636, "y": -11 }
+      ],
+      "sourceTraceId": "source_trace_19",
+      "sourceTraceKey": "[[\"C_PROGRAM_IN.pin1\"],[\"PROGRAM_VBUS\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 20.85, "y": 6.9, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 20.85, "y": 0.3000000000000007, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 23.5, "y": 0.3000000000000007, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 23.5, "y": -5.699999999999999, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 24, "y": -6.199999999999999, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 23.2, "y": -7, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 21.2, "y": -7, "layer": "bottom", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 21.2, "y": -7, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 20.2, "y": -6, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 18.5, "y": -6, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 18.5, "y": -7.600000000000001, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 17.7, "y": -7.600000000000001, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": 17.7, "y": -7, "layer": "bottom", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 17.7, "y": -7, "layer": "inner2", "width": 0.6 },
+        { "route_type": "wire", "x": 17.7, "y": -5.399999999999999, "layer": "inner2", "width": 0.6 },
+        { "route_type": "wire", "x": 14.6, "y": -5.399999999999999, "layer": "inner2", "width": 0.6 },
+        { "route_type": "wire", "x": 13.8, "y": -6.199999999999999, "layer": "inner2", "width": 0.6 },
+        { "route_type": "via", "x": 13.8, "y": -6.199999999999999, "from_layer": "inner2", "to_layer": "top" },
+        { "route_type": "wire", "x": 13.8, "y": -6.199999999999999, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 8.8, "y": -6.199999999999999, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8.8, "y": -6.199999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 8.1, "y": -5.5 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": 8.1, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 8.1, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 8.1, "y": -3.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 7.5, "y": -2.9000000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 5.7, "y": -2.9000000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 5.5, "y": -3.0999999999999996 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 5.5, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.5, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 5.3, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.4, "y": -4 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.445, "y": -3.9998710000000006 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.445, "y": -3.9998710000000006 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.4, "y": -4 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.8, "y": -4 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.9, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.9, "y": -2.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.3, "y": -1.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.3, "y": -0.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.4, "y": -0.40000000000000036 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.4, "y": -0.40000000000000036 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.445, "y": -0.3999290000000002 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.6, "y": -0.40000000000000036 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.6, "y": 1.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.56, "y": 1.7699759999999998 }
+      ],
+      "sourceTraceId": "source_trace_38",
+      "sourceTraceKey": "[[\"U_MCU.pin42\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 17.9, "y": -7.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 17.9, "y": -7.800000000000001 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 17.9, "y": -7.800000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 17.9, "y": -7.800000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 18.1, "y": -8 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 18.1, "y": -11.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 11.5, "y": -17.58 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.6, "y": -17.58 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.8, "y": -14.7 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.8, "y": -14.600000000000001 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": -2.8, "y": -14.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -2.8, "y": -14.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.1, "y": -10.3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.1, "y": -7 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.2, "y": -6.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.2, "y": -0.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.1, "y": -0.09999999999999964 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -7.1, "y": -0.09999999999999964 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.1, "y": -0.09999999999999964 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.8, "y": 0.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.1, "y": 0.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.725, "y": -0.1750000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.725, "y": -0.3999290000000002 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.1, "y": -0.09999999999999964 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.653364, "y": -0.09999999999999964 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -9.253364, "y": 1.5 }
+      ],
+      "sourceTraceId": "source_trace_122",
+      "sourceTraceKey": "[[\"R_SDA.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.6, "y": 0.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7, "y": 0.5999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7, "y": 2.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.4, "y": 3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -8.353364, "y": 3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -9.253364, "y": 4 }
+      ],
+      "sourceTraceId": "source_trace_120",
+      "sourceTraceKey": "[[\"R_SCL.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.1, "y": -7 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.2, "y": -7.100000000000001 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -7.2, "y": -7.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.2, "y": -7.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -7.949976, "y": -7.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -8.9, "y": -6.149975999999999 }
+      ],
+      "sourceTraceId": "source_trace_160",
+      "sourceTraceKey": "[[\"TP_3V3.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -7.2, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -6.5, "y": -5.5 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -6.5, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.5, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.199998, "y": -5.800001999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.35, "y": -5.800001999999999 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -9.253364, "y": 4 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -10.153364, "y": 3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11.4, "y": 3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11.6, "y": 2.9000000000000004 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": -11.6, "y": 2.9000000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -11.6, "y": 2.9000000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -10, "y": 4.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -10, "y": 8.3 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -6.5, "y": 11.8 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -6.1, "y": 11.8 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -6.1, "y": 11.8 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.1, "y": 11.8 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.469908, "y": 12.430092 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.405, "y": 12.430092 }
+      ],
+      "sourceTraceId": "source_trace_120",
+      "sourceTraceKey": "[[\"R_SCL.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.405, "y": 12.430092 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.253364, "y": 13.278456 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.253364, "y": 15.7 }
+      ],
+      "sourceTraceId": "source_trace_134",
+      "sourceTraceKey": "[[\"R_FLASH_CS.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "I2C_SDA",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -0.7999790000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.8750209999999985, "y": -0.7999790000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.5, "y": -1.174999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.5, "y": -1.6999999999999993 }
+      ],
+      "sourceTraceId": "source_trace_48",
+      "sourceTraceKey": "[[\"U_MCU.pin2\"],[\"I2C_SDA\"],null,null]"
+    },
+    {
+      "net": "I2C_SCL",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -1.2000290000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.175, "y": -1.1999999999999993 }
+      ],
+      "sourceTraceId": "source_trace_49",
+      "sourceTraceKey": "[[\"U_MCU.pin3\"],[\"I2C_SCL\"],null,null]"
+    },
+    {
+      "net": "COLD_DATA_MCU",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -4.799970999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.6250290000000014, "y": -4.799970999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.5749999999999993, "y": -4.850000000000001 }
+      ],
+      "sourceTraceId": "source_trace_56",
+      "sourceTraceKey": "[[\"U_MCU.pin12\"],[\"COLD_DATA_MCU\"],null,null]"
+    },
+    {
+      "net": "LED_RUN_DRIVE",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -3.200025 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.875024999999999, "y": -3.200025 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.5, "y": -2.825000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.5, "y": -2.5 }
+      ],
+      "sourceTraceId": "source_trace_53",
+      "sourceTraceKey": "[[\"U_MCU.pin8\"],[\"LED_RUN_DRIVE\"],null,null]"
+    },
+    {
+      "net": "LED_FAULT_DRIVE",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -3.6000750000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.4250749999999996, "y": -3.6000750000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.299999999999999, "y": -3.4749999999999996 }
+      ],
+      "sourceTraceId": "source_trace_54",
+      "sourceTraceKey": "[[\"U_MCU.pin9\"],[\"LED_FAULT_DRIVE\"],null,null]"
+    },
+    {
+      "net": "OUTPUT_CURRENT_ADC",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.424936, "y": -1.9998749999999994 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.974874999999999, "y": -1.9998749999999994 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.350000000000001, "y": -2.3750000000000018 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.350000000000001, "y": -2.5 }
+      ],
+      "sourceTraceId": "source_trace_62",
+      "sourceTraceKey": "[[\"U_MCU.pin38\"],[\"OUTPUT_CURRENT_ADC\"],null,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.799844, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.799844, "y": 1.1300000000000008 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 2.15, "y": 1.7699759999999998 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.619976, "y": 2.3000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.375, "y": 2.3000000000000007 }
+      ],
+      "sourceTraceId": "source_trace_47",
+      "sourceTraceKey": "[[\"U_MCU.pin45\"],[\"RP_CORE_1V1\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": 1.1300000000000008 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.4, "y": 1.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1, "y": 1.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1, "y": 1.5500000000000007 }
+      ],
+      "sourceTraceId": "source_trace_41",
+      "sourceTraceKey": "[[\"U_MCU.pin48\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.599948, "y": -7.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.05, "y": -7.849999999999998 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 1.65, "y": -7.850000000000001 }
+      ],
+      "sourceTraceId": "source_trace_45",
+      "sourceTraceKey": "[[\"U_MCU.pin23\"],[\"RP_CORE_1V1\"],null,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.200152, "y": 0.42506299999999975 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.200152, "y": 1.1300000000000008 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.45, "y": 2.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.785, "y": 2.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.06, "y": 2.375 }
+      ],
+      "sourceTraceId": "source_trace_46",
+      "sourceTraceKey": "[[\"U_MCU.pin50\"],[\"RP_CORE_1V1\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.199898, "y": -6.4250630000000015 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 0.199898, "y": -5.824898000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -0.125, "y": -5.5 }
+      ],
+      "sourceTraceId": "source_trace_36",
+      "sourceTraceKey": "[[\"U_MCU.pin22\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 1.375, "y": 2.3000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.06, "y": 2.375 }
+      ],
+      "sourceTraceId": "source_trace_45",
+      "sourceTraceKey": "[[\"U_MCU.pin23\"],[\"RP_CORE_1V1\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 1, "y": 1.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -0.9, "y": 0.8499999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.8, "y": 0.8000000000000007 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "RP_CORE_1V1",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.06, "y": 2.375 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -3.7, "y": -0.26500000000000057 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -3.7, "y": -4.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -0.75, "y": -7.850000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 1.65, "y": -7.850000000000001 }
+      ],
+      "sourceTraceId": "source_trace_45",
+      "sourceTraceKey": "[[\"U_MCU.pin23\"],[\"RP_CORE_1V1\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.8, "y": 0.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -3.1, "y": -0.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -3.1, "y": -3.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.6, "y": -4.050000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.5, "y": -4.050000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.8, "y": -4.75 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.8, "y": -5 },
+        { "route_type": "via", "from_layer": "inner2", "to_layer": "top", "x": -1.8, "y": -5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.8, "y": -5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -1.8, "y": -4.800000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -2.6, "y": -4 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.3, "y": -4 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.8, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.5, "y": -5.5 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -1.8, "y": -5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.625, "y": -5 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -0.125, "y": -5.5 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "I2C_SCL",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -6.175, "y": -1.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -5.6, "y": -0.625 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -5.6, "y": 0.3000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -6.1, "y": 0.8000000000000007 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": -6.1, "y": 0.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.1, "y": 0.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.1, "y": 2.4000000000000004 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -8.45, "y": 4.75 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -10.45, "y": 4.75 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11, "y": 4.2 }
+      ],
+      "sourceTraceId": "source_trace_163",
+      "sourceTraceKey": "[[\"TP_SCL.pin1\"],[\"I2C_SCL\"],null,null]"
+    },
+    {
+      "net": "I2C_SDA",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -2.5, "y": -1.6999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -4.4, "y": 0.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -4.4, "y": 0.34999999999999964 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "inner2", "x": -4.4, "y": 0.34999999999999964 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -4.4, "y": 0.34999999999999964 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -4.4, "y": -0.3000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -5.85, "y": -1.75 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -5.85, "y": -2.75 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -6.85, "y": -3.75 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -6.85, "y": -4.449999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -6.6, "y": -4.699999999999999 },
+        { "route_type": "via", "from_layer": "inner2", "to_layer": "top", "x": -6.6, "y": -4.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.6, "y": -4.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11, "y": -0.3000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -11, "y": 1.3000000000000007 }
+      ],
+      "sourceTraceId": "source_trace_164",
+      "sourceTraceKey": "[[\"TP_SDA.pin1\"],[\"I2C_SDA\"],null,null]"
+    },
+    {
+      "net": "LED_RUN_DRIVE",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.5, "y": -2.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.45, "y": -2.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.35, "y": -2.5500000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.384, "y": -3.516 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.384, "y": -3.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.3817777036855794, "y": -3.8508989537646325 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.3751277277591294, "y": -3.9014105357574884 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.364100682552816, "y": -3.9511503223398723 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.3487804905389704, "y": -3.999739763702191 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.3292837476294035, "y": -4.046809064856568 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.3057588358101122, "y": -4.092000000000002 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.2783847938647712, "y": -4.134968638829012 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.2473699547814832, "y": -4.175387964056938 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.212950360212944, "y": -4.212950360212943 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.1753879640569391, "y": -4.247369954781483 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.1349686388290112, "y": -4.27838479386477 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.0920000000000003, "y": -4.3057588358101135 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.0468090648565682, "y": -4.329283747629404 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -0.9997397637021905, "y": -4.348780490538971 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -0.9511503223398721, "y": -4.364100682552817 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -0.9014105357574873, "y": -4.3751277277591285 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -0.8508989537646324, "y": -4.381777703685579 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -0.8000000000000002, "y": -4.384 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 2.5, "y": -4.384 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 2.6, "y": -4.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 4.75, "y": -4.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 5.9, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 6.25, "y": -5.5 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 7.6, "y": -6.850000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 9.5, "y": -6.850000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 10.3, "y": -7.649999999999999 },
+        { "route_type": "via", "from_layer": "inner2", "to_layer": "bottom", "x": 10.3, "y": -7.649999999999999 },
+        { "route_type": "wire", "x": 10.3, "y": -7.649999999999999, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 10.65, "y": -8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 17.25, "y": -8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 17.65, "y": -8.399999999999999, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 18.6, "y": -8.399999999999999, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 19.4, "y": -7.600000000000001, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 23.9, "y": -7.600000000000001, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 24.7, "y": -7, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_148",
+      "sourceTraceKey": "[[\"R_LED_RUN.pin1\"],[\"LED_RUN_DRIVE\"],null,null]"
+    },
+    {
+      "net": "LED_FAULT_DRIVE",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.3, "y": -3.4749999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.8, "y": -3.9749999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.8, "y": -4.170000000000002 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.204, "y": -4.765999999999998 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 2.5, "y": -4.765999999999998 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 2.6, "y": -4.800000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 4.5, "y": -6.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 6.8, "y": -6.699999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 7.35, "y": -7.25 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 8, "y": -7.25 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 9.35, "y": -8.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 10.3, "y": -8.600000000000001 },
+        { "route_type": "via", "from_layer": "inner2", "to_layer": "bottom", "x": 10.3, "y": -8.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 10.3, "y": -8.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 17.2, "y": -8.600000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 17.4, "y": -8.8 },
+        { "route_type": "wire", "x": 26, "y": -8.8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 28.2, "y": -7.600000000000001, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 28.2, "y": -7, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_152",
+      "sourceTraceKey": "[[\"R_LED_FAULT.pin1\"],[\"LED_FAULT_DRIVE\"],null,null]"
+    },
+    {
+      "net": "COLD_DATA_MCU",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.575, "y": -4.850000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.55, "y": -4.899999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -2.55, "y": -5.100000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": -1.45, "y": -6.199999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 3.1, "y": -6.199999999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 4.9, "y": -8 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 8.1, "y": -8 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 9.45, "y": -9.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "inner2", "x": 10.55, "y": -9.350000000000001 },
+        { "route_type": "via", "from_layer": "inner2", "to_layer": "bottom", "x": 10.55, "y": -9.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 10.55, "y": -9.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 19.25, "y": -9.350000000000001 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": 19.3, "y": -9.399999999999999 },
+        { "route_type": "via", "from_layer": "bottom", "to_layer": "top", "x": 19.3, "y": -9.399999999999999 },
+        { "route_type": "wire", "x": 19.3, "y": -9.399999999999999, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 19.3, "y": -8, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 32.09, "y": -8, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 32.09, "y": -2.5, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 29.5, "y": -3, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 26.3, "y": 0.1999999999999993, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.646636, "y": 0.1999999999999993, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.646636, "y": 1.3000000000000007, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_186",
+      "sourceTraceKey": "[[\"R_COLD_SERIES.pin1\"],[\"COLD_DATA_MCU\"],null,null]"
+    },
+    {
+      "net": "HOT_SENSOR_DATA",
+      "route": [
+        { "route_type": "wire", "x": 23.153364, "y": 18, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.153364, "y": 18.8, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 20.4, "y": 18.8, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 20.4, "y": 16.149096, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.45004, "y": 16.149096, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_166",
+      "sourceTraceKey": "[[\"R_HOT_SERIES.pin2\",\"U_SENSOR_ESD.pin6\"],[],null,null]"
+    },
+    {
+      "net": "COLD_SENSOR_DATA",
+      "route": [
+        { "route_type": "wire", "x": 23.153364, "y": 6.7, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.153364, "y": 1.3000000000000007, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_168",
+      "sourceTraceKey": "[[\"R_COLD_PULLUP.pin2\",\"R_COLD_SERIES.pin2\"],[],null,null]"
+    },
+    {
+      "net": "COLD_SENSOR_DATA",
+      "route": [
+        { "route_type": "wire", "x": 23.153364, "y": 6.7, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 24.599999999999998, "y": 7.446636, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 24.599999999999998, "y": 14.899056, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.34996, "y": 16.149096, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_169",
+      "sourceTraceKey": "[[\"R_COLD_PULLUP.pin2\",\"U_SENSOR_ESD.pin4\"],[],null,null]"
+    },
+    {
+      "net": "COLD_SENSOR_DATA",
+      "route": [
+        { "route_type": "wire", "x": 23.34996, "y": 13.850904, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 24.3, "y": 12.900864, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 24.3, "y": 10, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 24.3, "y": 8.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 28.5, "y": 4, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_170",
+      "sourceTraceKey": "[[\"J_COLD_SENSOR.pin2\",\"U_SENSOR_ESD.pin3\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 18.3, "y": 15, "layer": "top", "width": 0.4 },
+        { "route_type": "wire", "x": 18.3, "y": 13.9, "layer": "top", "width": 0.4 }
+      ],
+      "sourceTraceId": "source_trace_171",
+      "sourceTraceKey": "[[\"C_HOT_SENSOR.pin1\",\"R_HOT_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 21.646635999999997, "y": 6.7, "width": 0.4, "layer": "top" },
+        { "route_type": "wire", "x": 21.7, "y": 10, "width": 0.4, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 21.646635999999997, "y": 6.7, "width": 0.4, "layer": "top" },
+        { "route_type": "wire", "x": 20.85, "y": 6.9, "width": 0.4, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 22.4, "y": 16.149096, "width": 0.4, "layer": "top" },
+        { "route_type": "wire", "x": 22.4, "y": 17.2, "width": 0.4, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_197",
+      "sourceTraceKey": "[[\"U_SENSOR_ESD.pin5\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 20.85, "y": 6.9, "width": 0.4, "layer": "bottom" },
+        { "route_type": "wire", "x": 20.599999999999998, "y": 0.5000070000000001, "width": 0.4, "layer": "bottom" },
+        { "route_type": "wire", "x": 28.5, "y": 0.5000070000000001, "width": 0.4, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_173",
+      "sourceTraceKey": "[[\"J_COLD_SENSOR.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": 19.7, "y": 15, "layer": "top", "width": 0.3 },
+        { "route_type": "wire", "x": 20.8, "y": 15, "layer": "top", "width": 0.3 }
+      ],
+      "sourceTraceId": "source_trace_189",
+      "sourceTraceKey": "[[\"C_HOT_SENSOR.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": 23.099999999999998, "y": 10, "width": 0.3, "layer": "top" },
+        { "route_type": "wire", "x": 23.099999999999998, "y": 8.9, "width": 0.3, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_191",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": 22.4, "y": 13.850904, "width": 0.3, "layer": "top" },
+        { "route_type": "wire", "x": 22.4, "y": 12.8, "width": 0.3, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_196",
+      "sourceTraceKey": "[[\"U_SENSOR_ESD.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 18.3, "y": 13.9, "layer": "inner2", "width": 0.4 },
+        { "route_type": "wire", "x": 18.3, "y": 16.8, "layer": "inner2", "width": 0.4 },
+        { "route_type": "wire", "x": 20.6, "y": 16.8, "layer": "inner2", "width": 0.4 },
+        { "route_type": "wire", "x": 20.6, "y": 16, "layer": "inner2", "width": 0.4 },
+        { "route_type": "wire", "x": 22.4, "y": 16, "layer": "inner2", "width": 0.4 },
+        { "route_type": "wire", "x": 22.4, "y": 17.2, "layer": "inner2", "width": 0.4 }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 12.753364, "y": -14, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 13.293364, "y": -14.54, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 14.8, "y": -14.54, "layer": "top", "width": 0.2 }
+      ],
+      "sourcePort": "R_RUN.pin1",
+      "sourceTraceId": "source_trace_124",
+      "sourceTraceKey": "[[\"R_RUN.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": -37.39, "y": -13.11, "layer": "top", "width": 1 },
+        { "route_type": "wire", "x": -33.46, "y": -13.11, "layer": "top", "width": 1 }
+      ],
+      "sourceTraceId": "source_trace_191",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": -32.86, "y": -11.2, "layer": "top", "width": 0.6 },
+        { "route_type": "wire", "x": -30.87, "y": -11.2, "layer": "top", "width": 0.6 }
+      ],
+      "sourceTraceId": "source_trace_3",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin8\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": -37.39, "y": -2.8900000000000006, "layer": "top", "width": 1 },
+        { "route_type": "wire", "x": -33.46, "y": -2.8900000000000006, "layer": "top", "width": 1 }
+      ],
+      "sourceTraceId": "source_trace_4",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin17\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "GND",
+      "route": [
+        { "route_type": "wire", "x": -32.86, "y": -4.800000000000001, "layer": "top", "width": 0.6 },
+        { "route_type": "wire", "x": -30.87, "y": -4.800000000000001, "layer": "top", "width": 0.6 }
+      ],
+      "sourceTraceId": "source_trace_2",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin2\"],[\"GND\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_USB_DP",
+      "route": [
+        { "route_type": "wire", "x": -32.885, "y": -7.75, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -31, "y": -7.75, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -30.75, "y": -7.5, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_7",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin4\"],[\"PROGRAM_USB_DP\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_USB_DP",
+      "route": [
+        { "route_type": "wire", "x": -32.885, "y": -8.75, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -34.82, "y": -8.75, "layer": "top", "width": 0.2 },
+        { "route_type": "via", "x": -34.82, "y": -8.75, "from_layer": "top", "to_layer": "bottom" },
+        { "route_type": "wire", "x": -34.82, "y": -8.75, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -32.7, "y": -8.75, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -31.45, "y": -7.5, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -30.75, "y": -7.5, "layer": "bottom", "width": 0.2 },
+        { "route_type": "via", "x": -30.75, "y": -7.5, "from_layer": "bottom", "to_layer": "top" },
+        { "route_type": "wire", "x": -30.75, "y": -7.5, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -30.3, "y": -7.050000000000001, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -28.849096, "y": -7.050039999999999, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_8",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin13\"],[\"PROGRAM_USB_DP\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_USB_DM",
+      "route": [
+        { "route_type": "wire", "x": -32.885, "y": -8.25, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -31, "y": -8.25, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -30.3, "y": -8.95, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -29.95, "y": -8.95, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_9",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin5\"],[\"PROGRAM_USB_DM\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_USB_DM",
+      "route": [
+        { "route_type": "wire", "x": -32.885, "y": -7.25, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -34.2, "y": -7.25, "layer": "top", "width": 0.2 },
+        { "route_type": "via", "x": -34.2, "y": -7.25, "from_layer": "top", "to_layer": "bottom" },
+        { "route_type": "wire", "x": -34.2, "y": -7.25, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -32.4, "y": -7.25, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -32, "y": -6.850000000000001, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -30.5, "y": -6.850000000000001, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -30.05, "y": -7.300000000000001, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -30.05, "y": -8.850000000000001, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -29.95, "y": -8.95, "layer": "bottom", "width": 0.2 },
+        { "route_type": "via", "x": -29.95, "y": -8.95, "from_layer": "bottom", "to_layer": "top" },
+        { "route_type": "wire", "x": -29.95, "y": -8.95, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -28.849096, "y": -8.94996, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_10",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin12\"],[\"PROGRAM_USB_DM\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_USB_DP",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -26.550904, "y": -7.050039999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -25.9, "y": -7.050039999999999 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -25, "y": -7.399999999999999 },
+        { "route_type": "via", "x": -25, "y": -7.399999999999999, "from_layer": "top", "to_layer": "bottom" },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -25, "y": -7.399999999999999 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -24.6, "y": -7.399999999999999 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -24, "y": -7.580000000000002 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -10.09112698372208, "y": -7.580000000000002 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -8.72, "y": -6.20887301627792 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -8.72, "y": 4.091126983722081 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -7.091126983722081, "y": 5.72 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -4, "y": 5.72 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -3.5, "y": 6.22 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -3.5, "y": 7.427011006054942 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -2.5, "y": 7.427011006054942 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -2.5, "y": 6.22 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -2, "y": 5.72 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 3, "y": 5.72 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 4.5, "y": 7.2 },
+        { "route_type": "via", "x": 4.5, "y": 7.2, "from_layer": "bottom", "to_layer": "top" },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.5, "y": 7.2 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.5, "y": 6.053364 }
+      ],
+      "sourceTraceId": "source_trace_128",
+      "sourceTraceKey": "[[\"R_USB_DP.pin1\"],[\"PROGRAM_USB_DP\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_USB_DM",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -26.550904, "y": -8.94996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -25.9, "y": -8.94996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -25, "y": -8.2 },
+        { "route_type": "via", "x": -25, "y": -8.2, "from_layer": "top", "to_layer": "bottom" },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -25, "y": -8.2 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -24.6, "y": -8.2 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -24, "y": -8.02 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -9.90887301627792, "y": -8.02 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -8.28, "y": -6.391126983722081 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -8.28, "y": 3.9088730162779193 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": -6.908873016277919, "y": 5.28 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 4.5, "y": 5.28 },
+        { "route_type": "wire", "width": 0.24, "layer": "bottom", "x": 6.1, "y": 7.2 },
+        { "route_type": "via", "x": 6.1, "y": 7.2, "from_layer": "bottom", "to_layer": "top" },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.1, "y": 7.2 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 6.1, "y": 6.053364 }
+      ],
+      "sourceTraceId": "source_trace_126",
+      "sourceTraceKey": "[[\"R_USB_DM.pin1\"],[\"PROGRAM_USB_DM\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_CC1",
+      "route": [
+        { "route_type": "wire", "x": -32.885, "y": -6.75, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -30.96, "y": -6.75, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -30.2, "y": -5.989999999999998, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -30.2, "y": -3.5, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -29.8, "y": -3.0999999999999996, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -28.753364, "y": -2, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_0",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin1\"],[\"PROGRAM_CC1\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS",
+      "route": [
+        { "route_type": "wire", "x": -32.86, "y": -5.600000000000001, "layer": "top", "width": 0.4 },
+        { "route_type": "wire", "x": -31.55, "y": -5.600000000000001, "layer": "top", "width": 0.4 }
+      ],
+      "sourceTraceId": "source_trace_5",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin3\"],[\"PROGRAM_VBUS\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS",
+      "route": [
+        { "route_type": "wire", "x": -32.86, "y": -10.399999999999999, "layer": "top", "width": 0.4 },
+        { "route_type": "wire", "x": -31.55, "y": -10.399999999999999, "layer": "top", "width": 0.4 }
+      ],
+      "sourceTraceId": "source_trace_6",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin7\"],[\"PROGRAM_VBUS\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_CC2",
+      "route": [
+        { "route_type": "wire", "x": -32.885, "y": -9.75, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -31.75, "y": -9.75, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -31.64, "y": -9.64, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": -31.4, "y": -9.64, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_1",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin14\"],[\"PROGRAM_CC2\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -18.750064, "y": -3.0500240000000005 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -18.8, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -26.8, "y": -3.0999999999999996 },
+        { "route_type": "via", "from_layer": "top", "to_layer": "bottom", "x": -26.8, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -26.8, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -29.9, "y": -3.0999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -30.25, "y": -2.75 },
+        { "route_type": "wire", "width": 0.2, "layer": "bottom", "x": -33.3, "y": -2.75 }
+      ],
+      "sourceTraceId": "source_trace_19",
+      "sourceTraceKey": "[[\"C_PROGRAM_IN.pin1\"],[\"PROGRAM_VBUS\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS",
+      "route": [
+        { "route_type": "wire", "x": -33.3, "y": -2.75, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -33.3, "y": -3.25, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -32.85, "y": -3.6999999999999993, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -32.85, "y": -4.300000000000001, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -32.6, "y": -4.550000000000001, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -32.6, "y": -5.149999999999999, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -32.15, "y": -5.600000000000001, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -31.55, "y": -5.600000000000001, "layer": "bottom", "width": 0.3 }
+      ],
+      "sourceTraceId": "source_trace_19",
+      "sourceTraceKey": "[[\"C_PROGRAM_IN.pin1\"],[\"PROGRAM_VBUS\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS",
+      "route": [
+        { "route_type": "wire", "x": -31.55, "y": -5.600000000000001, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -32.55, "y": -6.600000000000001, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -34.55, "y": -6.600000000000001, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -35.6, "y": -7.649999999999999, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -35.6, "y": -8.95, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -35.1, "y": -9.45, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -32.5, "y": -9.45, "layer": "bottom", "width": 0.3 },
+        { "route_type": "wire", "x": -31.55, "y": -10.399999999999999, "layer": "bottom", "width": 0.3 }
+      ],
+      "sourceTraceId": "source_trace_19",
+      "sourceTraceKey": "[[\"C_PROGRAM_IN.pin1\"],[\"PROGRAM_VBUS\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_CC2",
+      "route": [
+        { "route_type": "wire", "x": -31.4, "y": -9.64, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -29.76, "y": -9.64, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -29.36, "y": -9.239999999999998, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -29.36, "y": -5.559999999999999, "layer": "bottom", "width": 0.2 },
+        { "route_type": "wire", "x": -29.2, "y": -5.399999999999999, "layer": "bottom", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_1",
+      "sourceTraceKey": "[[\"J_PROGRAM.pin14\"],[\"PROGRAM_CC2\"],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 21.7, "y": 10, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 18.3, "y": 13.4, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 18.3, "y": 13.9, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_172",
+      "sourceTraceKey": "[[\"C_COLD_SENSOR.pin1\",\"R_COLD_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 22.4, "y": 17.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.85, "y": 17.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.9, "y": 17.25, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.9, "y": 19.25, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.65, "y": 21.5, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_171",
+      "sourceTraceKey": "[[\"C_HOT_SENSOR.pin1\",\"R_HOT_PULLUP.pin1\"],[],null,null]"
+    },
+    {
+      "net": "CTRL_3V3",
+      "route": [
+        { "route_type": "wire", "x": 22.4, "y": 16, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 25.9, "y": 12.5, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 28.5, "y": 12.500007, "width": 0.2, "layer": "inner2" }
+      ],
+      "sourceTraceId": "source_trace_174",
+      "sourceTraceKey": "[[\"J_HOT_SENSOR.pin1\"],[\"CTRL_3V3\"],null,null]"
+    },
+    {
+      "net": "LOGIC_5V",
+      "route": [
+        { "route_type": "wire", "x": -22.4, "y": -5.2, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -25.55, "y": -2.05, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -25.55, "y": 16.4, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -26.89, "y": 17.73, "width": 0.6, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_199",
+      "sourceTraceKey": "[[\"J_LINK.pin2\"],[\"LOGIC_5V\"],null,null]"
+    },
+    {
+      "net": "PROGRAM_VBUS",
+      "route": [
+        { "route_type": "wire", "x": -26.8, "y": -3.1, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -27.05, "y": -2.85, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -27.2, "y": -2.85, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -27.25, "y": -2.8, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -27.25, "y": 15.55, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -28.2, "y": 16.5, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -28.2, "y": 18.95, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -28.15, "y": 19, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -25.6, "y": 19, "width": 0.6, "layer": "bottom" },
+        { "route_type": "wire", "x": -24.35, "y": 17.73, "width": 0.6, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_200",
+      "sourceTraceKey": "[[\"J_LINK.pin3\"],[\"PROGRAM_VBUS\"],null,null]"
+    },
+    {
+      "net": "HOT_SENSOR_DATA",
+      "route": [
+        { "route_type": "wire", "x": 28.5, "y": 16, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 26.5, "y": 18, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 25.2, "y": 18, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 24.55, "y": 18.65, "width": 0.2, "layer": "top" },
+        { "route_type": "via", "x": 24.55, "y": 18.65, "from_layer": "top", "to_layer": "inner2" },
+        { "route_type": "wire", "x": 24.55, "y": 18.65, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 23.1, "y": 18.75, "width": 0.2, "layer": "inner2" },
+        { "route_type": "via", "x": 23.1, "y": 18.75, "from_layer": "inner2", "to_layer": "top" },
+        { "route_type": "wire", "x": 23.1, "y": 18.75, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.1, "y": 18.05, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.15, "y": 18, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_165",
+      "sourceTraceKey": "[[\"R_HOT_PULLUP.pin2\",\"R_HOT_SERIES.pin2\"],[],null,null]"
+    },
+    {
+      "net": "HOT_SENSOR_DATA",
+      "route": [
+        { "route_type": "wire", "x": 23.15, "y": 18.8, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.25, "y": 20.7, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 20.95, "y": 20.7, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 20.9, "y": 20.75, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 20.9, "y": 22.25, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 20.95, "y": 22.3, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 22.35, "y": 22.3, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 23.15, "y": 21.5, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_165",
+      "sourceTraceKey": "[[\"R_HOT_PULLUP.pin2\",\"R_HOT_SERIES.pin2\"],[],null,null]"
+    },
+    {
+      "net": "MCU_DRIVER_PERMISSION",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -1.6000789999999991 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.6, "y": -1.6000789999999991 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6, "y": -2.0000789999999995 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -6.45, "y": -2.0000789999999995 }
+      ],
+      "sourceTraceId": "source_trace_50",
+      "sourceTraceKey": "[[\"U_MCU.pin4\"],[\"MCU_DRIVER_PERMISSION\"],null,null]"
+    },
+    {
+      "net": "DRIVER_FAULT",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -1.9998749999999994 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.8, "y": -1.9998749999999994 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.000125, "y": -2.1999999999999993 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -5.1, "y": -2.1999999999999993 }
+      ],
+      "sourceTraceId": "source_trace_51",
+      "sourceTraceKey": "[[\"U_MCU.pin5\"],[\"DRIVER_FAULT\"],null,null]"
+    },
+    {
+      "net": "PD_FAULT_SENSE",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -3.424936, "y": -2.3999249999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.1, "y": -2.3999249999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": -4.7, "y": -2.9999249999999993 }
+      ],
+      "sourceTraceId": "source_trace_52",
+      "sourceTraceKey": "[[\"U_MCU.pin6\"],[\"PD_FAULT_SENSE\"],null,null]"
+    },
+    {
+      "net": "OUTPUT_VOLTAGE_ADC",
+      "route": [
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.424936, "y": -1.6000789999999991 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 3.4, "y": -1.5999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.3, "y": -1.5999999999999996 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.5, "y": -1.8000000000000007 },
+        { "route_type": "wire", "width": 0.2, "layer": "top", "x": 4.7, "y": -1.8000000000000007 }
+      ],
+      "sourceTraceId": "source_trace_63",
+      "sourceTraceKey": "[[\"U_MCU.pin39\"],[\"OUTPUT_VOLTAGE_ADC\"],null,null]"
+    },
+    {
+      "net": "I2C_SDA",
+      "route": [
+        { "route_type": "wire", "x": -9.11, "y": 20.27, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.45, "y": 15.6, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.45, "y": 15.25, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.5, "y": 15.2, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.5, "y": 9.05, "width": 0.2, "layer": "bottom" },
+        { "route_type": "via", "x": -4.5, "y": 9.05, "from_layer": "bottom", "to_layer": "inner1" },
+        { "route_type": "wire", "x": -4.5, "y": 9.05, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -4.5, "y": 2.4, "width": 0.2, "layer": "inner1" },
+        { "route_type": "via", "x": -4.5, "y": 2.4, "from_layer": "inner1", "to_layer": "bottom" },
+        { "route_type": "wire", "x": -4.5, "y": 2.4, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.5, "y": 0.45, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.4, "y": 0.35, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_207",
+      "sourceTraceKey": "[[\"J_LINK.pin10\"],[\"I2C_SDA\"],null,null]"
+    },
+    {
+      "net": "OUTPUT_CURRENT_ADC",
+      "route": [
+        { "route_type": "wire", "x": -14.190000000000001, "y": 20.27, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -12.75, "y": 18.8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -12.75, "y": 14.6, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -12.15, "y": 14, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -12.15, "y": 11.8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -10, "y": 9.65, "width": 0.2, "layer": "bottom" },
+        { "route_type": "via", "x": -10, "y": 9.65, "from_layer": "bottom", "to_layer": "inner1" },
+        { "route_type": "wire", "x": -10, "y": 9.65, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -7.6, "y": 7.25, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -7.6, "y": 6.7, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -5.15, "y": 4.25, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -5.15, "y": 1.8, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -4.35, "y": 1, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -1.75, "y": 1, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -0.85, "y": 0.1, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 1.75, "y": 0.1, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 4.05, "y": -2.2, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 4.05, "y": -2.4, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 4.3, "y": -2.65, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 4.350000000000001, "y": -2.5, "width": 0.2, "layer": "inner1" }
+      ],
+      "sourceTraceId": "source_trace_209",
+      "sourceTraceKey": "[[\"J_LINK.pin12\"],[\"OUTPUT_CURRENT_ADC\"],null,null]"
+    },
+    {
+      "net": "OUTPUT_VOLTAGE_ADC",
+      "route": [
+        { "route_type": "wire", "x": -16.73, "y": 20.27, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -15.3, "y": 18.8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -15.3, "y": 16.7, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -13.65, "y": 15.05, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -13.4, "y": 15.05, "width": 0.2, "layer": "bottom" },
+        { "route_type": "via", "x": -13.4, "y": 15.05, "from_layer": "bottom", "to_layer": "inner1" },
+        { "route_type": "wire", "x": -13.4, "y": 15.05, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -12.4, "y": 14.05, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -10.9, "y": 14.05, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -7.9, "y": 11.05, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -5.55, "y": 11.05, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -4.2, "y": 9.7, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -1.85, "y": 9.7, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -0.5, "y": 8.35, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -0.15, "y": 8.35, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 3.55, "y": 4.65, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 4.85, "y": 4.65, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 5.15, "y": 4.35, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 5.15, "y": -1.95, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": 5.25, "y": -2.05, "width": 0.2, "layer": "inner1" },
+        { "route_type": "via", "x": 5.25, "y": -2.05, "from_layer": "inner1", "to_layer": "bottom" },
+        { "route_type": "wire", "x": 5.25, "y": -2.05, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 5, "y": -1.8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 4.7, "y": -1.8, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_210",
+      "sourceTraceKey": "[[\"J_LINK.pin13\"],[\"OUTPUT_VOLTAGE_ADC\"],null,null]"
+    },
+    {
+      "net": "INPUT_VOLTAGE_ADC",
+      "route": [
+        { "route_type": "wire", "x": 3.4, "y": -1.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 5.75, "y": -1.2, "width": 0.2, "layer": "top" },
+        { "route_type": "via", "x": 5.75, "y": -1.2, "from_layer": "top", "to_layer": "inner2" },
+        { "route_type": "wire", "x": 5.75, "y": -1.2, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 5.55, "y": -1, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 2.15, "y": -1, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 2.025, "y": -0.875, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 2.025, "y": 2.825, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 1.675, "y": 3.175, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 0.3, "y": 3.175, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": 0.125, "y": 3, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -1.025, "y": 3, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -1.15, "y": 3.125, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -1.15, "y": 4.125, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -5.225, "y": 8.2, "width": 0.2, "layer": "inner2" },
+        { "route_type": "via", "x": -5.225, "y": 8.2, "from_layer": "inner2", "to_layer": "top" },
+        { "route_type": "wire", "x": -5.225, "y": 8.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -5.525, "y": 8.5, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -5.525, "y": 11, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -5.725, "y": 11.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -10.2, "y": 11.2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -10.9, "y": 11.9, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -10.9, "y": 13.975, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -13.6, "y": 16.675, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -15.55, "y": 16.675, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -15.675, "y": 16.8, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -15.675, "y": 18.75, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -16.15, "y": 19.225, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -18.225, "y": 19.225, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -19.27, "y": 20.27, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_211",
+      "sourceTraceKey": "[[\"J_LINK.pin14\"],[\"INPUT_VOLTAGE_ADC\"],null,null]"
+    },
+    {
+      "net": "MCU_DRIVER_PERMISSION",
+      "route": [
+        { "route_type": "wire", "x": -19.27, "y": 17.73, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -14.65, "y": 13.15, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -14.65, "y": 6.2, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -12.25, "y": 3.8, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -12.25, "y": 2.3, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -9.4, "y": -0.55, "width": 0.2, "layer": "bottom" },
+        { "route_type": "via", "x": -9.4, "y": -0.55, "from_layer": "bottom", "to_layer": "top" },
+        { "route_type": "wire", "x": -9.4, "y": -0.55, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -7.95, "y": -2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -6.55, "y": -2, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -6.45, "y": -2.0000789999999995, "width": 0.2, "layer": "top" },
+        { "route_type": "via", "x": -6.45, "y": -2.0000789999999995, "from_layer": "top", "to_layer": "bottom" },
+        { "route_type": "wire", "x": -6.45, "y": -2.0000789999999995, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -6.45, "y": -2, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_202",
+      "sourceTraceKey": "[[\"J_LINK.pin5\"],[\"MCU_DRIVER_PERMISSION\"],null,null]"
+    },
+    {
+      "net": "DRIVER_FAULT",
+      "route": [
+        { "route_type": "wire", "x": -16.73, "y": 17.73, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -15.75, "y": 16.75, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -15.75, "y": 15.25, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -15.15, "y": 14.65, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -14.85, "y": 14.65, "width": 0.2, "layer": "bottom" },
+        { "route_type": "via", "x": -14.85, "y": 14.65, "from_layer": "bottom", "to_layer": "inner2" },
+        { "route_type": "wire", "x": -14.85, "y": 14.65, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -14.65, "y": 14.45, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -14.65, "y": 6.9, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -11.3, "y": 3.55, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -5.95, "y": 3.55, "width": 0.2, "layer": "inner2" },
+        { "route_type": "wire", "x": -5.85, "y": 3.45, "width": 0.2, "layer": "inner2" },
+        { "route_type": "via", "x": -5.85, "y": 3.45, "from_layer": "inner2", "to_layer": "bottom" },
+        { "route_type": "wire", "x": -5.85, "y": 3.45, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -5.15, "y": 2.75, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -5.15, "y": -2.15, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -5.1, "y": -2.2, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_203",
+      "sourceTraceKey": "[[\"J_LINK.pin6\"],[\"DRIVER_FAULT\"],null,null]"
+    },
+    {
+      "net": "PD_FAULT_SENSE",
+      "route": [
+        { "route_type": "wire", "x": -14.190000000000001, "y": 17.73, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -13.4, "y": 18.2, "width": 0.2, "layer": "bottom" },
+        { "route_type": "via", "x": -13.4, "y": 18.2, "from_layer": "bottom", "to_layer": "inner1" },
+        { "route_type": "wire", "x": -13.4, "y": 18.2, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -14.2, "y": 16.55, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -15.5, "y": 15.25, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -15.5, "y": 7.8, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -15.1, "y": 7.4, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -15.1, "y": 6.35, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -12.25, "y": 3.5, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -12.25, "y": 2.3, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -10.05, "y": 0.1, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -8, "y": 0.1, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -7.75, "y": -0.15, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -7.75, "y": -0.7, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -7.15, "y": -1.3, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -7.15, "y": -2.65, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -6.8, "y": -3, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -4.8, "y": -3, "width": 0.2, "layer": "inner1" },
+        { "route_type": "wire", "x": -4.7, "y": -2.9999249999999993, "width": 0.2, "layer": "inner1" },
+        { "route_type": "via", "x": -4.7, "y": -2.9999249999999993, "from_layer": "inner1", "to_layer": "bottom" },
+        { "route_type": "wire", "x": -4.7, "y": -2.9999249999999993, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.7, "y": -3, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_204",
+      "sourceTraceKey": "[[\"J_LINK.pin7\"],[\"PD_FAULT_SENSE\"],null,null]"
+    },
+    {
+      "net": "I2C_SCL",
+      "route": [
+        { "route_type": "wire", "x": -9.11, "y": 17.73, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -9.1, "y": 10.5, "width": 0.2, "layer": "bottom" },
+        { "route_type": "via", "x": -9.1, "y": 10.5, "from_layer": "bottom", "to_layer": "top" },
+        { "route_type": "wire", "x": -9.1, "y": 10.5, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -9.35, "y": 10.25, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -9.35, "y": 7.85, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -9.6, "y": 7.6, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -10.55, "y": 7.6, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -10.85, "y": 7.3, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": -10.85, "y": 6.45, "width": 0.2, "layer": "top" },
+        { "route_type": "via", "x": -10.85, "y": 6.45, "from_layer": "top", "to_layer": "bottom" },
+        { "route_type": "wire", "x": -10.85, "y": 6.45, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -11.05, "y": 6.25, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -11.05, "y": 5.3, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_206",
+      "sourceTraceKey": "[[\"J_LINK.pin9\"],[\"I2C_SCL\"],null,null]"
+    },
+    {
+      "net": "DRIVER_FAULT",
+      "route": [
+        { "route_type": "wire", "x": 15.246636, "y": -7, "layer": "top", "width": 0.2 },
+        { "route_type": "wire", "x": 14.3, "y": -7, "layer": "top", "width": 0.2 }
+      ],
+      "sourceTraceId": "source_trace_137",
+      "sourceTraceKey": "[[\"R_DRIVER_FAULT.pin2\"],[\"DRIVER_FAULT\"],null,null]"
+    },
+    {
+      "net": "DRIVER_FAULT",
+      "route": [
+        { "route_type": "wire", "x": -5.1, "y": -2.2, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -4.95, "y": -2.35, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -3.4, "y": -2.35, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -3.15, "y": -2.6, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -3.15, "y": -3.1, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -2.95, "y": -3.3, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -2.95, "y": -4.05, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -2.8, "y": -4.2, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -1.8, "y": -4.2, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -1.45, "y": -3.85, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -1.45, "y": -1.6, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": -1.4, "y": -1.55, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 2.5, "y": -1.55, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 5.4, "y": 1.35, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 6.55, "y": 1.35, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 13.45, "y": -5.55, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 14.4, "y": -5.55, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 14.45, "y": -5.6, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 14.45, "y": -6.85, "width": 0.2, "layer": "bottom" },
+        { "route_type": "wire", "x": 14.3, "y": -7, "width": 0.2, "layer": "bottom" }
+      ],
+      "sourceTraceId": "source_trace_203",
+      "sourceTraceKey": "[[\"J_LINK.pin6\"],[\"DRIVER_FAULT\"],null,null]"
+    },
+    {
+      "net": "HOT_SENSOR_DATA",
+      "route": [
+        { "route_type": "wire", "x": 21.450039999999998, "y": 13.850904, "width": 0.2, "layer": "top" },
+        { "route_type": "wire", "x": 21.450039999999998, "y": 16.149096, "width": 0.2, "layer": "top" }
+      ],
+      "sourceTraceId": "source_trace_166",
+      "sourceTraceKey": "[[\"R_HOT_SERIES.pin2\",\"U_SENSOR_ESD.pin6\"],[],null,null]"
+    }
+  ],
+  "vias": [
+    { "net": "GND", "x": -0.4, "y": 16.9, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_0_0" },
+    { "net": "GND", "x": -0.4, "y": 17.7, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_0_1" },
+    { "net": "GND", "x": -0.4, "y": 18.5, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_0_2" },
+    { "net": "GND", "x": -0.4, "y": 19.3, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_0_3" },
+    { "net": "GND", "x": 0.4, "y": 16.9, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_1_0" },
+    { "net": "GND", "x": 0.4, "y": 17.7, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_1_1" },
+    { "net": "GND", "x": 0.4, "y": 18.5, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_1_2" },
+    { "net": "GND", "x": 0.4, "y": 19.3, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_1_3" },
+    { "net": "GND", "x": 2.4, "y": 16.9, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_2_0" },
+    { "net": "GND", "x": 2.4, "y": 17.7, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_2_1" },
+    { "net": "GND", "x": 2.4, "y": 18.5, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_2_2" },
+    { "net": "GND", "x": 2.4, "y": 19.3, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_DRIVER_PGND_2_3" },
+    { "net": "GND", "x": -34.7, "y": 14.400000000000006, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_0" },
+    { "net": "GND", "x": -31.5, "y": 13.400000000000006, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_1" },
+    { "net": "GND", "x": -29, "y": 13.900000000000006, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_2" },
+    { "net": "GND", "x": -29, "y": 14.5, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_3" },
+    { "net": "GND", "x": -11.5, "y": 13.400000000000006, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_4" },
+    { "net": "GND", "x": -11.5, "y": 12.400000000000006, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_5" },
+    { "net": "GND", "x": -11.5, "y": 8.300000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_6" },
+    { "net": "GND", "x": -11.5, "y": 7.300000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "FAN_GND_7" },
+    { "net": "CTRL_3V3", "x": 20.85, "y": 6.9, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_SENSOR_COLD_3V3" },
+    { "net": "CTRL_3V3", "x": 22.4, "y": 17.2, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_SENSOR_ESD_3V3" },
+    { "net": "GND", "x": 20.8, "y": 15, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_SENSOR_HOT_GND" },
+    { "net": "GND", "x": 23.099999999999998, "y": 8.9, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_SENSOR_COLD_GND" },
+    { "net": "GND", "x": 22.4, "y": 12.8, "holeDiameter": 0.3, "outerDiameter": 0.6, "name": "V_SENSOR_ESD_GND" },
+    { "net": "GND", "x": 13.5, "y": -7, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 20.7, "y": -1.9000000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -10.5, "y": -13, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 17.5, "y": -11, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 21.2, "y": -7, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LED_RUN_DRIVE", "x": 24.7, "y": -7, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LED_FAULT_DRIVE", "x": 28.200000000000003, "y": -7, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 17.7, "y": -7, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LOGIC_5V", "x": -22.4, "y": -5.199999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LOGIC_5V", "x": -14.6, "y": -6.700023999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -21, "y": 5.4, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -23.4, "y": 0.09999999999999964, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -24.1, "y": -1.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -12.3, "y": -3.4999979999999997, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -21, "y": -5.640080000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -17.45, "y": -4.359919999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -19.65, "y": -1.6499760000000006, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -21.4, "y": -9.100000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -14.45, "y": -9.100000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -14.3, "y": -5.299976000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -9.89, "y": -5.299976000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "SWCLK", "x": 1.5, "y": -15.3, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "SWCLK", "x": 0.65, "y": -5.350000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "SWDIO", "x": 4.5, "y": -15.3, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "SWDIO", "x": 1.5, "y": -5.350000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_USB_DP", "x": -25, "y": -7.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_USB_DM", "x": -25, "y": -8.2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_USB_DP", "x": 4.5, "y": 7.2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_USB_DM", "x": 6.1, "y": 7.2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "RP_USB_DP", "x": 0.6, "y": -0.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "RP_USB_DM", "x": 1.42, "y": -0.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "RP_USB_DP", "x": 4.5, "y": 3.7300000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "RP_USB_DM", "x": 6.1, "y": 3.7300000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_CC2", "x": -29.2, "y": -5.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LOGIC_5V", "x": -27.7, "y": -7.600000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LOGIC_5V", "x": -28.4, "y": -10.100000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -27.7, "y": -8.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -27, "y": -11.899999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -26.4, "y": -2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -25.8, "y": -4.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -22.125, "y": 15, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -21.325, "y": 15, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -20.525, "y": 15, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -0.8, "y": -3.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -0.8, "y": -3, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -0.8, "y": -2.1999999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 0, "y": -3.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 0, "y": -3, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 0, "y": -2.1999999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 0.8, "y": -3.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 0.8, "y": -3, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 0.8, "y": -2.1999999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -3.85, "y": 14.6, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 2.3, "y": 4.4, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD3", "x": -0.96, "y": 1.4499999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -10, "y": 22.165, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -10.8, "y": 22.165, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -9.2, "y": 22.165, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.5, "y": 22.165, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -7.3, "y": 22.165, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -5.7, "y": 22.165, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.920001, "y": 8.829952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.920001, "y": 8.029952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.920001, "y": 9.629952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.120001, "y": 8.829952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.920001, "y": 10.429952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.920001, "y": 7.229952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.120001, "y": 8.029952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.120001, "y": 9.629952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.120001, "y": 7.229952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.120001, "y": 10.429952, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 10.5, "y": 16.685105, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 9.7, "y": 16.685105, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 11.3, "y": 16.685105, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 14, "y": 16.685105, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 13.2, "y": 16.685105, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 14.8, "y": 16.685105, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -34.1, "y": 11.919897000000006, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -34.9, "y": 11.919897000000006, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -33.3, "y": 11.919897000000006, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -32.3, "y": 13.280000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -13.980103, "y": 13.400000000000006, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -13.980103, "y": 14.200000000000003, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -13.980103, "y": 12.600000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -13.980103, "y": 8.300000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -13.980103, "y": 9.100000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -13.980103, "y": 7.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 5.603364, "y": 13, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 5.55, "y": 11, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -0.999998, "y": -5.575063, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 0, "y": -11.2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.225, "y": -0.3999290000000002, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -6.225, "y": -3.9998710000000006, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 2.15, "y": -8.7, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 5.945, "y": -3.9998710000000006, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 5.945, "y": -0.3999290000000002, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 6.275, "y": 2.0999999999999996, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 5.975, "y": 0.6999999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -0.45, "y": 3.5999999999999996, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 3.56, "y": 4.020024, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -5.35, "y": -8.949998, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 9.55, "y": -14, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -5.050024, "y": -11.2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 5.150024, "y": -13.2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 13.01, "y": 5.9, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 22.15, "y": 5.65, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 21.65, "y": -6, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 22.249938, "y": -2.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 25.749998, "y": -2.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 28.399938, "y": -4, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 11.65, "y": -15.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -25, "y": -9, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 4.8, "y": 8.066025, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": 6.512436, "y": 2.9000000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD3", "x": -1.77, "y": 3.5500000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SCLK", "x": -0.534998, "y": -0.5500000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD0", "x": -1.35, "y": -0.5500000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD2", "x": -2.15, "y": -0.5500000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD2", "x": 0.265, "y": 3.9399999999999995, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SCLK", "x": 1.075, "y": 3.7750000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD0", "x": -3.1499999999999995, "y": 2.3499999999999996, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD0", "x": -2.3249999999999993, "y": 8.950000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "QSPI_SD0", "x": 1.405, "y": 10.95, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_VBUS_SENSE", "x": 2.5, "y": -2.5999999999999996, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_VBUS_SENSE", "x": 14.3, "y": -10.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "HOT_DATA_MCU", "x": -2, "y": -13.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "HOT_DATA_MCU", "x": 21.6, "y": 17.2, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_VBUS", "x": -26.8, "y": -3.0999999999999996, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_VBUS", "x": -6.6, "y": -6.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_VBUS", "x": 0.3, "y": -14.600000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_VBUS", "x": 6.4, "y": -14.100000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PROGRAM_VBUS", "x": 6.9, "y": -11.899999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 13.8, "y": -6.199999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 8.1, "y": -5.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 5.5, "y": -3.0999999999999996, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 17.9, "y": -7.800000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -2.8, "y": -14.600000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -7.1, "y": -0.09999999999999964, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -7.2, "y": -7.100000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -6.5, "y": -5.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -11.6, "y": 2.9000000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -6.1, "y": 11.8, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "I2C_SCL", "x": -11.05, "y": 5.3, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "I2C_SDA", "x": -2.5, "y": -1.6999999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "I2C_SCL", "x": -6.175, "y": -1.1999999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "COLD_DATA_MCU", "x": -2.5749999999999993, "y": -4.850000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LED_RUN_DRIVE", "x": -2.5, "y": -2.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LED_FAULT_DRIVE", "x": -2.299999999999999, "y": -3.4749999999999996, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "OUTPUT_CURRENT_ADC", "x": 4.350000000000001, "y": -2.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "RP_CORE_1V1", "x": 1.375, "y": 2.3000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 1, "y": 1.5500000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "RP_CORE_1V1", "x": 1.65, "y": -7.850000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "RP_CORE_1V1", "x": -1.06, "y": 2.375, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -0.125, "y": -5.5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": -1.8, "y": -5, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "I2C_SCL", "x": -6.1, "y": 0.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "I2C_SDA", "x": -4.4, "y": 0.34999999999999964, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "I2C_SDA", "x": -6.6, "y": -4.699999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LED_RUN_DRIVE", "x": 10.3, "y": -7.649999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LED_FAULT_DRIVE", "x": 10.3, "y": -8.600000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "LED_FAULT_DRIVE", "x": 20, "y": -8.8, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "COLD_DATA_MCU", "x": 10.55, "y": -9.350000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "COLD_DATA_MCU", "x": 19.3, "y": -9.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "CTRL_3V3", "x": 18.3, "y": 13.9, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "GND", "x": -35.57, "y": 17.05, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -35.57, "y": 17.73, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -31.55, "y": 19.3, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -30.87, "y": 19.3, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -35.57, "y": -13.45, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -35.57, "y": -12.77, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -31.55, "y": -11.2, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -30.87, "y": -11.2, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -35.57, "y": -3.2300000000000004, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -35.57, "y": -2.5500000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -31.55, "y": -4.800000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "GND", "x": -30.87, "y": -4.800000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "PROGRAM_USB_DP", "x": -34.82, "y": -8.75, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "PROGRAM_USB_DP", "x": -30.75, "y": -7.5, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "PROGRAM_USB_DM", "x": -34.2, "y": -7.25, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "PROGRAM_USB_DM", "x": -29.95, "y": -8.95, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "PROGRAM_VBUS", "x": -31.55, "y": -5.600000000000001, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "PROGRAM_VBUS", "x": -31.55, "y": -10.399999999999999, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "PROGRAM_CC2", "x": -31.4, "y": -9.64, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_208", "net": "HOT_SENSOR_DATA", "x": 24.55, "y": 18.65, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_209", "net": "HOT_SENSOR_DATA", "x": 23.1, "y": 18.75, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "MCU_DRIVER_PERMISSION", "x": -6.45, "y": -2.0000789999999995, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "DRIVER_FAULT", "x": -5.1, "y": -2.1999999999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "PD_FAULT_SENSE", "x": -4.7, "y": -2.9999249999999993, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "net": "OUTPUT_VOLTAGE_ADC", "x": 4.7, "y": -1.8000000000000007, "holeDiameter": 0.3, "outerDiameter": 0.6 },
+    { "name": "V_modular_control_215", "net": "I2C_SDA", "x": -4.5, "y": 9.05, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_216", "net": "I2C_SDA", "x": -4.5, "y": 2.4, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_217", "net": "OUTPUT_CURRENT_ADC", "x": -10, "y": 9.65, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_219", "net": "OUTPUT_VOLTAGE_ADC", "x": -13.4, "y": 15.05, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_220", "net": "OUTPUT_VOLTAGE_ADC", "x": 5.25, "y": -2.05, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_221", "net": "INPUT_VOLTAGE_ADC", "x": 5.75, "y": -1.2, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_222", "net": "INPUT_VOLTAGE_ADC", "x": -5.225, "y": 8.2, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_223", "net": "MCU_DRIVER_PERMISSION", "x": -9.4, "y": -0.55, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_225", "net": "DRIVER_FAULT", "x": -14.85, "y": 14.65, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_226", "net": "DRIVER_FAULT", "x": -5.85, "y": 3.45, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_227", "net": "PD_FAULT_SENSE", "x": -13.4, "y": 18.2, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_229", "net": "I2C_SCL", "x": -9.1, "y": 10.5, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "name": "V_modular_control_230", "net": "I2C_SCL", "x": -10.85, "y": 6.45, "holeDiameter": 0.3, "outerDiameter": 0.6, "tented": true },
+    { "net": "DRIVER_FAULT", "x": 14.3, "y": -7, "holeDiameter": 0.3, "outerDiameter": 0.6 }
+  ],
+  "pours": [
+    { "name": "GND_INNER1", "layer": "inner1", "connectsTo": "net.GND", "unbroken": true, "clearance": 0.223, "cutoutMargin": 0.25, "boardEdgeMargin": 0.301, "useThermalReliefs": false },
+    {
+      "name": "GND_USB_REFERENCE",
+      "layer": "inner2",
+      "connectsTo": "net.GND",
+      "unbroken": true,
+      "clearance": 0.223,
+      "cutoutMargin": 0.25,
+      "boardEdgeMargin": 0,
+      "useThermalReliefs": false,
+      "outline": [
+        { "x": -38, "y": -12 },
+        { "x": -4, "y": -11 },
+        { "x": -4, "y": -3 },
+        { "x": 9, "y": -3 },
+        { "x": 9, "y": 10 },
+        { "x": -10, "y": 10 },
+        { "x": -10, "y": -5 },
+        { "x": -38, "y": -4 }
+      ]
+    }
+  ]
+}

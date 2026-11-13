@@ -43,6 +43,8 @@ switch (process.argv[2]) {
         throw new Error(`Invalid compiled registry board: ${build.label}`)
       if (build.routingStatus === "unrouted" && circuit.some(e => ["pcb_trace", "pcb_via", "pcb_copper_pour"].includes(e.type)))
         throw new Error(`Draft build contains unexpected saved copper: ${build.label}`)
+      if (build.routingStatus === "routed" && !["pcb_trace", "pcb_via", "pcb_copper_pour"].every(type => circuit.some(e => e.type === type)))
+        throw new Error(`Routed build is missing physical copper: ${build.label}`)
     }
     const header: PreviewHeader = { ...source, paths: outputs, sizes: files.map(file => file.length) }
     const payload = Buffer.concat([Buffer.from(JSON.stringify(header) + "\n"), ...files])

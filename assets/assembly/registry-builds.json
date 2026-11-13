@@ -1,6 +1,6 @@
 [
   { "product": "standard", "label": "Standard — integrated, routed; bench qualification pending", "entrypoint": "assembly.tsx", "outputDir": "assembly", "routingStatus": "routed" },
-  { "product": "lite", "label": "Lite — UNROUTED design candidate", "entrypoint": "designs/lite.circuit.tsx", "outputDir": "designs/lite", "routingStatus": "unrouted" },
-  { "product": "modular", "label": "Modular Power — UNROUTED design candidate", "entrypoint": "designs/modular-power.circuit.tsx", "outputDir": "designs/modular-power", "routingStatus": "unrouted" },
-  { "product": "modular", "label": "Modular Controller — UNROUTED design candidate", "entrypoint": "designs/modular-control.circuit.tsx", "outputDir": "designs/modular-control", "routingStatus": "unrouted" }
+  { "product": "lite", "label": "Lite — routed; bench qualification pending", "entrypoint": "designs/lite.circuit.tsx", "outputDir": "designs/lite", "routingStatus": "routed" },
+  { "product": "modular", "label": "Modular Power — routed; connector and bench qualification pending", "entrypoint": "designs/modular-power.circuit.tsx", "outputDir": "designs/modular-power", "routingStatus": "routed" },
+  { "product": "modular", "label": "Modular Controller — routed; connector and bench qualification pending", "entrypoint": "designs/modular-control.circuit.tsx", "outputDir": "designs/modular-control", "routingStatus": "routed" }
 ]

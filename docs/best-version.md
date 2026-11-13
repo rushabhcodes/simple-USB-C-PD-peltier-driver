@@ -2,9 +2,9 @@
 
 Use the reviewed Standard design as the best all-round version of this family.
 It retains the 12 V fan supply and both powered probe interfaces on a single
-fully routed board, with no new inter-board connector or unrouted layout.
+fully routed board, without an inter-board connector.
 Lite removes useful interfaces; Modular adds board area, connectors and an
-internal harness. Their separate development candidates remain available.
+internal harness. Their separately routed review candidates remain available.
 
 This selection preserves the reviewed electrical design rather than claiming
 new hardware performance. The board is 72.5 × 59 mm, four layers, nominal

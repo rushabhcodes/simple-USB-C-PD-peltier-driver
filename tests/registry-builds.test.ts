@@ -12,12 +12,15 @@ test("the registry exposes all three products and both Modular PCBs", () => {
   for (const build of builds) expect(existsSync(build.entrypoint)).toBe(true)
 })
 
-test("Standard stays the default and all draft views disclose their routing status", () => {
+test("Standard stays the default and every published board discloses routed status and pending qualification", () => {
   const standard = builds.find(b => b.product === "standard")!
   expect(config.mainEntrypoint).toBe(standard.entrypoint)
   expect(config.previewComponentPath).toBe(standard.entrypoint)
   expect(config.siteDefaultComponentPath).toBe(standard.entrypoint)
-  for (const build of builds.filter(b => b.routingStatus === "unrouted")) expect(build.label).toContain("UNROUTED")
+  for (const build of builds) {
+    expect(build.routingStatus).toBe("routed")
+    expect(build.label).toContain("qualification pending")
+  }
   expect(config.buildCommand).toBe("bun run build:cloud")
   expect(pkg.scripts["build:preview"]).toContain("--all-images")
   expect(pkg.scripts["build:preview"]).toContain("--glbs")

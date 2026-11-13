@@ -26,7 +26,7 @@ test("packaging summary describes a complete integrated board", () => {
   expect(describeBestBoard(fixture())).toMatchObject({ layers: 4, purchasedPlacements: 134, traces: 364, vias: 370, pours: 29 })
 })
 
-test("unrouted, multi-board and changed-outline inputs are rejected", () => {
+test("other product variants and changed-outline inputs are rejected by the Standard selector", () => {
   const a = fixture().filter(e => e.type !== "pcb_trace")
   expect(() => describeBestBoard(a)).toThrow("copper")
   const b = fixture(); b.push(b[0]!)

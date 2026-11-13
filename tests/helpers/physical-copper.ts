@@ -87,15 +87,15 @@ function cutHole(outer: Polygon, hole: Polygon) {
   return outer
 }
 function padShape(e: Element, components: Map<string, Element>, maskOpening = false) {
-  const { x, y } = e, rotation = e.ccw_rotation ?? 0
+  const { x, y } = e, rotation = e.rect_ccw_rotation ?? e.ccw_rotation ?? 0
   if (e.type === "pcb_via") return cutHole(disk(x, y, e.outer_diameter / 2), disk(x, y, e.hole_diameter / 2))
   const plated = e.type === "pcb_plated_hole"
   const margin = maskOpening ? e.soldermask_margin ?? 0 : 0
-  const w = (plated ? e.outer_width : e.width) + 2 * margin
-  const h = (plated ? e.outer_height : e.height) + 2 * margin
+  const w = (plated ? e.rect_pad_width ?? e.outer_width : e.width) + 2 * margin
+  const h = (plated ? e.rect_pad_height ?? e.outer_height : e.height) + 2 * margin
   let shape: Polygon
   if (e.shape === "circle") shape = disk(x, y, (plated ? e.outer_diameter / 2 : e.radius) + margin)
-  else if (["rect", "rotated_rect", "circle_with_rect_pad"].includes(e.shape)) shape = rectangle(x, y, w, h, rotation)
+  else if (["rect", "rotated_rect", "circle_with_rect_pad", "circular_hole_with_rect_pad"].includes(e.shape)) shape = rectangle(x, y, w, h, rotation)
   else if (["pill", "rotated_pill", "oval"].includes(e.shape)) shape = capsule(x, y, w, h, rotation)
   else if (e.shape === "polygon") {
     if (margin !== 0) throw new Error("Polygonal solder-mask opening needs explicit geometry")
@@ -252,14 +252,16 @@ export function analyzePhysicalCopper(json: AnyCircuitElement[], expected = sour
         // The pad itself must exist as real copper; metadata cannot bridge it.
         const aWidth = a.route_type !== "via" ? a.width : b.route_type !== "via" ? b.width : 0
         const bWidth = b.route_type !== "via" ? b.width : aWidth
+        const endWidth = e.route_thickness_mode === "interpolated" ? bWidth : aWidth
         const length = Math.hypot(bPoint.x - aPoint.x, bPoint.y - aPoint.y)
-        // A repeated endpoint entirely inside a drill leaves no fabricated
-        // copper disk. The annular via/pad already models its real copper.
-        if (length <= EPS && elements.some(hole =>
+        // A stroke entirely inside a drill leaves no fabricated copper. This
+        // includes short grid-router detours as well as repeated endpoints.
+        if (elements.some(hole =>
           (hole.type === "pcb_via" || hole.type === "pcb_plated_hole") && hole.hole_diameter &&
-          Math.hypot(aPoint.x - hole.x, aPoint.y - hole.y) + Math.max(aWidth, bWidth) / 2 <= hole.hole_diameter / 2 + EPS)) continue
+          Math.max(Math.hypot(aPoint.x - hole.x, aPoint.y - hole.y) + aWidth / 2,
+            Math.hypot(bPoint.x - hole.x, bPoint.y - hole.y) + endWidth / 2) <= hole.hole_diameter / 2 + EPS)) continue
         const id = `${e.pcb_trace_id}:segment${i - 1}`
-        add(stroke(aPoint, bPoint, aWidth / 2, e.route_thickness_mode === "interpolated" ? bWidth / 2 : aWidth / 2), aLayer, id, e.type)
+        add(stroke(aPoint, bPoint, aWidth / 2, endWidth / 2), aLayer, id, e.type)
         segmentLengths.set(id, length)
       }
     }
@@ -270,6 +272,7 @@ export function analyzePhysicalCopper(json: AnyCircuitElement[], expected = sour
   // electrical nets still come exclusively from the immutable expected graph.
   for (const keys of [...expected.internalKeys, ...current.internalKeys]) union.join(keys.flatMap(key => portNodes.get(key) ?? []))
   const layerIndices: { ids: number[]; index: Flatbush }[] = []
+  const touchingPairs: Array<[number, number]> = []
   for (const layer of stack) {
     const ids = nodes.flatMap((node, i) => node.layer === layer ? [i] : [])
     if (!ids.length) continue
@@ -280,7 +283,10 @@ export function analyzePhysicalCopper(json: AnyCircuitElement[], expected = sour
     ids.forEach((id, i) => {
       const a = nodes[id]!.shape, b = a.box
       for (const j of index.search(b.xmin - EPS, b.ymin - EPS, b.xmax + EPS, b.ymax + EPS))
-        if (j > i && touches(a, nodes[ids[j]!]!.shape)) union.join([String(id), String(ids[j])])
+        if (j > i && touches(a, nodes[ids[j]!]!.shape)) {
+          touchingPairs.push([id, ids[j]!])
+          union.join([String(id), String(ids[j])])
+        }
     })
   }
   const expectedNets = new Map<string, string[]>(), groups = [], disconnected = []
@@ -329,6 +335,14 @@ export function analyzePhysicalCopper(json: AnyCircuitElement[], expected = sour
     // intended same-net islands. Opens, shorts and floating copper still fail.
     return actual?.length === 1 ? actual[0] : declaredNet(elementsById.get(node.id.split(":segment")[0]))
   }
+  // Intended net identities identify the touching objects that caused a short;
+  // the physical union above still determines whether the board actually shorts.
+  const shortContacts = touchingPairs.flatMap(([ai, bi]) => {
+    const a = nodes[ai]!, b = nodes[bi]!
+    const an = declaredNet(elementsById.get(a.id.split(":segment")[0]))
+    const bn = declaredNet(elementsById.get(b.id.split(":segment")[0]))
+    return an && bn && an !== bn ? [{ a: a.id, b: b.id, layer: a.layer, nets: [an, bn] }] : []
+  })
   const padGap = board.min_pad_edge_to_pad_edge_clearance ?? 0.1
   const traceGap = board.min_trace_to_pad_edge_clearance ?? 0.1
   const traceTraceGap = board.min_trace_to_trace_clearance ?? traceGap
@@ -363,7 +377,30 @@ export function analyzePhysicalCopper(json: AnyCircuitElement[], expected = sour
       viaCount: [...ids].filter(id => viaIds.has(id)).length }
   }
   const unanchoredCopper = [...new Set(nodes.filter((_, i) => !physicalGroups.has(union.root(String(i)))).map(node => node.id))]
-  return { requiredPortCount, ignoredNcPortCount, groups, disconnected, shorts, invalid, unanchoredCopper, clearanceViolations,
+  const routingPointsForIsland = (ports: string[]) => {
+    const roots = new Set(ports.flatMap(port => (portNodes.get(port) ?? []).map(id => union.root(id))))
+    const points = new Map<string, { x: number; y: number; layers: string[] }>()
+    const addPoint = (x: number, y: number, layer: string) => {
+      const key = `${x},${y}`, existing = points.get(key)
+      if (existing) { if (!existing.layers.includes(layer)) existing.layers.push(layer); return }
+      points.set(key, { x, y, layers: [layer] })
+    }
+    for (const [i, node] of nodes.entries()) {
+      if (!roots.has(union.root(String(i)))) continue
+      const [elementId, segmentIndex] = node.id.split(":segment")
+      const e = elementsById.get(elementId!)
+      if (!e) continue
+      if (["pcb_via", "pcb_plated_hole", "pcb_smtpad"].includes(node.type)) addPoint(e.x, e.y, node.layer)
+      if (node.type === "pcb_trace" && segmentIndex !== undefined) {
+        const a = e.route[Number(segmentIndex)], b = e.route[Number(segmentIndex) + 1]
+        const ap = a.route_type === "through_pad" ? a.end : a
+        const bp = b.route_type === "through_pad" ? b.start : b
+        addPoint(ap.x, ap.y, node.layer); addPoint(bp.x, bp.y, node.layer)
+      }
+    }
+    return [...points.values()]
+  }
+  return { requiredPortCount, ignoredNcPortCount, groups, disconnected, shorts, shortContacts, invalid, unanchoredCopper, clearanceViolations,
     missingPorts: [...expected.ports.keys()].filter(port => !portNodes.has(port)),
-    sourceSignature: current.signature, metricsForNet }
+    sourceSignature: current.signature, metricsForNet, routingPointsForIsland }
 }

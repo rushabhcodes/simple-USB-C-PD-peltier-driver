@@ -1,6 +1,6 @@
 # Publishing the three product versions
 
-The 0.2.x release family keeps one package, `rushabhcodes/simple-usb-c-pd-peltier-driver`,
+The 0.3.x release family keeps one package, `rushabhcodes/simple-usb-c-pd-peltier-driver`,
 with multiple build views. `includeBoardFiles` is the TSCircuit CLI's supported
 configuration for those builds. The three products have four physical board
 views because Modular consists of two PCBs:
@@ -8,13 +8,15 @@ views because Modular consists of two PCBs:
 | Registry build | Product | Status |
 |---|---|---|
 | `assembly.tsx` | Standard / recommended integrated board | Routed; bench qualification pending |
-| `designs/lite.circuit.tsx` | Lite | Unrouted design candidate |
-| `designs/modular-power.circuit.tsx` | Modular power board | Unrouted design candidate |
-| `designs/modular-control.circuit.tsx` | Modular controller board | Unrouted design candidate |
+| `designs/lite.circuit.tsx` | Lite | Routed; bench qualification pending |
+| `designs/modular-power.circuit.tsx` | Modular power board | Routed; connector and bench qualification pending |
+| `designs/modular-control.circuit.tsx` | Modular controller board | Routed; connector and bench qualification pending |
 
 Standard remains the default 3D assembly and preserves its existing copper.
-The draft boards retain their explicit UNROUTED titles and unresolved connector
-sourcing warnings. Publishing them does not qualify them for fabrication/sale.
+The variant boards have independent copper and explicit ROUTED REVIEW CANDIDATE
+titles. Modular's connector sourcing warnings remain unresolved. Publishing
+does not qualify the hardware for fabrication/sale. See the
+[routing review](routing-review.md) for current checks and open findings.
 
 ## Rebuild and push
 
@@ -23,6 +25,7 @@ bun install --frozen-lockfile
 bun run build:preview
 bun run build:cloud
 bun run typecheck
+bun run designs:route-check
 bun test ./tests
 tsci login
 tsci push --no-compress
@@ -58,7 +61,7 @@ present. The [design comparison](product-designs.md) and
 
 ## Local preflight and upload correction
 
-The board release passed TypeScript and all **92 tests across 15 files**. A clean
+The earlier 0.2.x board release passed TypeScript and all **92 tests across 15 files**. A clean
 source staging tree with no prior `dist/` restored all four compiled builds,
 including valid PNGs and GLB models. Chromium loaded and rendered each build,
 showed four gallery cards, and reported no page, request or HTTP errors. Draft
@@ -79,3 +82,14 @@ canonicalizes package JSON, and adds per-file diagnostics; source and dependency
 changes continue to invalidate the cache. The current board artifacts remain the
 same checked designs. Verify both automatic and native releases after this fix.
 No credential or generated build-cache directory belongs in the published source.
+
+## Routed 0.3.x update
+
+All four native PCB builds and the fresh physical/native routing audits pass.
+TypeScript and **102 tests across 17 files** pass, including an injected open
+permission trace with an unchanged source netlist. A clean staging tree containing
+209 tracked source files restores all four previews. The maximum source-file size
+is 3 MiB. The [routing report](routing-validation.json) records the exact traces,
+vias, checked thermal arrays, power corridors and remaining warnings.
+Chromium rendered all four restored PCB views and the four-card gallery with
+zero page, request or HTTP errors.

@@ -5,6 +5,11 @@ study. Standard remains the original routed PCB. Lite and Modular begin as
 editable schematic/floorplan candidates, with routing and hardware qualification
 outstanding. Passing source checks does not establish manufacturability.
 
+This is the historical source/placement review. All four PCBs were subsequently
+routed; the [routing review](routing-review.md) records three further cycles and
+the resolution of R3-04's routing portion. Connector and hardware qualification
+remain open.
+
 ## Cycle 1 — variants and source integrity
 
 Initial review of `c28f8c890b31f38c8fe63c92ef2eeaf6ea4e5f4a`:

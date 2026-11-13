@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "qualification": "Source and routing checks only; hardware, connector sourcing and fabrication-process qualification remain open",
+  "modularGraph": {
+    "pinCount": 461,
+    "matchesReference": true
+  },
+  "boards": [
+    {
+      "id": "standard",
+      "routingComplete": true,
+      "manufacturingReady": false,
+      "traceCount": 364,
+      "viaCount": 370,
+      "pourCount": 29,
+      "requiredPins": 422,
+      "ignoredNcPins": 39,
+      "sourceSignatureSha256": "131e52e8a35acd5cc7a16a3b9fbc4fff68f6e71293d702ea0d71f2d5b41c29fd",
+      "missingPorts": [],
+      "disconnected": [],
+      "shorts": [],
+      "clearanceViolations": [],
+      "floatingCopper": [],
+      "invalidPours": [],
+      "drillClearanceViolations": [],
+      "solderMaskViolations": [],
+      "placementIssues": [],
+      "thermalVias": {
+        "checkedPairs": 13,
+        "missing": [],
+        "invalid": []
+      },
+      "associationError": null,
+      "nativeErrors": [],
+      "crystals": [
+        {
+          "net": "XIN",
+          "traceLengthMm": 8.941759232961974,
+          "viaCount": 0
+        },
+        {
+          "net": "XOUT_CRYSTAL",
+          "traceLengthMm": 3.853731702004116,
+          "viaCount": 0
+        }
+      ],
+      "crystalErrors": [],
+      "powerCorridors": [
+        {
+          "net": "DRIVER_SW1",
+          "covered": true
+        },
+        {
+          "net": "DRIVER_SW2",
+          "covered": true
+        },
+        {
+          "net": "VBUS_QUALIFIED",
+          "covered": true
+        },
+        {
+          "net": "DRIVER_OUT",
+          "covered": true
+        },
+        {
+          "net": "TEC_POS",
+          "covered": true
+        },
+        {
+          "net": "TEC_POS",
+          "covered": true
+        }
+      ],
+      "missingKelvinRoutes": [],
+      "warnings": []
+    },
+    {
+      "id": "lite",
+      "routingComplete": true,
+      "manufacturingReady": false,
+      "traceCount": 331,
+      "viaCount": 357,
+      "pourCount": 29,
+      "requiredPins": 372,
+      "ignoredNcPins": 39,
+      "sourceSignatureSha256": "a8c4b4d4f97157a288076c2d76395846bb6597f88b05d1e275bb82fcae6354ce",
+      "missingPorts": [],
+      "disconnected": [],
+      "shorts": [],
+      "clearanceViolations": [],
+      "floatingCopper": [],
+      "invalidPours": [],
+      "drillClearanceViolations": [],
+      "solderMaskViolations": [],
+      "placementIssues": [],
+      "thermalVias": {
+        "checkedPairs": 13,
+        "missing": [],
+        "invalid": []
+      },
+      "associationError": null,
+      "nativeErrors": [],
+      "crystals": [
+        {
+          "net": "XIN",
+          "traceLengthMm": 8.941759232961974,
+          "viaCount": 0
+        },
+        {
+          "net": "XOUT_CRYSTAL",
+          "traceLengthMm": 3.853731702004116,
+          "viaCount": 0
+        }
+      ],
+      "crystalErrors": [],
+      "powerCorridors": [
+        {
+          "net": "DRIVER_SW1",
+          "covered": true
+        },
+        {
+          "net": "DRIVER_SW2",
+          "covered": true
+        },
+        {
+          "net": "VBUS_QUALIFIED",
+          "covered": true
+        },
+        {
+          "net": "DRIVER_OUT",
+          "covered": true
+        },
+        {
+          "net": "TEC_POS",
+          "covered": true
+        },
+        {
+          "net": "TEC_POS",
+          "covered": true
+        }
+      ],
+      "missingKelvinRoutes": [],
+      "warnings": []
+    },
+    {
+      "id": "modular-power",
+      "routingComplete": true,
+      "manufacturingReady": false,
+      "traceCount": 187,
+      "viaCount": 262,
+      "pourCount": 31,
+      "requiredPins": 249,
+      "ignoredNcPins": 19,
+      "sourceSignatureSha256": "94cab6b6ea3c69b15169c0aec999bfa84e3b0280b732b7f46b08cd34d17179b1",
+      "missingPorts": [],
+      "disconnected": [],
+      "shorts": [],
+      "clearanceViolations": [],
+      "floatingCopper": [],
+      "invalidPours": [],
+      "drillClearanceViolations": [],
+      "solderMaskViolations": [],
+      "placementIssues": [],
+      "thermalVias": {
+        "checkedPairs": 4,
+        "missing": [],
+        "invalid": []
+      },
+      "associationError": null,
+      "nativeErrors": [],
+      "crystals": [],
+      "crystalErrors": [],
+      "powerCorridors": [
+        {
+          "net": "DRIVER_SW1",
+          "covered": true
+        },
+        {
+          "net": "DRIVER_SW2",
+          "covered": true
+        },
+        {
+          "net": "VBUS_QUALIFIED",
+          "covered": true
+        },
+        {
+          "net": "DRIVER_OUT",
+          "covered": true
+        },
+        {
+          "net": "TEC_POS",
+          "covered": true
+        },
+        {
+          "net": "TEC_POS",
+          "covered": true
+        }
+      ],
+      "missingKelvinRoutes": [],
+      "warnings": [
+        {
+          "type": "source_missing_manufacturer_part_number_warning",
+          "source_missing_manufacturer_part_number_warning_id": "source_missing_manufacturer_part_number_warning_0",
+          "source_component_id": "source_component_85",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "warning_type": "source_missing_manufacturer_part_number_warning",
+          "message": "<pinheader#10552 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
+        },
+        {
+          "type": "pcb_trace_style_warning",
+          "pcb_trace_style_warning_id": "pcb_trace_style_warning_0",
+          "warning_type": "pcb_trace_style_warning",
+          "styling_issue_type": "long_segment_at_odd_angle",
+          "pcb_trace_id": "pcb_trace_162",
+          "source_trace_id": "source_trace_302",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "layer": "inner1",
+          "start_route_index": 8,
+          "end_route_index": 9,
+          "segment_start": {
+            "x": -23.75,
+            "y": -1.45
+          },
+          "segment_end": {
+            "x": -28.85,
+            "y": -2.35
+          },
+          "center": {
+            "x": -26.3,
+            "y": -1.9
+          },
+          "segment_length": 5.178802950489622,
+          "minimum_segment_length": 5,
+          "angle_degrees": 190.0079798014413,
+          "nearest_allowed_angle_degrees": 180,
+          "angle_deviation_degrees": 10.007979801441309,
+          "angle_tolerance_degrees": 4,
+          "message": ".U_FAN > .pin4 to .U_FAN > .pin5 has a 5.18 mm segment on inner1 at 190.01°, 10.01° from the nearest allowed direction (180°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+        }
+      ]
+    },
+    {
+      "id": "modular-control",
+      "routingComplete": true,
+      "manufacturingReady": false,
+      "traceCount": 195,
+      "viaCount": 228,
+      "pourCount": 4,
+      "requiredPins": 207,
+      "ignoredNcPins": 20,
+      "sourceSignatureSha256": "a2cc6ccc0cb3529ff4d51419f5b67b9c1d61b9bdada1b9b3d5f1e617148cc825",
+      "missingPorts": [],
+      "disconnected": [],
+      "shorts": [],
+      "clearanceViolations": [],
+      "floatingCopper": [],
+      "invalidPours": [],
+      "drillClearanceViolations": [],
+      "solderMaskViolations": [],
+      "placementIssues": [],
+      "thermalVias": {
+        "checkedPairs": 9,
+        "missing": [],
+        "invalid": []
+      },
+      "associationError": null,
+      "nativeErrors": [],
+      "crystals": [
+        {
+          "net": "XIN",
+          "traceLengthMm": 8.941759232961974,
+          "viaCount": 0
+        },
+        {
+          "net": "XOUT_CRYSTAL",
+          "traceLengthMm": 3.853731702004116,
+          "viaCount": 0
+        }
+      ],
+      "crystalErrors": [],
+      "powerCorridors": [],
+      "missingKelvinRoutes": [],
+      "warnings": [
+        {
+          "type": "source_missing_manufacturer_part_number_warning",
+          "source_missing_manufacturer_part_number_warning_id": "source_missing_manufacturer_part_number_warning_0",
+          "source_component_id": "source_component_65",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "warning_type": "source_missing_manufacturer_part_number_warning",
+          "message": "<pinheader#13588 name=\".J_LINK\" /> is missing a manufacturer part number and could not be resolved to a supplier part. Specify mpn, manufacturerPartNumber, or mfn, provide supplierPartNumbers, or configure a parts engine to select a part. If this part will not be assembled, mark it doNotPlace."
+        }
+      ]
+    }
+  ]
+}

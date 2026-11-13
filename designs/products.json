@@ -10,7 +10,7 @@
       "id": "lite", "name": "Lite", "targetSellPrice": [59, 79],
       "boards": ["lite"], "fanSupply": false, "probePorts": 0,
       "positioning": "Lower BOM for an OEM with its own cooling and sensing",
-      "routingStatus": "unrouted", "hardwareQualified": false
+      "routingStatus": "routed-review-candidate", "hardwareQualified": false
     },
     {
       "id": "standard", "name": "Standard", "targetSellPrice": [89, 119],
@@ -22,7 +22,7 @@
       "id": "modular", "name": "Modular", "targetSellPrice": [119, 159],
       "boards": ["modular-power", "modular-control"], "fanSupply": true, "probePorts": 2,
       "positioning": "Separate replaceable power and controller PCBs joined by a low-power harness",
-      "routingStatus": "unrouted", "hardwareQualified": false
+      "routingStatus": "routed-review-candidate", "hardwareQualified": false
     }
   ]
 }
