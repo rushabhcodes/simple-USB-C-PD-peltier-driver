@@ -1,8 +1,8 @@
-import { createHash } from "node:crypto"
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { brotliCompressSync, brotliDecompressSync, constants } from "node:zlib"
 import builds from "../assets/assembly/registry-builds.json"
 import { chunkPreview, joinPreview, validatePreviewManifest, type PreviewArchiveManifest } from "./preview-archive"
+import { fingerprintSources, changedSources } from "./preview-source"
 
 const archivePath = "assets/assembly/site-preview-manifest.json"
 const archiveDirectory = "assets/assembly"
@@ -17,17 +17,15 @@ async function sourceFingerprint() {
   const glob = new Bun.Glob("**/*")
   const paths = [
     "assembly.tsx", "index.circuit.tsx", "package.json", "tscircuit.config.json", "tsconfig.json",
-    "scripts/build-assembly.ts", "scripts/pack-site-preview.ts", "scripts/preview-archive.ts", "assets/assembly/provenance.json", "assets/assembly/registry-builds.json",
+    "scripts/build-assembly.ts", "scripts/pack-site-preview.ts", "scripts/preview-archive.ts", "scripts/preview-source.ts", "assets/assembly/provenance.json", "assets/assembly/registry-builds.json",
     ...["src", "imports", "designs"].flatMap(dir =>
       [...glob.scanSync({ cwd: dir, onlyFiles: true })].map(path => `${dir}/${path}`)),
   ].sort()
-  const hash = createHash("sha256")
-  for (const path of paths) hash.update(path).update("\0").update(await readFile(path)).update("\0")
-  return hash.digest("hex")
+  return fingerprintSources(await Promise.all(paths.map(async path => ({ path, data: await readFile(path) }))))
 }
 
-type PreviewHeader = { fingerprint: string; paths: string[]; sizes: number[] }
-const fingerprint = await sourceFingerprint()
+type PreviewHeader = { fingerprint: string; sources: Record<string, string>; paths: string[]; sizes: number[] }
+const source = await sourceFingerprint()
 switch (process.argv[2]) {
   case "pack": {
     const htmlPath = "dist/index.html"
@@ -46,7 +44,7 @@ switch (process.argv[2]) {
       if (build.routingStatus === "unrouted" && circuit.some(e => ["pcb_trace", "pcb_via", "pcb_copper_pour"].includes(e.type)))
         throw new Error(`Draft build contains unexpected saved copper: ${build.label}`)
     }
-    const header: PreviewHeader = { fingerprint, paths: outputs, sizes: files.map(file => file.length) }
+    const header: PreviewHeader = { ...source, paths: outputs, sizes: files.map(file => file.length) }
     const payload = Buffer.concat([Buffer.from(JSON.stringify(header) + "\n"), ...files])
     const archive = chunkPreview(brotliCompressSync(payload, {
       params: { [constants.BROTLI_PARAM_QUALITY]: 6 },
@@ -64,8 +62,9 @@ switch (process.argv[2]) {
     const newline = payload.indexOf(10)
     if (newline < 0) throw new Error(`Invalid preview archive: ${archivePath}`)
     const header: PreviewHeader = JSON.parse(payload.toString("utf8", 0, newline))
-    if (header.fingerprint !== fingerprint) {
-      throw new Error(`The published preview is stale. Run bun run build:preview and commit ${archivePath}.`)
+    if (header.fingerprint !== source.fingerprint) {
+      const changed = changedSources(header.sources ?? {}, source.sources)
+      throw new Error(`The published preview is stale. Changed inputs: ${changed.join(", ")}. Run bun run build:preview and commit ${archivePath}.`)
     }
     let offset = newline + 1
     if (JSON.stringify(header.paths) !== JSON.stringify(outputs) || header.sizes.length !== outputs.length || header.sizes.some(size => !Number.isSafeInteger(size) || size <= 0) ||

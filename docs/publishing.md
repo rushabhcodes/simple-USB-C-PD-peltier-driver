@@ -1,6 +1,6 @@
 # Publishing the three product versions
 
-Version 0.2.1 keeps one package, `rushabhcodes/simple-usb-c-pd-peltier-driver`,
+The 0.2.x release family keeps one package, `rushabhcodes/simple-usb-c-pd-peltier-driver`,
 with multiple build views. `includeBoardFiles` is the TSCircuit CLI's supported
 configuration for those builds. The three products have four physical board
 views because Modular consists of two PCBs:
@@ -34,6 +34,9 @@ and packs the outputs in checksum-verified chunks of at most 3 MiB to respect
 registry request-size limits. `build:cloud` verifies the source fingerprint and unpacks
 the same four builds for the registry's cloud builder. The fingerprint covers
 all variant source and the output map; a stale or incomplete preview is rejected.
+Release-version metadata and package JSON formatting are canonicalized; dependency,
+script and board changes still invalidate the cache. Per-file hashes identify any
+changed inputs when a remote build reports a stale preview.
 
 The static viewer uses a local browser bundle so a large bundle cannot fail a
 CDN's file-size limit. Preview generation uses committed footprints with live
@@ -55,7 +58,7 @@ present. The [design comparison](product-designs.md) and
 
 ## Local preflight and upload correction
 
-The release passed TypeScript and all **89 tests across 14 files**. A clean
+The board release passed TypeScript and all **92 tests across 15 files**. A clean
 source staging tree with no prior `dist/` restored all four compiled builds,
 including valid PNGs and GLB models. Chromium loaded and rendered each build,
 showed four gallery cards, and reported no page, request or HTTP errors. Draft
@@ -64,6 +67,15 @@ These checks establish the prepared artifacts, not hardware qualification or
 the eventual remote publication result; verify the live registry build after push.
 
 The initial 0.2.0 upload was stopped after HTTP 413 and detection of generated
-caches in the CLI fallback. Version 0.2.1 uses the same four checked board builds,
-split preview files, and a clean tracked-source staging tree. No credential or
-build cache directory belongs in the published source.
+caches in the CLI fallback. The corrected native `tsci push --no-compress`
+published 195 source files as 0.2.1; its cloud job succeeded and all four live
+boards rendered with hashes matching the tested Circuit JSON, four gallery
+cards, and no browser/request/HTTP errors. GitHub `main` was then pushed.
+
+GitHub synchronization automatically created 0.2.2. That job rejected a stale
+fingerprint even though the registry copies of all 85 covered input files matched
+the checkout. The follow-up fingerprint excludes only release-version metadata,
+canonicalizes package JSON, and adds per-file diagnostics; source and dependency
+changes continue to invalidate the cache. The current board artifacts remain the
+same checked designs. Verify both automatic and native releases after this fix.
+No credential or generated build-cache directory belongs in the published source.
